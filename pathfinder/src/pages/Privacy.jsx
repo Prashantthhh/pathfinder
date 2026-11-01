@@ -33,7 +33,7 @@ export default function Privacy() {
           className="btn"
           onClick={() => {
             clearAll();
-            profile.restart(); // also reset what is held in memory
+            profile.wipe(); // also reset what is held in memory
             setCleared(true);
           }}
         >
@@ -41,7 +41,7 @@ export default function Privacy() {
         </button>
       </p>
       <p role="status" className="prose__status">
-        {cleared ? 'Done. Your saved quiz answers, profile edits and saved careers were removed from this browser.' : ''}
+        {cleared ? 'Done. Your saved quiz answers, profile edits, saved careers and goal note were removed from this browser.' : ''}
       </p>
     </article>
   );

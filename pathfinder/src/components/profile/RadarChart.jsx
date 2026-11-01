@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import { DIMENSIONS } from '../../data/dimensions.js';
+import { levelOf } from '../../engine/dna.js';
 
 const SIZE = 480;
 const C = SIZE / 2;
@@ -21,7 +22,7 @@ export default function RadarChart({ values, title = 'Career DNA', description, 
   const uid = useId();
   const shape = DIMENSIONS.map((d, i) => point(i, R * clamp01(values?.[d.id])));
   const summary = description
-    ?? `Radar chart of ${DIMENSIONS.length} dimensions. ${DIMENSIONS.map((d) => `${d.label} ${Math.round(clamp01(values?.[d.id]) * 100)}%`).join(', ')}.`;
+    ?? `Radar chart of ${DIMENSIONS.length} dimensions. ${DIMENSIONS.map((d) => `${d.label}: ${levelOf(clamp01(values?.[d.id]))}`).join(', ')}.`;
 
   return (
     <figure className={`radar ${className}`}>
@@ -67,15 +68,15 @@ export default function RadarChart({ values, title = 'Career DNA', description, 
       </svg>
 
       <table className="sr-only">
-        <caption>{title}: relative emphasis, strongest dimension = 100%</caption>
+        <caption>{title}: how much each dimension stands out compared with the others</caption>
         <thead>
-          <tr><th scope="col">Dimension</th><th scope="col">Emphasis</th></tr>
+          <tr><th scope="col">Dimension</th><th scope="col">Level</th></tr>
         </thead>
         <tbody>
           {DIMENSIONS.map((d) => (
             <tr key={d.id}>
               <th scope="row">{d.label}</th>
-              <td>{Math.round(clamp01(values?.[d.id]) * 100)}%</td>
+              <td>{levelOf(clamp01(values?.[d.id]))}</td>
             </tr>
           ))}
         </tbody>

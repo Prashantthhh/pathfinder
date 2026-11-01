@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Nova from '../components/nova/Nova.jsx';
 import NovaBubble from '../components/nova/NovaBubble.jsx';
 import MatchItem from '../components/results/MatchItem.jsx';
+import RunComparison from '../components/results/RunComparison.jsx';
 import SignLink from '../components/common/SignLink.jsx';
 import ConfirmAction from '../components/common/ConfirmAction.jsx';
 import { DIMENSION_BY_ID } from '../data/dimensions.js';
@@ -39,7 +40,7 @@ export default function Results() {
 
   if (result.insufficient) return <Empty answered={p.answered > 0} />;
 
-  const incomplete = p.status !== 'complete';
+  const incomplete = p.status !== 'complete' && !p.edited;
   const topDims = Object.entries(profile.display)
     .filter(([, v]) => v > 0)
     .sort((a, b) => b[1] - a[1])
@@ -83,6 +84,15 @@ export default function Results() {
           <Nova size={130} mood={strong ? 'happy' : 'thinking'} />
         </div>
       </header>
+
+      {p.edited && (
+        <p className="banner" role="status">
+          These matches use your <strong>edited Career DNA</strong>, not only your quiz answers.{' '}
+          <Link to="/profile">Open Career DNA</Link>
+        </p>
+      )}
+
+      {p.previous && matches.length > 0 && <RunComparison previous={p.previous} matches={matches} careers={careers} />}
 
       {incomplete && (
         <p className="banner" role="status">

@@ -147,6 +147,12 @@ export default function Quiz() {
     <section className="quiz page" aria-labelledby="quiz-title">
       <h1 id="quiz-title" className="quiz__title">Find your career</h1>
 
+      {p.edited && (
+        <p className="banner quiz__edited" role="note">
+          Heads up: you have edited your Career DNA. Changing a quiz answer will reset those edits.
+        </p>
+      )}
+
       <div className="quiz__progress">
         <ProgressTrail quiz={quiz} step={step} answers={answers} />
       </div>

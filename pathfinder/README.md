@@ -15,6 +15,8 @@ npm run e2e        # build, then drive the real UI in a browser (see below)
 ## End-to-end tests
 
 `npm run e2e` builds the app, serves it on a free port, and clicks through the quiz,
+Career DNA editing, Explore, career pages, the Nova demo chat, and runs an axe-core
+accessibility scan on each page. It also checks the quiz,
 save/resume, results bands and floors, and mobile layout. It exits non-zero on any failure.
 
 It uses `playwright-core`, which does not download a browser. By default it uses the

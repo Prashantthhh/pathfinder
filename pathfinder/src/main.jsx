@@ -11,6 +11,9 @@ import './styles/nova.css';
 import './styles/home.css';
 import './styles/quiz.css';
 import './styles/results.css';
+import './styles/explore.css';
+import './styles/profile.css';
+import './styles/chat.css';
 
 // Blaze colours live in one place (data/dimensions.js); expose them to CSS.
 const root = document.documentElement;

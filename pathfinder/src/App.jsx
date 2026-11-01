@@ -7,9 +7,12 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Privacy from './pages/Privacy.jsx';
 import NotFound from './pages/NotFound.jsx';
-import ComingSoon from './pages/ComingSoon.jsx';
 import Quiz from './pages/Quiz.jsx';
 import Results from './pages/Results.jsx';
+import Profile from './pages/Profile.jsx';
+import Explore from './pages/Explore.jsx';
+import CareerDetail from './pages/CareerDetail.jsx';
+import NovaChat from './pages/NovaChat.jsx';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -37,10 +40,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/profile" element={<ComingSoon title="My Career DNA">Your Career DNA profile is coming in a later stage.</ComingSoon>} />
-          <Route path="/explore" element={<ComingSoon title="Explore careers">The career explorer is coming in a later stage.</ComingSoon>} />
-          <Route path="/careers/:id" element={<ComingSoon title="Career details">Career detail pages are coming in a later stage.</ComingSoon>} />
-          <Route path="/nova" element={<ComingSoon title="Ask Nova (demo)">Nova&rsquo;s demo chat is coming in a later stage. It will use preset answers, not live AI.</ComingSoon>} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/careers/:id" element={<CareerDetail />} />
+          <Route path="/nova" element={<NovaChat />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />

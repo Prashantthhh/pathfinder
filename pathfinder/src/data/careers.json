@@ -311,6 +311,7 @@
     "area": "bridge",
     "vector": { "build": 0.3, "data": 0.1, "ai": 0.1, "design": 0.35, "security": 0.1, "systems": 0.15, "people": 0.6, "play": 0.1 },
     "overview": "Explains complex technical products clearly in documentation, tutorials and API references so that other people can actually use them.",
+    "matchNote": "The eight dimensions have no \"writing\" axis, so this match score only reflects how much the role leans on People and Design. It says nothing about writing ability, which is the core skill here.",
     "responsibilities": ["Write and maintain docs, guides and API references", "Interview engineers to understand how things work", "Test the instructions by following them", "Keep documentation in step with product releases"],
     "skills": ["Clear, structured writing", "Enough programming to read code and run examples", "Docs tooling such as Markdown and Git", "Empathy for readers who are new to a topic"],
     "subjects": ["Software engineering", "Any area you want to specialise in documenting"],
