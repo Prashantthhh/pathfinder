@@ -94,7 +94,7 @@ function HowItWorks() {
             <div>
               <h3>
                 {s.title}
-                {s.soon && <span className="tag tag--soon">Not built yet</span>}
+                {s.soon && <span className="tag tag--soon">Coming next</span>}
               </h3>
               <p>{s.text}</p>
             </div>
