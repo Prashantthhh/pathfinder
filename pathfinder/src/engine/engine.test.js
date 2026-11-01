@@ -7,6 +7,7 @@ import { ROADMAP_LINKS, resolveLinks } from '../data/links.js';
 import { cosine } from './cosine.js';
 import { buildProfile } from './vector.js';
 import { recommend } from './recommend.js';
+import { MIN_ALT_PERCENT, MIN_MATCH_PERCENT } from './tiers.js';
 import { PERSONAS } from './fixtures.js';
 
 const personaResult = (id) => {
@@ -218,6 +219,53 @@ describe('recommend', () => {
           for (const s of d.sources) expect(chosen.has(`${s.questionId}/${s.optionId}`)).toBe(true);
         }
       }
+    }
+  });
+});
+
+describe('match floors', () => {
+  const singles = quiz.questions.flatMap((q) => q.options.map((o) => ({ id: `${q.id}/${o.id}`, answers: { [q.id]: [o.id] } })));
+  const profiles = [...PERSONAS.map((p) => ({ id: p.id, answers: p.answers })), ...singles];
+  const results = profiles.map((p) => ({ id: p.id, res: recommend(buildProfile(p.answers, quiz), careers) }));
+
+  it('exposes the agreed thresholds', () => {
+    expect(MIN_MATCH_PERCENT).toBe(50);
+    expect(MIN_ALT_PERCENT).toBe(45);
+  });
+  it('never returns a match below 50%, for personas or any single-answer profile', () => {
+    for (const { id, res } of results) {
+      for (const m of res.matches) expect(m.percent, `${id} ${m.career.id}`).toBeGreaterThanOrEqual(50);
+      expect(res.matches.length).toBeLessThanOrEqual(5);
+    }
+  });
+  it('never suggests an alternative below 45%, and never repeats a match', () => {
+    for (const { id, res } of results) {
+      const ids = new Set(res.matches.map((m) => m.career.id));
+      for (const a of res.alternatives) {
+        expect(a.percent, `${id} ${a.career.id}`).toBeGreaterThanOrEqual(45);
+        expect(ids.has(a.career.id)).toBe(false);
+      }
+      expect(res.alternatives.length).toBeLessThanOrEqual(3);
+    }
+  });
+  it('returns fewer than 5 matches, and fewer alternatives, when scores are low', () => {
+    const llm = recommend(buildProfile({ 'i-headline': ['llm'] }, quiz), careers);
+    expect(llm.matches.length).toBeLessThan(5);
+    expect(llm.alternatives.length).toBeLessThan(3);
+    expect(llm.belowMatchFloor).toBe(llm.ranked.filter((r) => r.percent < 50).length);
+    expect(llm.ranked.length).toBe(careers.length);
+  });
+  it('can have no matches at all without being "insufficient"', () => {
+    // "none yet" alone has no signal (insufficient); a real but unusual profile can still score low everywhere
+    const none = recommend(buildProfile({ 's-done': ['none'] }, quiz), careers);
+    expect(none.insufficient).toBe(true);
+    expect(none.matches).toEqual([]);
+  });
+  it('still shows the full persona result sizes the product relies on', () => {
+    for (const p of PERSONAS) {
+      const res = recommend(buildProfile(p.answers, quiz), careers);
+      expect(res.matches.length, p.id).toBe(5);
+      expect(res.alternatives.length, p.id).toBeGreaterThan(0);
     }
   });
 });

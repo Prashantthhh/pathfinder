@@ -1,5 +1,6 @@
 import { DIMENSION_BY_ID, DIMENSION_IDS } from '../data/dimensions.js';
 import { cosine, magnitude, toArray } from './cosine.js';
+import { MIN_ALT_PERCENT, MIN_MATCH_PERCENT } from './tiers.js';
 
 export const TOP_N = 5;
 export const ALT_N = 3;
@@ -76,17 +77,28 @@ export function recommend(profile, careers, { top = TOP_N, alternatives = ALT_N 
       why: explain(profile, r.career),
     }));
 
-  if (insufficient) return { insufficient: true, ranked, matches: [], alternatives: [] };
+  const none = { insufficient: true, ranked, matches: [], alternatives: [], belowMatchFloor: ranked.length };
+  if (insufficient) return none;
 
-  const matches = ranked.slice(0, top);
-  const rest = ranked.slice(top);
+  // Only careers at or above the match floor can be matches, however few that is.
+  const eligible = ranked.filter((r) => r.percent >= MIN_MATCH_PERCENT);
+  const matches = eligible.slice(0, top);
+  const rest = ranked.filter((r) => !matches.includes(r) && r.percent >= MIN_ALT_PERCENT);
 
-  // Alternatives: strong scores from areas the top picks don't cover, so the
-  // shortlist isn't three near-identical roles. Fill any gap by score.
+  // Alternatives: scores from areas the top picks don't cover, so the shortlist
+  // isn't near-identical roles. Fill any gap by score. Fewer than asked for is
+  // fine: the floor matters more than the count.
   const coveredAreas = new Set(matches.slice(0, 3).map((m) => m.career.area));
   const fresh = rest.filter((r) => !coveredAreas.has(r.career.area)).slice(0, alternatives);
   const filler = rest.filter((r) => !fresh.includes(r)).slice(0, alternatives - fresh.length);
   const alts = [...fresh, ...filler].sort((x, y) => x.rank - y.rank);
 
-  return { insufficient: false, ranked, matches, alternatives: alts };
+  return {
+    insufficient: false,
+    ranked,
+    matches,
+    alternatives: alts,
+    belowMatchFloor: ranked.filter((r) => r.percent < MIN_MATCH_PERCENT).length,
+    wanted: { top, alternatives },
+  };
 }

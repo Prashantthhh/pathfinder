@@ -5,19 +5,28 @@ import MatchItem from '../components/results/MatchItem.jsx';
 import SignLink from '../components/common/SignLink.jsx';
 import ConfirmAction from '../components/common/ConfirmAction.jsx';
 import { DIMENSION_BY_ID } from '../data/dimensions.js';
-import { groupByTier, tierOf } from '../engine/tiers.js';
+import { MIN_ALT_PERCENT, MIN_MATCH_PERCENT, groupByTier, tierOf } from '../engine/tiers.js';
 import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
 
 const list = (items) => (items.length <= 1 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`);
+const plural = (n, one, many) => (n === 1 ? one : many);
 
-function Empty() {
+function Empty({ answered }) {
   return (
     <section className="page page--narrow stub" aria-labelledby="res-title">
       <Nova size={120} mood="curious" />
       <h1 id="res-title">No matches yet</h1>
-      <p>Answer a few quiz questions and your matches will show up here, with the reasons behind each one.</p>
-      <SignLink to="/quiz">Find your career</SignLink>
+      {answered ? (
+        <p>
+          Your answers so far don&rsquo;t point toward anything yet (for example, &ldquo;none of these
+          yet&rdquo; on its own says nothing about your interests). Answer a few more questions and
+          your matches will show up here.
+        </p>
+      ) : (
+        <p>Answer a few quiz questions and your matches will show up here, with the reasons behind each one.</p>
+      )}
+      <SignLink to="/quiz">{answered ? 'Continue the quiz' : 'Find your career'}</SignLink>
     </section>
   );
 }
@@ -28,7 +37,7 @@ export default function Results() {
   const navigate = useNavigate();
   const { result, profile, quiz, careers } = p;
 
-  if (result.insufficient) return <Empty />;
+  if (result.insufficient) return <Empty answered={p.answered > 0} />;
 
   const incomplete = p.status !== 'complete';
   const topDims = Object.entries(profile.display)
@@ -37,11 +46,16 @@ export default function Results() {
     .slice(0, 2)
     .map(([d]) => DIMENSION_BY_ID[d]);
 
-  const groups = groupByTier(result.matches);
+  const { matches, alternatives, wanted, belowMatchFloor } = result;
+  const groups = groupByTier(matches);
   const strong = groups.some((g) => g.tier.id === 'strong');
+  const listed = result.ranked.filter((r) => tierOf(r.percent));
+
   const novaText = strong
     ? `Your answers leaned most on ${list(topDims.map((d) => d.label))}. These are the careers whose profiles line up most closely.`
-    : `Your answers are spread across several areas, so no career lines up very closely. That is normal, and it is a good reason to explore widely.`;
+    : matches.length
+      ? 'Your answers are spread across several areas, so no career lines up very closely. That is normal, and a good reason to explore widely.'
+      : `None of the ${careers.length} careers reached a ${MIN_MATCH_PERCENT}% match yet. More answers will sharpen the picture.`;
 
   const review = () => {
     p.reopen(0);
@@ -88,6 +102,13 @@ export default function Results() {
         <Link to="/profile">See your Career DNA</Link>
       </p>
 
+      {matches.length === 0 && (
+        <p className="banner" role="status">
+          No career reaches a {MIN_MATCH_PERCENT}% match score with your answers so far, so none is
+          presented as a match.
+        </p>
+      )}
+
       {groups.map(({ tier, items }) => (
         <section key={tier.id} className="results__group" aria-labelledby={`tier-${tier.id}`}>
           <h2 id={`tier-${tier.id}`}>{tier.label}</h2>
@@ -99,29 +120,44 @@ export default function Results() {
           </ol>
         </section>
       ))}
+
+      {matches.length > 0 && matches.length < wanted.top && (
+        <p className="fine" data-testid="fewer-matches">
+          Showing {matches.length} {plural(matches.length, 'match', 'matches')} rather than {wanted.top}: the
+          other careers score below {MIN_MATCH_PERCENT}%, and we don&rsquo;t present anything below that as a match.
+        </p>
+      )}
       <p className="fine">
-        The bands (80% and above, 60–79%, below 60%) are rough reading aids, not meaningful cut-offs.
+        Bands: strong is 80% and above, worth exploring is 65–79%, partial overlap is 50–64%. They are reading
+        aids, not cut-offs with any meaning on their own.
       </p>
 
-      {result.alternatives.length > 0 && (
-        <section className="results__group" aria-labelledby="alts-title">
-          <h2 id="alts-title">Other trails worth a look</h2>
-          <p className="section__intro">
-            These come from areas your top matches don&rsquo;t cover, so you can see more of the map.
-            They don&rsquo;t have to be your next-best scores, and they are not second prizes.
-          </p>
+      <section className="results__group" aria-labelledby="alts-title">
+        <h2 id="alts-title">Other trails worth a look</h2>
+        <p className="section__intro">
+          These come from areas your top matches don&rsquo;t cover, so you can see more of the map.
+          They are not second prizes, and only careers scoring {MIN_ALT_PERCENT}% or more are suggested.
+        </p>
+        {alternatives.length > 0 && (
           <ol className="results__list">
-            {result.alternatives.map((m) => (
+            {alternatives.map((m) => (
               <MatchItem key={m.career.id} item={m} quiz={quiz} total={careers.length} />
             ))}
           </ol>
-        </section>
-      )}
+        )}
+        {alternatives.length < wanted.alternatives && (
+          <p className="fine" data-testid="fewer-alternatives">
+            {alternatives.length === 0
+              ? `No other career reaches a ${MIN_ALT_PERCENT}% match score, so there are no alternatives to suggest right now.`
+              : `Showing ${alternatives.length} because only ${alternatives.length} other ${plural(alternatives.length, 'career reaches', 'careers reach')} a ${MIN_ALT_PERCENT}% match score or higher.`}
+          </p>
+        )}
+      </section>
 
       <details className="allranked">
-        <summary>See all {careers.length} careers ranked</summary>
+        <summary>See every career scoring {MIN_MATCH_PERCENT}% or more ({listed.length})</summary>
         <ol className="allranked__list">
-          {result.ranked.map((r) => (
+          {listed.map((r) => (
             <li key={r.career.id}>
               <Link to={`/careers/${r.career.id}`}>{r.career.title}</Link>
               <span>
@@ -130,6 +166,12 @@ export default function Results() {
             </li>
           ))}
         </ol>
+        {belowMatchFloor > 0 && (
+          <p className="fine">
+            The other {belowMatchFloor} {plural(belowMatchFloor, 'career scores', 'careers score')} below {MIN_MATCH_PERCENT}% and
+            {' '}{plural(belowMatchFloor, 'is', 'are')} not listed as {plural(belowMatchFloor, 'a match', 'matches')}.
+          </p>
+        )}
       </details>
 
       <div className="results__actions">

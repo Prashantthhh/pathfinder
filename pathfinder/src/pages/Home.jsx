@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import careers from '../data/careers.json';
 import quiz from '../data/quiz.json';
-import { DIMENSIONS, DIMENSION_BY_ID } from '../data/dimensions.js';
+import { DIMENSIONS } from '../data/dimensions.js';
 import { buildProfile } from '../engine/vector.js';
 import { recommend } from '../engine/recommend.js';
 import { PERSONAS } from '../engine/fixtures.js';
@@ -159,7 +159,6 @@ function SampleMatches() {
       </p>
       <ol className="matches">
         {sampleMatches.map((m) => {
-          const lead = m.why.drivers[0] && DIMENSION_BY_ID[m.why.drivers[0].dim];
           return (
             <li key={m.career.id} className="match">
               <div className="match__head">
@@ -170,7 +169,7 @@ function SampleMatches() {
                 </span>
               </div>
               <div className="match__bar" aria-hidden="true">
-                <span style={{ width: `${m.percent}%`, background: lead?.color }} />
+                <span style={{ width: `${m.percent}%` }} />
               </div>
               <p className="match__why">{m.why.sentence}</p>
             </li>

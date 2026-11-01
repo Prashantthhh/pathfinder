@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import quiz from '../data/quiz.json';
 import { PERSONAS } from '../engine/fixtures.js';
-import { TIERS, tierOf, groupByTier } from '../engine/tiers.js';
+import { TIERS, tierOf, groupByTier, MIN_MATCH_PERCENT } from '../engine/tiers.js';
 import {
   applyAnswer, quizReducer, sanitizeQuizState, initialQuizState, allAnswered, answeredCount,
 } from './quizState.js';
@@ -107,19 +107,19 @@ describe('sanitizeQuizState', () => {
 });
 
 describe('tiers', () => {
-  it('assigns tiers at the boundaries', () => {
-    expect(tierOf(100).id).toBe('strong');
-    expect(tierOf(80).id).toBe('strong');
-    expect(tierOf(79).id).toBe('worth');
-    expect(tierOf(60).id).toBe('worth');
-    expect(tierOf(59).id).toBe('partial');
-    expect(tierOf(0).id).toBe('partial');
+  it('uses strong >= 80, worth exploring 65-79, partial overlap 50-64', () => {
+    const cases = [[100, 'strong'], [80, 'strong'], [79, 'worth'], [65, 'worth'], [64, 'partial'], [50, 'partial']];
+    for (const [pct, id] of cases) expect(tierOf(pct)?.id, String(pct)).toBe(id);
   });
-  it('groups in order and omits empty tiers', () => {
-    const groups = groupByTier([{ percent: 94 }, { percent: 70 }, { percent: 50 }, { percent: 45 }]);
+  it('never gives a tier to anything below 50', () => {
+    for (const pct of [49, 45, 10, 0]) expect(tierOf(pct), String(pct)).toBeNull();
+  });
+  it('groups in order, omits empty tiers and drops items below the floor', () => {
+    const groups = groupByTier([{ percent: 94 }, { percent: 70 }, { percent: 55 }, { percent: 50 }, { percent: 49 }, { percent: 20 }]);
     expect(groups.map((g) => g.tier.id)).toEqual(['strong', 'worth', 'partial']);
     expect(groups[2].items).toHaveLength(2);
     expect(groupByTier([{ percent: 90 }]).map((g) => g.tier.id)).toEqual(['strong']);
-    expect(TIERS[TIERS.length - 1].min).toBe(0);
+    expect(groupByTier([{ percent: 49 }])).toEqual([]);
+    expect(TIERS[TIERS.length - 1].min).toBe(MIN_MATCH_PERCENT);
   });
 });

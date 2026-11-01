@@ -4,8 +4,11 @@ const pct = (v) => `${Math.round((v ?? 0) * 100)}%`;
 
 /**
  * "Why this match": built from the engine's own breakdown. Each driver is a
- * dimension that carried a meaningful share of the score, with the quiz
- * answers that raised it.
+ * dimension that carried a meaningful share of the score. It shows how much
+ * weight the career puts on that dimension and the quiz answers that pointed
+ * there. It deliberately shows no percentage for the student: the student's
+ * profile is relative (strongest dimension = 1), so "100%" would be misread
+ * as a score or a level of skill.
  */
 export default function WhyMatch({ item, quiz, open = false }) {
   const { why, career } = item;
@@ -26,17 +29,20 @@ export default function WhyMatch({ item, quiz, open = false }) {
                   <span className="why__blaze" style={{ background: dim.color }} aria-hidden="true" />
                   <strong>{dim.label}</strong>
                   <span className="why__nums">
-                    your profile {pct(d.student)} · {career.title} {pct(d.career)}
+                    {career.title} puts a weight of {pct(d.career)} on {dim.label}
                   </span>
                 </p>
                 {d.sources.length > 0 && (
-                  <ul className="why__sources">
-                    {d.sources.map((s) => (
-                      <li key={`${s.questionId}-${s.optionId}`}>
-                        <span className="why__section">{sectionLabel(s.section)}:</span> &ldquo;{s.label}&rdquo;
-                      </li>
-                    ))}
-                  </ul>
+                  <>
+                    <p className="why__from">Your answers that point here:</p>
+                    <ul className="why__sources">
+                      {d.sources.map((s) => (
+                        <li key={`${s.questionId}-${s.optionId}`}>
+                          <span className="why__section">{sectionLabel(s.section)}:</span> &ldquo;{s.label}&rdquo;
+                        </li>
+                      ))}
+                    </ul>
+                  </>
                 )}
               </li>
             );

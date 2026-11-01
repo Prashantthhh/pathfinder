@@ -51,3 +51,6 @@
 .allranked__tier { color: var(--ink-soft); font-size: var(--step--1); margin-left: var(--s-2); }
 
 .results__actions { display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-5); align-items: center; margin-top: var(--s-8); }
+
+.result__floor { margin: 0 0 var(--s-2); font-size: var(--step--1); color: var(--ink-soft); font-style: italic; }
+.why__from { margin: var(--s-1) 0 0; font-size: var(--step--1); color: var(--ink-soft); }
