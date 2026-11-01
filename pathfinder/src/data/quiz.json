@@ -1,0 +1,192 @@
+{
+  "sections": [
+    { "id": "interests", "label": "Interests", "intro": "What pulls you in? There are no wrong answers here." },
+    { "id": "skills", "label": "Skills", "intro": "What you can do today. This is kept separate from what interests you." },
+    { "id": "style", "label": "Work style", "intro": "How you like to work and what matters to you." }
+  ],
+  "questions": [
+    {
+      "id": "i-saturday",
+      "section": "interests",
+      "type": "multi",
+      "max": 3,
+      "prompt": "Which of these would you happily spend a free Saturday on?",
+      "hint": "Pick up to 3.",
+      "options": [
+        { "id": "app", "label": "Building a small app or website from scratch", "w": { "build": 3, "design": 1 }, "nova": "Building from scratch — noted. Making something that runs is a strong signal for the Build trail." },
+        { "id": "dataset", "label": "Digging through a dataset to see what it says", "w": { "data": 3, "ai": 1 }, "nova": "Digging into a dataset: that points toward the Data trail. Curiosity about what numbers hide is the main ingredient." },
+        { "id": "model", "label": "Training a model or wiring up a chatbot", "w": { "ai": 3, "build": 1, "data": 1 }, "nova": "Models and chatbots — the AI trail it is. I've also nudged Build and Data, since both help here." },
+        { "id": "sketch", "label": "Redesigning an app screen that annoys me", "w": { "design": 3, "people": 1 }, "nova": "Fixing a screen that annoys you is how a lot of designers start. Marking Design strongly." },
+        { "id": "ctf", "label": "Solving a capture-the-flag puzzle or breaking my own test system", "w": { "security": 3, "systems": 1 }, "nova": "Breaking things on purpose, in a safe sandbox — that's the Security trail. I'm also giving Systems a small bump." },
+        { "id": "homelab", "label": "Setting up servers, a home lab or a network", "w": { "systems": 3, "security": 1 }, "nova": "A home lab is a great Systems signal. People who like infrastructure often drift toward security too, so I noted a little of that." },
+        { "id": "organise", "label": "Organising a team or event and making it run smoothly", "w": { "people": 3, "design": 1 }, "nova": "Making a group run smoothly is a real skill, and tech teams need it. That goes onto the People trail." },
+        { "id": "game", "label": "Making a game or a creative experiment", "w": { "play": 3, "build": 1, "design": 1 }, "nova": "A game or a creative experiment — Play trail. It usually pulls in Build and Design as well, so I added those." }
+      ]
+    },
+    {
+      "id": "i-project",
+      "section": "interests",
+      "type": "single",
+      "prompt": "You get a month and freedom to pick one project. Which one do you start?",
+      "options": [
+        { "id": "tracker", "label": "A budgeting app with charts and reminders", "w": { "build": 2, "data": 2, "design": 1 }, "nova": "A budgeting app mixes building with a bit of data and design. I noted all three." },
+        { "id": "recsys", "label": "A recommender that suggests films from what a user likes", "w": { "ai": 3, "data": 2, "build": 1 }, "nova": "A recommender is close to what this very app does. AI and Data both get a boost." },
+        { "id": "vuln", "label": "A deliberately vulnerable web app, so I can learn to attack and fix it", "w": { "security": 3, "build": 1, "systems": 1 }, "nova": "Building something to break it — smart way to learn. Security leads, with Build and Systems behind it." },
+        { "id": "platformer", "label": "A 2D platformer with my own levels", "w": { "play": 3, "build": 2, "design": 1 }, "nova": "A platformer needs code, art sense and game feel. Play is the main trail here." },
+        { "id": "pipeline", "label": "A pipeline that collects public data daily and keeps it tidy", "w": { "data": 2, "systems": 3, "build": 1 }, "nova": "Automating data collection is the quiet backbone of many data teams. Systems and Data both noted." },
+        { "id": "redesign", "label": "A redesign of a campus app, after interviewing students about it", "w": { "design": 3, "people": 3 }, "nova": "Interviewing real users first — that's what separates design from decoration. Design and People both go up." }
+      ]
+    },
+    {
+      "id": "i-headline",
+      "section": "interests",
+      "type": "multi",
+      "max": 2,
+      "prompt": "Which headlines would you actually click?",
+      "hint": "Pick up to 2.",
+      "options": [
+        { "id": "breach", "label": "How attackers got into a company's network", "w": { "security": 3, "systems": 1 }, "nova": "The how of a breach is the part defenders study. That adds to Security." },
+        { "id": "llm", "label": "A new language model can do something unexpected", "w": { "ai": 3, "build": 1 }, "nova": "New model capabilities catch your eye — AI trail. I also added a little Build, since someone has to turn them into apps." },
+        { "id": "outage", "label": "Why a huge service went down for hours", "w": { "systems": 3, "security": 1 }, "nova": "Outage post-mortems are Systems reading. Good sign if you enjoy working out why things fail." },
+        { "id": "stats", "label": "A survey result that turns out to be misleading", "w": { "data": 3, "people": 1 }, "nova": "Spotting a misleading statistic is a Data instinct. Noted." },
+        { "id": "launch", "label": "How a small team launched a product people love", "w": { "people": 2, "design": 2, "build": 1 }, "nova": "Product stories mix design, teamwork and building. I spread the credit across all three." },
+        { "id": "gamedev", "label": "How an indie game was made by two people", "w": { "play": 3, "build": 1 }, "nova": "Indie game stories — Play trail, with a bit of Build." }
+      ]
+    },
+    {
+      "id": "i-notice",
+      "section": "interests",
+      "type": "single",
+      "prompt": "When you use an app, what do you notice first?",
+      "options": [
+        { "id": "look", "label": "How it looks and how easy it is to use", "w": { "design": 3, "people": 1 }, "nova": "You notice look and ease first. That's a designer's eye, so Design goes up." },
+        { "id": "speed", "label": "Whether it is fast and reliable", "w": { "systems": 3, "build": 1 }, "nova": "Speed and reliability: Systems thinking. Noted." },
+        { "id": "data", "label": "What it knows about me and how it uses that", "w": { "data": 2, "security": 2 }, "nova": "Wondering what an app does with your data touches both Data and Security. I noted both." },
+        { "id": "safe", "label": "Whether it could be hacked or misused", "w": { "security": 3, "systems": 1 }, "nova": "Thinking about misuse before features — a very Security-minded habit." },
+        { "id": "smart", "label": "Which parts feel smart or predictive", "w": { "ai": 3, "data": 1 }, "nova": "Noticing the smart parts leans AI, and Data sits right behind it." },
+        { "id": "fun", "label": "Whether it is fun to use", "w": { "play": 3, "design": 1 }, "nova": "Fun first. Play trail, with Design just behind." }
+      ]
+    },
+    {
+      "id": "i-break",
+      "section": "interests",
+      "type": "single",
+      "prompt": "Something you built stops working. What do you do first?",
+      "options": [
+        { "id": "read", "label": "Read the code and logs line by line", "w": { "build": 3, "systems": 1 }, "nova": "Line-by-line debugging is the heart of Build. Good habit." },
+        { "id": "measure", "label": "Check the numbers: when did it start, how often, who is affected", "w": { "data": 3, "systems": 1 }, "nova": "Measuring before guessing is Data thinking, and it helps Systems work too." },
+        { "id": "attack", "label": "Ask whether someone broke it on purpose", "w": { "security": 3, "systems": 1 }, "nova": "Suspecting foul play first — a security mindset. Noted." },
+        { "id": "infra", "label": "Look at the environment: servers, network, configuration", "w": { "systems": 3, "security": 1 }, "nova": "Checking the environment before the code is classic Systems instinct." },
+        { "id": "ask", "label": "Ask a teammate to pair up and talk it through", "w": { "people": 3, "build": 1 }, "nova": "Talking it through with someone is a real strength. People goes up." },
+        { "id": "retry", "label": "Try different things quickly and see what happens", "w": { "play": 3, "build": 1 }, "nova": "Rapid experimenting is a Play-style approach. It works best if you also keep notes on what you tried." }
+      ]
+    },
+    {
+      "id": "i-club",
+      "section": "interests",
+      "type": "single",
+      "prompt": "A college club needs a volunteer. You put your hand up for…",
+      "options": [
+        { "id": "site", "label": "Building the club's website", "w": { "build": 3, "design": 1 }, "nova": "Building the site: Build, with a bit of Design." },
+        { "id": "poster", "label": "Designing posters and the logo", "w": { "design": 3, "play": 1 }, "nova": "Posters and logos — Design trail, with a creative streak." },
+        { "id": "analysis", "label": "Analysing the sign-up and feedback data", "w": { "data": 3, "people": 1 }, "nova": "Analysing feedback is a Data task that also helps people. Both noted." },
+        { "id": "lead", "label": "Running the team and talking to sponsors", "w": { "people": 3 }, "nova": "Leading and talking to sponsors: People trail, strongly." },
+        { "id": "wifi", "label": "Setting up the lab machines, Wi-Fi and accounts", "w": { "systems": 3, "security": 1 }, "nova": "Keeping the lab running is Systems work, and it often teaches security basics too." },
+        { "id": "contest", "label": "Organising the CTF or hackathon", "w": { "security": 2, "people": 2, "play": 1 }, "nova": "Organising a CTF or hackathon mixes Security, People and a bit of Play. All three noted." }
+      ]
+    },
+    {
+      "id": "s-done",
+      "section": "skills",
+      "type": "multi",
+      "prompt": "Which of these have you actually done, even at a beginner level?",
+      "hint": "Pick all that apply. 'None yet' is a fine answer.",
+      "options": [
+        { "id": "code", "label": "Written a program or app beyond coursework", "w": { "build": 3 }, "nova": "Programs beyond coursework count a lot. Recorded as a Build skill." },
+        { "id": "sql", "label": "Used SQL, a spreadsheet or pandas to analyse data", "w": { "data": 3 }, "nova": "Hands-on data work recorded as a Data skill." },
+        { "id": "ml", "label": "Trained a model or called an AI/LLM API", "w": { "ai": 3, "build": 1 }, "nova": "You've used AI tools directly. That goes in as an AI skill, plus a little Build." },
+        { "id": "figma", "label": "Made mockups or prototypes (Figma or similar)", "w": { "design": 3 }, "nova": "Mockups count as real design practice. Recorded as a Design skill." },
+        { "id": "ctf", "label": "Tried CTFs, security labs or vulnerability write-ups", "w": { "security": 3 }, "nova": "Security lab time recorded as a Security skill." },
+        { "id": "linux", "label": "Used Linux and the command line, Docker or deployed something", "w": { "systems": 3, "build": 1 }, "nova": "Command-line and deployment experience: recorded as a Systems skill, plus a little Build." },
+        { "id": "lead", "label": "Led a team, event or club activity", "w": { "people": 3 }, "nova": "Leading others recorded as a People skill." },
+        { "id": "game", "label": "Made a game, mod or creative coding piece", "w": { "play": 3, "build": 1 }, "nova": "Making a game or mod recorded as a Play skill, plus a little Build." },
+        { "id": "none", "label": "None of these yet", "w": {}, "exclusive": true, "nova": "That's a perfectly fine starting point. Your matches will lean on what interests you, and every career has a beginner path." }
+      ]
+    },
+    {
+      "id": "s-coding",
+      "section": "skills",
+      "type": "single",
+      "prompt": "How comfortable are you with programming today?",
+      "options": [
+        { "id": "new", "label": "Just starting out", "w": {}, "nova": "Starting out is fine. I won't count it against any career; I only track what you've done." },
+        { "id": "basic", "label": "I can solve small problems in one language", "w": { "build": 1 }, "nova": "Small problems in one language: a small Build point recorded." },
+        { "id": "projects", "label": "I can build complete projects with several parts", "w": { "build": 2, "systems": 1 }, "nova": "Complete multi-part projects: a solid Build skill, plus a little Systems." },
+        { "id": "strong", "label": "I'm comfortable in more than one language and tools like Git", "w": { "build": 3, "systems": 1 }, "nova": "Several languages and Git — strong Build skill recorded." }
+      ]
+    },
+    {
+      "id": "s-maths",
+      "section": "skills",
+      "type": "single",
+      "prompt": "How do you feel about maths and statistics?",
+      "options": [
+        { "id": "love", "label": "I enjoy them and do well", "w": { "data": 2, "ai": 2 }, "nova": "Comfort with maths helps in Data and AI work. Both recorded as skills." },
+        { "id": "ok", "label": "Fine when I see a use for it", "w": { "data": 1, "ai": 1 }, "nova": "Fine with a purpose behind it — a small Data and AI point recorded." },
+        { "id": "avoid", "label": "I would rather avoid heavy maths", "w": { "design": 1, "people": 1 }, "nova": "Plenty of strong careers lean less on maths. I've recorded a small point for Design and People instead, but this is not a verdict on what you can learn." }
+      ]
+    },
+    {
+      "id": "w-day",
+      "section": "style",
+      "type": "single",
+      "prompt": "Describe your ideal workday.",
+      "options": [
+        { "id": "deep", "label": "Long stretches of focused, heads-down building", "w": { "build": 3, "systems": 1 }, "nova": "Long focused stretches suit building and infrastructure work." },
+        { "id": "puzzle", "label": "Investigating a puzzle: logs, numbers, clues", "w": { "data": 2, "security": 2 }, "nova": "Investigating clues fits data and security work equally. Both noted." },
+        { "id": "people", "label": "Talking to users and teammates for much of the day", "w": { "people": 3, "design": 1 }, "nova": "Lots of conversation points to People-heavy roles, and Design too." },
+        { "id": "mix", "label": "A mix: some building, some meetings, some thinking", "w": { "build": 1, "people": 1, "data": 1 }, "nova": "A mixed day keeps your options wide. Small points to Build, People and Data." },
+        { "id": "creative", "label": "Sketching ideas and trying creative variations", "w": { "design": 2, "play": 2 }, "nova": "Sketching and variations: Design and Play, equally." }
+      ]
+    },
+    {
+      "id": "w-mode",
+      "section": "style",
+      "type": "single",
+      "prompt": "Which sounds more like you?",
+      "options": [
+        { "id": "analytical", "label": "Analytical: I like logic, evidence and rigorous answers", "w": { "data": 2, "security": 1, "systems": 1 }, "nova": "Analytical style recorded across Data, Security and Systems." },
+        { "id": "creative", "label": "Creative: I like new ideas, looks and feel", "w": { "design": 2, "play": 2 }, "nova": "Creative style recorded across Design and Play." },
+        { "id": "practical", "label": "Practical: I like making things that work", "w": { "build": 3 }, "nova": "Practical, make-it-work style: Build." },
+        { "id": "social", "label": "Social: I like helping groups get things done", "w": { "people": 3 }, "nova": "Social, group-focused style: People." }
+      ]
+    },
+    {
+      "id": "w-team",
+      "section": "style",
+      "type": "single",
+      "prompt": "How much of your work time would you like to spend with other people?",
+      "options": [
+        { "id": "solo", "label": "Mostly working on my own", "w": { "build": 1, "security": 1, "data": 1 }, "nova": "Mostly solo: I gave a small point to Build, Security and Data, which often allow long independent stretches. Every role still involves some teamwork." },
+        { "id": "small", "label": "A small team, with regular check-ins", "w": { "build": 1, "systems": 1, "design": 1 }, "nova": "A small team with check-ins is how many product and engineering teams work. Small points to Build, Systems and Design." },
+        { "id": "lots", "label": "Often, with lots of different people", "w": { "people": 3, "design": 1 }, "nova": "Working with many people often: People goes up, with Design behind." }
+      ]
+    },
+    {
+      "id": "w-matters",
+      "section": "style",
+      "type": "multi",
+      "max": 2,
+      "prompt": "What matters most to you in a first role?",
+      "hint": "Pick up to 2.",
+      "options": [
+        { "id": "learn", "label": "Learning technical depth quickly", "w": { "build": 1, "systems": 1, "ai": 1 }, "nova": "Wanting technical depth leans toward build-heavy, systems and AI roles." },
+        { "id": "users", "label": "Seeing real users use what I make", "w": { "design": 2, "build": 1, "people": 1 }, "nova": "Seeing users use your work points to product-facing roles." },
+        { "id": "impact", "label": "Protecting people or keeping important systems safe", "w": { "security": 2, "systems": 1 }, "nova": "Protecting people and systems: Security, with Systems behind it." },
+        { "id": "insight", "label": "Finding insights that change decisions", "w": { "data": 2, "people": 1 }, "nova": "Insights that change decisions: Data, plus the People skill of getting heard." },
+        { "id": "creative-out", "label": "Making something creative and expressive", "w": { "play": 2, "design": 1 }, "nova": "Creative expression: Play, with Design behind it." },
+        { "id": "lead-out", "label": "Leading and shaping what a team builds", "w": { "people": 3 }, "nova": "Shaping what a team builds: a strong People signal." }
+      ]
+    }
+  ]
+}
