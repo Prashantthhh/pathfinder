@@ -43,9 +43,9 @@ describe('cosine', () => {
 });
 
 describe('career data', () => {
-  it('has the 18 requested careers with unique ids', () => {
-    expect(careers).toHaveLength(18);
-    expect(new Set(careers.map((c) => c.id)).size).toBe(18);
+  it('has the 23 careers with unique ids', () => {
+    expect(careers).toHaveLength(23);
+    expect(new Set(careers.map((c) => c.id)).size).toBe(23);
   });
   it('every vector covers all 8 dimensions within 0..1', () => {
     for (const c of careers) {
@@ -69,6 +69,11 @@ describe('career data', () => {
         if (a.id < b.id) expect(cosine(a.vector, b.vector), `${a.id} vs ${b.id}`).toBeLessThan(0.97);
       }
     }
+  });
+  it('Tech Policy & Cyber Law states that legal practice usually needs an LLB after B.Tech', () => {
+    const law = careers.find((c) => c.id === 'tech-policy-cyber-law');
+    expect(law.entryNote).toMatch(/LLB/);
+    expect(law.entryNote).toMatch(/B\.Tech/);
   });
   it('never invents salary or demand figures', () => {
     for (const c of careers) {
@@ -180,7 +185,9 @@ describe('recommend', () => {
     expect(top3.filter((id) => dataAi.includes(id)).length).toBeGreaterThanOrEqual(3);
   });
   it('creative people-person gets design/product first', () => {
-    expect(topIds(personaResult('creative-people'), 2).sort()).toEqual(['product-manager', 'ui-ux-designer']);
+    const res = personaResult('creative-people');
+    expect(topIds(res, 2).sort()).toEqual(['ui-ux-designer', 'ux-researcher']);
+    expect(topIds(res, 5)).toContain('product-manager');
   });
   it('game builder gets Game Developer first', () => {
     expect(topIds(personaResult('game-builder'), 1)).toEqual(['game-developer']);

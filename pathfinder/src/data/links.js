@@ -18,6 +18,8 @@ export const ROADMAP_LINKS = {
   'ux-design':      { label: 'UX Design roadmap (roadmap.sh)',       url: 'https://roadmap.sh/ux-design' },
   'game-developer': { label: 'Game Developer roadmap (roadmap.sh)',  url: 'https://roadmap.sh/game-developer' },
   qa:               { label: 'QA roadmap (roadmap.sh)',              url: 'https://roadmap.sh/qa' },
+  'technical-writer': { label: 'Technical Writer roadmap (roadmap.sh)', url: 'https://roadmap.sh/technical-writer' },
+  devrel:           { label: 'Developer Relations roadmap (roadmap.sh)', url: 'https://roadmap.sh/devrel' },
   'product-manager':{ label: 'Product Manager roadmap (roadmap.sh)', url: 'https://roadmap.sh/product-manager' },
 };
 

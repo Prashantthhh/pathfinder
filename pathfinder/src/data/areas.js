@@ -9,6 +9,7 @@ export const AREAS = [
   { id: 'security', label: 'Security Ridge',   blurb: 'Defending systems and testing them from the outside.',          x: 84, y: 52, dims: ['security'] },
   { id: 'cloud',    label: 'Cloud & Networks', blurb: 'Infrastructure, delivery and connectivity.',                    x: 46, y: 36, dims: ['systems'] },
   { id: 'design',   label: 'Design & Product', blurb: 'Deciding what to build and how it should feel.',                x: 14, y: 28, dims: ['design', 'people'] },
+  { id: 'bridge',   label: 'Crossroads',       blurb: 'Roles between engineering and the wider world: writing, advocacy, consulting and policy.', x: 62, y: 86, dims: ['people'] },
   { id: 'games',    label: 'Game Grounds',     blurb: 'Interactive worlds and real-time graphics.',                    x: 30, y: 12, dims: ['play', 'build'] },
 ];
 
