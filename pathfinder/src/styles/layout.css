@@ -1,0 +1,210 @@
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--paper-hi) 94%, transparent);
+  backdrop-filter: blur(4px);
+  border-bottom: 2px solid var(--ink);
+}
+.site-header::after {
+  /* second, dashed rule like a trail edge */
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -7px;
+  border-bottom: 2px dashed var(--ink-soft);
+  opacity: 0.45;
+  pointer-events: none;
+}
+.site-header__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  text-decoration: none;
+  color: var(--ink);
+}
+.brand:hover { color: var(--ink); }
+.brand__word {
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+}
+
+.nav-toggle {
+  font: inherit;
+  font-weight: 700;
+  min-height: 2.75rem;
+  padding: 0 var(--s-4);
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.site-nav { display: none; width: 100%; padding-bottom: var(--s-3); }
+.site-nav.is-open { display: block; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-1); }
+.site-nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 2.75rem;
+  padding: 0 var(--s-3);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-left: 5px solid transparent;
+}
+.site-nav a:hover { background: var(--paper-lo); color: var(--ink); }
+.site-nav a[aria-current='page'] { border-left-color: var(--blaze-build); background: var(--paper-lo); }
+
+.nav-tag {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.05rem 0.4rem;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}
+
+@media (min-width: 52rem) {
+  .nav-toggle { display: none; }
+  .site-nav { display: block; width: auto; padding: 0; }
+  .site-nav ul { flex-direction: row; gap: var(--s-2); }
+  .site-nav a { border-left: 0; border-bottom: 4px solid transparent; padding: 0 var(--s-3); min-height: var(--header-h); }
+  .site-nav a[aria-current='page'] { border-bottom-color: var(--blaze-build); background: transparent; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: var(--s-8);
+  background: var(--forest);
+  color: var(--paper-hi);
+  padding: var(--s-7) 0 var(--s-6);
+  border-top: 6px double var(--paper-hi);
+}
+.site-footer__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: var(--s-6);
+}
+@media (min-width: 52rem) {
+  .site-footer__inner { grid-template-columns: 2fr 1fr 1fr; }
+}
+.site-footer a { color: var(--paper-hi); }
+.site-footer a:hover { color: #fff; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: var(--s-2); }
+.site-footer__brand { font-family: var(--font-label); letter-spacing: 0.18em; font-weight: 700; margin-bottom: var(--s-2); }
+.site-footer__h {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 var(--s-3);
+  opacity: 0.85;
+}
+.site-footer p { font-size: var(--step--1); max-width: 34rem; }
+.site-footer__note { opacity: 0.9; }
+
+/* ---------- Generic page pieces ---------- */
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--s-7) var(--gutter);
+}
+.page--narrow { max-width: 46rem; }
+.stub { text-align: center; }
+.stub .nova { margin: 0 auto var(--s-4); display: block; }
+
+.prose h2 { margin-top: var(--s-6); font-size: var(--step-2); }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: var(--s-2); }
+.prose__status { min-height: 1.6em; font-weight: 600; color: var(--forest); }
+
+.btn {
+  font: inherit;
+  font-weight: 700;
+  min-height: 2.75rem;
+  padding: 0 var(--s-5);
+  background: var(--forest);
+  color: var(--paper-hi);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.btn:hover { background: var(--forest-hi); }
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  padding: 0.1rem 0.5rem;
+  border: 1.5px dashed var(--ink);
+  border-radius: 2px;
+  vertical-align: middle;
+}
+.tag--illustrative { background: var(--tan); }
+.tag--soon { margin-left: var(--s-2); background: transparent; }
+
+.eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: var(--s-3);
+}
+.fine { font-size: var(--step--1); color: var(--ink-soft); }
+.note {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  border-left: 4px solid var(--blaze-build);
+  padding-left: var(--s-3);
+  max-width: 40rem;
+}
+
+/* ---------- Trail signpost links ---------- */
+.sign {
+  display: inline-block;
+  text-decoration: none;
+  filter: drop-shadow(0 3px 0 rgba(42, 40, 34, 0.35));
+  transition: transform 0.15s ease;
+}
+.sign__board {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 3rem;
+  padding: 0 2.4rem 0 var(--s-5);
+  font-weight: 700;
+  font-size: 1.05rem;
+  clip-path: polygon(0 0, calc(100% - 1.3rem) 0, 100% 50%, calc(100% - 1.3rem) 100%, 0 100%);
+}
+.sign--primary .sign__board { background: var(--forest); color: var(--paper-hi); }
+.sign--quiet .sign__board { background: var(--tan); color: var(--ink); }
+.sign:hover { transform: translateY(-2px); }
+.sign--primary:hover .sign__board { background: var(--forest-hi); color: #fff; }
+.sign--quiet:hover .sign__board { background: #d8c58f; color: var(--ink); }
+.sign:focus-visible { outline-offset: 5px; }

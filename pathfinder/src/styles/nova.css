@@ -1,0 +1,65 @@
+/* ---------- Nova, the star-compass ---------- */
+.nova { display: block; overflow: visible; }
+
+.nova__tip {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+.nova__tip--north { fill: #c62828; }
+.nova__tip--cardinal { fill: var(--forest); }
+.nova__tip--inter { fill: #e0b04a; }
+
+.nova__bezel { fill: var(--paper-hi); stroke: var(--ink); stroke-width: 4; }
+.nova__face { fill: #fff8e6; }
+.nova__features { fill: var(--ink); stroke: none; }
+.nova__line { fill: none; stroke: var(--ink); stroke-width: 3.2; stroke-linecap: round; }
+.nova__eye-white { fill: #fff; stroke: var(--ink); stroke-width: 2; }
+.nova__mouth-open { fill: var(--ink); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.nova__cheek { fill: #f08a7e; opacity: 0.55; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .nova__star {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nova-sway 7s ease-in-out infinite;
+  }
+  .nova__body {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nova-pop 0.45s ease-out;
+  }
+}
+@keyframes nova-sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes nova-pop {
+  0% { transform: scale(0.94); }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- Speech bubble ---------- */
+.bubble {
+  position: relative;
+  background: var(--paper-hi);
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  max-width: 18rem;
+}
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.6rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--paper-hi);
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: translateX(-50%) rotate(45deg);
+}

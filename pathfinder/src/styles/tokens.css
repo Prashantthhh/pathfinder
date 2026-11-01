@@ -1,0 +1,47 @@
+/* Design tokens. The eight --blaze-* colours are injected from
+   src/data/dimensions.js at startup (single source of truth). */
+:root {
+  color-scheme: light;
+
+  /* Paper and ink */
+  --paper: #f1e9d6;          /* the map background */
+  --paper-hi: #fbf6e9;       /* lighter sheet for labels and panels */
+  --paper-lo: #e6dab9;       /* darker band */
+  --tan: #e3d3a6;
+  --ink: #2a2822;
+  --ink-soft: #4f4a3b;
+  --forest: #1f4d3a;
+  --forest-hi: #2b6b51;
+  --contour: #cbbb92;
+  --contour-index: #b3a06b;
+  --grid: rgba(42, 40, 34, 0.07);
+  --focus: #1d63c4;
+
+  /* Type */
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-label: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.9rem);
+  --step-4: clamp(2.3rem, 1.4rem + 4vw, 4.1rem);
+
+  /* Space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 6.5rem;
+
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --measure: 72rem;
+  --radius: 3px;
+  --header-h: 4rem;
+}
