@@ -1,0 +1,143 @@
+/* ---------- Buttons used across quiz/results ---------- */
+.btn--quiet { background: var(--tan); color: var(--ink); }
+.btn--quiet:hover { background: #d8c58f; }
+.btn--danger { background: #8f1d1d; color: var(--paper-hi); }
+.btn--danger:hover { background: #a82424; }
+.confirm { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-3); padding: var(--s-2) var(--s-3); border: 2px dashed var(--ink); background: var(--paper-hi); }
+.confirm__text { font-weight: 600; }
+
+/* ---------- Quiz layout ---------- */
+.quiz {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-areas: 'title' 'progress' 'nova' 'question' 'nav';
+  max-width: 62rem;
+}
+.quiz__title { grid-area: title; font-size: var(--step-2); margin: 0; }
+.quiz__progress { grid-area: progress; }
+.quiz__nova { grid-area: nova; }
+.quiz__question { grid-area: question; }
+.quiz__nav { grid-area: nav; }
+
+@media (min-width: 56rem) {
+  .quiz {
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    grid-template-areas: 'title nova' 'progress nova' 'question nova' 'nav nova';
+    column-gap: var(--s-7);
+    grid-template-rows: auto auto auto 1fr;
+  }
+  .quiz__nova { position: sticky; top: calc(var(--header-h) + var(--s-5)); align-self: start; grid-row: 1 / span 4; }
+}
+
+/* Nova panel: side-by-side on phones, stacked on wide screens */
+.quiz__nova { display: flex; align-items: flex-start; gap: var(--s-4); }
+.quiz__nova .nova { flex: none; width: 4.5rem; height: 4.5rem; }
+.quiz__nova .bubble { max-width: none; flex: 1; min-height: 4.5rem; }
+.quiz__nova .bubble::after {
+  left: -0.55rem;
+  top: 1.1rem;
+  bottom: auto;
+  transform: rotate(135deg);
+}
+@media (min-width: 56rem) {
+  .quiz__nova { flex-direction: column-reverse; align-items: center; }
+  .quiz__nova .nova { width: 8.5rem; height: 8.5rem; }
+  .quiz__nova .bubble { width: 100%; min-height: 7rem; }
+  .quiz__nova .bubble::after { left: 50%; top: auto; bottom: -0.6rem; transform: translateX(-50%) rotate(45deg); }
+}
+
+/* ---------- Progress trail ---------- */
+.trail-progress__sections { display: flex; gap: var(--s-3); }
+.trail-progress__section { min-width: 0; }
+.trail-progress__name {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+}
+.trail-progress__name.is-current { color: var(--ink); font-weight: 700; }
+.trail-progress__cells { display: flex; gap: 3px; }
+.trail-progress__cell {
+  flex: 1;
+  height: 0.85rem;
+  border: 2px solid var(--ink-soft);
+  border-radius: 2px;
+  background: transparent;
+}
+.trail-progress__section--0 { --c: var(--blaze-build); }
+.trail-progress__section--1 { --c: var(--blaze-data); }
+.trail-progress__section--2 { --c: var(--blaze-design); }
+.trail-progress__cell--done { background: var(--c); border-color: var(--ink); }
+.trail-progress__cell--current { background: var(--paper-hi); border-color: var(--ink); box-shadow: 0 0 0 2px var(--c); transform: scaleY(1.35); }
+.trail-progress__cell--skipped { border-style: dashed; }
+.trail-progress__text { font-size: var(--step--1); color: var(--ink-soft); margin: var(--s-2) 0 0; }
+
+/* ---------- Question ---------- */
+.quiz__step { font-size: var(--step--1); font-family: var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--s-3); }
+.quiz__step:focus { outline: none; }
+.quiz__step:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+.quiz__section { font-weight: 700; color: var(--forest); }
+.quiz__count { color: var(--ink-soft); }
+
+.question { border: 0; padding: 0; margin: 0; min-width: 0; }
+.question__prompt { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.15; font-weight: 700; padding: 0; margin-bottom: var(--s-2); }
+.question__hint { color: var(--ink-soft); margin: 0 0 var(--s-4); }
+.options { display: grid; gap: var(--s-3); margin-top: var(--s-4); }
+
+.opt {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-3);
+  align-items: start;
+  padding: var(--s-3) var(--s-4);
+  min-height: 3.25rem;
+  background: color-mix(in srgb, var(--paper-hi) 92%, transparent);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.opt:hover { background: var(--paper-hi); }
+.opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.opt__mark {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.1rem;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: var(--paper-hi);
+  display: grid;
+  place-items: center;
+}
+.opt input[type='radio'] + .opt__mark { border-radius: 50%; }
+.opt input:focus-visible + .opt__mark { outline: 3px solid var(--focus); outline-offset: 3px; }
+.opt:has(input:focus-visible) { box-shadow: 0 0 0 3px var(--focus); }
+.opt input:checked + .opt__mark { background: var(--forest); }
+.opt input[type='checkbox']:checked + .opt__mark::after { content: '✓'; color: var(--paper-hi); font-weight: 700; line-height: 1; }
+.opt input[type='radio']:checked + .opt__mark::after { content: ''; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--paper-hi); }
+.opt.is-selected { background: var(--tan); box-shadow: inset 6px 0 0 var(--forest); }
+.opt.is-locked { opacity: 0.55; cursor: not-allowed; }
+.opt.is-locked input { cursor: not-allowed; }
+.opt__body { display: flex; flex-direction: column; gap: 0.2rem; }
+.opt__label { font-weight: 600; }
+.opt__recorded { font-size: 0.82rem; color: var(--ink-soft); }
+.opt__dim { white-space: nowrap; }
+.opt__blaze { display: inline-block; width: 0.5rem; height: 0.9rem; margin-right: 0.3rem; border-radius: 1px; border: 1px solid var(--ink); vertical-align: -0.1rem; }
+
+.quiz__error { margin: var(--s-4) 0 0; padding: var(--s-2) var(--s-3); border-left: 5px solid #8f1d1d; background: var(--paper-hi); font-weight: 700; color: #7a1818; }
+
+.quiz__nav { margin-top: var(--s-2); }
+.quiz__buttons { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.quiz__save { font-size: var(--step--1); color: var(--ink-soft); margin-top: var(--s-4); }
+
+/* ---------- Resume / finished gate ---------- */
+.gate { text-align: center; }
+.gate .nova { margin: 0 auto var(--s-4); }
+.gate__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-4); margin: var(--s-5) 0; }
+.gate__again { margin-top: var(--s-5); }

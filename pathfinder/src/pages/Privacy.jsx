@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import useTitle from '../hooks/useTitle.js';
 import { clearAll } from '../state/storage.js';
+import { useProfile } from '../state/ProfileContext.jsx';
 
 export default function Privacy() {
   useTitle('Privacy & your data');
   const [cleared, setCleared] = useState(false);
+  const profile = useProfile();
 
   return (
     <article className="page page--narrow prose" aria-labelledby="privacy-title">
@@ -31,6 +33,7 @@ export default function Privacy() {
           className="btn"
           onClick={() => {
             clearAll();
+            profile.restart(); // also reset what is held in memory
             setCleared(true);
           }}
         >

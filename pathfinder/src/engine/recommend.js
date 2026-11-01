@@ -35,7 +35,7 @@ export function explain(profile, career) {
         .filter((c) => c.dim === t.dim)
         .sort((x, y) => y.weight - x.weight)
         .slice(0, 2)
-        .map(({ prompt, label, optionId, questionId, kind }) => ({ prompt, label, optionId, questionId, kind })),
+        .map(({ prompt, label, optionId, questionId, kind, section }) => ({ prompt, label, optionId, questionId, kind, section })),
     }));
 
   // Dimensions the career leans on that the student's answers barely touched:

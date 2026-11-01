@@ -8,6 +8,8 @@ import About from './pages/About.jsx';
 import Privacy from './pages/Privacy.jsx';
 import NotFound from './pages/NotFound.jsx';
 import ComingSoon from './pages/ComingSoon.jsx';
+import Quiz from './pages/Quiz.jsx';
+import Results from './pages/Results.jsx';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -33,8 +35,8 @@ export default function App() {
       <main id="main" tabIndex={-1} ref={mainRef}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz" element={<ComingSoon title="Career quiz">The quiz is the next stage of the build.</ComingSoon>} />
-          <Route path="/results" element={<ComingSoon title="Your matches">Matches appear here once the quiz is built.</ComingSoon>} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/results" element={<Results />} />
           <Route path="/profile" element={<ComingSoon title="My Career DNA">Your Career DNA profile is coming in a later stage.</ComingSoon>} />
           <Route path="/explore" element={<ComingSoon title="Explore careers">The career explorer is coming in a later stage.</ComingSoon>} />
           <Route path="/careers/:id" element={<ComingSoon title="Career details">Career detail pages are coming in a later stage.</ComingSoon>} />

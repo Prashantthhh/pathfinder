@@ -1,0 +1,53 @@
+.results { max-width: 56rem; }
+.results__intro { display: grid; gap: var(--s-5); align-items: center; margin-bottom: var(--s-5); }
+.results__nova { display: flex; flex-direction: column-reverse; align-items: center; gap: var(--s-4); }
+@media (min-width: 52rem) {
+  .results__intro { grid-template-columns: 1fr 15rem; gap: var(--s-6); }
+}
+
+.banner {
+  margin: 0 0 var(--s-5);
+  padding: var(--s-3) var(--s-4);
+  background: var(--paper-hi);
+  border: 2px dashed var(--ink);
+  font-weight: 600;
+}
+
+.results__dims { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-3); }
+.chip { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.15rem 0.6rem; border: 2px solid var(--ink); border-radius: 2px; background: var(--paper-hi); font-weight: 700; }
+.chip__blaze { width: 0.5rem; height: 1rem; border-radius: 1px; border: 1px solid var(--ink); }
+
+.results__group { margin-top: var(--s-7); }
+.results__group > h2 { font-size: var(--step-2); margin-bottom: var(--s-1); }
+.results__list { list-style: none; margin: 0; padding: 0; }
+.result { padding: var(--s-5) 0; border-top: 2px dashed var(--ink-soft); }
+.result:first-child { border-top: 0; }
+.result__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4); }
+.result__title { margin: 0; flex: 1 1 14rem; font-size: var(--step-2); }
+.result__title a { color: var(--ink); text-decoration-color: var(--forest); }
+.result__title a:hover { color: var(--forest); }
+.result__score { margin: 0; color: var(--ink-soft); font-size: var(--step--1); }
+.result__rank { opacity: 0.9; }
+.result__area { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); font-weight: 700; margin: var(--s-1) 0 0; }
+.result__overview { margin: var(--s-2) 0 var(--s-3); max-width: 42rem; }
+
+/* Why this match */
+.why { border-left: 5px solid var(--forest); background: color-mix(in srgb, var(--paper-hi) 85%, transparent); }
+.why summary { cursor: pointer; padding: var(--s-2) var(--s-4); font-weight: 700; min-height: 2.75rem; display: flex; align-items: center; }
+.why__body { padding: 0 var(--s-4) var(--s-4); }
+.why__drivers { list-style: none; padding: 0; margin: var(--s-3) 0; display: grid; gap: var(--s-3); }
+.why__dim { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); }
+.why__blaze { width: 0.55rem; height: 1.1rem; border-radius: 1px; border: 1.5px solid var(--ink); }
+.why__nums { font-size: var(--step--1); color: var(--ink-soft); }
+.why__sources { margin: var(--s-1) 0 0; padding-left: 1.6rem; font-size: var(--step--1); }
+.why__section { font-family: var(--font-label); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--forest); font-weight: 700; }
+.why__stretch { margin: 0; font-size: var(--step--1); color: var(--ink-soft); }
+
+/* All careers ranked */
+.allranked { margin-top: var(--s-7); border-top: 2px solid var(--ink); padding-top: var(--s-3); }
+.allranked summary { cursor: pointer; font-weight: 700; min-height: 2.75rem; display: flex; align-items: center; }
+.allranked__list { list-style: none; margin: var(--s-3) 0 0; padding: 0; max-width: 38rem; }
+.allranked__list li { display: flex; justify-content: space-between; gap: var(--s-4); padding: var(--s-2) 0; border-bottom: 1px dotted var(--ink-soft); }
+.allranked__tier { color: var(--ink-soft); font-size: var(--step--1); margin-left: var(--s-2); }
+
+.results__actions { display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-5); align-items: center; margin-top: var(--s-8); }
