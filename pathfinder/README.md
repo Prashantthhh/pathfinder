@@ -35,3 +35,13 @@ Microsoft Edge that ships with Windows.
   and fewer are shown when fewer qualify.
 - Salary and demand are `null` ("data not connected yet"). External links are limited to the
   verified allow-list in `src/data/links.js`.
+
+## Deploying (Vercel)
+
+There is no backend and no environment variables, so nothing secret is needed.
+
+- Import the GitHub repo in Vercel.
+- **Root Directory:** `pathfinder` (the app lives in a subfolder of the repo).
+- Framework preset: Vite (auto-detected). Build command `npm run build`, output directory `dist`.
+- `vercel.json` rewrites every path to `index.html` so deep links such as
+  `/careers/security-analyst` work after a refresh, and adds a few basic security headers.
