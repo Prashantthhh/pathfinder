@@ -150,7 +150,7 @@ check('Strong matches are all >= 80%', strongPcts.length > 0 && strongPcts.every
 const worthPcts = await pcts(page.locator('[aria-labelledby="tier-worth"] .match__pct'));
 check('Worth exploring are all 65-79%', worthPcts.every((n) => n >= 65 && n <= 79), worthPcts.join(','));
 const altPcts = await pcts(page.locator('[aria-labelledby="alts-title"] .match__pct'));
-check('alternatives are all >= 45%', altPcts.every((n) => n >= 45), altPcts.join(','));
+check('printed alternative scores are all >= 50% (45-49% ones print no number)', altPcts.every((n) => n >= 50), altPcts.join(','));
 
 // Why this match: no student percentage, shows career weight + answers
 await page.locator('.result details').first().evaluate((d) => { d.open = true; });
@@ -195,14 +195,21 @@ await page.goto(BASE + '/results', { waitUntil: 'networkidle' });
 const someAlts = page.getByTestId('fewer-alternatives');
 check('some but fewer than 3 alternatives: explains the count', (await someAlts.isVisible()) && lower(await someAlts.innerText()).includes('showing 2 because only 2 other careers reach a 45%'), await someAlts.innerText().catch(() => 'missing'));
 
-await seed(PERSONAS[1].answers, 'complete');
+await seed({ 'i-project': ['platformer'] }); // alternatives: QA 52%, UI/UX 49%, AI Engineer 48%
 await page.goto(BASE + '/results', { waitUntil: 'networkidle' });
-const lowAlt = page.locator('[aria-labelledby="alts-title"] .result').filter({ has: page.locator('.result__floor') });
-const lowAltPcts = await pcts(page.locator('[aria-labelledby="alts-title"] .result:has(.result__floor) .match__pct'));
-check('alternatives under 50% are labelled as not a match', (await lowAlt.count()) === 0 || lowAltPcts.every((n) => n >= 45 && n < 50), lowAltPcts.join(','));
-const allAltPcts = await pcts(page.locator('[aria-labelledby="alts-title"] .match__pct'));
-const floorLabels = await page.locator('[aria-labelledby="alts-title"] .result__floor').count();
-check('every alternative under 50% carries the label', floorLabels === allAltPcts.filter((n) => n < 50).length, `${floorLabels} labels vs ${allAltPcts}`);
+const alts = page.locator('[aria-labelledby="alts-title"] .result');
+const lowAlts = alts.filter({ has: page.locator('.result__score--low') });
+check('this profile has an alternative in the 45-49% range (so the checks below mean something)', (await lowAlts.count()) > 0);
+const lowHeads = await lowAlts.evaluateAll((els) => els.map((e) => ({
+  head: e.querySelector('.result__head').innerText + ' ' + e.querySelector('.result__floor').innerText,
+  hasNumber: Boolean(e.querySelector('.match__pct')),
+  hasBar: Boolean(e.querySelector('.match__bar')),
+  hasRank: Boolean(e.querySelector('.match__rank')),
+})));
+check('alternatives under 50% say "below the 50% match line"', lowHeads.length > 0 && lowHeads.every((h) => /below the 50% match line/i.test(h.head)), JSON.stringify(lowHeads));
+check('alternatives under 50% print no score, bar or rank', lowHeads.every((h) => !h.hasNumber && !h.hasBar && !h.hasRank && !/\d+%\s*match score/i.test(h.head)), JSON.stringify(lowHeads));
+const midAlts = alts.filter({ hasNot: page.locator('.result__score--low') });
+check('alternatives at 50%+ still show their score', (await midAlts.count()) === 0 || (await midAlts.first().locator('.match__pct').count()) === 1);
 
 await seed({ 's-done': ['none'] });
 await page.goto(BASE + '/results', { waitUntil: 'networkidle' });
@@ -257,7 +264,8 @@ await axeCheck(page, '/explore');
 await shot(page, 'explore', { fullPage: true });
 
 await page.locator('#q').fill('security');
-check('search writes the query to the URL', page.url().includes('q=security'));
+const urlHasQuery = await page.waitForURL(/q=security/, { timeout: 5000 }).then(() => true, () => false);
+check('search writes the query to the URL', urlHasQuery, page.url());
 const secRows = await rows().locator('.crow__title').allInnerTexts();
 check('search finds Security Analyst and narrows the list', secRows.includes('Security Analyst') && secRows.length < 23, secRows.join(','));
 check('count line updates', /Showing \d+ of 23 careers/.test(await page.locator('.explore__count').innerText()));

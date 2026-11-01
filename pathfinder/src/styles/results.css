@@ -54,3 +54,4 @@
 
 .result__floor { margin: 0 0 var(--s-2); font-size: var(--step--1); color: var(--ink-soft); font-style: italic; }
 .why__from { margin: var(--s-1) 0 0; font-size: var(--step--1); color: var(--ink-soft); }
+.result__score--low { font-style: italic; font-weight: 600; }
