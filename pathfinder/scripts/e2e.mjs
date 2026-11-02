@@ -162,9 +162,9 @@ check('Why this match lists the quiz answers behind it', why.includes('your answ
 
 // neutral bars, blaze colours kept on markers
 const barInfo = await page.locator('.match__bar span').first().evaluate((el) => ({ inline: el.getAttribute('style'), bg: getComputedStyle(el).backgroundColor }));
-check('result bars have no inline colour and use the neutral ink-soft', !/background/.test(barInfo.inline) && barInfo.bg === 'rgb(79, 74, 59)', JSON.stringify(barInfo));
+check('result bars have no inline colour and use the neutral ink-2 token', !/background/.test(barInfo.inline) && barInfo.bg === 'rgb(61, 80, 104)', JSON.stringify(barInfo));
 const blazeCount = await page.locator('.why__blaze').first().evaluate((el) => getComputedStyle(el).backgroundColor);
-check('dimension markers still carry a blaze colour', blazeCount !== 'rgba(0, 0, 0, 0)' && blazeCount !== 'rgb(79, 74, 59)', blazeCount);
+check('dimension markers still carry a blaze colour', blazeCount !== 'rgba(0, 0, 0, 0)' && blazeCount !== 'rgb(61, 80, 104)', blazeCount);
 
 // all-ranked list respects the floor
 await page.locator('.allranked summary').click();
@@ -284,10 +284,63 @@ await goto('/explore?match=1');
 const matchPctsExplore = await pcts(page.locator('.crow__score .match__pct'));
 check('"matches for me" shows only 50%+ careers', matchPctsExplore.length > 0 && matchPctsExplore.every((n) => n >= 50), matchPctsExplore.join(','));
 
+// ---------------------------------------------------------------- redesigned Home: the interest map
+await page.evaluate(() => localStorage.clear());
 await goto('/');
-await page.getByRole('link', { name: /Security Ridge/ }).click();
-await page.waitForURL('**/explore?area=security');
-check('Home map destination opens Explore filtered to that area', (await rows().count()) === 2);
+check('home: headline and the 35-domain promise', (await page.locator('h1').innerText()).toLowerCase().includes('find where you fit') && (await page.locator('.h-lede').innerText()).includes('35 career domains'));
+check('home: states the India / any-stream audience', (await page.locator('.eyebrow').first().innerText()).toLowerCase().includes('india'));
+check('home: map has exactly 35 domain dots', (await page.locator('.hexmap__dot').count()) === 35);
+check('home: the list twin has the same 35 domains, in 7 groups', (await page.locator('.dindex__btn').count()) === 35 && (await page.locator('.dindex__group').count()) === 7);
+check('home: all six RIASEC corners are labelled on the map', (await page.locator('.hexmap__corner').count()) === 6);
+check('home: the 35 dots share one tab stop (roving tabindex)', (await page.locator('.hexmap__dot[tabindex="0"]').count()) === 1);
+check('home: nothing selected, so Nova is not pointing yet', (await page.locator('.readout').innerText()).toLowerCase().includes('pointing at nothing yet'));
+
+// hover -> readout + Nova's needle turns
+const restBearing = await page.locator('.hexmap__nova .nova__aim').evaluate((el) => el.getAttribute('style'));
+await page.locator('.hexmap__dot', { hasText: 'Visual, Product' }).hover();
+await page.waitForTimeout(150);
+const readout = await page.locator('.readout').innerText();
+check('home: hovering a domain fills the readout with its name, group and O*NET basis', readout.includes('Visual, Product & Fashion Design') && /creative & media/i.test(readout) && readout.includes('O*NET occupations (US)') && readout.includes('Graphic Designers'), readout.slice(0, 200));
+check('home: readout shows the six interest scores out of 7', (await page.locator('.bars__row').count()) === 6 && (await page.locator('.bars__v').first().innerText()).includes('of 7'));
+check('home: readout says Artistic is the primary interest for design', readout.includes('Mostly Artistic'), readout.slice(0, 200));
+const aimed = await page.locator('.hexmap__nova .nova__aim').evaluate((el) => el.getAttribute('style'));
+check('home: Nova points at the domain (her bearing changes)', aimed !== restBearing && /--bearing:\s*\d+(\.\d+)?deg/.test(aimed), `${restBearing} -> ${aimed}`);
+check('home: a label and a route line appear for the active domain', (await page.locator('.hexmap__tip').innerText()).includes('Visual, Product') && (await page.locator('.hexmap__route line').count()) === 1);
+await shot(page, 'home-pointing');
+
+// click selects (and stays after the mouse leaves); click again clears
+await page.locator('.hexmap__dot', { hasText: 'Accounting & Audit' }).click();
+await page.mouse.move(5, 400);
+check('home: clicking a dot keeps it selected after the mouse leaves', (await page.locator('.readout').innerText()).includes('Accounting & Audit') && (await page.locator('.hexmap__dot[aria-pressed="true"]').count()) === 1);
+await page.locator('.hexmap__dot', { hasText: 'Accounting & Audit' }).click();
+check('home: clicking again clears the selection', (await page.locator('.hexmap__dot[aria-pressed="true"]').count()) === 0);
+
+// keyboard: Tab to the map, arrows move between neighbours, Enter selects
+await page.locator('.hexmap__dot[tabindex="0"]').focus();
+const startName = await page.locator('.readout .readout__title').innerText();
+await page.keyboard.press('ArrowRight');
+const afterRight = await page.locator('.readout .readout__title').innerText();
+check('home: arrow keys move the focus (and the readout) to a neighbouring domain', afterRight !== startName, `${startName} -> ${afterRight}`);
+await page.keyboard.press('Enter');
+check('home: Enter selects the focused domain', (await page.locator('.hexmap__dot[aria-pressed="true"]').count()) === 1);
+check('home: focus ring is visible on a dot', await page.locator('.hexmap__dot:focus-visible').count() === 1);
+
+// list twin
+await page.locator('.dindex__btn', { hasText: 'Law & Legal Services' }).click();
+check('home: choosing from the list selects the same domain on the map', (await page.locator('.readout').innerText()).includes('Law & Legal Services') && (await page.locator('.hexmap__dot[aria-pressed="true"]').innerText()).includes('Law & Legal Services'));
+
+// honesty and attribution on Home
+const homeText = await page.locator('main').innerText();
+check('home: discloses that interest scores are O*NET estimates (machine learning)', homeText.includes('Machine Learning/Expert') && homeText.includes('O*NET 31.0 Database') && /US occupations/.test(homeText));
+check('home: says India facts are labelled and salary is not connected', /India facts are labelled/.test(homeText) && /data not connected yet/.test(homeText));
+check('home: step 3 (placing you on the map) is marked Coming next', lower(await page.locator('.h-step--soon .tag').innerText()) === 'coming next');
+const footerText = await page.locator('footer').innerText();
+check('footer carries the full O*NET attribution', footerText.includes('O*NET 31.0 Database') && footerText.includes('U.S. Department of Labor, Employment and Training Administration (USDOL/ETA)') && footerText.includes('CC BY 4.0') && footerText.includes('trademark of USDOL/ETA'));
+check('footer says the information was modified and not endorsed', /modified/.test(footerText) && /has not approved, endorsed, or tested/.test(footerText));
+check('footer links to the O*NET database and the CC BY licence', (await page.locator('footer a[href="https://www.onetcenter.org/database.html"]').count()) === 1 && (await page.locator('footer a[href="https://creativecommons.org/licenses/by/4.0/"]').count()) === 1);
+check('no global contour backdrop any more', (await page.locator('svg.contours').count()) === 0);
+await shot(page, 'home-full', { fullPage: true });
+
 
 await goto('/explore');
 const daRow = rows().filter({ hasText: 'Data Analyst' }).first();

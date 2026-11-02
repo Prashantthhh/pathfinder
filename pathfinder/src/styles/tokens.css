@@ -1,33 +1,41 @@
-/* Design tokens. The eight --blaze-* colours are injected from
-   src/data/dimensions.js at startup (single source of truth). */
+/* Design tokens.
+   Type-blaze colours (--r, --i, --a, --s, --e, --c and their -lt tones) are injected
+   from src/data/palette.js at startup, so the palette has one source of truth. */
 :root {
   color-scheme: light;
 
-  /* Paper and ink */
-  --paper: #f1e9d6;          /* the map background */
-  --paper-hi: #fbf6e9;       /* lighter sheet for labels and panels */
-  --paper-lo: #e6dab9;       /* darker band */
-  --tan: #e3d3a6;
-  --ink: #2a2822;
-  --ink-soft: #4f4a3b;
-  --forest: #1f4d3a;
-  --forest-hi: #2b6b51;
-  --contour: #cbbb92;
-  --contour-index: #b3a06b;
-  --grid: rgba(42, 40, 34, 0.07);
-  --focus: #1d63c4;
+  /* Light reading surfaces */
+  --bg: #f7f4ec;
+  --surface: #fffdf8;
+  --surface-2: #efeadf;
+  --line: #d9d2c3;
+  --ink: #10243a;
+  --ink-2: #3d5068;
+  --ink-3: #566a80;
+
+  /* Night map surfaces */
+  --night: #0a1d30;
+  --night-2: #0f2a44;
+  --night-line: rgba(244, 241, 232, 0.16);
+  --on-night: #f4f1e8;
+  --on-night-2: #b9c6d6;
+
+  --signal: #ffc93c;          /* primary action on night */
+  --signal-hi: #ffd96b;
+  --focus: #1d6fd8;
+  --focus-on-night: #ffc93c;
 
   /* Type */
-  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-label: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 
-  --step--1: 0.875rem;
+  --step--1: 0.9rem;
   --step-0: 1.0625rem;
   --step-1: 1.25rem;
-  --step-2: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
-  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.9rem);
-  --step-4: clamp(2.3rem, 1.4rem + 4vw, 4.1rem);
+  --step-2: clamp(1.5rem, 1.25rem + 1.1vw, 2.1rem);
+  --step-3: clamp(1.95rem, 1.4rem + 2.2vw, 3rem);
+  --step-4: clamp(2.5rem, 1.5rem + 4.6vw, 4.9rem);
 
   /* Space */
   --s-1: 0.25rem;
@@ -41,7 +49,20 @@
   --s-9: 6.5rem;
 
   --gutter: clamp(1rem, 4vw, 2.5rem);
-  --measure: 72rem;
-  --radius: 3px;
+  --measure: 76rem;
+  --radius: 10px;
+  --radius-sm: 6px;
   --header-h: 4rem;
+
+  /* Aliases so pages not yet redesigned keep working with the new look. */
+  --paper: var(--bg);
+  --paper-hi: var(--surface);
+  --paper-lo: var(--surface-2);
+  --tan: #e7e0cf;
+  --ink-soft: var(--ink-2);
+  --forest: #0e4f5c;
+  --forest-hi: #14697a;
+  --contour: #cbbb92;
+  --contour-index: #b3a06b;
+  --grid: rgba(16, 36, 58, 0.07);
 }

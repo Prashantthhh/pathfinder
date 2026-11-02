@@ -1,20 +1,16 @@
-/* ---------- Header ---------- */
+/* ---------- Header: night bar with a six-colour trail blaze along the bottom ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--paper-hi) 94%, transparent);
-  backdrop-filter: blur(4px);
-  border-bottom: 2px solid var(--ink);
+  background: var(--night);
+  color: var(--on-night);
 }
 .site-header::after {
-  /* second, dashed rule like a trail edge */
   content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -7px;
-  border-bottom: 2px dashed var(--ink-soft);
-  opacity: 0.45;
-  pointer-events: none;
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--r) 0 16.66%, var(--i) 0 33.33%, var(--a) 0 50%, var(--s) 0 66.66%, var(--e) 0 83.33%, var(--c) 0);
 }
 .site-header__inner {
   max-width: var(--measure);
@@ -30,27 +26,28 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-2);
+  gap: var(--s-3);
   text-decoration: none;
-  color: var(--ink);
+  color: var(--on-night);
 }
-.brand:hover { color: var(--ink); }
+.brand:hover { color: #fff; }
 .brand__word {
-  font-family: var(--font-label);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 1.15rem;
 }
+.brand__mark { overflow: visible; }
 
 .nav-toggle {
   font: inherit;
   font-weight: 700;
   min-height: 2.75rem;
   padding: 0 var(--s-4);
-  background: var(--paper);
-  color: var(--ink);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
+  background: transparent;
+  color: var(--on-night);
+  border: 2px solid var(--on-night-2);
+  border-radius: 999px;
   cursor: pointer;
 }
 
@@ -62,40 +59,39 @@
   align-items: center;
   gap: var(--s-2);
   min-height: 2.75rem;
-  padding: 0 var(--s-3);
-  color: var(--ink);
-  font-weight: 600;
+  padding: 0 var(--s-4);
+  color: var(--on-night);
+  font-weight: 700;
   text-decoration: none;
-  border-left: 5px solid transparent;
+  border-radius: 999px;
 }
-.site-nav a:hover { background: var(--paper-lo); color: var(--ink); }
-.site-nav a[aria-current='page'] { border-left-color: var(--blaze-build); background: var(--paper-lo); }
+.site-nav a:hover { background: rgba(244, 241, 232, 0.1); color: #fff; }
+.site-nav a[aria-current='page'] { background: var(--signal); color: var(--ink); }
 
 .nav-tag {
   font-family: var(--font-label);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.05rem 0.4rem;
   border: 1.5px solid currentColor;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 @media (min-width: 52rem) {
   .nav-toggle { display: none; }
   .site-nav { display: block; width: auto; padding: 0; }
-  .site-nav ul { flex-direction: row; gap: var(--s-2); }
-  .site-nav a { border-left: 0; border-bottom: 4px solid transparent; padding: 0 var(--s-3); min-height: var(--header-h); }
-  .site-nav a[aria-current='page'] { border-bottom-color: var(--blaze-build); background: transparent; }
+  .site-nav ul { flex-direction: row; gap: var(--s-1); }
 }
 
 /* ---------- Footer ---------- */
 .site-footer {
   margin-top: var(--s-8);
-  background: var(--forest);
-  color: var(--paper-hi);
+  background: var(--night);
+  color: var(--on-night);
   padding: var(--s-7) 0 var(--s-6);
-  border-top: 6px double var(--paper-hi);
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--r), var(--i), var(--a), var(--s), var(--e), var(--c)) 1;
 }
 .site-footer__inner {
   max-width: var(--measure);
@@ -107,21 +103,29 @@
 @media (min-width: 52rem) {
   .site-footer__inner { grid-template-columns: 2fr 1fr 1fr; }
 }
-.site-footer a { color: var(--paper-hi); }
-.site-footer a:hover { color: #fff; }
+.site-footer a { color: var(--on-night); }
+.site-footer a:hover { color: var(--signal); }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { margin-bottom: var(--s-2); }
-.site-footer__brand { font-family: var(--font-label); letter-spacing: 0.18em; font-weight: 700; margin-bottom: var(--s-2); }
+.site-footer__brand { font-family: var(--font-display); letter-spacing: 0.04em; font-weight: 800; font-size: 1.1rem; margin-bottom: var(--s-2); }
 .site-footer__h {
   font-family: var(--font-label);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0 0 var(--s-3);
-  opacity: 0.85;
+  color: var(--on-night-2);
 }
-.site-footer p { font-size: var(--step--1); max-width: 34rem; }
-.site-footer__note { opacity: 0.9; }
+.site-footer p { font-size: var(--step--1); max-width: 40rem; color: var(--on-night-2); }
+.site-footer__note { color: var(--on-night-2); }
+.site-footer__credit {
+  grid-column: 1 / -1;
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--night-line);
+  font-size: 0.82rem;
+  color: var(--on-night-2);
+}
+.site-footer__credit p { margin: 0 0 var(--s-2); max-width: 60rem; }
 
 /* ---------- Generic page pieces ---------- */
 .page {
@@ -136,20 +140,20 @@
 .prose h2 { margin-top: var(--s-6); font-size: var(--step-2); }
 .prose ul { padding-left: 1.2rem; }
 .prose li { margin-bottom: var(--s-2); }
-.prose__status { min-height: 1.6em; font-weight: 600; color: var(--forest); }
+.prose__status { min-height: 1.6em; font-weight: 700; color: var(--forest); }
 
 .btn {
   font: inherit;
   font-weight: 700;
-  min-height: 2.75rem;
+  min-height: 2.9rem;
   padding: 0 var(--s-5);
-  background: var(--forest);
-  color: var(--paper-hi);
+  background: var(--ink);
+  color: var(--surface);
   border: 2px solid var(--ink);
-  border-radius: var(--radius);
+  border-radius: 999px;
   cursor: pointer;
 }
-.btn:hover { background: var(--forest-hi); }
+.btn:hover { background: var(--forest); border-color: var(--forest); }
 
 .tag {
   display: inline-block;
@@ -160,11 +164,11 @@
   letter-spacing: 0.1em;
   line-height: 1.4;
   padding: 0.1rem 0.5rem;
-  border: 1.5px dashed var(--ink);
-  border-radius: 2px;
+  border: 1.5px dashed currentColor;
+  border-radius: 4px;
   vertical-align: middle;
 }
-.tag--illustrative { background: var(--tan); }
+.tag--illustrative { background: var(--surface-2); }
 .tag--soon { margin-left: var(--s-2); background: transparent; }
 
 .eyebrow {
@@ -176,35 +180,52 @@
   color: var(--forest);
   margin-bottom: var(--s-3);
 }
-.fine { font-size: var(--step--1); color: var(--ink-soft); }
+.on-night .eyebrow { color: var(--signal); }
+.fine { font-size: var(--step--1); color: var(--ink-3); }
+.on-night .fine { color: var(--on-night-2); }
 .note {
   font-size: var(--step--1);
-  color: var(--ink-soft);
-  border-left: 4px solid var(--blaze-build);
+  color: var(--ink-3);
+  border-left: 4px solid var(--e-lt);
   padding-left: var(--s-3);
   max-width: 40rem;
 }
 
-/* ---------- Trail signpost links ---------- */
+/* ---------- Signpost links ---------- */
 .sign {
   display: inline-block;
   text-decoration: none;
-  filter: drop-shadow(0 3px 0 rgba(42, 40, 34, 0.35));
   transition: transform 0.15s ease;
 }
 .sign__board {
   display: inline-flex;
   align-items: center;
   gap: var(--s-3);
-  min-height: 3rem;
-  padding: 0 2.4rem 0 var(--s-5);
-  font-weight: 700;
+  min-height: 3.1rem;
+  padding: 0 var(--s-3) 0 var(--s-5);
+  font-family: var(--font-display);
+  font-weight: 750;
   font-size: 1.05rem;
-  clip-path: polygon(0 0, calc(100% - 1.3rem) 0, 100% 50%, calc(100% - 1.3rem) 100%, 0 100%);
+  border-radius: 999px;
 }
-.sign--primary .sign__board { background: var(--forest); color: var(--paper-hi); }
-.sign--quiet .sign__board { background: var(--tan); color: var(--ink); }
-.sign:hover { transform: translateY(-2px); }
-.sign--primary:hover .sign__board { background: var(--forest-hi); color: #fff; }
-.sign--quiet:hover .sign__board { background: #d8c58f; color: var(--ink); }
-.sign:focus-visible { outline-offset: 5px; }
+.sign__arrow {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  transition: transform 0.15s ease;
+}
+.sign--primary .sign__board { background: var(--ink); color: var(--surface); }
+.sign--primary .sign__arrow { background: var(--signal); color: var(--ink); }
+.sign--quiet .sign__board { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.sign--quiet .sign__arrow { background: var(--ink); color: var(--surface); }
+.on-night .sign--primary .sign__board { background: var(--signal); color: var(--ink); }
+.on-night .sign--primary .sign__arrow { background: var(--ink); color: var(--signal); }
+.on-night .sign--quiet .sign__board { color: var(--on-night); box-shadow: inset 0 0 0 2px var(--on-night-2); }
+.on-night .sign--quiet .sign__arrow { background: var(--on-night); color: var(--ink); }
+.sign:hover .sign__arrow { transform: translateX(3px); }
+.sign:hover { color: inherit; }
+.sign--primary:hover .sign__board { filter: brightness(1.08); }
+.sign:focus-visible { outline-offset: 5px; border-radius: 999px; }

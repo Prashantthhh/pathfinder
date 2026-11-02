@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import domainData from '../../data/domains.json';
+
+const { meta } = domainData;
 
 export default function Footer() {
   return (
@@ -7,8 +10,8 @@ export default function Footer() {
         <div className="site-footer__about">
           <p className="site-footer__brand">PATHFINDER</p>
           <p>
-            A career discovery project for B.Tech CSE students. Match scores show how closely your
-            answers line up with a career's profile. They are not predictions of success.
+            A career discovery project for students in India, in any stream. Match scores show how closely
+            your interests line up with a kind of work. They are not predictions of success.
           </p>
         </div>
 
@@ -30,6 +33,19 @@ export default function Footer() {
           </ul>
           <p className="site-footer__note">Contact: not set up yet. This is a college project.</p>
         </nav>
+
+        <div className="site-footer__credit">
+          <p>
+            This site includes information from the{' '}
+            <a href={meta.url}>{meta.source}</a> by the U.S. Department of Labor, Employment and Training
+            Administration (USDOL/ETA). Used under the{' '}
+            <a href={meta.licenseUrl}>{meta.license}</a> license. O*NET&reg; is a trademark of USDOL/ETA.
+          </p>
+          <p>
+            PATHFINDER has modified this information (averaging occupations into domains and placing them on a map).
+            USDOL/ETA has not approved, endorsed, or tested these modifications.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -1,51 +1,67 @@
-/* ---------- Nova, the star-compass ---------- */
+/* ---------- Nova, the star-compass guide ---------- */
 .nova { display: block; overflow: visible; }
 
-.nova__tip {
-  stroke: var(--ink);
-  stroke-width: 3;
-  stroke-linejoin: round;
-}
-.nova__tip--north { fill: #c62828; }
-.nova__tip--cardinal { fill: var(--forest); }
-.nova__tip--inter { fill: #e0b04a; }
+.nova__outline { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.nova__tip--north .nova__facet--lt { fill: #ff6a66; }
+.nova__tip--north .nova__facet--dk { fill: #c92a34; }
+.nova__tip--cardinal .nova__facet--lt { fill: #2fc1b3; }
+.nova__tip--cardinal .nova__facet--dk { fill: #137a73; }
+.nova__tip--inter .nova__facet--lt { fill: #ffd56e; }
+.nova__tip--inter .nova__facet--dk { fill: #e39e1f; }
 
-.nova__bezel { fill: var(--paper-hi); stroke: var(--ink); stroke-width: 4; }
-.nova__face { fill: #fff8e6; }
+.nova__bezel { stroke: var(--ink); stroke-width: 3.5; }
+.nova__face { stroke: none; }
+.nova__shine { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; opacity: 0.7; }
 .nova__features { fill: var(--ink); stroke: none; }
-.nova__line { fill: none; stroke: var(--ink); stroke-width: 3.2; stroke-linecap: round; }
-.nova__eye-white { fill: #fff; stroke: var(--ink); stroke-width: 2; }
-.nova__mouth-open { fill: var(--ink); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
-.nova__cheek { fill: #f08a7e; opacity: 0.55; }
+.nova__line { fill: none; stroke: var(--ink); stroke-width: 3.4; stroke-linecap: round; }
+.nova__glint { fill: #fff; }
+.nova__eye-white { fill: #fff; stroke: var(--ink); stroke-width: 2.2; }
+.nova__mouth-open { fill: #7a1f2b; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; }
+.nova__cheek { fill: #ff8c82; opacity: 0.55; }
+.nova__spark { fill: var(--signal); stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+.nova__mark { font-family: var(--font-display); font-size: 34px; font-weight: 800; fill: var(--signal); stroke: var(--ink); stroke-width: 1.5; paint-order: stroke; }
+.nova__dots circle { fill: var(--signal); stroke: var(--ink); stroke-width: 1.4; }
+
+/* The star swings to the requested bearing like a compass needle (a touch of overshoot). */
+.nova__aim,
+.nova__star {
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+}
+.nova__aim { transform: rotate(var(--bearing, 0deg)); }
 
 @media (prefers-reduced-motion: no-preference) {
-  .nova__star {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: nova-sway 7s ease-in-out infinite;
-  }
+  .nova__aim { transition: transform 0.9s cubic-bezier(0.3, 1.5, 0.5, 1); }
+  .nova--scan .nova__star { animation: nova-scan 7s ease-in-out infinite; }
   .nova__body {
-    transform-box: fill-box;
-    transform-origin: center;
+    transform-box: view-box;
+    transform-origin: 100px 100px;
     animation: nova-pop 0.45s ease-out;
   }
+  .nova__spark { transform-box: fill-box; transform-origin: center; animation: nova-twinkle 1.8s ease-in-out infinite; }
+  .nova__spark--b { animation-delay: 0.6s; }
 }
-@keyframes nova-sway {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+@keyframes nova-scan {
+  0%, 100% { transform: rotate(-16deg); }
+  50% { transform: rotate(16deg); }
 }
 @keyframes nova-pop {
-  0% { transform: scale(0.94); }
+  0% { transform: scale(0.95); }
   60% { transform: scale(1.04); }
   100% { transform: scale(1); }
+}
+@keyframes nova-twinkle {
+  0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.85; }
+  50% { transform: scale(1.15) rotate(20deg); opacity: 1; }
 }
 
 /* ---------- Speech bubble ---------- */
 .bubble {
   position: relative;
-  background: var(--paper-hi);
+  background: var(--surface);
+  color: var(--ink);
   border: 2px solid var(--ink);
-  border-radius: 1rem;
+  border-radius: 16px;
   padding: var(--s-3) var(--s-4);
   font-size: var(--step--1);
   line-height: 1.5;
@@ -58,8 +74,10 @@
   bottom: -0.6rem;
   width: 0.9rem;
   height: 0.9rem;
-  background: var(--paper-hi);
+  background: var(--surface);
   border-right: 2px solid var(--ink);
   border-bottom: 2px solid var(--ink);
   transform: translateX(-50%) rotate(45deg);
 }
+
+.brand__outline { fill: none; stroke: #f4f1e8; stroke-width: 3; stroke-linejoin: round; }

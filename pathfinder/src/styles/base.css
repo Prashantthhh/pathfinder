@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--step-0);
@@ -30,13 +30,14 @@ main:focus {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  line-height: 1.15;
+  font-weight: 750;
+  line-height: 1.08;
   margin: 0 0 var(--s-3);
   text-wrap: balance;
 }
-h1 { font-size: var(--step-4); letter-spacing: -0.015em; }
-h2 { font-size: var(--step-3); letter-spacing: -0.01em; }
-h3 { font-size: var(--step-1); }
+h1 { font-size: var(--step-4); letter-spacing: -0.025em; font-weight: 800; }
+h2 { font-size: var(--step-3); letter-spacing: -0.02em; }
+h3 { font-size: var(--step-1); letter-spacing: -0.01em; }
 
 p { margin: 0 0 var(--s-4); }
 img, svg { max-width: 100%; }
@@ -51,7 +52,12 @@ a:hover { color: var(--forest-hi); text-decoration-thickness: 0.16em; }
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+.on-night :focus-visible,
+.site-header :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--focus-on-night);
 }
 
 .sr-only {
@@ -72,9 +78,10 @@ a:hover { color: var(--forest-hi); text-decoration-thickness: 0.16em; }
   top: -4rem;
   z-index: 100;
   padding: var(--s-3) var(--s-4);
-  background: var(--ink);
-  color: var(--paper-hi);
+  background: var(--signal);
+  color: var(--ink);
   font-weight: 700;
+  border-radius: var(--radius-sm);
 }
 .skip-link:focus { top: var(--s-3); }
 
@@ -86,20 +93,3 @@ a:hover { color: var(--forest-hi); text-decoration-thickness: 0.16em; }
     scroll-behavior: auto !important;
   }
 }
-
-/* Topographic backdrop */
-.contours {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-.contours__minor,
-.contours__index {
-  fill: none;
-  stroke-linecap: round;
-}
-.contours__minor { stroke: var(--contour); stroke-width: 1; opacity: 0.75; }
-.contours__index { stroke: var(--contour-index); stroke-width: 1.8; opacity: 0.7; }

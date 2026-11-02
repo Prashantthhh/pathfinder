@@ -10,6 +10,8 @@ npm run build      # production build
 npm test           # unit tests (vitest): engine, data integrity, quiz state, tiers
 npm run samples    # print top matches for the sample students
 npm run e2e        # build, then drive the real UI in a browser (see below)
+npm run onet:fetch    # download O*NET into .cache/onet (git-ignored)
+npm run onet:domains  # rebuild src/data/domains.json from the O*NET data
 ```
 
 ## End-to-end tests
@@ -45,3 +47,11 @@ There is no backend and no environment variables, so nothing secret is needed.
 - Framework preset: Vite (auto-detected). Build command `npm run build`, output directory `dist`.
 - `vercel.json` rewrites every path to `index.html` so deep links such as
   `/careers/security-analyst` work after a refresh, and adds a few basic security headers.
+
+## Data sources and attribution
+
+The interest map is built from the O*NET 31.0 Database (U.S. Department of Labor, Employment and
+Training Administration), used under CC BY 4.0. O*NET describes US occupations and is never used here
+for Indian salary, outlook or qualifications. See `docs/design-audit.md` for the model, the data
+limits (including O*NET's own "Machine Learning/Expert" labelling of the interest scores) and how to
+rebuild the data.

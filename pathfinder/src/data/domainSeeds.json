@@ -1,0 +1,55 @@
+{
+  "_note": "Hand-written registry of the 35 career domains. 'occupations' are EXACT O*NET 31.0 occupation titles used only to estimate where each domain sits on the interest map (scripts/build-domains.mjs resolves them and fails if a title is missing). Blurbs are our own wording. O*NET occupations are US occupations: they describe the kind of work, not Indian jobs, qualifications or pay.",
+  "groups": [
+    { "id": "tech", "label": "Technology & Engineering" },
+    { "id": "health", "label": "Health & Life" },
+    { "id": "science", "label": "Science & Maths" },
+    { "id": "business", "label": "Business, Law & Public Service" },
+    { "id": "people", "label": "Teaching & People" },
+    { "id": "creative", "label": "Creative & Media" },
+    { "id": "service", "label": "Service & Movement" }
+  ],
+  "domains": [
+    { "id": "software-it", "label": "Software & IT", "group": "tech", "blurb": "Building and running the software people use every day.", "occupations": ["Software Developers", "Web Developers", "Computer Systems Analysts"] },
+    { "id": "data-ai", "label": "Data, AI & Analytics", "group": "tech", "blurb": "Finding patterns in data and building systems that learn from it.", "occupations": ["Data Scientists", "Database Architects"] },
+    { "id": "cyber-networks", "label": "Cybersecurity & Networks", "group": "tech", "blurb": "Keeping systems connected and protected from misuse.", "occupations": ["Information Security Analysts", "Network and Computer Systems Administrators", "Computer Network Architects"] },
+    { "id": "electronics-embedded", "label": "Electronics & Embedded", "group": "tech", "blurb": "Designing circuits, chips and the devices built around them.", "occupations": ["Electronics Engineers, Except Computer", "Computer Hardware Engineers"] },
+    { "id": "electrical-power", "label": "Electrical & Power", "group": "tech", "blurb": "Generating, distributing and installing electrical power.", "occupations": ["Electrical Engineers", "Electricians", "Power Distributors and Dispatchers"] },
+    { "id": "mechanical-manufacturing", "label": "Mechanical & Manufacturing", "group": "tech", "blurb": "Designing machines and making things at scale.", "occupations": ["Mechanical Engineers", "Industrial Engineers", "Materials Engineers"] },
+    { "id": "civil-construction", "label": "Civil & Construction", "group": "tech", "blurb": "Planning and building roads, bridges, buildings and water systems.", "occupations": ["Civil Engineers", "Construction Managers", "Surveyors"] },
+    { "id": "chemical-materials", "label": "Chemical & Materials", "group": "tech", "blurb": "Turning raw materials into fuels, plastics, metals and medicines.", "occupations": ["Chemical Engineers", "Materials Scientists", "Petroleum Engineers"] },
+    { "id": "automotive-aerospace", "label": "Automotive & Aerospace", "group": "tech", "blurb": "Designing, building and maintaining vehicles, aircraft and spacecraft.", "occupations": ["Aerospace Engineers", "Aircraft Mechanics and Service Technicians", "Automotive Service Technicians and Mechanics"] },
+
+    { "id": "medicine-surgery", "label": "Medicine & Surgery", "group": "health", "blurb": "Diagnosing illness and treating patients as a doctor.", "occupations": ["Family Medicine Physicians", "Orthopedic Surgeons, Except Pediatric", "Anesthesiologists"] },
+    { "id": "nursing-allied", "label": "Nursing & Allied Health", "group": "health", "blurb": "Caring for patients and supporting treatment: nursing, therapy, labs and imaging.", "occupations": ["Registered Nurses", "Physical Therapists", "Medical and Clinical Laboratory Technologists", "Radiologic Technologists and Technicians"] },
+    { "id": "dentistry-pharmacy", "label": "Dentistry & Pharmacy", "group": "health", "blurb": "Oral health, eye care and the safe use of medicines.", "occupations": ["Dentists, General", "Pharmacists", "Optometrists"] },
+    { "id": "biotech-life", "label": "Biotech & Life Sciences", "group": "health", "blurb": "Studying living systems to understand disease and develop treatments.", "occupations": ["Biochemists and Biophysicists", "Medical Scientists, Except Epidemiologists", "Biological Technicians"] },
+    { "id": "veterinary-animal", "label": "Veterinary & Animal Care", "group": "health", "blurb": "Looking after the health and welfare of animals.", "occupations": ["Veterinarians", "Veterinary Technologists and Technicians", "Zoologists and Wildlife Biologists"] },
+    { "id": "agriculture-food", "label": "Agriculture & Food", "group": "health", "blurb": "Growing, improving and processing the food we eat.", "occupations": ["Agricultural Engineers", "Food Scientists and Technologists", "Soil and Plant Scientists", "Farmers, Ranchers, and Other Agricultural Managers"] },
+
+    { "id": "environment-earth", "label": "Environment & Earth Sciences", "group": "science", "blurb": "Understanding and protecting land, water, air and ecosystems.", "occupations": ["Environmental Scientists and Specialists, Including Health", "Geoscientists, Except Hydrologists and Geographers", "Conservation Scientists", "Hydrologists"] },
+    { "id": "physical-sciences", "label": "Physical Sciences", "group": "science", "blurb": "Research into matter, energy and the universe.", "occupations": ["Physicists", "Chemists", "Astronomers"] },
+    { "id": "maths-stats", "label": "Maths & Statistics", "group": "science", "blurb": "Using mathematics to model risk, chance and real-world systems.", "occupations": ["Mathematicians", "Statisticians", "Actuaries"] },
+
+    { "id": "accounting-audit", "label": "Accounting & Audit", "group": "business", "blurb": "Keeping accurate financial records and checking that they hold up.", "occupations": ["Accountants and Auditors", "Tax Preparers", "Budget Analysts"] },
+    { "id": "banking-finance", "label": "Banking, Finance & Insurance", "group": "business", "blurb": "Managing money, credit and risk for people and organisations.", "occupations": ["Financial and Investment Analysts", "Personal Financial Advisors", "Loan Officers", "Insurance Underwriters"] },
+    { "id": "business-management", "label": "Business & Management", "group": "business", "blurb": "Running organisations, teams and operations.", "occupations": ["General and Operations Managers", "Management Analysts", "Human Resources Specialists"] },
+    { "id": "marketing-sales", "label": "Marketing, Sales & Retail", "group": "business", "blurb": "Understanding customers and getting products to them.", "occupations": ["Marketing Managers", "Market Research Analysts and Marketing Specialists", "Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products", "Retail Salespersons"] },
+    { "id": "law-legal", "label": "Law & Legal Services", "group": "business", "blurb": "Advising on and arguing about rights, rules and disputes.", "occupations": ["Lawyers", "Paralegals and Legal Assistants", "Judges, Magistrate Judges, and Magistrates"] },
+    { "id": "civil-services-policy", "label": "Civil Services & Public Policy", "group": "business", "blurb": "Designing and running public policy and administration.", "occupations": ["Administrative Services Managers", "Political Scientists", "Compliance Officers"] },
+    { "id": "defence-police", "label": "Defence & Police", "group": "business", "blurb": "Protecting people and keeping order in uniformed services.", "occupations": ["Police and Sheriff's Patrol Officers", "First-Line Supervisors of Police and Detectives", "Detectives and Criminal Investigators", "Firefighters"] },
+
+    { "id": "teaching-education", "label": "Teaching & Education", "group": "people", "blurb": "Helping others learn, from early years to specialist subjects.", "occupations": ["Elementary School Teachers, Except Special Education", "Secondary School Teachers, Except Special and Career/Technical Education", "Special Education Teachers, Kindergarten"] },
+    { "id": "psychology-counselling", "label": "Psychology & Counselling", "group": "people", "blurb": "Supporting mental health and helping people through difficult times.", "occupations": ["Clinical and Counseling Psychologists", "Substance Abuse and Behavioral Disorder Counselors"] },
+    { "id": "social-work", "label": "Social Work & Development", "group": "people", "blurb": "Working with communities and families to improve wellbeing.", "occupations": ["Child, Family, and School Social Workers", "Healthcare Social Workers", "Community Health Workers", "Social and Human Service Assistants"] },
+
+    { "id": "journalism-publishing", "label": "Journalism & Publishing", "group": "creative", "blurb": "Finding, writing and editing stories and information.", "occupations": ["News Analysts, Reporters, and Journalists", "Editors", "Writers and Authors", "Technical Writers"] },
+    { "id": "film-music-arts", "label": "Film, Music & Performing Arts", "group": "creative", "blurb": "Making and performing film, music, theatre and dance.", "occupations": ["Producers and Directors", "Actors", "Musicians and Singers", "Dancers", "Film and Video Editors"] },
+    { "id": "design", "label": "Visual, Product & Fashion Design", "group": "creative", "blurb": "Shaping how graphics, products, clothes and interiors look and work.", "occupations": ["Graphic Designers", "Fashion Designers", "Commercial and Industrial Designers", "Interior Designers"] },
+    { "id": "architecture-planning", "label": "Architecture & Planning", "group": "creative", "blurb": "Designing buildings, landscapes and the layout of towns and cities.", "occupations": ["Architects, Except Landscape and Naval", "Landscape Architects", "Urban and Regional Planners"] },
+
+    { "id": "hospitality-tourism", "label": "Hospitality & Tourism", "group": "service", "blurb": "Looking after guests, travellers and diners.", "occupations": ["Chefs and Head Cooks", "Lodging Managers", "Travel Agents", "Tour Guides and Escorts"] },
+    { "id": "sports-fitness", "label": "Sports & Fitness", "group": "service", "blurb": "Competing, coaching and helping people get fitter.", "occupations": ["Exercise Trainers and Group Fitness Instructors", "Coaches and Scouts", "Athletes and Sports Competitors", "Exercise Physiologists"] },
+    { "id": "transport-logistics", "label": "Transport, Aviation & Logistics", "group": "service", "blurb": "Moving people and goods safely and on time.", "occupations": ["Airline Pilots, Copilots, and Flight Engineers", "Air Traffic Controllers", "Logisticians", "Transportation, Storage, and Distribution Managers"] }
+  ]
+}

@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { starTips } from '../nova/starPath.js';
 
-const TIPS = starTips(50, 50, { long: 46, short: 31, valley: 12 });
-
 function BrandMark() {
+  const tips = useMemo(() => starTips(50, 50, { long: 46, short: 31, valley: 12 }), []);
   return (
-    <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true" focusable="false" className="brand__mark">
-      {TIPS.map((t, i) => (
-        <path key={i} d={t.d} className={`nova__tip nova__tip--${t.north ? 'north' : t.kind}`} />
+    <svg viewBox="0 0 100 100" width="32" height="32" aria-hidden="true" focusable="false" className="brand__mark">
+      {tips.map((t, i) => (
+        <g key={i} className={`nova__tip nova__tip--${t.north ? 'north' : t.kind}`}>
+          <path d={t.leftFacet} className="nova__facet nova__facet--lt" />
+          <path d={t.rightFacet} className="nova__facet nova__facet--dk" />
+          <path d={t.d} className="brand__outline" />
+        </g>
       ))}
     </svg>
   );

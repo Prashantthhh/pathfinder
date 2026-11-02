@@ -1,0 +1,1393 @@
+{
+  "meta": {
+    "source": "O*NET 31.0 Database",
+    "release": "August 2026 Release",
+    "url": "https://www.onetcenter.org/database.html",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "interests": {
+      "file": "Career Interest Types.txt",
+      "scale": "OI (1-7)",
+      "date": "02/2026",
+      "source": "Machine Learning/Expert"
+    },
+    "sha256": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9",
+    "method": "Domain RIASEC = mean of its representative O*NET occupations. Position: primary interest picks the wedge, a strong neighbouring interest nudges toward it, distance from the centre = how distinct the primary interest is (src/engine/hexmap.js). Points are then spread slightly so labels do not overlap.",
+    "maxLead": 3.7517,
+    "spread": {
+      "maxMove": 0.101,
+      "minGap": 0.105
+    }
+  },
+  "groups": [
+    {
+      "id": "tech",
+      "label": "Technology & Engineering"
+    },
+    {
+      "id": "health",
+      "label": "Health & Life"
+    },
+    {
+      "id": "science",
+      "label": "Science & Maths"
+    },
+    {
+      "id": "business",
+      "label": "Business, Law & Public Service"
+    },
+    {
+      "id": "people",
+      "label": "Teaching & People"
+    },
+    {
+      "id": "creative",
+      "label": "Creative & Media"
+    },
+    {
+      "id": "service",
+      "label": "Service & Movement"
+    }
+  ],
+  "domains": [
+    {
+      "id": "software-it",
+      "label": "Software & IT",
+      "group": "tech",
+      "blurb": "Building and running the software people use every day.",
+      "occupations": [
+        {
+          "code": "15-1252.00",
+          "title": "Software Developers"
+        },
+        {
+          "code": "15-1254.00",
+          "title": "Web Developers"
+        },
+        {
+          "code": "15-1211.00",
+          "title": "Computer Systems Analysts"
+        }
+      ],
+      "riasec": {
+        "R": 3.29,
+        "I": 5.82,
+        "A": 2.49,
+        "S": 1.98,
+        "E": 2.35,
+        "C": 5.53
+      },
+      "home": {
+        "x": 0.616,
+        "y": -0.355
+      },
+      "x": 0.594,
+      "y": -0.291,
+      "primary": "I",
+      "secondary": "C",
+      "wedge": "I"
+    },
+    {
+      "id": "data-ai",
+      "label": "Data, AI & Analytics",
+      "group": "tech",
+      "blurb": "Finding patterns in data and building systems that learn from it.",
+      "occupations": [
+        {
+          "code": "15-2051.00",
+          "title": "Data Scientists"
+        },
+        {
+          "code": "15-1243.00",
+          "title": "Database Architects"
+        }
+      ],
+      "riasec": {
+        "R": 2.4,
+        "I": 6.3,
+        "A": 2.38,
+        "S": 1.78,
+        "E": 2.2,
+        "C": 5.75
+      },
+      "home": {
+        "x": 0.686,
+        "y": -0.396
+      },
+      "x": 0.742,
+      "y": -0.405,
+      "primary": "I",
+      "secondary": "C",
+      "wedge": "I"
+    },
+    {
+      "id": "cyber-networks",
+      "label": "Cybersecurity & Networks",
+      "group": "tech",
+      "blurb": "Keeping systems connected and protected from misuse.",
+      "occupations": [
+        {
+          "code": "15-1212.00",
+          "title": "Information Security Analysts"
+        },
+        {
+          "code": "15-1244.00",
+          "title": "Network and Computer Systems Administrators"
+        },
+        {
+          "code": "15-1241.00",
+          "title": "Computer Network Architects"
+        }
+      ],
+      "riasec": {
+        "R": 3.93,
+        "I": 4.91,
+        "A": 1.53,
+        "S": 2.17,
+        "E": 3.17,
+        "C": 5.77
+      },
+      "home": {
+        "x": -0.587,
+        "y": -0.388
+      },
+      "x": -0.587,
+      "y": -0.388,
+      "primary": "C",
+      "secondary": "I",
+      "wedge": "C"
+    },
+    {
+      "id": "electronics-embedded",
+      "label": "Electronics & Embedded",
+      "group": "tech",
+      "blurb": "Designing circuits, chips and the devices built around them.",
+      "occupations": [
+        {
+          "code": "17-2072.00",
+          "title": "Electronics Engineers, Except Computer"
+        },
+        {
+          "code": "17-2061.00",
+          "title": "Computer Hardware Engineers"
+        }
+      ],
+      "riasec": {
+        "R": 5.96,
+        "I": 5.68,
+        "A": 1.93,
+        "S": 1.71,
+        "E": 1.8,
+        "C": 5.03
+      },
+      "home": {
+        "x": 0.078,
+        "y": -0.711
+      },
+      "x": 0.098,
+      "y": -0.748,
+      "primary": "R",
+      "secondary": "I",
+      "wedge": "R"
+    },
+    {
+      "id": "electrical-power",
+      "label": "Electrical & Power",
+      "group": "tech",
+      "blurb": "Generating, distributing and installing electrical power.",
+      "occupations": [
+        {
+          "code": "17-2071.00",
+          "title": "Electrical Engineers"
+        },
+        {
+          "code": "47-2111.00",
+          "title": "Electricians"
+        },
+        {
+          "code": "51-8012.00",
+          "title": "Power Distributors and Dispatchers"
+        }
+      ],
+      "riasec": {
+        "R": 6.07,
+        "I": 3.53,
+        "A": 1.45,
+        "S": 1.67,
+        "E": 2.45,
+        "C": 4.54
+      },
+      "home": {
+        "x": -0.109,
+        "y": -0.778
+      },
+      "x": -0.109,
+      "y": -0.778,
+      "primary": "R",
+      "secondary": "C",
+      "wedge": "R"
+    },
+    {
+      "id": "mechanical-manufacturing",
+      "label": "Mechanical & Manufacturing",
+      "group": "tech",
+      "blurb": "Designing machines and making things at scale.",
+      "occupations": [
+        {
+          "code": "17-2141.00",
+          "title": "Mechanical Engineers"
+        },
+        {
+          "code": "17-2112.00",
+          "title": "Industrial Engineers"
+        },
+        {
+          "code": "17-2131.00",
+          "title": "Materials Engineers"
+        }
+      ],
+      "riasec": {
+        "R": 5.74,
+        "I": 5.31,
+        "A": 2.05,
+        "S": 1.32,
+        "E": 2.44,
+        "C": 4.76
+      },
+      "home": {
+        "x": 0.069,
+        "y": -0.693
+      },
+      "x": 0.049,
+      "y": -0.655,
+      "primary": "R",
+      "secondary": "I",
+      "wedge": "R"
+    },
+    {
+      "id": "civil-construction",
+      "label": "Civil & Construction",
+      "group": "tech",
+      "blurb": "Planning and building roads, bridges, buildings and water systems.",
+      "occupations": [
+        {
+          "code": "17-2051.00",
+          "title": "Civil Engineers"
+        },
+        {
+          "code": "11-9021.00",
+          "title": "Construction Managers"
+        },
+        {
+          "code": "17-1022.00",
+          "title": "Surveyors"
+        }
+      ],
+      "riasec": {
+        "R": 5.45,
+        "I": 4.35,
+        "A": 2.01,
+        "S": 1.89,
+        "E": 3.42,
+        "C": 4.9
+      },
+      "home": {
+        "x": -0.077,
+        "y": -0.642
+      },
+      "x": -0.077,
+      "y": -0.642,
+      "primary": "R",
+      "secondary": "C",
+      "wedge": "R"
+    },
+    {
+      "id": "chemical-materials",
+      "label": "Chemical & Materials",
+      "group": "tech",
+      "blurb": "Turning raw materials into fuels, plastics, metals and medicines.",
+      "occupations": [
+        {
+          "code": "17-2041.00",
+          "title": "Chemical Engineers"
+        },
+        {
+          "code": "19-2032.00",
+          "title": "Materials Scientists"
+        },
+        {
+          "code": "17-2171.00",
+          "title": "Petroleum Engineers"
+        }
+      ],
+      "riasec": {
+        "R": 5.82,
+        "I": 5.89,
+        "A": 1.96,
+        "S": 1.4,
+        "E": 2.25,
+        "C": 4.34
+      },
+      "home": {
+        "x": 0.447,
+        "y": -0.559
+      },
+      "x": 0.423,
+      "y": -0.534,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "automotive-aerospace",
+      "label": "Automotive & Aerospace",
+      "group": "tech",
+      "blurb": "Designing, building and maintaining vehicles, aircraft and spacecraft.",
+      "occupations": [
+        {
+          "code": "17-2011.00",
+          "title": "Aerospace Engineers"
+        },
+        {
+          "code": "49-3011.00",
+          "title": "Aircraft Mechanics and Service Technicians"
+        },
+        {
+          "code": "49-3023.00",
+          "title": "Automotive Service Technicians and Mechanics"
+        }
+      ],
+      "riasec": {
+        "R": 6.45,
+        "I": 4.48,
+        "A": 1.45,
+        "S": 1.34,
+        "E": 1.99,
+        "C": 4.48
+      },
+      "home": {
+        "x": 0,
+        "y": -0.828
+      },
+      "x": 0,
+      "y": -0.828,
+      "primary": "R",
+      "secondary": "I",
+      "wedge": "R"
+    },
+    {
+      "id": "medicine-surgery",
+      "label": "Medicine & Surgery",
+      "group": "health",
+      "blurb": "Diagnosing illness and treating patients as a doctor.",
+      "occupations": [
+        {
+          "code": "29-1215.00",
+          "title": "Family Medicine Physicians"
+        },
+        {
+          "code": "29-1242.00",
+          "title": "Orthopedic Surgeons, Except Pediatric"
+        },
+        {
+          "code": "29-1211.00",
+          "title": "Anesthesiologists"
+        }
+      ],
+      "riasec": {
+        "R": 4.67,
+        "I": 6.1,
+        "A": 1.37,
+        "S": 5.43,
+        "E": 2.4,
+        "C": 3.85
+      },
+      "home": {
+        "x": 0.554,
+        "y": -0.421
+      },
+      "x": 0.547,
+      "y": -0.44,
+      "primary": "I",
+      "secondary": "S",
+      "wedge": "I"
+    },
+    {
+      "id": "nursing-allied",
+      "label": "Nursing & Allied Health",
+      "group": "health",
+      "blurb": "Caring for patients and supporting treatment: nursing, therapy, labs and imaging.",
+      "occupations": [
+        {
+          "code": "29-1141.00",
+          "title": "Registered Nurses"
+        },
+        {
+          "code": "29-1123.00",
+          "title": "Physical Therapists"
+        },
+        {
+          "code": "29-2011.00",
+          "title": "Medical and Clinical Laboratory Technologists"
+        },
+        {
+          "code": "29-2034.00",
+          "title": "Radiologic Technologists and Technicians"
+        }
+      ],
+      "riasec": {
+        "R": 4.88,
+        "I": 5.15,
+        "A": 1.41,
+        "S": 4.42,
+        "E": 1.84,
+        "C": 4.47
+      },
+      "home": {
+        "x": 0.403,
+        "y": -0.447
+      },
+      "x": 0.404,
+      "y": -0.43,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "dentistry-pharmacy",
+      "label": "Dentistry & Pharmacy",
+      "group": "health",
+      "blurb": "Oral health, eye care and the safe use of medicines.",
+      "occupations": [
+        {
+          "code": "29-1021.00",
+          "title": "Dentists, General"
+        },
+        {
+          "code": "29-1051.00",
+          "title": "Pharmacists"
+        },
+        {
+          "code": "29-1041.00",
+          "title": "Optometrists"
+        }
+      ],
+      "riasec": {
+        "R": 4.28,
+        "I": 5.64,
+        "A": 1.42,
+        "S": 4.77,
+        "E": 2.3,
+        "C": 4.06
+      },
+      "home": {
+        "x": 0.535,
+        "y": -0.391
+      },
+      "x": 0.503,
+      "y": -0.344,
+      "primary": "I",
+      "secondary": "S",
+      "wedge": "I"
+    },
+    {
+      "id": "biotech-life",
+      "label": "Biotech & Life Sciences",
+      "group": "health",
+      "blurb": "Studying living systems to understand disease and develop treatments.",
+      "occupations": [
+        {
+          "code": "19-1021.00",
+          "title": "Biochemists and Biophysicists"
+        },
+        {
+          "code": "19-1042.00",
+          "title": "Medical Scientists, Except Epidemiologists"
+        },
+        {
+          "code": "19-4021.00",
+          "title": "Biological Technicians"
+        }
+      ],
+      "riasec": {
+        "R": 4.99,
+        "I": 6.45,
+        "A": 2.08,
+        "S": 2.47,
+        "E": 1.79,
+        "C": 4.32
+      },
+      "home": {
+        "x": 0.597,
+        "y": -0.508
+      },
+      "x": 0.639,
+      "y": -0.492,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "veterinary-animal",
+      "label": "Veterinary & Animal Care",
+      "group": "health",
+      "blurb": "Looking after the health and welfare of animals.",
+      "occupations": [
+        {
+          "code": "29-1131.00",
+          "title": "Veterinarians"
+        },
+        {
+          "code": "29-2056.00",
+          "title": "Veterinary Technologists and Technicians"
+        },
+        {
+          "code": "19-1023.00",
+          "title": "Zoologists and Wildlife Biologists"
+        }
+      ],
+      "riasec": {
+        "R": 6.04,
+        "I": 6.08,
+        "A": 1.44,
+        "S": 3.01,
+        "E": 1.68,
+        "C": 3.91
+      },
+      "home": {
+        "x": 0.454,
+        "y": -0.573
+      },
+      "x": 0.478,
+      "y": -0.623,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "agriculture-food",
+      "label": "Agriculture & Food",
+      "group": "health",
+      "blurb": "Growing, improving and processing the food we eat.",
+      "occupations": [
+        {
+          "code": "17-2021.00",
+          "title": "Agricultural Engineers"
+        },
+        {
+          "code": "19-1012.00",
+          "title": "Food Scientists and Technologists"
+        },
+        {
+          "code": "19-1013.00",
+          "title": "Soil and Plant Scientists"
+        },
+        {
+          "code": "11-9013.00",
+          "title": "Farmers, Ranchers, and Other Agricultural Managers"
+        }
+      ],
+      "riasec": {
+        "R": 5.82,
+        "I": 5.36,
+        "A": 1.95,
+        "S": 2.05,
+        "E": 3.03,
+        "C": 3.92
+      },
+      "home": {
+        "x": 0.178,
+        "y": -0.672
+      },
+      "x": 0.178,
+      "y": -0.672,
+      "primary": "R",
+      "secondary": "I",
+      "wedge": "R"
+    },
+    {
+      "id": "environment-earth",
+      "label": "Environment & Earth Sciences",
+      "group": "science",
+      "blurb": "Understanding and protecting land, water, air and ecosystems.",
+      "occupations": [
+        {
+          "code": "19-2041.00",
+          "title": "Environmental Scientists and Specialists, Including Health"
+        },
+        {
+          "code": "19-2042.00",
+          "title": "Geoscientists, Except Hydrologists and Geographers"
+        },
+        {
+          "code": "19-1031.00",
+          "title": "Conservation Scientists"
+        },
+        {
+          "code": "19-2043.00",
+          "title": "Hydrologists"
+        }
+      ],
+      "riasec": {
+        "R": 5.33,
+        "I": 6.53,
+        "A": 2.05,
+        "S": 2.5,
+        "E": 2.42,
+        "C": 4.19
+      },
+      "home": {
+        "x": 0.573,
+        "y": -0.519
+      },
+      "x": 0.548,
+      "y": -0.545,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "physical-sciences",
+      "label": "Physical Sciences",
+      "group": "science",
+      "blurb": "Research into matter, energy and the universe.",
+      "occupations": [
+        {
+          "code": "19-2012.00",
+          "title": "Physicists"
+        },
+        {
+          "code": "19-2031.00",
+          "title": "Chemists"
+        },
+        {
+          "code": "19-2011.00",
+          "title": "Astronomers"
+        }
+      ],
+      "riasec": {
+        "R": 5.23,
+        "I": 6.9,
+        "A": 2.52,
+        "S": 1.99,
+        "E": 1.75,
+        "C": 4.55
+      },
+      "home": {
+        "x": 0.633,
+        "y": -0.532
+      },
+      "x": 0.643,
+      "y": -0.596,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "maths-stats",
+      "label": "Maths & Statistics",
+      "group": "science",
+      "blurb": "Using mathematics to model risk, chance and real-world systems.",
+      "occupations": [
+        {
+          "code": "15-2021.00",
+          "title": "Mathematicians"
+        },
+        {
+          "code": "15-2041.00",
+          "title": "Statisticians"
+        },
+        {
+          "code": "15-2011.00",
+          "title": "Actuaries"
+        }
+      ],
+      "riasec": {
+        "R": 2.38,
+        "I": 6.01,
+        "A": 2.04,
+        "S": 2.05,
+        "E": 2.09,
+        "C": 5.78
+      },
+      "home": {
+        "x": 0.661,
+        "y": -0.381
+      },
+      "x": 0.639,
+      "y": -0.387,
+      "primary": "I",
+      "secondary": "C",
+      "wedge": "I"
+    },
+    {
+      "id": "accounting-audit",
+      "label": "Accounting & Audit",
+      "group": "business",
+      "blurb": "Keeping accurate financial records and checking that they hold up.",
+      "occupations": [
+        {
+          "code": "13-2011.00",
+          "title": "Accountants and Auditors"
+        },
+        {
+          "code": "13-2082.00",
+          "title": "Tax Preparers"
+        },
+        {
+          "code": "13-2031.00",
+          "title": "Budget Analysts"
+        }
+      ],
+      "riasec": {
+        "R": 1.44,
+        "I": 3.22,
+        "A": 1.22,
+        "S": 2.21,
+        "E": 4.05,
+        "C": 6.93
+      },
+      "home": {
+        "x": -0.835,
+        "y": -0.387
+      },
+      "x": -0.835,
+      "y": -0.387,
+      "primary": "C",
+      "secondary": "E",
+      "wedge": "C"
+    },
+    {
+      "id": "banking-finance",
+      "label": "Banking, Finance & Insurance",
+      "group": "business",
+      "blurb": "Managing money, credit and risk for people and organisations.",
+      "occupations": [
+        {
+          "code": "13-2051.00",
+          "title": "Financial and Investment Analysts"
+        },
+        {
+          "code": "13-2052.00",
+          "title": "Personal Financial Advisors"
+        },
+        {
+          "code": "13-2072.00",
+          "title": "Loan Officers"
+        },
+        {
+          "code": "13-2053.00",
+          "title": "Insurance Underwriters"
+        }
+      ],
+      "riasec": {
+        "R": 1.29,
+        "I": 3.57,
+        "A": 1.37,
+        "S": 3.2,
+        "E": 5.11,
+        "C": 5.85
+      },
+      "home": {
+        "x": -0.716,
+        "y": -0.187
+      },
+      "x": -0.724,
+      "y": -0.192,
+      "primary": "C",
+      "secondary": "E",
+      "wedge": "C"
+    },
+    {
+      "id": "business-management",
+      "label": "Business & Management",
+      "group": "business",
+      "blurb": "Running organisations, teams and operations.",
+      "occupations": [
+        {
+          "code": "11-1021.00",
+          "title": "General and Operations Managers"
+        },
+        {
+          "code": "13-1111.00",
+          "title": "Management Analysts"
+        },
+        {
+          "code": "13-1071.00",
+          "title": "Human Resources Specialists"
+        }
+      ],
+      "riasec": {
+        "R": 1.53,
+        "I": 3.44,
+        "A": 1.42,
+        "S": 3.33,
+        "E": 5.83,
+        "C": 5.64
+      },
+      "home": {
+        "x": -0.708,
+        "y": 0.123
+      },
+      "x": -0.708,
+      "y": 0.121,
+      "primary": "E",
+      "secondary": "C",
+      "wedge": "E"
+    },
+    {
+      "id": "marketing-sales",
+      "label": "Marketing, Sales & Retail",
+      "group": "business",
+      "blurb": "Understanding customers and getting products to them.",
+      "occupations": [
+        {
+          "code": "11-2021.00",
+          "title": "Marketing Managers"
+        },
+        {
+          "code": "13-1161.00",
+          "title": "Market Research Analysts and Marketing Specialists"
+        },
+        {
+          "code": "41-4011.00",
+          "title": "Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products"
+        },
+        {
+          "code": "41-2031.00",
+          "title": "Retail Salespersons"
+        }
+      ],
+      "riasec": {
+        "R": 2.02,
+        "I": 2.91,
+        "A": 2.11,
+        "S": 2.84,
+        "E": 5.98,
+        "C": 4.91
+      },
+      "home": {
+        "x": -0.715,
+        "y": 0.223
+      },
+      "x": -0.715,
+      "y": 0.225,
+      "primary": "E",
+      "secondary": "C",
+      "wedge": "E"
+    },
+    {
+      "id": "law-legal",
+      "label": "Law & Legal Services",
+      "group": "business",
+      "blurb": "Advising on and arguing about rights, rules and disputes.",
+      "occupations": [
+        {
+          "code": "23-1011.00",
+          "title": "Lawyers"
+        },
+        {
+          "code": "23-2011.00",
+          "title": "Paralegals and Legal Assistants"
+        },
+        {
+          "code": "23-1023.00",
+          "title": "Judges, Magistrate Judges, and Magistrates"
+        }
+      ],
+      "riasec": {
+        "R": 1.73,
+        "I": 4.41,
+        "A": 2.28,
+        "S": 3.52,
+        "E": 4.9,
+        "C": 4.66
+      },
+      "home": {
+        "x": -0.57,
+        "y": 0.121
+      },
+      "x": -0.57,
+      "y": 0.121,
+      "primary": "E",
+      "secondary": "C",
+      "wedge": "E"
+    },
+    {
+      "id": "civil-services-policy",
+      "label": "Civil Services & Public Policy",
+      "group": "business",
+      "blurb": "Designing and running public policy and administration.",
+      "occupations": [
+        {
+          "code": "11-3012.00",
+          "title": "Administrative Services Managers"
+        },
+        {
+          "code": "19-3094.00",
+          "title": "Political Scientists"
+        },
+        {
+          "code": "13-1041.00",
+          "title": "Compliance Officers"
+        }
+      ],
+      "riasec": {
+        "R": 1.64,
+        "I": 3.97,
+        "A": 1.99,
+        "S": 3.38,
+        "E": 4.72,
+        "C": 5.37
+      },
+      "home": {
+        "x": -0.633,
+        "y": -0.178
+      },
+      "x": -0.633,
+      "y": -0.137,
+      "primary": "C",
+      "secondary": "E",
+      "wedge": "C"
+    },
+    {
+      "id": "defence-police",
+      "label": "Defence & Police",
+      "group": "business",
+      "blurb": "Protecting people and keeping order in uniformed services.",
+      "occupations": [
+        {
+          "code": "33-3051.00",
+          "title": "Police and Sheriff's Patrol Officers"
+        },
+        {
+          "code": "33-1012.00",
+          "title": "First-Line Supervisors of Police and Detectives"
+        },
+        {
+          "code": "33-3021.00",
+          "title": "Detectives and Criminal Investigators"
+        },
+        {
+          "code": "33-2011.00",
+          "title": "Firefighters"
+        }
+      ],
+      "riasec": {
+        "R": 4.87,
+        "I": 3.23,
+        "A": 1.15,
+        "S": 3.34,
+        "E": 4.5,
+        "C": 4.43
+      },
+      "home": {
+        "x": -0.144,
+        "y": -0.56
+      },
+      "x": -0.144,
+      "y": -0.56,
+      "primary": "R",
+      "secondary": "E",
+      "wedge": "R"
+    },
+    {
+      "id": "teaching-education",
+      "label": "Teaching & Education",
+      "group": "people",
+      "blurb": "Helping others learn, from early years to specialist subjects.",
+      "occupations": [
+        {
+          "code": "25-2021.00",
+          "title": "Elementary School Teachers, Except Special Education"
+        },
+        {
+          "code": "25-2031.00",
+          "title": "Secondary School Teachers, Except Special and Career/Technical Education"
+        },
+        {
+          "code": "25-2055.00",
+          "title": "Special Education Teachers, Kindergarten"
+        }
+      ],
+      "riasec": {
+        "R": 2.64,
+        "I": 3.45,
+        "A": 3.76,
+        "S": 7,
+        "E": 2.4,
+        "C": 3.69
+      },
+      "home": {
+        "x": 0,
+        "y": 0.84
+      },
+      "x": 0,
+      "y": 0.93,
+      "primary": "S",
+      "secondary": "A",
+      "wedge": "S"
+    },
+    {
+      "id": "psychology-counselling",
+      "label": "Psychology & Counselling",
+      "group": "people",
+      "blurb": "Supporting mental health and helping people through difficult times.",
+      "occupations": [
+        {
+          "code": "19-3033.00",
+          "title": "Clinical and Counseling Psychologists"
+        },
+        {
+          "code": "21-1011.00",
+          "title": "Substance Abuse and Behavioral Disorder Counselors"
+        }
+      ],
+      "riasec": {
+        "R": 1.32,
+        "I": 4.7,
+        "A": 2.83,
+        "S": 6.62,
+        "E": 2.68,
+        "C": 3.33
+      },
+      "home": {
+        "x": 0,
+        "y": 0.821
+      },
+      "x": 0,
+      "y": 0.72,
+      "primary": "S",
+      "secondary": "I",
+      "wedge": "S"
+    },
+    {
+      "id": "social-work",
+      "label": "Social Work & Development",
+      "group": "people",
+      "blurb": "Working with communities and families to improve wellbeing.",
+      "occupations": [
+        {
+          "code": "21-1021.00",
+          "title": "Child, Family, and School Social Workers"
+        },
+        {
+          "code": "21-1022.00",
+          "title": "Healthcare Social Workers"
+        },
+        {
+          "code": "21-1094.00",
+          "title": "Community Health Workers"
+        },
+        {
+          "code": "21-1093.00",
+          "title": "Social and Human Service Assistants"
+        }
+      ],
+      "riasec": {
+        "R": 1.74,
+        "I": 3.46,
+        "A": 2.35,
+        "S": 6.61,
+        "E": 3.16,
+        "C": 3.65
+      },
+      "home": {
+        "x": 0,
+        "y": 0.832
+      },
+      "x": 0,
+      "y": 0.825,
+      "primary": "S",
+      "secondary": "C",
+      "wedge": "S"
+    },
+    {
+      "id": "journalism-publishing",
+      "label": "Journalism & Publishing",
+      "group": "creative",
+      "blurb": "Finding, writing and editing stories and information.",
+      "occupations": [
+        {
+          "code": "27-3023.00",
+          "title": "News Analysts, Reporters, and Journalists"
+        },
+        {
+          "code": "27-3041.00",
+          "title": "Editors"
+        },
+        {
+          "code": "27-3043.00",
+          "title": "Writers and Authors"
+        },
+        {
+          "code": "27-3042.00",
+          "title": "Technical Writers"
+        }
+      ],
+      "riasec": {
+        "R": 1.57,
+        "I": 3.5,
+        "A": 5.35,
+        "S": 2.56,
+        "E": 3.7,
+        "C": 4.25
+      },
+      "home": {
+        "x": 0.571,
+        "y": 0.328
+      },
+      "x": 0.545,
+      "y": 0.31,
+      "primary": "A",
+      "secondary": "C",
+      "wedge": "A"
+    },
+    {
+      "id": "film-music-arts",
+      "label": "Film, Music & Performing Arts",
+      "group": "creative",
+      "blurb": "Making and performing film, music, theatre and dance.",
+      "occupations": [
+        {
+          "code": "27-2012.00",
+          "title": "Producers and Directors"
+        },
+        {
+          "code": "27-2011.00",
+          "title": "Actors"
+        },
+        {
+          "code": "27-2042.00",
+          "title": "Musicians and Singers"
+        },
+        {
+          "code": "27-2031.00",
+          "title": "Dancers"
+        },
+        {
+          "code": "27-4032.00",
+          "title": "Film and Video Editors"
+        }
+      ],
+      "riasec": {
+        "R": 3.05,
+        "I": 1.85,
+        "A": 6.36,
+        "S": 3.24,
+        "E": 3.89,
+        "C": 2.58
+      },
+      "home": {
+        "x": 0.69,
+        "y": 0.399
+      },
+      "x": 0.725,
+      "y": 0.416,
+      "primary": "A",
+      "secondary": "E",
+      "wedge": "A"
+    },
+    {
+      "id": "design",
+      "label": "Visual, Product & Fashion Design",
+      "group": "creative",
+      "blurb": "Shaping how graphics, products, clothes and interiors look and work.",
+      "occupations": [
+        {
+          "code": "27-1024.00",
+          "title": "Graphic Designers"
+        },
+        {
+          "code": "27-1022.00",
+          "title": "Fashion Designers"
+        },
+        {
+          "code": "27-1021.00",
+          "title": "Commercial and Industrial Designers"
+        },
+        {
+          "code": "27-1025.00",
+          "title": "Interior Designers"
+        }
+      ],
+      "riasec": {
+        "R": 4.12,
+        "I": 3.04,
+        "A": 6.27,
+        "S": 2.26,
+        "E": 3.7,
+        "C": 3.54
+      },
+      "home": {
+        "x": 0.64,
+        "y": 0.37
+      },
+      "x": 0.631,
+      "y": 0.37,
+      "primary": "A",
+      "secondary": "R",
+      "wedge": "A"
+    },
+    {
+      "id": "architecture-planning",
+      "label": "Architecture & Planning",
+      "group": "creative",
+      "blurb": "Designing buildings, landscapes and the layout of towns and cities.",
+      "occupations": [
+        {
+          "code": "17-1011.00",
+          "title": "Architects, Except Landscape and Naval"
+        },
+        {
+          "code": "17-1012.00",
+          "title": "Landscape Architects"
+        },
+        {
+          "code": "19-3051.00",
+          "title": "Urban and Regional Planners"
+        }
+      ],
+      "riasec": {
+        "R": 4.52,
+        "I": 4.64,
+        "A": 3.96,
+        "S": 2.74,
+        "E": 3.92,
+        "C": 4.03
+      },
+      "home": {
+        "x": 0.33,
+        "y": -0.367
+      },
+      "x": 0.324,
+      "y": -0.362,
+      "primary": "I",
+      "secondary": "R",
+      "wedge": "I"
+    },
+    {
+      "id": "hospitality-tourism",
+      "label": "Hospitality & Tourism",
+      "group": "service",
+      "blurb": "Looking after guests, travellers and diners.",
+      "occupations": [
+        {
+          "code": "35-1011.00",
+          "title": "Chefs and Head Cooks"
+        },
+        {
+          "code": "11-9081.00",
+          "title": "Lodging Managers"
+        },
+        {
+          "code": "41-3041.00",
+          "title": "Travel Agents"
+        },
+        {
+          "code": "39-7011.00",
+          "title": "Tour Guides and Escorts"
+        }
+      ],
+      "riasec": {
+        "R": 3,
+        "I": 1.67,
+        "A": 2.38,
+        "S": 4.23,
+        "E": 5.19,
+        "C": 4.55
+      },
+      "home": {
+        "x": -0.57,
+        "y": 0.276
+      },
+      "x": -0.57,
+      "y": 0.276,
+      "primary": "E",
+      "secondary": "C",
+      "wedge": "E"
+    },
+    {
+      "id": "sports-fitness",
+      "label": "Sports & Fitness",
+      "group": "service",
+      "blurb": "Competing, coaching and helping people get fitter.",
+      "occupations": [
+        {
+          "code": "39-9031.00",
+          "title": "Exercise Trainers and Group Fitness Instructors"
+        },
+        {
+          "code": "27-2022.00",
+          "title": "Coaches and Scouts"
+        },
+        {
+          "code": "27-2021.00",
+          "title": "Athletes and Sports Competitors"
+        },
+        {
+          "code": "29-1128.00",
+          "title": "Exercise Physiologists"
+        }
+      ],
+      "riasec": {
+        "R": 4.98,
+        "I": 2.79,
+        "A": 2.12,
+        "S": 4.99,
+        "E": 4.04,
+        "C": 3.3
+      },
+      "home": {
+        "x": -0.058,
+        "y": 0.575
+      },
+      "x": -0.058,
+      "y": 0.575,
+      "primary": "S",
+      "secondary": "R",
+      "wedge": "S"
+    },
+    {
+      "id": "transport-logistics",
+      "label": "Transport, Aviation & Logistics",
+      "group": "service",
+      "blurb": "Moving people and goods safely and on time.",
+      "occupations": [
+        {
+          "code": "53-2011.00",
+          "title": "Airline Pilots, Copilots, and Flight Engineers"
+        },
+        {
+          "code": "53-2021.00",
+          "title": "Air Traffic Controllers"
+        },
+        {
+          "code": "13-1081.00",
+          "title": "Logisticians"
+        },
+        {
+          "code": "11-3071.00",
+          "title": "Transportation, Storage, and Distribution Managers"
+        }
+      ],
+      "riasec": {
+        "R": 3.81,
+        "I": 3.01,
+        "A": 1.14,
+        "S": 2.48,
+        "E": 4.78,
+        "C": 5.22
+      },
+      "home": {
+        "x": -0.619,
+        "y": -0.204
+      },
+      "x": -0.61,
+      "y": -0.24,
+      "primary": "C",
+      "secondary": "E",
+      "wedge": "C"
+    }
+  ]
+}

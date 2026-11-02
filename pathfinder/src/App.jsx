@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import ContourBackground from './components/map/ContourBackground.jsx';
 import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -32,7 +31,6 @@ export default function App() {
 
   return (
     <>
-      <ContourBackground />
       <a className="skip-link" href="#main">Skip to main content</a>
       <Header />
       <main id="main" tabIndex={-1} ref={mainRef}>
