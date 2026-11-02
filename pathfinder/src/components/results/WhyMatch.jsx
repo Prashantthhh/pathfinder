@@ -1,18 +1,24 @@
 import { DIMENSION_BY_ID } from '../../data/dimensions.js';
+import { SETTING_BY_ID } from '../../data/settings.js';
 
-const pct = (v) => `${Math.round((v ?? 0) * 100)}%`;
+const SETTING_STATE = {
+  close: 'close to what you said',
+  partly: 'partly like what you said',
+  differs: 'different from what you said',
+};
 
 /**
- * "Why this match": built from the engine's own breakdown. Each driver is a
- * dimension that carried a meaningful share of the score. It shows how much
- * weight the career puts on that dimension and the quiz answers that pointed
- * there. It deliberately shows no percentage for the student: the student's
- * profile is relative (strongest dimension = 1), so "100%" would be misread
- * as a score or a level of skill.
+ * "Why this match": built from the engine's own breakdown.
+ *  - Interests: the interest types that carried a meaningful share of the score, with
+ *    O*NET's own interest score for the career (1-7) and the quiz answers behind each.
+ *    It deliberately shows no percentage for the student: the student's profile is
+ *    relative (strongest = 1), so "100%" would be misread as a score or a skill level.
+ *  - Work settings: how the day-to-day compares with what the student said they like.
  */
 export default function WhyMatch({ item, quiz, open = false }) {
   const { why, career } = item;
   const sectionLabel = (id) => quiz.sections.find((s) => s.id === id)?.label ?? '';
+  const notable = why.settingsNotes.filter((n) => n.state !== 'partly');
 
   return (
     <details className="why" open={open}>
@@ -29,7 +35,7 @@ export default function WhyMatch({ item, quiz, open = false }) {
                   <span className="why__blaze" style={{ background: dim.color }} aria-hidden="true" />
                   <strong>{dim.label}</strong>
                   <span className="why__nums">
-                    {career.title} puts a weight of {pct(d.career)} on {dim.label}
+                    O*NET rates {career.title} {d.career.toFixed(1)} of 7 on {dim.label} interest
                   </span>
                 </p>
                 {d.sources.length > 0 && (
@@ -49,10 +55,23 @@ export default function WhyMatch({ item, quiz, open = false }) {
           })}
         </ul>
 
+        {notable.length > 0 && (
+          <div className="why__settings">
+            <p className="why__from">How the day-to-day compares (work settings we derived from O*NET):</p>
+            <ul className="why__sources">
+              {notable.map((n) => (
+                <li key={n.id}>
+                  <strong>{SETTING_BY_ID[n.id].label}:</strong> {SETTING_STATE[n.state]}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {why.stretch.length > 0 && (
           <p className="why__stretch">
-            <strong>Worth knowing:</strong> this role also leans on{' '}
-            {why.stretch.map((d) => DIMENSION_BY_ID[d].label).join(' and ')}, which your answers
+            <strong>Worth knowing:</strong> this career also leans on{' '}
+            {why.stretch.map((d) => DIMENSION_BY_ID[d].label).join(' and ')} interests, which your answers
             barely touched. You would likely be building that from scratch.
           </p>
         )}

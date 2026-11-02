@@ -1,0 +1,1461 @@
+{
+  "_note": "Hand-written inputs for the 60 careers. Everything else (interests, tasks, skills, work settings, description) is generated from the O*NET 31.0 Database by scripts/build-careers.mjs. 'onet' is the EXACT O*NET occupation title. 'loose' marks careers whose closest O*NET occupation is only an approximate match. 'entry' (stream labels in streams.js) is OUR general reading of the typical route in India (stream the route usually starts from, and a study-length bucket); it is not an eligibility rule and is shown as 'typical route, verify with the official body'. 'routes' reference ids in indiaRegistry.json; a name is shown only if links:check could confirm it on the official site.",
+  "careers": [
+    {
+      "id": "software-developer",
+      "title": "Software Developer",
+      "domain": "software-it",
+      "onet": "Software Developers",
+      "keywords": [
+        "programmer",
+        "coder",
+        "software engineer",
+        "it",
+        "app developer"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng",
+          "grad-sci"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "ux-ui-designer",
+      "title": "UX/UI Designer",
+      "domain": "software-it",
+      "onet": "Web and Digital Interface Designers",
+      "keywords": [
+        "ux",
+        "ui",
+        "app design",
+        "web design",
+        "interface"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "uceed"
+        },
+        {
+          "exam": "nid-dat"
+        }
+      ]
+    },
+    {
+      "id": "data-scientist",
+      "title": "Data Scientist",
+      "domain": "data-ai",
+      "onet": "Data Scientists",
+      "keywords": [
+        "machine learning",
+        "ai",
+        "analytics",
+        "big data"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "grad-eng",
+          "grad-sci"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "domain": "data-ai",
+      "onet": "Business Intelligence Analysts",
+      "keywords": [
+        "analytics",
+        "excel",
+        "sql",
+        "dashboard",
+        "mis"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "commerce",
+          "grad-eng",
+          "grad-sci",
+          "grad-com"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    },
+    {
+      "id": "cybersecurity-analyst",
+      "title": "Cybersecurity Analyst",
+      "domain": "cyber-networks",
+      "onet": "Information Security Analysts",
+      "keywords": [
+        "cyber security",
+        "ethical hacking",
+        "infosec",
+        "network security"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng",
+          "grad-sci"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "animator",
+      "title": "Animator",
+      "domain": "film-music-arts",
+      "onet": "Special Effects Artists and Animators",
+      "keywords": [
+        "animation",
+        "vfx",
+        "2d",
+        "3d",
+        "gaming art"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "electronics-engineer",
+      "title": "Electronics Engineer",
+      "domain": "electronics-embedded",
+      "onet": "Electronics Engineers, Except Computer",
+      "keywords": [
+        "ece",
+        "embedded",
+        "vlsi",
+        "circuits",
+        "electronics"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "electrical-engineer",
+      "title": "Electrical Engineer",
+      "domain": "electrical-power",
+      "onet": "Electrical Engineers",
+      "keywords": [
+        "eee",
+        "power",
+        "electrical",
+        "grid"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "electrician",
+      "title": "Electrician",
+      "domain": "electrical-power",
+      "onet": "Electricians",
+      "keywords": [
+        "iti",
+        "wireman",
+        "electrical technician",
+        "wiring"
+      ],
+      "entry": {
+        "streams": [
+          "diploma"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "aitt",
+          "body": "dgt"
+        }
+      ]
+    },
+    {
+      "id": "mechanical-engineer",
+      "title": "Mechanical Engineer",
+      "domain": "mechanical-manufacturing",
+      "onet": "Mechanical Engineers",
+      "keywords": [
+        "me",
+        "machines",
+        "manufacturing",
+        "cad",
+        "automobile"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "civil-engineer",
+      "title": "Civil Engineer",
+      "domain": "civil-construction",
+      "onet": "Civil Engineers",
+      "keywords": [
+        "construction",
+        "structures",
+        "roads",
+        "bridges",
+        "site engineer"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "aerospace-engineer",
+      "title": "Aerospace Engineer",
+      "domain": "automotive-aerospace",
+      "onet": "Aerospace Engineers",
+      "keywords": [
+        "aeronautical",
+        "aircraft",
+        "space",
+        "isro",
+        "drdo"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-advanced",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
+      "id": "automobile-technician",
+      "title": "Automobile Technician",
+      "domain": "automotive-aerospace",
+      "onet": "Automotive Service Technicians and Mechanics",
+      "keywords": [
+        "mechanic",
+        "iti",
+        "car repair",
+        "service technician",
+        "diploma automobile"
+      ],
+      "entry": {
+        "streams": [
+          "diploma"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "aitt",
+          "body": "dgt"
+        }
+      ]
+    },
+    {
+      "id": "doctor",
+      "title": "Doctor (MBBS)",
+      "domain": "medicine-surgery",
+      "onet": "Family Medicine Physicians",
+      "keywords": [
+        "mbbs",
+        "physician",
+        "medicine",
+        "neet",
+        "general practitioner"
+      ],
+      "entry": {
+        "streams": [
+          "pcb"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "neet-ug",
+          "body": "nmc"
+        }
+      ]
+    },
+    {
+      "id": "entrepreneur",
+      "title": "Entrepreneur",
+      "domain": "business-management",
+      "onet": "Chief Executives",
+      "loose": "Chief Executives run established organisations. Starting a business is a related but different path, so treat this match as approximate.",
+      "keywords": [
+        "startup",
+        "founder",
+        "business owner",
+        "self employed"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "nurse",
+      "title": "Nurse",
+      "domain": "nursing-allied",
+      "onet": "Registered Nurses",
+      "keywords": [
+        "bsc nursing",
+        "gnm",
+        "anm",
+        "staff nurse",
+        "hospital"
+      ],
+      "entry": {
+        "streams": [
+          "pcb"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "body": "inc"
+        }
+      ]
+    },
+    {
+      "id": "physiotherapist",
+      "title": "Physiotherapist",
+      "domain": "nursing-allied",
+      "onet": "Physical Therapists",
+      "keywords": [
+        "bpt",
+        "physio",
+        "rehabilitation",
+        "sports injury"
+      ],
+      "entry": {
+        "streams": [
+          "pcb"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    },
+    {
+      "id": "dentist",
+      "title": "Dentist",
+      "domain": "dentistry-pharmacy",
+      "onet": "Dentists, General",
+      "keywords": [
+        "bds",
+        "dental",
+        "teeth",
+        "oral health"
+      ],
+      "entry": {
+        "streams": [
+          "pcb"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "neet-ug",
+          "body": "dci"
+        }
+      ]
+    },
+    {
+      "id": "pharmacist",
+      "title": "Pharmacist",
+      "domain": "dentistry-pharmacy",
+      "onet": "Pharmacists",
+      "keywords": [
+        "b pharm",
+        "d pharm",
+        "medicines",
+        "chemist",
+        "drug"
+      ],
+      "entry": {
+        "streams": [
+          "pcb",
+          "pcm",
+          "diploma"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "gpat",
+          "body": "pci"
+        }
+      ]
+    },
+    {
+      "id": "biotechnologist",
+      "title": "Biotechnologist",
+      "domain": "biotech-life",
+      "onet": "Biochemists and Biophysicists",
+      "keywords": [
+        "biotech",
+        "genetics",
+        "lab research",
+        "microbiology",
+        "life sciences"
+      ],
+      "entry": {
+        "streams": [
+          "pcb",
+          "pcm",
+          "grad-sci"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": []
+    },
+    {
+      "id": "veterinarian",
+      "title": "Veterinarian",
+      "domain": "veterinary-animal",
+      "onet": "Veterinarians",
+      "keywords": [
+        "bvsc",
+        "vet",
+        "animal doctor",
+        "livestock"
+      ],
+      "entry": {
+        "streams": [
+          "pcb"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "neet-ug",
+          "body": "vci"
+        }
+      ]
+    },
+    {
+      "id": "agricultural-scientist",
+      "title": "Agricultural Scientist",
+      "domain": "agriculture-food",
+      "onet": "Soil and Plant Scientists",
+      "keywords": [
+        "agriculture",
+        "bsc agri",
+        "crops",
+        "agronomy",
+        "icar"
+      ],
+      "entry": {
+        "streams": [
+          "pcb",
+          "pcm",
+          "grad-sci"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "body": "icar"
+        }
+      ]
+    },
+    {
+      "id": "food-technologist",
+      "title": "Food Technologist",
+      "domain": "agriculture-food",
+      "onet": "Food Scientists and Technologists",
+      "keywords": [
+        "food processing",
+        "food safety",
+        "nutrition",
+        "fssai"
+      ],
+      "entry": {
+        "streams": [
+          "pcb",
+          "pcm",
+          "grad-sci",
+          "diploma"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    },
+    {
+      "id": "environmental-scientist",
+      "title": "Environmental Scientist",
+      "domain": "environment-earth",
+      "onet": "Environmental Scientists and Specialists, Including Health",
+      "keywords": [
+        "environment",
+        "climate",
+        "pollution",
+        "sustainability",
+        "ecology"
+      ],
+      "entry": {
+        "streams": [
+          "pcb",
+          "pcm",
+          "grad-sci"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": []
+    },
+    {
+      "id": "physicist",
+      "title": "Physicist (research scientist)",
+      "domain": "physical-sciences",
+      "onet": "Physicists",
+      "keywords": [
+        "physics",
+        "research",
+        "csir",
+        "scientist",
+        "msc physics"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "grad-sci"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "csir-ugc-net"
+        }
+      ]
+    },
+    {
+      "id": "statistician",
+      "title": "Statistician",
+      "domain": "maths-stats",
+      "onet": "Statisticians",
+      "keywords": [
+        "statistics",
+        "bstat",
+        "survey",
+        "data",
+        "isi"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "commerce",
+          "grad-sci",
+          "grad-com",
+          "grad-eng"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "isi-admission",
+          "body": "isi"
+        }
+      ]
+    },
+    {
+      "id": "actuary",
+      "title": "Actuary",
+      "domain": "maths-stats",
+      "onet": "Actuaries",
+      "keywords": [
+        "insurance maths",
+        "risk",
+        "actuarial",
+        "iai"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "commerce",
+          "grad-sci",
+          "grad-com"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "acet",
+          "body": "iai"
+        }
+      ]
+    },
+    {
+      "id": "chartered-accountant",
+      "title": "Chartered Accountant",
+      "domain": "accounting-audit",
+      "onet": "Accountants and Auditors",
+      "keywords": [
+        "ca",
+        "audit",
+        "taxation",
+        "accounts",
+        "icai"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "ca-foundation",
+          "body": "icai"
+        }
+      ]
+    },
+    {
+      "id": "company-secretary",
+      "title": "Company Secretary",
+      "domain": "accounting-audit",
+      "onet": "Compliance Officers",
+      "loose": "O*NET has no Company Secretary occupation. Compliance Officers is the nearest, so treat this match as approximate.",
+      "keywords": [
+        "cs",
+        "corporate law",
+        "compliance",
+        "icsi",
+        "governance"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "cseet",
+          "body": "icsi"
+        }
+      ]
+    },
+    {
+      "id": "financial-planner",
+      "title": "Financial Planner",
+      "domain": "banking-finance",
+      "onet": "Personal Financial Advisors",
+      "keywords": [
+        "investment adviser",
+        "wealth",
+        "mutual funds",
+        "financial advisor",
+        "cfp"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "body": "sebi"
+        },
+        {
+          "body": "nism"
+        }
+      ]
+    },
+    {
+      "id": "bank-officer",
+      "title": "Bank Officer",
+      "domain": "banking-finance",
+      "onet": "Loan Officers",
+      "loose": "Loan Officers covers one part of a bank officer's work. Treat this match as approximate.",
+      "keywords": [
+        "po",
+        "banking",
+        "ibps",
+        "sbi",
+        "clerk"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "ibps-po",
+          "body": "ibps"
+        }
+      ]
+    },
+    {
+      "id": "management-consultant",
+      "title": "Management Consultant",
+      "domain": "business-management",
+      "onet": "Management Analysts",
+      "keywords": [
+        "mba",
+        "consulting",
+        "strategy",
+        "iim",
+        "business analyst"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "cat"
+        }
+      ]
+    },
+    {
+      "id": "hr-manager",
+      "title": "HR Manager",
+      "domain": "business-management",
+      "onet": "Human Resources Specialists",
+      "keywords": [
+        "human resources",
+        "hr",
+        "recruitment",
+        "talent",
+        "mba hr"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "cat"
+        }
+      ]
+    },
+    {
+      "id": "marketing-manager",
+      "title": "Marketing Manager",
+      "domain": "marketing-sales",
+      "onet": "Marketing Managers",
+      "keywords": [
+        "marketing",
+        "brand",
+        "digital marketing",
+        "advertising",
+        "mba marketing"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "cat"
+        }
+      ]
+    },
+    {
+      "id": "event-manager",
+      "title": "Event Manager",
+      "domain": "hospitality-tourism",
+      "onet": "Meeting, Convention, and Event Planners",
+      "keywords": [
+        "events",
+        "weddings",
+        "conference",
+        "exhibitions",
+        "planner"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "lawyer",
+      "title": "Lawyer",
+      "domain": "law-legal",
+      "onet": "Lawyers",
+      "keywords": [
+        "advocate",
+        "llb",
+        "clat",
+        "litigation",
+        "corporate law"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "clat",
+          "body": "bci"
+        }
+      ]
+    },
+    {
+      "id": "judge",
+      "title": "Judge",
+      "domain": "law-legal",
+      "onet": "Judges, Magistrate Judges, and Magistrates",
+      "keywords": [
+        "judiciary",
+        "magistrate",
+        "civil judge",
+        "judicial services"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "state-judicial"
+        }
+      ]
+    },
+    {
+      "id": "civil-servant",
+      "title": "Civil Servant (IAS and allied services)",
+      "domain": "civil-services-policy",
+      "onet": "Administrative Services Managers",
+      "loose": "O*NET has no equivalent of the Indian civil services. Administrative Services Managers is the nearest, so treat this match as approximate.",
+      "keywords": [
+        "ias",
+        "ips",
+        "ifs",
+        "upsc",
+        "government",
+        "collector"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "upsc-cse",
+          "body": "upsc"
+        }
+      ]
+    },
+    {
+      "id": "policy-analyst",
+      "title": "Policy Analyst",
+      "domain": "civil-services-policy",
+      "onet": "Political Scientists",
+      "keywords": [
+        "public policy",
+        "think tank",
+        "governance",
+        "research",
+        "political science"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": []
+    },
+    {
+      "id": "police-officer",
+      "title": "Police Officer",
+      "domain": "defence-police",
+      "onet": "Police and Sheriff's Patrol Officers",
+      "keywords": [
+        "ips",
+        "sub inspector",
+        "constable",
+        "law enforcement",
+        "police"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "upsc-cse",
+          "body": "upsc"
+        }
+      ]
+    },
+    {
+      "id": "criminal-investigator",
+      "title": "Criminal Investigator",
+      "domain": "defence-police",
+      "onet": "Detectives and Criminal Investigators",
+      "keywords": [
+        "detective",
+        "cbi",
+        "crime",
+        "forensic",
+        "investigation"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "school-teacher",
+      "title": "School Teacher",
+      "domain": "teaching-education",
+      "onet": "Secondary School Teachers, Except Special and Career/Technical Education",
+      "keywords": [
+        "teacher",
+        "bed",
+        "tgt",
+        "pgt",
+        "school"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "ctet",
+          "body": "ncte"
+        }
+      ]
+    },
+    {
+      "id": "special-educator",
+      "title": "Special Educator",
+      "domain": "teaching-education",
+      "onet": "Special Education Teachers, Secondary School",
+      "keywords": [
+        "special needs",
+        "inclusive education",
+        "disability",
+        "bed special"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "body": "rci"
+        }
+      ]
+    },
+    {
+      "id": "clinical-psychologist",
+      "title": "Clinical Psychologist",
+      "domain": "psychology-counselling",
+      "onet": "Clinical and Counseling Psychologists",
+      "keywords": [
+        "psychology",
+        "mental health",
+        "therapist",
+        "mphil",
+        "rci"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "body": "rci"
+        }
+      ]
+    },
+    {
+      "id": "career-counsellor",
+      "title": "Career Counsellor",
+      "domain": "psychology-counselling",
+      "onet": "Educational, Guidance, and Career Counselors and Advisors",
+      "keywords": [
+        "guidance",
+        "student counsellor",
+        "school counsellor",
+        "advisor"
+      ],
+      "entry": {
+        "streams": [
+          "grad-arts",
+          "grad-any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    },
+    {
+      "id": "social-worker",
+      "title": "Social Worker",
+      "domain": "social-work",
+      "onet": "Child, Family, and School Social Workers",
+      "keywords": [
+        "msw",
+        "ngo",
+        "community",
+        "welfare",
+        "development sector"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    },
+    {
+      "id": "journalist",
+      "title": "Journalist",
+      "domain": "journalism-publishing",
+      "onet": "News Analysts, Reporters, and Journalists",
+      "keywords": [
+        "reporter",
+        "news",
+        "media",
+        "mass communication",
+        "anchor"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "iimc-entrance",
+          "body": "iimc"
+        }
+      ]
+    },
+    {
+      "id": "content-writer",
+      "title": "Content Writer",
+      "domain": "journalism-publishing",
+      "onet": "Writers and Authors",
+      "keywords": [
+        "writer",
+        "author",
+        "copywriter",
+        "blogger",
+        "editor"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "film-director",
+      "title": "Film Director / Producer",
+      "domain": "film-music-arts",
+      "onet": "Producers and Directors",
+      "keywords": [
+        "cinema",
+        "filmmaker",
+        "ott",
+        "direction",
+        "television"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "ftii-entrance",
+          "body": "ftii"
+        }
+      ]
+    },
+    {
+      "id": "musician",
+      "title": "Musician",
+      "domain": "film-music-arts",
+      "onet": "Musicians and Singers",
+      "keywords": [
+        "singer",
+        "music",
+        "composer",
+        "instrumentalist",
+        "classical"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": []
+    },
+    {
+      "id": "graphic-designer",
+      "title": "Graphic Designer",
+      "domain": "design",
+      "onet": "Graphic Designers",
+      "keywords": [
+        "bdes",
+        "visual design",
+        "branding",
+        "logo",
+        "advertising design"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "nid-dat"
+        },
+        {
+          "exam": "uceed"
+        }
+      ]
+    },
+    {
+      "id": "fashion-designer",
+      "title": "Fashion Designer",
+      "domain": "design",
+      "onet": "Fashion Designers",
+      "keywords": [
+        "nift",
+        "garments",
+        "textile",
+        "apparel",
+        "boutique"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "nift-entrance"
+        }
+      ]
+    },
+    {
+      "id": "industrial-designer",
+      "title": "Industrial / Product Designer",
+      "domain": "design",
+      "onet": "Commercial and Industrial Designers",
+      "keywords": [
+        "product design",
+        "industrial design",
+        "bdes",
+        "uceed",
+        "ergonomics"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "uceed"
+        },
+        {
+          "exam": "nid-dat"
+        }
+      ]
+    },
+    {
+      "id": "architect",
+      "title": "Architect",
+      "domain": "architecture-planning",
+      "onet": "Architects, Except Landscape and Naval",
+      "keywords": [
+        "barch",
+        "nata",
+        "building design",
+        "coa",
+        "architecture"
+      ],
+      "entry": {
+        "streams": [
+          "pcm"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "exam": "nata",
+          "body": "coa"
+        }
+      ]
+    },
+    {
+      "id": "urban-planner",
+      "title": "Urban Planner",
+      "domain": "architecture-planning",
+      "onet": "Urban and Regional Planners",
+      "keywords": [
+        "town planning",
+        "city planning",
+        "bplan",
+        "smart cities",
+        "mplan"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "grad-eng",
+          "grad-design"
+        ],
+        "studyYears": "5+"
+      },
+      "routes": [
+        {
+          "body": "itpi"
+        }
+      ]
+    },
+    {
+      "id": "chef",
+      "title": "Chef",
+      "domain": "hospitality-tourism",
+      "onet": "Chefs and Head Cooks",
+      "keywords": [
+        "culinary",
+        "cook",
+        "hotel kitchen",
+        "bakery",
+        "catering"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "nchm-jee",
+          "body": "nchmct"
+        }
+      ]
+    },
+    {
+      "id": "hotel-manager",
+      "title": "Hotel Manager",
+      "domain": "hospitality-tourism",
+      "onet": "Lodging Managers",
+      "keywords": [
+        "hotel management",
+        "hospitality",
+        "front office",
+        "resort",
+        "bsc hha"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "nchm-jee",
+          "body": "nchmct"
+        }
+      ]
+    },
+    {
+      "id": "sports-coach",
+      "title": "Sports Coach",
+      "domain": "sports-fitness",
+      "onet": "Coaches and Scouts",
+      "keywords": [
+        "coaching",
+        "physical education",
+        "trainer",
+        "athletics",
+        "nis"
+      ],
+      "entry": {
+        "streams": [
+          "any"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "body": "sai"
+        }
+      ]
+    },
+    {
+      "id": "commercial-pilot",
+      "title": "Commercial Pilot",
+      "domain": "transport-logistics",
+      "onet": "Airline Pilots, Copilots, and Flight Engineers",
+      "keywords": [
+        "pilot",
+        "aviation",
+        "cpl",
+        "airline",
+        "flying"
+      ],
+      "entry": {
+        "streams": [
+          "pcm"
+        ],
+        "studyYears": "≤3"
+      },
+      "routes": [
+        {
+          "exam": "dgca-cpl",
+          "body": "dgca"
+        }
+      ]
+    },
+    {
+      "id": "supply-chain-manager",
+      "title": "Supply Chain Manager",
+      "domain": "transport-logistics",
+      "onet": "Logisticians",
+      "keywords": [
+        "logistics",
+        "procurement",
+        "warehouse",
+        "operations",
+        "supply chain"
+      ],
+      "entry": {
+        "streams": [
+          "grad-any"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": []
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 import { DIMENSIONS } from '../data/dimensions.js';
+import { STREAM_LABELS } from '../data/streams.js';
+import { STUDY_LABELS } from './feasibility.js';
 
 // Nova's demo brain. There is NO language model here: the chat matches the
 // user's words to a fixed list of answers written in advance. A few answers
@@ -8,17 +10,18 @@ import { DIMENSIONS } from '../data/dimensions.js';
 const normalise = (s) => ` ${String(s).toLowerCase().replace(/[^a-z0-9+# ]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
 const mentions = (text, phrase) => text.includes(` ${phrase.toLowerCase().replace(/[^a-z0-9+# ]+/g, ' ').replace(/\s+/g, ' ').trim()} `);
 
-/** "AI Engineer (LLM apps)" -> "ai engineer" */
+/** "Doctor (MBBS)" -> "doctor" */
 const shortTitle = (c) => c.title.replace(/\(.*?\)/g, '').trim();
 
 function careerAnswer(career) {
+  const streams = career.entry.streams.map((x) => STREAM_LABELS[x] ?? x).join(', ');
   const parts = [
-    `${career.title}: ${career.overview}`,
-    `Skills often used: ${career.skills.slice(0, 4).join('; ')}.`,
-    `A beginner project idea: ${career.projects[0]}.`,
+    `${career.title}: ${career.description}`,
+    `Skills O*NET rates as most important: ${career.skills.slice(0, 4).join('; ')}.`,
+    `Typical route in India (verify with the official body): usually starts from ${streams}, and takes ${STUDY_LABELS[career.entry.studyYears]} of study.`,
   ];
-  if (career.entryNote) parts.push(career.entryNote);
-  parts.push('Salary and demand: data not connected yet.');
+  if (career.onet.loose) parts.push(career.onet.loose);
+  parts.push('Salary and outlook: data not connected yet.');
   return parts.join(' ');
 }
 
@@ -84,7 +87,7 @@ export function answerFor(input, { demo, careers, result = null }) {
 
 function fromPrompt(p, { result }) {
   if (p.kind === 'dimensions') {
-    return { id: p.id, source: 'preset', text: `There are eight: ${DIMENSIONS.map((d) => `${d.label} (${d.blurb.replace(/\.$/, '').toLowerCase()})`).join('; ')}.` };
+    return { id: p.id, source: 'preset', text: `There are six, Holland's RIASEC types: ${DIMENSIONS.map((d) => `${d.label} (${d.blurb.replace(/\.$/, '').toLowerCase()})`).join('; ')}.` };
   }
   if (p.kind === 'results-top') return { id: p.id, ...topMatchAnswer(result) };
   return { id: p.id, source: 'preset', text: p.answer };

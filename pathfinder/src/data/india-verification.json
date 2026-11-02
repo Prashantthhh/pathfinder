@@ -1,0 +1,361 @@
+{
+  "checkedAt": "2026-11-02",
+  "results": {
+    "exams:jee-main": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://jeemain.nta.nic.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:neet-ug": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://neet.nta.nic.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:jee-advanced": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://jeeadv.ac.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:csir-ugc-net": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://csirnet.nta.nic.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:ctet": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://ctet.nic.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:gpat": {
+      "loaded": false,
+      "needleFound": false,
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-02"
+    },
+    "exams:ca-foundation": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://boslive.icai.org/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:clat": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://consortiumofnlus.ac.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:acet": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.actuariesindia.org/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:cseet": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.icsi.edu/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:cat": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://iimcat.ac.in/per/g06/pub/32842/ASM/WebPortal/1/index.html?32842@@1@@1",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:upsc-cse": {
+      "loaded": true,
+      "needleFound": false,
+      "status": 200,
+      "finalUrl": "https://www.upsc.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:ibps-po": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.ibps.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:neet-pg": {
+      "loaded": false,
+      "needleFound": false,
+      "status": 403,
+      "finalUrl": "https://natboard.edu.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:nid-dat": {
+      "loaded": true,
+      "needleFound": false,
+      "status": 200,
+      "finalUrl": "https://admissions.nid.edu/NIDA2027/Default.aspx",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:uceed": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.uceed.iitb.ac.in/2027/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:iimc-entrance": {
+      "loaded": true,
+      "needleFound": false,
+      "status": 200,
+      "finalUrl": "https://iimc.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:nata": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.nata.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:dgca-cpl": {
+      "loaded": true,
+      "needleFound": false,
+      "status": 200,
+      "finalUrl": "https://www.dgca.gov.in/digigov-portal/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:nchm-jee": {
+      "loaded": false,
+      "needleFound": false,
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-02"
+    },
+    "exams:nift-entrance": {
+      "loaded": true,
+      "needleFound": false,
+      "status": 200,
+      "finalUrl": "https://www.nift.ac.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:state-judicial": {
+      "loaded": false,
+      "needleFound": false,
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-02"
+    },
+    "exams:ftii-entrance": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://ftii.ac.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:aitt": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://dgt.gov.in/hi",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:aicte": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.aicte.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:nmc": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://nmc.org.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:dgt": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://dgt.gov.in/hi",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:inc": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.indiannursingcouncil.org/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:dci": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://dciindia.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:pci": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.pci.nic.in/"
+    },
+    "bodies:vci": {
+      "loaded": false,
+      "needleFound": false,
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:bci": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.barcouncilofindia.org/home",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:rci": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://rehabcouncil.nic.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:icai": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.icai.org/",
+      "checkedAt": "2026-11-02"
+    },
+    "exams:isi-admission": {
+      "loaded": false,
+      "needleFound": false,
+      "status": null,
+      "finalUrl": null,
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:upsc": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.upsc.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:iai": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.actuariesindia.org/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:icsi": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.icsi.edu/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:ibps": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.ibps.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:dgca": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.dgca.gov.in/digigov-portal/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:ncte": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://web.ncte.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:coa": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://coa.org.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:icar": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://icar.org.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:sebi": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.sebi.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:isi": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.isical.ac.in/index",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:iimc": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://iimc.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:ftii": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://ftii.ac.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:nchmct": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://nchm.gov.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:itpi": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.itpi.org.in/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:sai": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://sportsauthorityofindia.nic.in/sai_new/",
+      "checkedAt": "2026-11-02"
+    },
+    "bodies:nism": {
+      "loaded": true,
+      "needleFound": true,
+      "status": 200,
+      "finalUrl": "https://www.nism.ac.in/",
+      "checkedAt": "2026-11-02"
+    }
+  }
+}

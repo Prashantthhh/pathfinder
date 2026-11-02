@@ -68,9 +68,10 @@
   border-radius: 2px;
   background: transparent;
 }
-.trail-progress__section--0 { --c: var(--blaze-build); }
-.trail-progress__section--1 { --c: var(--blaze-data); }
-.trail-progress__section--2 { --c: var(--blaze-design); }
+.trail-progress__section--0 { --c: var(--e-lt); }
+.trail-progress__section--1 { --c: var(--i-lt); }
+.trail-progress__section--2 { --c: var(--s-lt); }
+.trail-progress__section--3 { --c: var(--a-lt); }
 .trail-progress__cell--done { background: var(--c); border-color: var(--ink); }
 .trail-progress__cell--current { background: var(--paper-hi); border-color: var(--ink); box-shadow: 0 0 0 2px var(--c); transform: scaleY(1.35); }
 .trail-progress__cell--skipped { border-style: dashed; }
@@ -141,3 +142,6 @@
 .gate .nova { margin: 0 auto var(--s-4); }
 .gate__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-4); margin: var(--s-5) 0; }
 .gate__again { margin-top: var(--s-5); }
+
+.trail-progress__section { overflow: hidden; }
+.trail-progress__name { overflow: hidden; text-overflow: ellipsis; }

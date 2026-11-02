@@ -1,0 +1,84 @@
+{
+  "source": "O*NET 31.0 Database",
+  "release": "August 2026 Release",
+  "url": "https://www.onetcenter.org/database.html",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "interests": {
+    "dateFrom": "02/2026",
+    "dateTo": "02/2026",
+    "sources": [
+      "Machine Learning/Expert"
+    ]
+  },
+  "workContext": {
+    "dateFrom": "07/2016",
+    "dateTo": "08/2026",
+    "sources": [
+      "Analyst - Transition",
+      "Incumbent",
+      "Occupational Expert"
+    ]
+  },
+  "tasks": {
+    "dateFrom": "07/2016",
+    "dateTo": "08/2026",
+    "sources": [
+      "Analyst",
+      "Analyst - Transition",
+      "Incumbent",
+      "Occupational Expert"
+    ]
+  },
+  "skills": {
+    "dateFrom": "07/2016",
+    "dateTo": "08/2026",
+    "sources": [
+      "Analyst"
+    ]
+  },
+  "streams": {
+    "pcm": "Science (PCM)",
+    "pcb": "Science (PCB)",
+    "commerce": "Commerce",
+    "arts": "Arts / Humanities",
+    "diploma": "Diploma / ITI",
+    "grad-eng": "Graduate in engineering / technology",
+    "grad-sci": "Graduate in science",
+    "grad-com": "Graduate in commerce / management",
+    "grad-arts": "Graduate in arts / humanities",
+    "grad-law": "Graduate in law",
+    "grad-health": "Graduate in medicine / health",
+    "grad-design": "Graduate in design / architecture",
+    "grad-any": "Any graduate degree",
+    "any": "Any stream"
+  },
+  "settingsMethod": "Six work settings derived by PATHFINDER from O*NET Work Context items (scale CX 1-5, rescaled 0-1), then rescaled across the careers in this product so 0 means the least and 1 the most among them. They are not O*NET scores. Items are listed in src/data/settings.js.",
+  "settingRanges": {
+    "people": {
+      "min": 0.452,
+      "max": 0.967
+    },
+    "team": {
+      "min": 0.455,
+      "max": 0.938
+    },
+    "autonomy": {
+      "min": 0.439,
+      "max": 0.988
+    },
+    "pace": {
+      "min": 0.392,
+      "max": 0.83
+    },
+    "hands": {
+      "min": 0.098,
+      "max": 0.852
+    },
+    "routine": {
+      "min": 0.365,
+      "max": 0.938
+    }
+  },
+  "count": 60
+}

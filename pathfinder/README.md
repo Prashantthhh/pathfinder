@@ -12,6 +12,8 @@ npm run samples    # print top matches for the sample students
 npm run e2e        # build, then drive the real UI in a browser (see below)
 npm run onet:fetch    # download O*NET into .cache/onet (git-ignored)
 npm run onet:domains  # rebuild src/data/domains.json from the O*NET data
+npm run onet:careers  # rebuild src/data/careers.json from the O*NET data
+npm run links:check   # confirm exam / body names on official sites (add -- --write to save)
 ```
 
 ## End-to-end tests
@@ -30,13 +32,15 @@ Microsoft Edge that ships with Windows.
 
 ## Matching rules
 
-- Match score = cosine similarity between the student's 8-dimension profile and the career's.
-  It is not a prediction of success.
-- Bands: strong 80%+, worth exploring 65-79%, partial overlap 50-64%.
-- Nothing under 50% is shown as a match. Alternatives (careers from other areas) need 45%+,
-  and fewer are shown when fewer qualify.
-- Salary and demand are `null` ("data not connected yet"). External links are limited to the
-  verified allow-list in `src/data/links.js`.
+See `docs/data-model.md` for the full model. In short:
+
+- Interests use Holland's six RIASEC types. A match score is the cosine similarity of the student's and the
+  career's interest profiles (each with its own average removed), plus a smaller work-settings term. It is not a
+  prediction of success.
+- Bands: strong 80%+, worth exploring 65-79%, partial overlap 50-64%. Nothing under 50% is a match; alternatives need 45%+.
+- Stream and study answers only decide **Strong fits vs Explore further**. They never change a score or hide a career.
+- Salary and outlook are `null` ("data not connected yet"). O*NET is US data and is not used for India.
+- Indian exams and governing bodies are shown only if `npm run links:check` confirmed the name on the official site.
 
 ## Deploying (Vercel)
 

@@ -5,6 +5,8 @@ import Nova from '../components/nova/Nova.jsx';
 import ConfirmAction from '../components/common/ConfirmAction.jsx';
 import SignLink from '../components/common/SignLink.jsx';
 import { DIMENSIONS } from '../data/dimensions.js';
+import { SETTINGS } from '../data/settings.js';
+import { STREAM_LABELS } from '../data/streams.js';
 import { levelOf } from '../engine/dna.js';
 import { GOAL_MAX } from '../state/appState.js';
 import { useProfile } from '../state/ProfileContext.jsx';
@@ -19,9 +21,9 @@ export default function Profile() {
   const values = p.dna ?? p.profile.display;
   const hasAnswers = p.answered > 0;
   const savedCareers = p.saved.map((id) => careers.find((c) => c.id === id)).filter(Boolean);
-  const radarDescription = `Radar chart of eight dimensions. ${DIMENSIONS.map((d) => `${d.label}: ${levelOf(values[d.id])}`).join(', ')}.`;
+  const radarDescription = `Radar chart of six interest types. ${DIMENSIONS.map((d) => `${d.label}: ${levelOf(values[d.id])}`).join(', ')}.`;
 
-  const answeredList = quiz.questions
+  const answeredList = p.questions
     .filter((q) => p.answers[q.id]?.length)
     .map((q) => ({
       q,
@@ -35,8 +37,8 @@ export default function Profile() {
         <p className="eyebrow">Career DNA</p>
         <h1>Your Career DNA</h1>
         <p className="lede">
-          The shape of your interests, skills and work style across eight dimensions. This is the
-          profile your matches are compared against, and you can change it as you learn about yourself.
+          The shape of your interests across six types (Holland&rsquo;s RIASEC). This is the profile your
+          matches are compared against, and you can change it as you learn about yourself.
         </p>
       </header>
 
@@ -57,7 +59,7 @@ export default function Profile() {
         <section aria-labelledby="adjust-title" className="profile__edit">
           <h2 id="adjust-title">Adjust your profile</h2>
           <p className="fine">
-            Each slider shows how much a dimension stands out for you compared with your others. It is
+            Each slider shows how much an interest type stands out for you compared with your others. It is
             not a mark or a measure of skill. Your matches update as you move them.
           </p>
           <DnaSliders values={values} onChange={p.setDna} />
@@ -97,6 +99,25 @@ export default function Profile() {
         )}
         <p><Link to="/results">See full results and the reasons</Link></p>
       </section>
+
+      {(p.profile.context.stream || Object.keys(p.profile.settings).length > 0) && (
+        <section className="profile__section" aria-labelledby="where-title">
+          <h2 id="where-title">Where you are and how you like to work</h2>
+          <p className="fine">
+            These come from your quiz answers. Stream and study answers only decide how matches are grouped; work
+            settings add a smaller part of the score. Change them by reviewing your answers.
+          </p>
+          <ul className="profile__facts">
+            {p.profile.context.stream && <li><strong>Stream:</strong> {STREAM_LABELS[p.profile.context.stream] ?? p.profile.context.stream}</li>}
+            {p.profile.context.study && <li><strong>Open to 5+ years of study:</strong> {{ yes: 'yes', no: 'no', unsure: 'not sure' }[p.profile.context.study]}</li>}
+            {p.profile.context.earn && <li><strong>Need to earn soon:</strong> {{ yes: 'yes', no: 'no', unsure: 'not sure' }[p.profile.context.earn]}</li>}
+            {SETTINGS.filter((st) => typeof p.profile.settings[st.id] === 'number').map((st) => {
+              const v = p.profile.settings[st.id];
+              return <li key={st.id}><strong>{st.label}:</strong> {v < 0.34 ? st.low : v > 0.66 ? st.high : 'somewhere in between'}</li>;
+            })}
+          </ul>
+        </section>
+      )}
 
       <section className="profile__section" aria-labelledby="goal-title">
         <h2 id="goal-title">Your career goal</h2>

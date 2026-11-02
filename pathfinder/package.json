@@ -11,7 +11,9 @@
     "samples": "node scripts/samples.mjs",
     "e2e": "vite build && node scripts/e2e.mjs",
     "onet:fetch": "node scripts/fetch-onet.mjs",
-    "onet:domains": "node scripts/build-domains.mjs"
+    "onet:domains": "node scripts/build-domains.mjs",
+    "onet:careers": "node scripts/build-careers.mjs",
+    "links:check": "node scripts/check-links.mjs"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",

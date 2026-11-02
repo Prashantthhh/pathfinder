@@ -138,3 +138,7 @@ li.is-active .hexmap__dot-mark { transform: scale(1.55); }
 .dindex__btn.is-selected { background: var(--ink); color: var(--surface); }
 .dindex__dot { flex: none; width: 0.85rem; height: 0.85rem; border-radius: 50%; background: var(--t); box-shadow: 0 0 0 2px var(--night); }
 .dindex__btn.is-selected .dindex__dot { box-shadow: 0 0 0 2px var(--surface); }
+
+.readout__go { margin: var(--s-3) 0 0; }
+.readout__go a { color: var(--signal); font-weight: 700; }
+.readout__go a:hover { color: var(--signal-hi); }

@@ -1,7 +1,7 @@
 {
   "greeting": "Hi, I'm Nova. This chat is in demo mode: I only have answers that were written in advance, and I'm not a live AI. Pick a question below, or type one and I'll try to match it to something I have.",
-  "fallback": "I'm in demo mode, so I only have preset answers and I don't have one for that. I haven't looked it up or worked it out. Try one of the suggested questions, or mention a career by name (for example \"Data Analyst\").",
-  "suggested": ["match-score", "predict", "start", "results-top", "dimensions", "salary"],
+  "fallback": "I'm in demo mode, so I only have preset answers and I don't have one for that. I haven't looked it up or worked it out. Try one of the suggested questions, or mention a career by name (for example \"Chartered Accountant\").",
+  "suggested": ["match-score", "predict", "start", "results-top", "onet", "salary"],
   "prompts": [
     {
       "id": "who",
@@ -12,65 +12,71 @@
     {
       "id": "match-score",
       "question": "What does a match score mean?",
-      "keywords": ["match score", "score", "percent", "percentage", "cosine", "how is it calculated", "how do you calculate", "what does 8"],
-      "answer": "Your quiz answers become a profile across eight dimensions, and every career has its own profile on the same eight. The match score is how closely the shape of the two lines up, using cosine similarity. 100% would mean an identical shape. It says nothing about how well you would do in the career."
+      "keywords": ["match score", "score", "percent", "percentage", "cosine", "how is it calculated", "how do you calculate"],
+      "answer": "Your answers become an interest profile across six types (Holland's RIASEC), and every career has its own profile from O*NET. The match score is how closely the shape of the two lines up, using cosine similarity. A smaller part comes from how the day-to-day work feels compared with what you said you like. It says nothing about how well you would do in the career."
     },
     {
       "id": "predict",
       "question": "Does a high score mean I would succeed?",
       "keywords": ["succeed", "success", "predict", "guarantee", "good at", "will i", "chance", "sure thing", "best career"],
-      "answer": "No. A match score compares your answers with a hand-written career profile. It does not measure ability, effort or how the job market treats you. Use it to decide what to read about and try, not to rule careers in or out."
+      "answer": "No. A match score compares your interests with a career's interest profile. It does not measure ability, effort or how the job market treats you. Use it to decide what to read about and try, not to rule careers in or out."
     },
     {
       "id": "dna",
       "question": "What is Career DNA?",
       "keywords": ["dna", "radar", "chart", "my profile", "profile shape", "edit profile"],
-      "answer": "It's your profile across the eight dimensions, drawn as a radar chart. It comes from your quiz answers, and you can edit it on the Career DNA page. Your matches update straight away. The sliders show how much each dimension stands out compared with your others, not how good you are at it."
+      "answer": "It's your interest profile across the six types, drawn as a radar chart. It comes from your quiz answers, and you can edit it on the Career DNA page. Your matches update straight away. The sliders show how much each type stands out compared with your others, not how good you are at it."
     },
     {
-      "id": "dimensions",
-      "question": "What are the eight dimensions?",
+      "id": "types",
+      "question": "What are the six interest types?",
       "kind": "dimensions",
-      "keywords": ["dimension", "dimensions", "eight", "axes", "axis", "build data ai"],
+      "keywords": ["six types", "riasec", "holland", "interest types", "dimensions", "realistic investigative"],
       "answer": ""
     },
     {
       "id": "start",
       "question": "I'm not sure where to start",
       "keywords": ["start", "begin", "lost", "confused", "unsure", "not sure", "where do i", "no idea", "overwhelmed"],
-      "answer": "A good first step is the quiz: it asks about what you enjoy, what you can already do and how you like to work, and then shows careers with the reasons. You don't have to decide anything. Treat the results as a reading list. You can also browse Explore Careers or try Surprise Me."
+      "answer": "A good first step is the quiz: it asks about what you enjoy and how you like to work, then shows careers with the reasons. You don't have to decide anything. Treat the results as a reading list. You can also browse Explore Careers or try Surprise Me."
+    },
+    {
+      "id": "split",
+      "question": "What do Strong fits and Explore further mean?",
+      "keywords": ["strong fits", "explore further", "strong fit", "why is it under explore"],
+      "answer": "Strong fits are careers that score 80% or more and whose typical route also suits the stream and study answers you gave. Explore further holds everything else that is still a match, each with the reason, such as a different usual starting stream or a longer route. Nothing is hidden, and your answers about stream and study never change the match score."
+    },
+    {
+      "id": "streams",
+      "question": "Which stream do I need for a career?",
+      "strong": true,
+      "keywords": ["stream", "pcm", "pcb", "eligibility", "eligible", "which stream", "after 12th", "after 10th"],
+      "answer": "Each career page shows the stream its route typically starts from, labelled \"typical route, verify with the official body\". It is our general reading, not an eligibility rule. I don't give percentages, age limits or fees. For the rules, use the official body named on the career page, or check with the institute."
+    },
+    {
+      "id": "exams",
+      "question": "Which entrance exams do you list?",
+      "keywords": ["exam", "exams", "entrance", "neet", "jee", "clat", "cat", "upsc", "licence", "license", "governing body"],
+      "answer": "Career pages name the entrance exam and the governing or licensing body for India, with a link, only where that name was confirmed on the official site. Where it wasn't, the page says \"Check with the official body\". I don't list eligibility, fees or exam patterns."
     },
     {
       "id": "maths",
       "question": "Do I need to be good at maths?",
       "keywords": ["math", "maths", "mathematics", "statistics", "stats", "calculus"],
-      "answer": "It varies by role. Data science and machine learning lean on statistics and linear algebra more. Many others, such as frontend, QA, design and product roles, lean on it less. That is a general picture, not a rule, and maths is learnable."
+      "answer": "It varies by career. Some, such as statistics, engineering or data science, lean on it heavily; many others lean on it much less. That is a general picture, not a rule, and maths is learnable."
     },
     {
       "id": "salary",
-      "strong": true,
       "question": "What do these careers pay?",
-      "keywords": ["salary", "pay", "paid", "earn", "money", "ctc", "package", "lpa", "income", "demand", "openings", "job market"],
-      "answer": "I don't have that data. Salary and demand show \"data not connected yet\" on every career page because I won't make up numbers. When they are connected, they will come with a source and an update date."
-    },
-    {
-      "id": "cyber-law",
       "strong": true,
-      "question": "Do I need a law degree for cyber law?",
-      "keywords": ["llb", "law degree", "lawyer", "legal", "cyber law", "advocate bar", "policy", "regulation"],
-      "answer": "Practising as a lawyer in cyber law usually needs an LLB after your B.Tech. Some policy research and compliance roles do not require a law degree, but legal practice does."
+      "keywords": ["salary", "pay", "paid", "earn", "money", "ctc", "package", "lpa", "income", "demand", "openings", "job market", "outlook"],
+      "answer": "I don't have that data. Salary and job outlook show \"data not connected yet\" on every career page because I won't make up numbers, and the occupation data we use comes from the US, so it can't tell you about India. When a cited Indian source is connected, it will show with its source and date."
     },
     {
-      "id": "da-vs-ds",
-      "question": "Data Analyst or Data Scientist?",
-      "keywords": ["analyst vs scientist", "difference between data", "data analyst or data scientist", "analyst and scientist", "analyst or scientist"],
-      "answer": "They overlap. Analysts mostly answer business questions with SQL, spreadsheets and dashboards. Scientists lean more on statistics and modelling, including machine learning. Open both career pages to see their skills side by side. A comparison tool is planned but not built yet."
-    },
-    {
-      "id": "learn",
-      "question": "Where can I learn more?",
-      "keywords": ["learn", "resources", "course", "courses", "roadmap", "tutorial", "study", "youtube", "link"],
-      "answer": "Career pages link to roadmap.sh roadmaps, only where a page has been checked to exist. I don't list courses because I won't invent links. Each page also has beginner project ideas you can start without a course."
+      "id": "onet",
+      "question": "Where does the career data come from?",
+      "keywords": ["onet", "o net", "source", "data come", "where is the data", "department of labor", "us data"],
+      "answer": "Interest profiles, tasks and skills come from the O*NET 31.0 Database (U.S. Department of Labor, August 2026), used under a CC BY 4.0 licence. O*NET says its interest scores were produced by machine learning with expert review, so treat them as estimates. They describe US occupations. Education routes, exams and licences are for India and written separately."
     },
     {
       "id": "results-top",
@@ -95,7 +101,7 @@
       "id": "surprise",
       "question": "What does Surprise Me do?",
       "keywords": ["surprise", "random", "something new", "unfamiliar"],
-      "answer": "On Explore Careers it suggests a career from an area you haven't looked at, picked because it shares dimensions with careers you matched or saved. With no profile yet, it picks something at random."
+      "answer": "On Explore Careers it suggests a career from a domain you haven't looked at, picked because its interest profile is close to careers you matched or saved. With no profile yet, it picks something at random."
     }
   ]
 }

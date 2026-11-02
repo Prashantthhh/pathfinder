@@ -1,27 +1,30 @@
 import { Link } from 'react-router-dom';
-import { AREA_BY_ID } from '../../data/areas.js';
-import { DIMENSIONS } from '../../data/dimensions.js';
-import { LEAN_THRESHOLD } from '../../engine/explore.js';
+import { DIMENSION_BY_ID } from '../../data/dimensions.js';
+import { domainLabel } from '../../data/domainsIndex.js';
+import { primaryType } from '../../engine/explore.js';
 import { MIN_MATCH_PERCENT } from '../../engine/tiers.js';
 import SaveButton from '../common/SaveButton.jsx';
 
+const firstSentence = (text) => {
+  const m = text.match(/^.*?[.!?](\s|$)/);
+  return m ? m[0].trim() : text;
+};
+
 /** One career in the Explore list: a log entry, not a card. */
 export default function CareerRow({ career, percent }) {
-  const leans = DIMENSIONS.filter((d) => career.vector[d.id] >= LEAN_THRESHOLD);
+  const main = DIMENSION_BY_ID[primaryType(career)];
   return (
     <li className="crow">
       <div className="crow__main">
-        <p className="crow__area">{AREA_BY_ID[career.area]?.label}</p>
+        <p className="crow__area">{domainLabel(career.domain)}</p>
         <h3 className="crow__title"><Link to={`/careers/${career.id}`}>{career.title}</Link></h3>
-        <p className="crow__overview">{career.overview}</p>
+        <p className="crow__overview">{firstSentence(career.description)}</p>
         <p className="crow__leans">
-          <span className="crow__leans-label">Leans on:</span>{' '}
-          {leans.map((d) => (
-            <span key={d.id} className="chip chip--small">
-              <span className="chip__blaze" style={{ background: d.color }} aria-hidden="true" />
-              {d.label}
-            </span>
-          ))}
+          <span className="crow__leans-label">Main interest:</span>{' '}
+          <span className="chip chip--small">
+            <span className="chip__blaze" style={{ background: main.color }} aria-hidden="true" />
+            {main.label}
+          </span>
         </p>
       </div>
       <div className="crow__side">

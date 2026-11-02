@@ -1,45 +1,69 @@
 // Hand-written sample students used by tests and `npm run samples`.
-// Answers are { questionId: [optionId, ...] }.
+// Answers are { questionId: [optionId, ...] }. Each picks interest answers a real
+// student of that kind plausibly would; they are not tuned to any career.
+
+const acts = (picks) => Object.fromEntries(picks.map((p, i) => [`q-act-${i + 1}`, p.map((t) => `a${i + 1}-${t}`)]));
 
 export const PERSONAS = [
   {
-    id: 'security-tinkerer',
-    name: 'Security-curious tinkerer',
+    id: 'science-pcb',
+    name: 'Science (PCB) student',
+    stream: 'Science (PCB), Class 12',
     answers: {
-      'i-saturday': ['ctf', 'homelab'], 'i-project': ['vuln'], 'i-headline': ['breach', 'outage'],
-      'i-notice': ['safe'], 'i-break': ['attack'], 'i-club': ['contest'],
-      's-done': ['ctf', 'linux'], 's-coding': ['projects'], 's-maths': ['ok'],
-      'w-day': ['puzzle'], 'w-mode': ['analytical'], 'w-team': ['small'], 'w-matters': ['impact', 'learn'],
+      'q-stream': ['pcb'],
+      ...acts([['I', 'S'], ['I', 'S'], ['S', 'I'], ['S', 'I'], ['I', 'S'], ['S', 'I'], ['S', 'R'], ['S', 'I']]),
+      'q-subjects': ['biology', 'chemistry', 'psychology'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['mix'], 'q-set-hands': ['mixed'],
+      'q-study': ['yes'], 'q-earn': ['no'],
     },
   },
   {
-    id: 'data-ai-curious',
-    name: 'Data and AI curious',
+    id: 'commerce',
+    name: 'Commerce student',
+    stream: 'Commerce, Class 12',
     answers: {
-      'i-saturday': ['dataset', 'model'], 'i-project': ['recsys'], 'i-headline': ['llm', 'stats'],
-      'i-notice': ['smart'], 'i-break': ['measure'], 'i-club': ['analysis'],
-      's-done': ['sql', 'ml'], 's-coding': ['basic'], 's-maths': ['love'],
-      'w-day': ['puzzle'], 'w-mode': ['analytical'], 'w-team': ['solo'], 'w-matters': ['insight', 'learn'],
+      'q-stream': ['commerce'],
+      ...acts([['E', 'C'], ['E', 'C'], ['E', 'C'], ['C', 'E'], ['E', 'C'], ['E', 'C'], ['E', 'C'], ['E', 'C']]),
+      'q-subjects': ['business', 'maths'],
+      'q-set-people': ['crowd'], 'q-set-pace': ['fast'], 'q-set-structure': ['mix'], 'q-set-hands': ['desk'],
+      'q-study': ['unsure'], 'q-earn': ['yes'],
     },
   },
   {
-    id: 'creative-people',
-    name: 'Creative people-person',
+    id: 'arts',
+    name: 'Arts / Humanities student',
+    stream: 'Arts, Class 12',
     answers: {
-      'i-saturday': ['sketch', 'organise'], 'i-project': ['redesign'], 'i-headline': ['launch'],
-      'i-notice': ['look'], 'i-break': ['ask'], 'i-club': ['poster'],
-      's-done': ['figma', 'lead'], 's-coding': ['new'], 's-maths': ['avoid'],
-      'w-day': ['people'], 'w-mode': ['creative'], 'w-team': ['lots'], 'w-matters': ['users', 'lead-out'],
+      'q-stream': ['arts'],
+      ...acts([['A', 'S'], ['A', 'S'], ['A', 'S'], ['A', 'S'], ['A', 'S'], ['A', 'S'], ['A', 'E'], ['A', 'S']]),
+      'q-subjects': ['languages', 'arts', 'humanities'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['free'], 'q-set-hands': ['desk'],
+      'q-study': ['yes'], 'q-earn': ['no'],
     },
   },
   {
-    id: 'game-builder',
-    name: 'Game builder',
+    id: 'cse-graduate',
+    name: 'CSE graduate',
+    stream: 'Graduate in engineering (CSE)',
     answers: {
-      'i-saturday': ['game', 'app'], 'i-project': ['platformer'], 'i-headline': ['gamedev'],
-      'i-notice': ['fun'], 'i-break': ['retry'], 'i-club': ['site'],
-      's-done': ['code', 'game'], 's-coding': ['strong'], 's-maths': ['ok'],
-      'w-day': ['deep'], 'w-mode': ['practical'], 'w-team': ['small'], 'w-matters': ['creative-out', 'learn'],
+      'q-stream': ['graduate'],
+      'q-field': ['eng'],
+      ...acts([['I', 'C'], ['I', 'C'], ['I', 'C'], ['I', 'C'], ['I', 'R'], ['I', 'C'], ['I', 'C'], ['I', 'C']]),
+      'q-subjects': ['maths', 'cs', 'physics'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['mix'], 'q-set-hands': ['desk'],
+      'q-study': ['no'], 'q-earn': ['yes'],
+    },
+  },
+  {
+    id: 'iti-hands-on',
+    name: 'ITI student (hands-on)',
+    stream: 'Diploma / ITI',
+    answers: {
+      'q-stream': ['diploma'],
+      ...acts([['R', 'C'], ['R'], ['R', 'C'], ['R'], ['R', 'I'], ['R', 'C'], ['R'], ['R', 'C']]),
+      'q-subjects': ['physics', 'pe'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['clear'], 'q-set-hands': ['hands'],
+      'q-study': ['no'], 'q-earn': ['yes'],
     },
   },
 ];

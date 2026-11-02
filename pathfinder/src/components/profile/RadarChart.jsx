@@ -2,14 +2,17 @@ import { useId } from 'react';
 import { DIMENSIONS } from '../../data/dimensions.js';
 import { levelOf } from '../../engine/dna.js';
 
-const SIZE = 480;
-const C = SIZE / 2;
+// A wider-than-tall canvas leaves room for the longer interest-type labels ("Investigative", "Enterprising").
+const W = 640;
+const H = 480;
+const CX = W / 2;
+const CY = H / 2;
 const R = 140;
 const LABEL_R = 172;
 const RINGS = [0.25, 0.5, 0.75, 1];
 
 const angle = (i) => -Math.PI / 2 + (2 * Math.PI * i) / DIMENSIONS.length;
-const point = (i, r) => [C + r * Math.cos(angle(i)), C + r * Math.sin(angle(i))];
+const point = (i, r) => [CX + r * Math.cos(angle(i)), CY + r * Math.sin(angle(i))];
 const clamp01 = (v) => Math.min(1, Math.max(0, Number(v) || 0));
 const pts = (list) => list.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ');
 
@@ -27,7 +30,7 @@ export default function RadarChart({ values, title = 'Career DNA', description, 
   return (
     <figure className={`radar ${className}`}>
       <svg
-        viewBox={`0 0 ${SIZE} ${SIZE}`}
+        viewBox={`0 0 ${W} ${H}`}
         role="img"
         aria-labelledby={`${uid}-t ${uid}-d`}
         className="radar__svg"
@@ -44,7 +47,7 @@ export default function RadarChart({ values, title = 'Career DNA', description, 
         ))}
         {DIMENSIONS.map((d, i) => {
           const [x, y] = point(i, R);
-          return <line key={d.id} x1={C} y1={C} x2={x} y2={y} className="radar__axis" />;
+          return <line key={d.id} x1={CX} y1={CY} x2={x} y2={y} className="radar__axis" />;
         })}
 
         <polygon points={pts(shape)} className="radar__shape" />

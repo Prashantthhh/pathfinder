@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import CareerRow from '../components/explore/CareerRow.jsx';
 import Nova from '../components/nova/Nova.jsx';
-import { AREAS } from '../data/areas.js';
 import { DIMENSIONS } from '../data/dimensions.js';
+import { CAREER_COUNT_BY_DOMAIN, DOMAINS, DOMAIN_GROUPS } from '../data/domainsIndex.js';
 import { filterCareers, searchCareers, sortCareers, surprise } from '../engine/explore.js';
 import { MIN_MATCH_PERCENT } from '../engine/tiers.js';
 import { useProfile } from '../state/ProfileContext.jsx';
@@ -11,6 +11,7 @@ import useTitle from '../hooks/useTitle.js';
 
 const csv = (v) => (v ? v.split(',').filter(Boolean) : []);
 const toggle = (list, id) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
+const DOMAINS_WITH_CAREERS = DOMAINS.filter((d) => CAREER_COUNT_BY_DOMAIN[d.id] > 0);
 
 export default function Explore() {
   useTitle('Explore careers');
@@ -18,12 +19,12 @@ export default function Explore() {
   const { careers, result, percentById } = p;
   const hasProfile = !result.insufficient;
 
-  // All filter state lives in the URL, so links like /explore?area=security work
+  // All filter state lives in the URL, so links like /explore?domain=design work
   // and a filtered view can be shared or bookmarked.
   const [params, setParams] = useSearchParams();
   const q = params.get('q') ?? '';
-  const areas = csv(params.get('area'));
-  const dims = csv(params.get('dim'));
+  const domains = csv(params.get('domain'));
+  const types = csv(params.get('type'));
   const savedOnly = params.get('saved') === '1';
   const matchOnly = params.get('match') === '1' && hasProfile;
   const sort = params.get('sort') ?? (q ? 'relevance' : hasProfile ? 'match' : 'name');
@@ -41,18 +42,17 @@ export default function Explore() {
   const items = useMemo(() => {
     const found = searchCareers(careers, q);
     const filtered = filterCareers(found, {
-      areas: new Set(areas),
-      dims: new Set(dims),
+      domains: new Set(domains),
+      types: new Set(types),
       savedOnly,
       saved: new Set(p.saved),
       minPercent: matchOnly ? MIN_MATCH_PERCENT : undefined,
       percentById,
     });
     return sortCareers(filtered, sortValue, percentById);
-  }, [careers, q, params.get('area'), params.get('dim'), savedOnly, matchOnly, sortValue, p.saved, percentById]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [careers, q, params.get('domain'), params.get('type'), savedOnly, matchOnly, sortValue, p.saved, percentById]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const anyFilter = Boolean(q || areas.length || dims.length || savedOnly || matchOnly);
-  const areaCounts = useMemo(() => careers.reduce((a, c) => ({ ...a, [c.area]: (a[c.area] ?? 0) + 1 }), {}), [careers]);
+  const anyFilter = Boolean(q || domains.length || types.length || savedOnly || matchOnly);
 
   // Filters start open on wide screens and closed on phones.
   const filtersRef = useRef(null);
@@ -88,8 +88,8 @@ export default function Explore() {
           <p className="eyebrow">Destinations</p>
           <h1>Explore careers</h1>
           <p className="lede">
-            {careers.length} careers across {AREAS.length} areas. Search, filter, or let Nova pick something unexpected.
-            You don&rsquo;t need to take the quiz first.
+            {careers.length} careers across {DOMAINS_WITH_CAREERS.length} domains. Search, filter, or let Nova pick something
+            unexpected. You don&rsquo;t need to take the quiz first.
           </p>
         </div>
         <button type="button" className="sign sign--quiet sign--button" onClick={surpriseMe}>
@@ -128,7 +128,7 @@ export default function Explore() {
                 id="q"
                 type="search"
                 className="field"
-                placeholder="e.g. data, security, react"
+                placeholder="e.g. doctor, ca, design, iti"
                 value={q}
                 onChange={(e) => update({ q: e.target.value })}
                 autoComplete="off"
@@ -136,23 +136,34 @@ export default function Explore() {
             </div>
 
             <fieldset className="field-group">
-              <legend className="field-label">Area</legend>
-              {AREAS.map((a) => (
-                <label key={a.id} className="check">
-                  <input type="checkbox" checked={areas.includes(a.id)} onChange={() => update({ area: toggle(areas, a.id) })} />
-                  <span>{a.label} <span className="check__n">{areaCounts[a.id] ?? 0}</span></span>
-                </label>
-              ))}
+              <legend className="field-label">Domain</legend>
+              <div className="field-scroll" tabIndex={0} role="group" aria-label="Domains, scrollable">
+                {DOMAIN_GROUPS.map((g) => {
+                  const list = DOMAINS_WITH_CAREERS.filter((d) => d.group === g.id);
+                  if (!list.length) return null;
+                  return (
+                    <div key={g.id} className="field-sub">
+                      <p className="field-sub__h">{g.label}</p>
+                      {list.map((d) => (
+                        <label key={d.id} className="check">
+                          <input type="checkbox" checked={domains.includes(d.id)} onChange={() => update({ domain: toggle(domains, d.id) })} />
+                          <span>{d.label} <span className="check__n">{CAREER_COUNT_BY_DOMAIN[d.id]}</span></span>
+                        </label>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
             </fieldset>
 
             <fieldset className="field-group">
-              <legend className="field-label">Leans on</legend>
+              <legend className="field-label">Main interest</legend>
               {DIMENSIONS.map((d) => (
                 <label key={d.id} className="check">
-                  <input type="checkbox" checked={dims.includes(d.id)} onChange={() => update({ dim: toggle(dims, d.id) })} />
+                  <input type="checkbox" checked={types.includes(d.id)} onChange={() => update({ type: toggle(types, d.id) })} />
                   <span>
                     <span className="chip__blaze chip__blaze--inline" style={{ background: d.color }} aria-hidden="true" />
-                    {d.label}
+                    {d.label} <span className="check__n">{d.nickname}</span>
                   </span>
                 </label>
               ))}

@@ -71,7 +71,7 @@ function Gate({ kind, onContinue }) {
 export default function Quiz() {
   useTitle('Career quiz');
   const p = useProfile();
-  const { quiz, step, answers } = p;
+  const { quiz, step, answers, questions } = p;
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -81,11 +81,11 @@ export default function Quiz() {
     return p.started ? 'resume' : null;
   });
 
-  const question = quiz.questions[step];
+  const question = questions[Math.min(step, questions.length - 1)];
   const section = quiz.sections.find((s) => s.id === question.section);
   const selected = answers[question.id] ?? [];
-  const isLast = step === quiz.questions.length - 1;
-  const firstInSection = quiz.questions.find((q) => q.section === question.section).id === question.id;
+  const isLast = step >= questions.length - 1;
+  const firstInSection = questions.find((q) => q.section === question.section).id === question.id;
 
   // What Nova says: a reaction to the answer just given, else a reaction to
   // the answer already stored for this question, else a short intro.
@@ -154,7 +154,7 @@ export default function Quiz() {
       )}
 
       <div className="quiz__progress">
-        <ProgressTrail quiz={quiz} step={step} answers={answers} />
+        <ProgressTrail quiz={quiz} questions={questions} step={step} answers={answers} />
       </div>
 
       <aside className="quiz__nova" aria-label="Nova">
@@ -165,7 +165,7 @@ export default function Quiz() {
       <div className="quiz__question">
         <h2 className="quiz__step" tabIndex={-1} ref={headingRef}>
           <span className="quiz__section">{section.label}</span>
-          <span className="quiz__count"> · Question {step + 1} of {quiz.questions.length}</span>
+          <span className="quiz__count"> · Question {step + 1} of {questions.length}</span>
         </h2>
         <QuestionStep
           key={question.id}

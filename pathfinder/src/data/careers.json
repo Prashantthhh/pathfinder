@@ -1,395 +1,4398 @@
 [
   {
-    "id": "frontend-developer",
-    "title": "Frontend Developer",
-    "area": "software",
-    "vector": { "build": 0.8, "data": 0.1, "ai": 0.1, "design": 0.7, "security": 0.1, "systems": 0.1, "people": 0.3, "play": 0.4 },
-    "overview": "Builds the part of a web product that people see and touch: layouts, interactions, forms and animations running in the browser.",
-    "responsibilities": ["Turn designs into responsive, accessible interfaces", "Connect screens to backend APIs", "Keep pages fast and consistent across browsers and devices", "Work with designers and backend developers on how features behave"],
-    "skills": ["HTML, CSS, JavaScript", "A UI framework such as React", "Responsive layout and accessibility", "Git and browser dev tools"],
-    "subjects": ["Web technologies", "Human-computer interaction", "Data structures"],
-    "entryRoutes": ["Personal and college web projects", "Internships on web teams", "Open-source contributions to UI libraries"],
-    "projects": ["A portfolio site that works on a phone", "A to-do or notes app that saves to the browser", "Re-create a page of a site you like with your own code"],
-    "related": ["full-stack-developer", "ui-ux-designer", "mobile-app-developer"],
-    "roadmaps": ["frontend"],
-    "keywords": ["web", "react", "css", "javascript", "ui"],
+    "id": "software-developer",
+    "title": "Software Developer",
+    "domain": "software-it",
+    "keywords": [
+      "programmer",
+      "coder",
+      "software engineer",
+      "it",
+      "app developer"
+    ],
+    "onet": {
+      "code": "15-1252.00",
+      "title": "Software Developers"
+    },
+    "description": "Research, design, and develop computer and network software or specialized utility programs. Analyze user needs and develop software solutions, applying principles and techniques of computer science, engineering, and mathematical analysis. Update software or enhance existing software capabilities. May work with computer hardware engineers to integrate hardware and software systems, and develop specifications and performance requirements. May maintain databases within an application area, working individually or coordinating database development as part of a team.",
+    "riasec": {
+      "R": 3.61,
+      "I": 6.05,
+      "A": 2.37,
+      "S": 1.81,
+      "E": 1.87,
+      "C": 5.62
+    },
+    "settings": {
+      "people": 0.062,
+      "team": 0.687,
+      "autonomy": 0.67,
+      "pace": 0.306,
+      "hands": 0.068,
+      "routine": 0.56
+    },
+    "tasks": [
+      "Analyze user needs and software requirements to determine feasibility of design within time and cost constraints.",
+      "Develop or direct software system testing or validation procedures, programming, or documentation.",
+      "Confer with systems analysts, engineers, programmers and others to design systems and to obtain information on project limitations and capabilities, performance requirements and interfaces.",
+      "Modify existing software to correct errors, adapt it to new hardware, or upgrade interfaces and improve performance.",
+      "Prepare reports or correspondence concerning project specifications, activities, or status."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Active Learning",
+      "Active Listening",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng",
+        "grad-sci"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.484,
+      "team": 0.787,
+      "autonomy": 0.807,
+      "pace": 0.526,
+      "hands": 0.149,
+      "routine": 0.686
+    },
+    "related": [
+      "statistician",
+      "data-scientist",
+      "physicist"
+    ]
   },
   {
-    "id": "backend-developer",
-    "title": "Backend Developer",
-    "area": "software",
-    "vector": { "build": 0.8, "data": 0.4, "ai": 0.1, "design": 0.05, "security": 0.3, "systems": 0.6, "people": 0.15, "play": 0.1 },
-    "overview": "Builds the servers, APIs and databases that sit behind an application and make its features work reliably.",
-    "responsibilities": ["Design and implement APIs", "Model and query databases", "Handle authentication, validation and error cases", "Monitor and improve performance and reliability"],
-    "skills": ["A server-side language (Java, Python, Go, Node.js and others)", "SQL and database design", "REST or GraphQL APIs", "Testing and debugging"],
-    "subjects": ["Databases", "Operating systems", "Computer networks", "Data structures and algorithms"],
-    "entryRoutes": ["Projects with a real database and API", "Backend internships", "Contributing to open-source services"],
-    "projects": ["A REST API for a library or expense tracker", "A URL shortener with a database", "Add login and permissions to an existing API"],
-    "related": ["full-stack-developer", "data-engineer", "devops-engineer", "cloud-engineer"],
-    "roadmaps": ["backend"],
-    "keywords": ["api", "server", "database", "java", "python", "node"],
+    "id": "ux-ui-designer",
+    "title": "UX/UI Designer",
+    "domain": "software-it",
+    "keywords": [
+      "ux",
+      "ui",
+      "app design",
+      "web design",
+      "interface"
+    ],
+    "onet": {
+      "code": "15-1255.00",
+      "title": "Web and Digital Interface Designers"
+    },
+    "description": "Design digital user interfaces or websites. Develop and test layouts, interfaces, functionality, and navigation menus to ensure compatibility and usability across browsers or devices. May use web framework applications as well as client-side code and processes. May evaluate web design following web and accessibility standards, and may analyze web use metrics and optimize websites for marketability and search engine ranking. May design and test interfaces that facilitate the human-computer interaction and maximize the usability of digital devices, websites, and software with a focus on aesthetics and design. May create graphics used in websites and manage website content and links.",
+    "riasec": {
+      "R": 2.59,
+      "I": 4.88,
+      "A": 4.48,
+      "S": 2.2,
+      "E": 3.13,
+      "C": 4.4
+    },
+    "settings": {
+      "people": 0.497,
+      "team": 0.654,
+      "autonomy": 0.641,
+      "pace": 0.358,
+      "hands": 0.138,
+      "routine": 0.543
+    },
+    "tasks": [
+      "Identify problems uncovered by testing or customer feedback, and correct problems or refer problems to appropriate personnel for correction.",
+      "Design, build, or maintain Web sites, using authoring or scripting languages, content creation tools, management tools, and digital media.",
+      "Write supporting code for Web applications or Web sites.",
+      "Perform Web site tests according to planned schedules, or after any Web site or product revision.",
+      "Collaborate with web development professionals, such as front-end or back-end developers, to complete the full scope of Web development projects."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Listening",
+      "Active Learning",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "uceed"
+      },
+      {
+        "exam": "nid-dat"
+      }
+    ],
     "salary": null,
-    "demand": null
-  },
-  {
-    "id": "full-stack-developer",
-    "title": "Full-Stack Developer",
-    "area": "software",
-    "vector": { "build": 0.85, "data": 0.45, "ai": 0.1, "design": 0.3, "security": 0.25, "systems": 0.4, "people": 0.35, "play": 0.1 },
-    "overview": "Works across the whole web application, from the interface to the server and database, and can take a feature from idea to working product.",
-    "responsibilities": ["Build user-facing features and the APIs behind them", "Choose how data is stored and moved", "Deploy and maintain the application", "Make trade-offs between speed of delivery and quality"],
-    "skills": ["Frontend and backend fundamentals", "A database", "Deployment basics", "Git and testing"],
-    "subjects": ["Web technologies", "Databases", "Software engineering"],
-    "entryRoutes": ["Complete projects you can demo end to end", "Small-team or startup internships", "Hackathons"],
-    "projects": ["A small marketplace or booking app with login", "A chat app with a database", "A dashboard fed by your own API"],
-    "related": ["frontend-developer", "backend-developer", "mobile-app-developer", "product-manager"],
-    "roadmaps": ["full-stack"],
-    "keywords": ["web", "mern", "end to end", "startup"],
-    "salary": null,
-    "demand": null
-  },
-  {
-    "id": "mobile-app-developer",
-    "title": "Mobile App Developer",
-    "area": "software",
-    "vector": { "build": 0.85, "data": 0.05, "ai": 0.1, "design": 0.5, "security": 0.1, "systems": 0.35, "people": 0.2, "play": 0.4 },
-    "overview": "Creates apps for phones and tablets, working within device limits such as screen size, battery, connectivity and platform guidelines.",
-    "responsibilities": ["Build screens and navigation for Android and/or iOS", "Handle offline use, notifications and device features", "Publish and update apps through app stores", "Test across devices and OS versions"],
-    "skills": ["Kotlin or Swift, or a cross-platform framework", "UI patterns for small screens", "REST APIs and local storage", "Debugging on devices"],
-    "subjects": ["Object-oriented programming", "Operating systems", "Human-computer interaction"],
-    "entryRoutes": ["Publish a small app of your own", "Mobile-focused internships", "Cross-platform projects"],
-    "projects": ["A habit tracker that works offline", "A weather app using a public API", "A campus events app"],
-    "related": ["frontend-developer", "full-stack-developer", "game-developer", "ui-ux-designer"],
-    "roadmaps": ["android", "ios"],
-    "keywords": ["android", "ios", "kotlin", "swift", "flutter", "app"],
-    "salary": null,
-    "demand": null
-  },
-  {
-    "id": "data-analyst",
-    "title": "Data Analyst",
-    "area": "data",
-    "vector": { "build": 0.15, "data": 0.9, "ai": 0.2, "design": 0.3, "security": 0.05, "systems": 0.05, "people": 0.55, "play": 0.1 },
-    "overview": "Answers business questions with data: cleans it, analyses it, and explains the result clearly to people who make decisions.",
-    "responsibilities": ["Query and clean data", "Build reports and dashboards", "Explain findings to non-technical colleagues", "Check whether a number can be trusted"],
-    "skills": ["SQL", "Spreadsheets and a BI tool", "Basic statistics", "Python or R for analysis", "Data visualisation and storytelling"],
-    "subjects": ["Probability and statistics", "Databases", "Discrete mathematics"],
-    "entryRoutes": ["Analysis projects on public datasets", "Analytics internships", "College club or fest data work"],
-    "projects": ["Analyse a public dataset and write up what you found", "Build a dashboard for your own spending", "Clean a messy CSV and document each decision"],
-    "related": ["data-scientist", "data-engineer", "product-manager"],
-    "roadmaps": ["data-analyst"],
-    "keywords": ["sql", "excel", "dashboard", "statistics", "analytics"],
-    "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.708,
+      "team": 0.771,
+      "autonomy": 0.791,
+      "pace": 0.549,
+      "hands": 0.202,
+      "routine": 0.676
+    },
+    "related": [
+      "data-scientist",
+      "journalist",
+      "statistician"
+    ]
   },
   {
     "id": "data-scientist",
     "title": "Data Scientist",
-    "area": "data",
-    "vector": { "build": 0.3, "data": 0.9, "ai": 0.6, "design": 0.1, "security": 0.05, "systems": 0.1, "people": 0.3, "play": 0.1 },
-    "overview": "Uses statistics and machine learning to explore data, build predictive models and test whether they hold up.",
-    "responsibilities": ["Frame a question as a statistical or modelling problem", "Explore and prepare data", "Train and evaluate models", "Communicate uncertainty and limitations honestly"],
-    "skills": ["Python and its data libraries", "Statistics and probability", "Machine-learning fundamentals", "Experiment design and evaluation"],
-    "subjects": ["Linear algebra", "Probability and statistics", "Machine learning"],
-    "entryRoutes": ["Notebook projects with clear evaluation", "Research or analytics internships", "Competitions on public datasets"],
-    "projects": ["Predict something from a public dataset and compare against a simple baseline", "A/B test analysis on simulated data", "Reproduce the result of a published tutorial and extend it"],
-    "related": ["data-analyst", "ml-engineer", "ai-engineer", "data-engineer"],
-    "roadmaps": ["data-scientist"],
-    "keywords": ["statistics", "modelling", "python", "pandas", "research"],
+    "domain": "data-ai",
+    "keywords": [
+      "machine learning",
+      "ai",
+      "analytics",
+      "big data"
+    ],
+    "onet": {
+      "code": "15-2051.00",
+      "title": "Data Scientists"
+    },
+    "description": "Develop and implement a set of techniques or analytics applications to transform raw data into meaningful information using data-oriented programming languages and visualization software. Apply data mining, data modeling, natural language processing, and machine learning to extract and analyze information from large structured and unstructured datasets. Visualize, interpret, and report data findings. May create dynamic data reports.",
+    "riasec": {
+      "R": 2.17,
+      "I": 6.98,
+      "A": 2.61,
+      "S": 1.66,
+      "E": 1.71,
+      "C": 5.39
+    },
+    "settings": {
+      "people": 0.157,
+      "team": 0.261,
+      "autonomy": 0.603,
+      "pace": 0.377,
+      "hands": 0.097,
+      "routine": 0.478
+    },
+    "tasks": [
+      "Analyze, manipulate, or process large sets of data using statistical software.",
+      "Create graphs, charts, or other visualizations to convey the results of data analysis using specialized software.",
+      "Test, validate, and reformulate models to ensure accurate prediction of outcomes of interest.",
+      "Deliver oral or written presentations of the results of mathematical modeling and data analysis to management or other end users.",
+      "Recommend data-driven solutions to key stakeholders."
+    ],
+    "skills": [
+      "Mathematics",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Speaking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "grad-eng",
+        "grad-sci"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.533,
+      "team": 0.581,
+      "autonomy": 0.77,
+      "pace": 0.557,
+      "hands": 0.171,
+      "routine": 0.639
+    },
+    "related": [
+      "statistician",
+      "software-developer",
+      "physicist"
+    ]
   },
   {
-    "id": "data-engineer",
-    "title": "Data Engineer",
-    "area": "data",
-    "vector": { "build": 0.6, "data": 0.8, "ai": 0.15, "design": 0.0, "security": 0.2, "systems": 0.6, "people": 0.15, "play": 0.05 },
-    "overview": "Builds the pipelines and storage that move data from where it is produced to where analysts and models can use it.",
-    "responsibilities": ["Design and run data pipelines", "Model warehouses and lakes", "Keep data accurate, fresh and documented", "Scale processing as data grows"],
-    "skills": ["SQL and a scripting language", "Data modelling", "Batch and stream processing concepts", "Workflow orchestration", "Cloud storage basics"],
-    "subjects": ["Databases", "Distributed systems", "Operating systems"],
-    "entryRoutes": ["Pipeline projects with scheduled jobs", "Backend or data internships", "Contribute to open-source data tools"],
-    "projects": ["An ETL pipeline that loads a public API into a database every day", "A small warehouse schema with sample queries", "Add data-quality checks to an existing pipeline"],
-    "related": ["backend-developer", "data-analyst", "data-scientist", "cloud-engineer"],
-    "roadmaps": ["data-engineer"],
-    "keywords": ["etl", "pipeline", "warehouse", "spark", "sql"],
+    "id": "data-analyst",
+    "title": "Data Analyst",
+    "domain": "data-ai",
+    "keywords": [
+      "analytics",
+      "excel",
+      "sql",
+      "dashboard",
+      "mis"
+    ],
+    "onet": {
+      "code": "15-2051.01",
+      "title": "Business Intelligence Analysts"
+    },
+    "description": "Produce financial and market intelligence by querying data repositories and generating periodic reports. Devise methods for identifying data patterns and trends in available information sources.",
+    "riasec": {
+      "R": 1.24,
+      "I": 5.41,
+      "A": 1.93,
+      "S": 1.85,
+      "E": 4.42,
+      "C": 5.79
+    },
+    "settings": {
+      "people": 0.179,
+      "team": 0.464,
+      "autonomy": 0.681,
+      "pace": 0.395,
+      "hands": 0.045,
+      "routine": 0.524
+    },
+    "tasks": [
+      "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+      "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+      "Manage timely flow of business intelligence information to users.",
+      "Provide technical support for existing reports, dashboards, or other tools.",
+      "Identify and analyze industry or geographic trends with business strategy implications."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "commerce",
+        "grad-eng",
+        "grad-sci",
+        "grad-com"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.544,
+      "team": 0.679,
+      "autonomy": 0.813,
+      "pace": 0.565,
+      "hands": 0.132,
+      "routine": 0.665
+    },
+    "related": [
+      "management-consultant",
+      "actuary",
+      "chartered-accountant"
+    ]
   },
   {
-    "id": "ml-engineer",
-    "title": "ML Engineer",
-    "area": "ai",
-    "vector": { "build": 0.6, "data": 0.65, "ai": 0.9, "design": 0.05, "security": 0.1, "systems": 0.4, "people": 0.1, "play": 0.1 },
-    "overview": "Takes machine-learning models from experiment to something that runs reliably in a product, including training, serving and monitoring.",
-    "responsibilities": ["Train and tune models", "Build training and inference pipelines", "Deploy and monitor models in production", "Track data and model versions"],
-    "skills": ["Python and an ML framework", "Maths behind ML (linear algebra, probability, optimisation)", "Software engineering practice", "MLOps basics"],
-    "subjects": ["Machine learning", "Linear algebra", "Algorithms", "Software engineering"],
-    "entryRoutes": ["End-to-end ML projects including deployment", "ML or research internships", "Reproducing published work"],
-    "projects": ["Train an image classifier and serve it behind an API", "Build a recommender for a small dataset", "Add monitoring to a deployed model"],
-    "related": ["data-scientist", "ai-engineer", "data-engineer", "devops-engineer"],
-    "roadmaps": ["mlops", "data-scientist"],
-    "keywords": ["machine learning", "deep learning", "pytorch", "tensorflow", "mlops", "model"],
+    "id": "cybersecurity-analyst",
+    "title": "Cybersecurity Analyst",
+    "domain": "cyber-networks",
+    "keywords": [
+      "cyber security",
+      "ethical hacking",
+      "infosec",
+      "network security"
+    ],
+    "onet": {
+      "code": "15-1212.00",
+      "title": "Information Security Analysts"
+    },
+    "description": "Plan, implement, upgrade, or monitor security measures for the protection of computer networks and information. Assess system vulnerabilities for security risks and propose and implement risk mitigation strategies. May ensure appropriate security controls are in place that will safeguard digital files and vital electronic infrastructure. May respond to computer security breaches and viruses.",
+    "riasec": {
+      "R": 3.56,
+      "I": 5.4,
+      "A": 1.34,
+      "S": 2.11,
+      "E": 2.85,
+      "C": 6.08
+    },
+    "settings": {
+      "people": 0.524,
+      "team": 0.509,
+      "autonomy": 0.585,
+      "pace": 0.482,
+      "hands": 0.245,
+      "routine": 0.541
+    },
+    "tasks": [
+      "Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs.",
+      "Monitor current reports of computer viruses to determine when to update virus protection systems.",
+      "Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.",
+      "Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.",
+      "Modify computer security files to incorporate new software, correct errors, or change individual access status."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Listening",
+      "Speaking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng",
+        "grad-sci"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.722,
+      "team": 0.701,
+      "autonomy": 0.76,
+      "pace": 0.603,
+      "hands": 0.283,
+      "routine": 0.675
+    },
+    "related": [
+      "software-developer",
+      "statistician",
+      "actuary"
+    ]
   },
   {
-    "id": "ai-engineer",
-    "title": "AI Engineer (LLM apps)",
-    "area": "ai",
-    "vector": { "build": 0.75, "data": 0.35, "ai": 0.85, "design": 0.2, "security": 0.15, "systems": 0.25, "people": 0.25, "play": 0.2 },
-    "overview": "Builds applications on top of existing large language models and other AI services, such as assistants, search over documents and workflow automation.",
-    "responsibilities": ["Design prompts and retrieval pipelines", "Integrate model APIs into products", "Evaluate output quality and failure modes", "Handle cost, latency, safety and privacy concerns"],
-    "skills": ["Programming, usually Python or TypeScript", "Working with model APIs", "Embeddings and retrieval", "Evaluation of non-deterministic output", "Basic web or API development"],
-    "subjects": ["Machine learning basics", "Natural language processing", "Software engineering"],
-    "entryRoutes": ["Shipping small LLM-powered projects", "Product or backend internships with AI features", "Hackathons"],
-    "projects": ["A question-answering app over your own notes", "A tool that summarises and tags documents, with a written evaluation of where it fails", "A chatbot with a clear 'I don't know' behaviour"],
-    "related": ["ml-engineer", "full-stack-developer", "data-scientist", "backend-developer"],
-    "roadmaps": ["ai-engineer"],
-    "keywords": ["llm", "gpt", "chatbot", "rag", "prompt", "generative"],
+    "id": "animator",
+    "title": "Animator",
+    "domain": "film-music-arts",
+    "keywords": [
+      "animation",
+      "vfx",
+      "2d",
+      "3d",
+      "gaming art"
+    ],
+    "onet": {
+      "code": "27-1014.00",
+      "title": "Special Effects Artists and Animators"
+    },
+    "description": "Create special effects or animations using film, video, computers, or other electronic tools and media for use in products, such as computer games, movies, music videos, and commercials.",
+    "riasec": {
+      "R": 3.71,
+      "I": 2.77,
+      "A": 7,
+      "S": 2.18,
+      "E": 2.62,
+      "C": 3.13
+    },
+    "settings": {
+      "people": 0.623,
+      "team": 0.629,
+      "autonomy": 0.557,
+      "pace": 0.701,
+      "hands": 0.233,
+      "routine": 0.497
+    },
+    "tasks": [
+      "Design complex graphics and animation, using independent judgment, creativity, and computer equipment.",
+      "Create basic designs, drawings, and illustrations for product labels, cartons, direct mail, or television.",
+      "Participate in design and production of multimedia campaigns, handling budgeting and scheduling, and assisting with such responsibilities as production coordination, background design, and progress tracking.",
+      "Create two-dimensional and three-dimensional images depicting objects in motion or illustrating a process, using computer animation or modeling programs.",
+      "Make objects or characters appear lifelike by manipulating light, color, texture, shadow, and transparency, or manipulating static images to give the illusion of motion."
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Speaking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.773,
+      "team": 0.759,
+      "autonomy": 0.745,
+      "pace": 0.699,
+      "hands": 0.274,
+      "routine": 0.65
+    },
+    "related": [
+      "graphic-designer",
+      "fashion-designer",
+      "musician"
+    ]
   },
   {
-    "id": "security-analyst",
-    "title": "Security Analyst",
-    "area": "security",
-    "vector": { "build": 0.1, "data": 0.35, "ai": 0.1, "design": 0.0, "security": 0.95, "systems": 0.5, "people": 0.3, "play": 0.1 },
-    "overview": "Watches over an organisation's systems, investigates suspicious activity and helps reduce the chance and impact of attacks.",
-    "responsibilities": ["Monitor logs and alerts", "Investigate and triage incidents", "Track vulnerabilities and follow up on fixes", "Write clear incident reports and recommendations"],
-    "skills": ["Networking and operating-system fundamentals", "Log analysis", "Knowledge of common attack types", "Scripting", "Careful written communication"],
-    "subjects": ["Computer networks", "Operating systems", "Cryptography and network security"],
-    "entryRoutes": ["Home-lab and detection exercises", "Security club or CTF participation", "SOC or IT internships"],
-    "projects": ["Set up a small lab and collect logs from it", "Write detection rules for a simulated attack", "Write an incident report for a practice scenario"],
-    "related": ["penetration-tester", "network-engineer", "cloud-engineer", "devops-engineer"],
-    "roadmaps": ["cyber-security"],
-    "keywords": ["soc", "blue team", "incident", "cyber", "defence"],
+    "id": "electronics-engineer",
+    "title": "Electronics Engineer",
+    "domain": "electronics-embedded",
+    "keywords": [
+      "ece",
+      "embedded",
+      "vlsi",
+      "circuits",
+      "electronics"
+    ],
+    "onet": {
+      "code": "17-2072.00",
+      "title": "Electronics Engineers, Except Computer"
+    },
+    "description": "Research, design, develop, or test electronic components and systems for commercial, industrial, military, or scientific use employing knowledge of electronic theory and materials properties. Design electronic circuits and components for use in fields such as telecommunications, aerospace guidance and propulsion control, acoustics, or instruments and controls.",
+    "riasec": {
+      "R": 6.24,
+      "I": 5.81,
+      "A": 2.03,
+      "S": 1.59,
+      "E": 1.62,
+      "C": 4.68
+    },
+    "settings": {
+      "people": 0.318,
+      "team": 0.402,
+      "autonomy": 0.727,
+      "pace": 0.105,
+      "hands": 0.13,
+      "routine": 0.38
+    },
+    "tasks": [
+      "Design electronic components, software, products, or systems for commercial, industrial, medical, military, or scientific applications.",
+      "Operate computer-assisted engineering or design software or equipment to perform electronics engineering tasks.",
+      "Evaluate project work to ensure effectiveness, technical adequacy, or compatibility in the resolution of complex electronics engineering problems.",
+      "Direct or coordinate activities concerned with manufacture, construction, installation, maintenance, operation, or modification of electronic equipment, products, or systems.",
+      "Confer with engineers, customers, vendors, or others to discuss existing or potential electronics engineering projects or products."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Speaking",
+      "Active Listening",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.616,
+      "team": 0.649,
+      "autonomy": 0.838,
+      "pace": 0.438,
+      "hands": 0.196,
+      "routine": 0.583
+    },
+    "related": [
+      "electrical-engineer",
+      "mechanical-engineer",
+      "civil-engineer"
+    ]
   },
   {
-    "id": "penetration-tester",
-    "title": "Penetration Tester",
-    "area": "security",
-    "vector": { "build": 0.35, "data": 0.1, "ai": 0.05, "design": 0.0, "security": 0.95, "systems": 0.55, "people": 0.1, "play": 0.45 },
-    "overview": "Is authorised to test systems the way an attacker would, to find weaknesses before real attackers do, then explains how to fix them.",
-    "responsibilities": ["Plan and scope authorised tests", "Probe applications, networks and configurations for weaknesses", "Document findings with evidence and a fix", "Retest after fixes"],
-    "skills": ["Networking and web fundamentals", "Linux and scripting", "Common vulnerability classes", "Report writing", "Strong ethics and respect for scope"],
-    "subjects": ["Computer networks", "Operating systems", "Web technologies", "Cryptography"],
-    "entryRoutes": ["Capture-the-flag practice on legal training platforms", "Security club projects", "Bug-bounty programmes that permit your testing"],
-    "projects": ["Build and then attack your own vulnerable web app in a sandbox", "Write up solved CTF challenges", "Write a sample test report"],
-    "related": ["security-analyst", "network-engineer", "backend-developer", "qa-sdet"],
-    "roadmaps": ["cyber-security"],
-    "keywords": ["ethical hacking", "red team", "ctf", "vulnerability", "exploit"],
+    "id": "electrical-engineer",
+    "title": "Electrical Engineer",
+    "domain": "electrical-power",
+    "keywords": [
+      "eee",
+      "power",
+      "electrical",
+      "grid"
+    ],
+    "onet": {
+      "code": "17-2071.00",
+      "title": "Electrical Engineers"
+    },
+    "description": "Research, design, develop, test, or supervise the manufacturing and installation of electrical equipment, components, or systems for commercial, industrial, military, or scientific use.",
+    "riasec": {
+      "R": 6.02,
+      "I": 5.45,
+      "A": 2.12,
+      "S": 1.72,
+      "E": 2.44,
+      "C": 4.43
+    },
+    "settings": {
+      "people": 0.602,
+      "team": 0.607,
+      "autonomy": 0.807,
+      "pace": 0.491,
+      "hands": 0.314,
+      "routine": 0.742
+    },
+    "tasks": [
+      "Design, implement, maintain, or improve electrical instruments, equipment, facilities, components, products, or systems for commercial, industrial, or domestic purposes.",
+      "Oversee project production efforts to assure projects are completed on time and within budget.",
+      "Direct or coordinate manufacturing, construction, installation, maintenance, support, documentation, or testing activities to ensure compliance with specifications, codes, or customer requirements.",
+      "Perform detailed calculations to compute and establish manufacturing, construction, or installation standards or specifications.",
+      "Operate computer-assisted engineering or design software or equipment to perform engineering tasks."
+    ],
+    "skills": [
+      "Writing",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Listening",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.762,
+      "team": 0.748,
+      "autonomy": 0.882,
+      "pace": 0.607,
+      "hands": 0.335,
+      "routine": 0.79
+    },
+    "related": [
+      "civil-engineer",
+      "electronics-engineer",
+      "mechanical-engineer"
+    ]
   },
   {
-    "id": "cloud-engineer",
-    "title": "Cloud Engineer",
-    "area": "cloud",
-    "vector": { "build": 0.45, "data": 0.2, "ai": 0.05, "design": 0.0, "security": 0.45, "systems": 0.95, "people": 0.15, "play": 0.0 },
-    "overview": "Designs and operates the cloud infrastructure that applications run on, balancing reliability, security and cost.",
-    "responsibilities": ["Provision compute, storage and networking", "Define infrastructure as code", "Manage access, backups and cost", "Respond to outages and capacity issues"],
-    "skills": ["Linux and networking", "One major cloud platform", "Infrastructure as code", "Scripting", "Security and identity basics"],
-    "subjects": ["Operating systems", "Computer networks", "Distributed systems"],
-    "entryRoutes": ["Deploy your own projects to a cloud free tier", "Cloud or IT operations internships", "Platform certifications, if useful to you"],
-    "projects": ["Deploy a web app with a database using infrastructure as code", "Set up a static site with a custom domain and HTTPS", "Write a runbook for recovering a failed service"],
-    "related": ["devops-engineer", "network-engineer", "backend-developer", "data-engineer"],
-    "roadmaps": ["aws"],
-    "keywords": ["aws", "azure", "gcp", "infrastructure", "terraform", "servers"],
+    "id": "electrician",
+    "title": "Electrician",
+    "domain": "electrical-power",
+    "keywords": [
+      "iti",
+      "wireman",
+      "electrical technician",
+      "wiring"
+    ],
+    "onet": {
+      "code": "47-2111.00",
+      "title": "Electricians"
+    },
+    "description": "Install, maintain, and repair electrical wiring, equipment, and fixtures. Ensure that work is in accordance with relevant codes. May install or service street lights, intercom systems, or electrical control systems.",
+    "riasec": {
+      "R": 7,
+      "I": 2.7,
+      "A": 1.24,
+      "S": 1.32,
+      "E": 1.81,
+      "C": 4.09
+    },
+    "settings": {
+      "people": 0.825,
+      "team": 0.828,
+      "autonomy": 0.727,
+      "pace": 0.573,
+      "hands": 1,
+      "routine": 0.691
+    },
+    "tasks": [
+      "Prepare sketches or follow blueprints to determine the location of wiring or equipment and to ensure conformance to building and safety codes.",
+      "Place conduit, pipes, or tubing, inside designated partitions, walls, or other concealed areas, and pull insulated wires or cables through the conduit to complete circuits between boxes.",
+      "Work from ladders, scaffolds, or roofs to install, maintain, or repair electrical wiring, equipment, or fixtures.",
+      "Use a variety of tools or equipment, such as power construction equipment, measuring devices, power tools, and testing equipment, such as oscilloscopes, ammeters, or test lamps.",
+      "Assemble, install, test, or maintain electrical or electronic wiring, equipment, appliances, apparatus, or fixtures, using hand tools or power tools."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Active Learning",
+      "Reading Comprehension"
+    ],
+    "entry": {
+      "streams": [
+        "diploma"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "aitt",
+        "body": "dgt"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.877,
+      "team": 0.855,
+      "autonomy": 0.838,
+      "pace": 0.643,
+      "hands": 0.852,
+      "routine": 0.761
+    },
+    "related": [
+      "automobile-technician",
+      "civil-engineer",
+      "mechanical-engineer"
+    ]
   },
   {
-    "id": "devops-engineer",
-    "title": "DevOps Engineer",
-    "area": "cloud",
-    "vector": { "build": 0.75, "data": 0.1, "ai": 0.05, "design": 0.0, "security": 0.35, "systems": 0.75, "people": 0.45, "play": 0.1 },
-    "overview": "Connects development and operations by automating how software is built, tested, released and monitored.",
-    "responsibilities": ["Build and maintain CI/CD pipelines", "Containerise and deploy services", "Set up monitoring and alerting", "Help teams release safely and often"],
-    "skills": ["Linux and shell scripting", "Git and CI/CD tools", "Containers and orchestration", "Monitoring and logging", "Collaboration across teams"],
-    "subjects": ["Operating systems", "Computer networks", "Software engineering"],
-    "entryRoutes": ["Automate the build and deploy of your own projects", "DevOps or SRE internships", "Open-source CI contributions"],
-    "projects": ["A CI pipeline that tests and deploys a small app", "Containerise a multi-service app", "Add a dashboard and alerts to a running service"],
-    "related": ["cloud-engineer", "backend-developer", "qa-sdet", "network-engineer"],
-    "roadmaps": ["devops"],
-    "keywords": ["ci/cd", "docker", "kubernetes", "automation", "sre", "pipeline"],
+    "id": "mechanical-engineer",
+    "title": "Mechanical Engineer",
+    "domain": "mechanical-manufacturing",
+    "keywords": [
+      "me",
+      "machines",
+      "manufacturing",
+      "cad",
+      "automobile"
+    ],
+    "onet": {
+      "code": "17-2141.00",
+      "title": "Mechanical Engineers"
+    },
+    "description": "Perform engineering duties in planning and designing tools, engines, machines, and other mechanically functioning equipment. Oversee installation, operation, maintenance, and repair of equipment such as centralized heat, gas, water, and steam systems.",
+    "riasec": {
+      "R": 6.39,
+      "I": 5.12,
+      "A": 2.02,
+      "S": 1.22,
+      "E": 1.97,
+      "C": 4.83
+    },
+    "settings": {
+      "people": 0.627,
+      "team": 0.551,
+      "autonomy": 0.681,
+      "pace": 0.468,
+      "hands": 0.268,
+      "routine": 0.531
+    },
+    "tasks": [
+      "Read and interpret blueprints, technical drawings, schematics, or computer-generated reports.",
+      "Research, design, evaluate, install, operate, or maintain mechanical products, equipment, systems or processes to meet requirements.",
+      "Specify system components or direct modification of products to ensure conformance with engineering design, performance specifications, or environmental regulations.",
+      "Confer with engineers or other personnel to implement operating procedures, resolve system malfunctions, or provide technical information.",
+      "Investigate equipment failures or difficulties to diagnose faulty operation and recommend remedial actions."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Critical Thinking",
+      "Mathematics",
+      "Science"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.775,
+      "team": 0.721,
+      "autonomy": 0.813,
+      "pace": 0.597,
+      "hands": 0.3,
+      "routine": 0.669
+    },
+    "related": [
+      "civil-engineer",
+      "electrical-engineer",
+      "electronics-engineer"
+    ]
   },
   {
-    "id": "network-engineer",
-    "title": "Network Engineer",
-    "area": "cloud",
-    "vector": { "build": 0.2, "data": 0.1, "ai": 0.0, "design": 0.0, "security": 0.5, "systems": 0.9, "people": 0.25, "play": 0.05 },
-    "overview": "Plans, builds and maintains the networks that connect computers, offices and data centres, and troubleshoots them when they fail.",
-    "responsibilities": ["Configure routers, switches and firewalls", "Plan addressing and segmentation", "Monitor traffic and troubleshoot faults", "Document the network and changes to it"],
-    "skills": ["TCP/IP, routing and switching", "Network troubleshooting tools", "Firewall and VPN concepts", "Scripting for automation"],
-    "subjects": ["Computer networks", "Operating systems", "Cryptography and network security"],
-    "entryRoutes": ["Network simulator labs", "IT or network operations internships", "Home-lab setups"],
-    "projects": ["Design and simulate a multi-office network", "Document a home or campus network", "Write a script that checks device reachability"],
-    "related": ["cloud-engineer", "security-analyst", "devops-engineer", "penetration-tester"],
-    "roadmaps": [],
-    "keywords": ["routing", "switching", "tcp/ip", "firewall", "cisco", "lan"],
+    "id": "civil-engineer",
+    "title": "Civil Engineer",
+    "domain": "civil-construction",
+    "keywords": [
+      "construction",
+      "structures",
+      "roads",
+      "bridges",
+      "site engineer"
+    ],
+    "onet": {
+      "code": "17-2051.00",
+      "title": "Civil Engineers"
+    },
+    "description": "Perform engineering duties in planning, designing, and overseeing construction and maintenance of building structures and facilities, such as roads, railroads, airports, bridges, harbors, channels, dams, irrigation projects, pipelines, power plants, and water and sewage systems.",
+    "riasec": {
+      "R": 6.43,
+      "I": 5.15,
+      "A": 2.21,
+      "S": 1.69,
+      "E": 2.66,
+      "C": 4.61
+    },
+    "settings": {
+      "people": 0.662,
+      "team": 0.598,
+      "autonomy": 0.545,
+      "pace": 0.582,
+      "hands": 0.272,
+      "routine": 0.578
+    },
+    "tasks": [
+      "Direct engineering activities, ensuring compliance with environmental, safety, or other governmental regulations.",
+      "Manage and direct the construction, operations, or maintenance activities at project site.",
+      "Inspect project sites to monitor progress and ensure conformance to design specifications and safety or sanitation standards.",
+      "Compute load and grade requirements, water flow rates, or material stress factors to determine design specifications.",
+      "Plan and design transportation or hydraulic systems or structures, using computer-assisted design or drawing tools."
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Speaking",
+      "Mathematics",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.793,
+      "team": 0.744,
+      "autonomy": 0.738,
+      "pace": 0.647,
+      "hands": 0.303,
+      "routine": 0.696
+    },
+    "related": [
+      "mechanical-engineer",
+      "electrical-engineer",
+      "electronics-engineer"
+    ]
   },
   {
-    "id": "ui-ux-designer",
-    "title": "UI/UX Designer",
-    "area": "design",
-    "vector": { "build": 0.25, "data": 0.25, "ai": 0.1, "design": 0.95, "security": 0.0, "systems": 0.0, "people": 0.7, "play": 0.3 },
-    "overview": "Researches how people use a product and designs the screens and flows that make it clear and usable.",
-    "responsibilities": ["Talk to users and study how they work", "Sketch flows, wireframes and prototypes", "Design visual interfaces and design systems", "Test designs with people and revise them"],
-    "skills": ["A design tool such as Figma", "User research methods", "Visual hierarchy, layout and typography", "Accessibility", "Communicating design decisions"],
-    "subjects": ["Human-computer interaction", "Psychology basics", "Web technologies"],
-    "entryRoutes": ["Case studies of redesigns you researched and tested", "Design internships", "Working with a developer on a shared project"],
-    "projects": ["Redesign one flow of an app you use, with before-and-after reasoning", "Run five short usability tests and write up what you changed", "Build a small design system"],
-    "related": ["frontend-developer", "product-manager", "mobile-app-developer"],
-    "roadmaps": ["ux-design"],
-    "keywords": ["figma", "user research", "prototype", "wireframe", "usability"],
+    "id": "aerospace-engineer",
+    "title": "Aerospace Engineer",
+    "domain": "automotive-aerospace",
+    "keywords": [
+      "aeronautical",
+      "aircraft",
+      "space",
+      "isro",
+      "drdo"
+    ],
+    "onet": {
+      "code": "17-2011.00",
+      "title": "Aerospace Engineers"
+    },
+    "description": "Perform engineering duties in designing, constructing, and testing aircraft, missiles, and spacecraft. May conduct basic and applied research to evaluate adaptability of materials and equipment to aircraft design and manufacture. May recommend improvements in testing equipment and techniques.",
+    "riasec": {
+      "R": 5.65,
+      "I": 6.05,
+      "A": 2.35,
+      "S": 1.25,
+      "E": 2.52,
+      "C": 4.44
+    },
+    "settings": {
+      "people": 0.693,
+      "team": 0.737,
+      "autonomy": 0.446,
+      "pace": 0.199,
+      "hands": 0.037,
+      "routine": 0.628
+    },
+    "tasks": [
+      "Formulate conceptual design of aeronautical or aerospace products or systems to meet customer requirements or conform to environmental regulations.",
+      "Evaluate product data or design from inspections or reports for conformance to engineering principles, customer requirements, environmental regulations, or quality standards.",
+      "Direct or coordinate activities of engineering or technical personnel involved in designing, fabricating, modifying, or testing of aircraft or aerospace products.",
+      "Plan or conduct experimental, environmental, operational, or stress tests on models or prototypes of aircraft or aerospace systems or equipment.",
+      "Diagnose performance problems by reviewing reports or documentation from customers or field engineers or by inspecting malfunctioning or damaged products."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Writing",
+      "Mathematics",
+      "Science"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-advanced",
+        "body": "aicte"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.809,
+      "team": 0.811,
+      "autonomy": 0.684,
+      "pace": 0.479,
+      "hands": 0.126,
+      "routine": 0.725
+    },
+    "related": [
+      "food-technologist",
+      "electrical-engineer",
+      "electronics-engineer"
+    ]
   },
   {
-    "id": "game-developer",
-    "title": "Game Developer",
-    "area": "games",
-    "vector": { "build": 0.8, "data": 0.1, "ai": 0.2, "design": 0.5, "security": 0.05, "systems": 0.4, "people": 0.25, "play": 0.95 },
-    "overview": "Programs the mechanics, physics and systems of games, usually inside an engine, while balancing performance and fun.",
-    "responsibilities": ["Implement gameplay features", "Work with artists and designers on how things look and feel", "Optimise for frame rate and memory", "Playtest, debug and iterate"],
-    "skills": ["C# or C++", "A game engine such as Unity or Unreal", "Maths for graphics and physics", "Profiling and optimisation"],
-    "subjects": ["Data structures and algorithms", "Linear algebra", "Computer graphics", "Object-oriented programming"],
-    "entryRoutes": ["Finished small games and game-jam entries", "Game studio internships", "Mods for existing games"],
-    "projects": ["A complete small game in a weekend jam", "A 2D platformer with your own physics", "Add an enemy AI to a prototype"],
-    "related": ["mobile-app-developer", "frontend-developer", "ui-ux-designer", "ml-engineer"],
-    "roadmaps": ["game-developer"],
-    "keywords": ["unity", "unreal", "gameplay", "graphics", "game jam"],
+    "id": "automobile-technician",
+    "title": "Automobile Technician",
+    "domain": "automotive-aerospace",
+    "keywords": [
+      "mechanic",
+      "iti",
+      "car repair",
+      "service technician",
+      "diploma automobile"
+    ],
+    "onet": {
+      "code": "49-3023.00",
+      "title": "Automotive Service Technicians and Mechanics"
+    },
+    "description": "Diagnose, adjust, repair, or overhaul automotive vehicles.",
+    "riasec": {
+      "R": 7,
+      "I": 3.58,
+      "A": 1,
+      "S": 1.45,
+      "E": 1.6,
+      "C": 4.31
+    },
+    "settings": {
+      "people": 0.478,
+      "team": 0.29,
+      "autonomy": 0.563,
+      "pace": 0.548,
+      "hands": 0.796,
+      "routine": 0.557
+    },
+    "tasks": [
+      "Follow checklists to ensure all important parts are examined, including belts, hoses, steering systems, spark plugs, brake and fuel systems, wheel bearings, and other potentially troublesome areas.",
+      "Test and adjust repaired systems to meet manufacturers' performance specifications.",
+      "Perform routine and scheduled maintenance services, such as oil changes, lubrications, and tune-ups.",
+      "Inspect vehicles for damage and record findings so that necessary repairs can be made.",
+      "Align wheels, axles, frames, torsion bars, and steering mechanisms of automobiles, using special alignment equipment and wheel-balancing machines."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Active Listening",
+      "Monitoring",
+      "Speaking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "diploma"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "aitt",
+        "body": "dgt"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.698,
+      "team": 0.595,
+      "autonomy": 0.748,
+      "pace": 0.632,
+      "hands": 0.698,
+      "routine": 0.684
+    },
+    "related": [
+      "electrician",
+      "civil-engineer",
+      "mechanical-engineer"
+    ]
   },
   {
-    "id": "qa-sdet",
-    "title": "QA / SDET",
-    "area": "software",
-    "vector": { "build": 0.55, "data": 0.25, "ai": 0.05, "design": 0.1, "security": 0.4, "systems": 0.35, "people": 0.4, "play": 0.2 },
-    "overview": "Makes sure software works before users find out it does not, by designing tests, writing automation and finding the cases others missed.",
-    "responsibilities": ["Plan test strategies and cases", "Write automated tests and test tooling", "Report defects with clear steps to reproduce", "Work with developers to prevent repeat bugs"],
-    "skills": ["A programming language for test automation", "Testing techniques (boundary, exploratory, regression)", "API and UI testing tools", "CI basics", "Attention to detail"],
-    "subjects": ["Software engineering", "Data structures", "Databases"],
-    "entryRoutes": ["Add automated tests to your own and open-source projects", "QA or test-automation internships", "Bug reports to open-source projects"],
-    "projects": ["An automated test suite for a small web app", "An API test harness with a readable report", "A bug-hunt write-up on an app you use"],
-    "related": ["backend-developer", "devops-engineer", "penetration-tester", "frontend-developer"],
-    "roadmaps": ["qa"],
-    "keywords": ["testing", "automation", "selenium", "quality", "sdet", "bugs"],
+    "id": "doctor",
+    "title": "Doctor (MBBS)",
+    "domain": "medicine-surgery",
+    "keywords": [
+      "mbbs",
+      "physician",
+      "medicine",
+      "neet",
+      "general practitioner"
+    ],
+    "onet": {
+      "code": "29-1215.00",
+      "title": "Family Medicine Physicians"
+    },
+    "description": "Diagnose, treat, and provide preventive care to individuals and families across the lifespan. May refer patients to specialists when needed for further diagnosis or treatment.",
+    "riasec": {
+      "R": 3.75,
+      "I": 6.08,
+      "A": 1.45,
+      "S": 6.21,
+      "E": 2.34,
+      "C": 3.95
+    },
+    "settings": {
+      "people": 1,
+      "team": 0.94,
+      "autonomy": 0.896,
+      "pace": 0.788,
+      "hands": 0.381,
+      "routine": 0.569
+    },
+    "tasks": [
+      "Prescribe or administer treatment, therapy, medication, vaccination, and other specialized medical care to treat or prevent illness, disease, or injury.",
+      "Order, perform, and interpret tests and analyze records, reports, and examination information to diagnose patients' condition.",
+      "Collect, record, and maintain patient information, such as medical history, reports, or examination results.",
+      "Monitor patients' conditions and progress and reevaluate treatments as necessary.",
+      "Explain procedures and discuss test results or prescribed treatments with patients."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Active Listening",
+      "Writing",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "pcb"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "neet-ug",
+        "body": "nmc"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.967,
+      "team": 0.909,
+      "autonomy": 0.931,
+      "pace": 0.737,
+      "hands": 0.385,
+      "routine": 0.691
+    },
+    "related": [
+      "nurse",
+      "physiotherapist",
+      "pharmacist"
+    ]
   },
   {
-    "id": "product-manager",
-    "title": "Product Manager",
-    "area": "design",
-    "vector": { "build": 0.1, "data": 0.35, "ai": 0.15, "design": 0.4, "security": 0.05, "systems": 0.1, "people": 0.95, "play": 0.1 },
-    "overview": "Decides what a team should build and why, by understanding users, the business and what is technically possible, then keeps everyone aligned.",
-    "responsibilities": ["Talk to users and define problems worth solving", "Prioritise work and write clear requirements", "Coordinate design, engineering and other teams", "Use data to judge whether a feature worked"],
-    "skills": ["Communication and facilitation", "Basic data analysis", "Prioritisation", "Enough technical understanding to talk to engineers"],
-    "subjects": ["Software engineering", "Human-computer interaction", "Statistics basics"],
-    "entryRoutes": ["Lead a student project or club product", "Associate or intern product roles", "Move across from engineering, design or analytics"],
-    "projects": ["Write a one-page product brief for an app idea, based on user interviews", "Run a campus club's event process and measure the results", "Prioritise a backlog for a team project and explain why"],
-    "related": ["ui-ux-designer", "data-analyst", "full-stack-developer"],
-    "roadmaps": ["product-manager"],
-    "keywords": ["product", "roadmap", "stakeholder", "requirements", "strategy"],
+    "id": "entrepreneur",
+    "title": "Entrepreneur",
+    "domain": "business-management",
+    "keywords": [
+      "startup",
+      "founder",
+      "business owner",
+      "self employed"
+    ],
+    "onet": {
+      "code": "11-1011.00",
+      "title": "Chief Executives",
+      "loose": "Chief Executives run established organisations. Starting a business is a related but different path, so treat this match as approximate."
+    },
+    "description": "Determine and formulate policies and provide overall direction of companies or private and public sector organizations within guidelines set up by a board of directors or similar governing body. Plan, direct, or coordinate operational activities at the highest level of management with the help of subordinate executives and staff managers.",
+    "riasec": {
+      "R": 1.26,
+      "I": 3.05,
+      "A": 2.16,
+      "S": 3.54,
+      "E": 6.96,
+      "C": 4.97
+    },
+    "settings": {
+      "people": 0.872,
+      "team": 0.778,
+      "autonomy": 0.965,
+      "pace": 0.58,
+      "hands": 0.199,
+      "routine": 0.637
+    },
+    "tasks": [
+      "Direct or coordinate an organization's financial or budget activities to fund operations, maximize investments, or increase efficiency.",
+      "Confer with board members, organization officials, or staff members to discuss issues, coordinate activities, or resolve problems.",
+      "Prepare budgets for approval, including those for funding or implementation of programs.",
+      "Direct, plan, or implement policies, objectives, or activities of organizations or businesses to ensure continuing operations, to maximize returns on investments, or to increase productivity.",
+      "Prepare or present reports concerning activities, expenses, budgets, government statutes or rulings, or other items affecting businesses or program services."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Speaking",
+      "Reading Comprehension",
+      "Writing",
+      "Active Listening"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.901,
+      "team": 0.831,
+      "autonomy": 0.969,
+      "pace": 0.646,
+      "hands": 0.248,
+      "routine": 0.73
+    },
+    "related": [
+      "marketing-manager",
+      "financial-planner",
+      "hr-manager"
+    ]
   },
   {
-    "id": "technical-writer",
-    "title": "Technical Writer",
-    "area": "bridge",
-    "vector": { "build": 0.3, "data": 0.1, "ai": 0.1, "design": 0.35, "security": 0.1, "systems": 0.15, "people": 0.6, "play": 0.1 },
-    "overview": "Explains complex technical products clearly in documentation, tutorials and API references so that other people can actually use them.",
-    "matchNote": "The eight dimensions have no \"writing\" axis, so this match score only reflects how much the role leans on People and Design. It says nothing about writing ability, which is the core skill here.",
-    "responsibilities": ["Write and maintain docs, guides and API references", "Interview engineers to understand how things work", "Test the instructions by following them", "Keep documentation in step with product releases"],
-    "skills": ["Clear, structured writing", "Enough programming to read code and run examples", "Docs tooling such as Markdown and Git", "Empathy for readers who are new to a topic"],
-    "subjects": ["Software engineering", "Any area you want to specialise in documenting"],
-    "entryRoutes": ["Improve the docs of an open-source project", "Write tutorials and publish them", "Documentation internships, or move across from engineering or support"],
-    "projects": ["Rewrite the README and setup guide of a project you use", "Write a getting-started tutorial and have a beginner test it", "Document a small API with working examples"],
-    "related": ["developer-advocate", "product-manager", "ui-ux-designer"],
-    "roadmaps": ["technical-writer"],
-    "keywords": ["documentation", "docs", "writing", "api docs", "tutorial"],
+    "id": "nurse",
+    "title": "Nurse",
+    "domain": "nursing-allied",
+    "keywords": [
+      "bsc nursing",
+      "gnm",
+      "anm",
+      "staff nurse",
+      "hospital"
+    ],
+    "onet": {
+      "code": "29-1141.00",
+      "title": "Registered Nurses"
+    },
+    "description": "Assess patient health problems and needs, develop and implement nursing care plans, and maintain medical records. Administer nursing care to ill, injured, convalescent, or disabled patients. May advise patients on health maintenance and disease prevention or provide case management. Licensing or registration required.",
+    "riasec": {
+      "R": 3.46,
+      "I": 4.71,
+      "A": 1.34,
+      "S": 5.57,
+      "E": 2.38,
+      "C": 4.75
+    },
+    "settings": {
+      "people": 0.959,
+      "team": 0.959,
+      "autonomy": 0.592,
+      "pace": 0.594,
+      "hands": 0.432,
+      "routine": 0.757
+    },
+    "tasks": [
+      "Record patients' medical information and vital signs.",
+      "Administer medications to patients and monitor patients for reactions or side effects.",
+      "Maintain accurate, detailed reports and records.",
+      "Monitor, record, and report symptoms or changes in patients' conditions.",
+      "Provide health care, first aid, immunizations, or assistance in convalescence or rehabilitation in locations such as schools, hospitals, or industry."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcb"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "body": "inc"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.946,
+      "team": 0.918,
+      "autonomy": 0.764,
+      "pace": 0.652,
+      "hands": 0.424,
+      "routine": 0.799
+    },
+    "related": [
+      "doctor",
+      "pharmacist",
+      "physiotherapist"
+    ]
   },
   {
-    "id": "developer-advocate",
-    "title": "Developer Advocate",
-    "area": "bridge",
-    "vector": { "build": 0.6, "data": 0.15, "ai": 0.2, "design": 0.25, "security": 0.1, "systems": 0.25, "people": 0.85, "play": 0.3 },
-    "overview": "Helps developers succeed with a product or platform through talks, demos, sample code and feedback to the product team.",
-    "responsibilities": ["Build demos, sample apps and tutorials", "Give talks and run workshops", "Collect developer feedback and relay it to the product team", "Engage with developer communities"],
-    "skills": ["Solid programming ability", "Public speaking and writing", "Explaining ideas to different audiences", "Community building"],
-    "subjects": ["Software engineering", "Whatever technology you would advocate for"],
-    "entryRoutes": ["Run workshops or tech talks at college clubs", "Write and share projects publicly", "Move across from software engineering"],
-    "projects": ["Give a talk on something you built and publish the slides and code", "Run a beginner workshop for your club", "Build a sample app for a public API and write it up"],
-    "related": ["technical-writer", "full-stack-developer", "product-manager"],
-    "roadmaps": ["devrel"],
-    "keywords": ["devrel", "community", "talks", "developer relations", "demo"],
+    "id": "physiotherapist",
+    "title": "Physiotherapist",
+    "domain": "nursing-allied",
+    "keywords": [
+      "bpt",
+      "physio",
+      "rehabilitation",
+      "sports injury"
+    ],
+    "onet": {
+      "code": "29-1123.00",
+      "title": "Physical Therapists"
+    },
+    "description": "Assess, plan, organize, and participate in rehabilitative programs that improve mobility, relieve pain, increase strength, and improve or correct disabling conditions resulting from disease or injury.",
+    "riasec": {
+      "R": 4.33,
+      "I": 4.87,
+      "A": 2.17,
+      "S": 5.91,
+      "E": 2.49,
+      "C": 3.07
+    },
+    "settings": {
+      "people": 0.959,
+      "team": 0.826,
+      "autonomy": 0.831,
+      "pace": 0.543,
+      "hands": 0.532,
+      "routine": 0.55
+    },
+    "tasks": [
+      "Plan, prepare, or carry out individually designed programs of physical treatment to maintain, improve, or restore physical functioning, alleviate pain, or prevent physical dysfunction in patients.",
+      "Perform and document an initial exam, evaluating data to identify problems and determine a diagnosis prior to intervention.",
+      "Record prognosis, treatment, response, and progress in patient's chart or enter information into computer.",
+      "Instruct patient and family in treatment procedures to be continued at home.",
+      "Evaluate effects of treatment at various stages and adjust treatments to achieve maximum benefit."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcb"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.946,
+      "team": 0.854,
+      "autonomy": 0.895,
+      "pace": 0.63,
+      "hands": 0.499,
+      "routine": 0.68
+    },
+    "related": [
+      "doctor",
+      "dentist",
+      "nurse"
+    ]
   },
   {
-    "id": "ux-researcher",
-    "title": "UX Researcher",
-    "area": "design",
-    "vector": { "build": 0.05, "data": 0.55, "ai": 0.05, "design": 0.7, "security": 0.0, "systems": 0.0, "people": 0.85, "play": 0.1 },
-    "overview": "Studies how people behave and what they need, using interviews, surveys and usability tests, so that teams build the right thing.",
-    "responsibilities": ["Plan studies and recruit participants", "Run interviews and usability sessions", "Analyse qualitative and quantitative findings", "Present insights that change what the team does"],
-    "skills": ["Interviewing and observation", "Survey design and basic statistics", "Synthesising messy findings", "Clear presentation of evidence"],
-    "subjects": ["Human-computer interaction", "Statistics basics", "Psychology basics"],
-    "entryRoutes": ["Run small studies on a campus app or project", "Research or design internships", "Move across from design, analytics or engineering"],
-    "projects": ["Interview five users of an app and report themes and recommendations", "Run a usability test on a prototype and revise it", "Design a short survey and analyse the responses"],
-    "related": ["ui-ux-designer", "product-manager", "data-analyst"],
-    "roadmaps": [],
-    "keywords": ["user research", "interviews", "usability", "survey", "hci"],
+    "id": "dentist",
+    "title": "Dentist",
+    "domain": "dentistry-pharmacy",
+    "keywords": [
+      "bds",
+      "dental",
+      "teeth",
+      "oral health"
+    ],
+    "onet": {
+      "code": "29-1021.00",
+      "title": "Dentists, General"
+    },
+    "description": "Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and other dental tissues affecting oral hygiene and retention of teeth. May fit dental appliances or provide preventive care.",
+    "riasec": {
+      "R": 5.23,
+      "I": 5.48,
+      "A": 1.17,
+      "S": 4.41,
+      "E": 2,
+      "C": 3.71
+    },
+    "settings": {
+      "people": 0.913,
+      "team": 0.944,
+      "autonomy": 0.976,
+      "pace": 0.607,
+      "hands": 0.33,
+      "routine": 0.874
+    },
+    "tasks": [
+      "Use masks, gloves, and safety glasses to protect patients and self from infectious diseases.",
+      "Administer anesthetics to limit the amount of pain experienced by patients during procedures.",
+      "Examine teeth, gums, and related tissues, using dental instruments, x-rays, or other diagnostic equipment, to evaluate dental health, diagnose diseases or abnormalities, and plan appropriate treatments.",
+      "Formulate plan of treatment for patient's teeth and mouth tissue.",
+      "Use dental air turbines, hand instruments, dental appliances, or surgical implements."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "pcb"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "neet-ug",
+        "body": "dci"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.922,
+      "team": 0.911,
+      "autonomy": 0.975,
+      "pace": 0.658,
+      "hands": 0.347,
+      "routine": 0.866
+    },
+    "related": [
+      "veterinarian",
+      "doctor",
+      "physiotherapist"
+    ]
   },
   {
-    "id": "it-tech-consultant",
-    "title": "IT / Tech Consultant",
-    "area": "bridge",
-    "vector": { "build": 0.3, "data": 0.4, "ai": 0.15, "design": 0.1, "security": 0.3, "systems": 0.5, "people": 0.8, "play": 0.05 },
-    "overview": "Advises organisations on technology problems, from choosing systems to planning migrations and improving processes, and often helps put the plan into action.",
-    "responsibilities": ["Understand a client's goals and constraints", "Assess options and write recommendations", "Plan and coordinate implementation with technical teams", "Present findings to non-technical decision-makers"],
-    "skills": ["Broad technical understanding", "Structured problem solving", "Communication and presentation", "Project coordination"],
-    "subjects": ["Software engineering", "Databases", "Computer networks", "Business basics"],
-    "entryRoutes": ["Campus placements with consulting and services firms", "Case-study practice and team projects", "Move across from engineering with a business-facing role"],
-    "projects": ["Write a recommendation for a small business choosing between two tools, with your reasoning", "Map and improve a process at a campus club", "Prepare a short slide deck explaining a technical decision to a non-technical audience"],
-    "related": ["product-manager", "cloud-engineer", "data-analyst"],
-    "roadmaps": [],
-    "keywords": ["consulting", "advisory", "it services", "client", "migration"],
+    "id": "pharmacist",
+    "title": "Pharmacist",
+    "domain": "dentistry-pharmacy",
+    "keywords": [
+      "b pharm",
+      "d pharm",
+      "medicines",
+      "chemist",
+      "drug"
+    ],
+    "onet": {
+      "code": "29-1051.00",
+      "title": "Pharmacists"
+    },
+    "description": "Dispense drugs prescribed by physicians and other health practitioners and provide information to patients about medications and their use. May advise physicians and other health practitioners on the selection, dosage, interactions, and side effects of medications.",
+    "riasec": {
+      "R": 2.82,
+      "I": 5.67,
+      "A": 1.48,
+      "S": 4.88,
+      "E": 2.62,
+      "C": 4.56
+    },
+    "settings": {
+      "people": 0.872,
+      "team": 0.646,
+      "autonomy": 0.541,
+      "pace": 0.947,
+      "hands": 0.367,
+      "routine": 0.897
+    },
+    "tasks": [
+      "Review prescriptions to assure accuracy, to ascertain the needed ingredients, and to evaluate their suitability.",
+      "Collaborate with other health care professionals to plan, monitor, review, or evaluate the quality or effectiveness of drugs or drug regimens, providing advice on drug applications or characteristics.",
+      "Work in hospitals or clinics or for Health Management Organizations (HMOs), dispensing prescriptions, serving as a medical team consultant, or specializing in specific drug therapy areas, such as oncology or nuclear pharmacotherapy.",
+      "Provide information and advice regarding drug interactions, side effects, dosage, and proper medication storage.",
+      "Provide specialized services to help patients manage conditions, such as diabetes, asthma, smoking cessation, or high blood pressure."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "pcb",
+        "pcm",
+        "diploma"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "gpat",
+        "body": "pci"
+      }
+    ],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.901,
+      "team": 0.767,
+      "autonomy": 0.736,
+      "pace": 0.807,
+      "hands": 0.375,
+      "routine": 0.879
+    },
+    "related": [
+      "doctor",
+      "nurse",
+      "dentist"
+    ]
   },
   {
-    "id": "tech-policy-cyber-law",
-    "title": "Tech Policy & Cyber Law",
-    "area": "bridge",
-    "vector": { "build": 0.05, "data": 0.3, "ai": 0.3, "design": 0.0, "security": 0.6, "systems": 0.1, "people": 0.75, "play": 0.0 },
-    "overview": "Works on the rules around technology: privacy, data protection, cybercrime, AI governance and platform regulation. Roles range from legal practice to policy research and compliance.",
-    "entryNote": "Practising as a lawyer in cyber law usually needs an LLB after your B.Tech. Some policy research and compliance roles do not require a law degree, but legal practice does.",
-    "responsibilities": ["Interpret laws and regulations that apply to technology", "Advise organisations on privacy, security and compliance obligations", "Research and write policy briefs", "Work with engineers to understand how systems actually behave"],
-    "skills": ["Legal and policy reading and writing", "Understanding of security and data systems", "Argument and analysis", "Explaining technical ideas to lawyers and the reverse"],
-    "subjects": ["Cryptography and network security", "Databases", "Law subjects, if you pursue an LLB"],
-    "entryRoutes": ["An LLB after B.Tech for legal practice", "Policy research internships and fellowships", "Privacy, compliance or trust-and-safety roles that value technical backgrounds"],
-    "projects": ["Write a plain-language summary of a data-protection law for students", "Analyse the privacy policy of an app you use and list your questions", "Write a short policy brief on a technology issue with sources"],
-    "related": ["security-analyst", "product-manager", "it-tech-consultant"],
-    "roadmaps": [],
-    "keywords": ["law", "privacy", "data protection", "regulation", "compliance", "governance", "cybercrime"],
+    "id": "biotechnologist",
+    "title": "Biotechnologist",
+    "domain": "biotech-life",
+    "keywords": [
+      "biotech",
+      "genetics",
+      "lab research",
+      "microbiology",
+      "life sciences"
+    ],
+    "onet": {
+      "code": "19-1021.00",
+      "title": "Biochemists and Biophysicists"
+    },
+    "description": "Study the chemical composition or physical principles of living cells and organisms, their electrical and mechanical energy, and related phenomena. May conduct research to further understanding of the complex chemical combinations and reactions involved in metabolism, reproduction, growth, and heredity. May determine the effects of foods, drugs, serums, hormones, and other substances on tissues and vital processes of living organisms.",
+    "riasec": {
+      "R": 5.11,
+      "I": 7,
+      "A": 2.61,
+      "S": 2.15,
+      "E": 1.83,
+      "C": 3.64
+    },
+    "settings": {
+      "people": 0.254,
+      "team": 0.447,
+      "autonomy": 0.714,
+      "pace": 0.584,
+      "hands": 0.305,
+      "routine": 0.733
+    },
+    "tasks": [
+      "Share research findings by writing scientific articles or by making presentations at scientific conferences.",
+      "Teach or advise undergraduate or graduate students or supervise their research.",
+      "Study physical principles of living cells or organisms and their electrical or mechanical energy, applying methods and knowledge of mathematics, physics, chemistry, or biology.",
+      "Manage laboratory teams or monitor the quality of a team's work.",
+      "Develop new methods to study the mechanisms of biological processes."
+    ],
+    "skills": [
+      "Science",
+      "Reading Comprehension",
+      "Writing",
+      "Critical Thinking",
+      "Active Listening"
+    ],
+    "entry": {
+      "streams": [
+        "pcb",
+        "pcm",
+        "grad-sci"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [],
     "salary": null,
-    "demand": null
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.583,
+      "team": 0.671,
+      "autonomy": 0.831,
+      "pace": 0.648,
+      "hands": 0.328,
+      "routine": 0.785
+    },
+    "related": [
+      "physicist",
+      "food-technologist",
+      "agricultural-scientist"
+    ]
+  },
+  {
+    "id": "veterinarian",
+    "title": "Veterinarian",
+    "domain": "veterinary-animal",
+    "keywords": [
+      "bvsc",
+      "vet",
+      "animal doctor",
+      "livestock"
+    ],
+    "onet": {
+      "code": "29-1131.00",
+      "title": "Veterinarians"
+    },
+    "description": "Diagnose, treat, or research diseases and injuries of animals. Includes veterinarians who conduct research and development, inspect livestock, or care for pets and companion animals.",
+    "riasec": {
+      "R": 5.98,
+      "I": 5.98,
+      "A": 1,
+      "S": 3.45,
+      "E": 1.7,
+      "C": 3.47
+    },
+    "settings": {
+      "people": 0.984,
+      "team": 0.963,
+      "autonomy": 0.805,
+      "pace": 0.735,
+      "hands": 0.598,
+      "routine": 0.611
+    },
+    "tasks": [
+      "Treat sick or injured animals by prescribing medication, setting bones, dressing wounds, or performing surgery.",
+      "Inoculate animals against various diseases, such as rabies or distemper.",
+      "Examine animals to detect and determine the nature of diseases or injuries.",
+      "Collect body tissue, feces, blood, urine, or other body fluids for examination and analysis.",
+      "Operate diagnostic equipment, such as radiographic or ultrasound equipment, and interpret the resulting images."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Active Learning",
+      "Speaking",
+      "Science"
+    ],
+    "entry": {
+      "streams": [
+        "pcb"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "neet-ug",
+        "body": "vci"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.959,
+      "team": 0.92,
+      "autonomy": 0.881,
+      "pace": 0.714,
+      "hands": 0.549,
+      "routine": 0.715
+    },
+    "related": [
+      "dentist",
+      "agricultural-scientist",
+      "environmental-scientist"
+    ]
+  },
+  {
+    "id": "agricultural-scientist",
+    "title": "Agricultural Scientist",
+    "domain": "agriculture-food",
+    "keywords": [
+      "agriculture",
+      "bsc agri",
+      "crops",
+      "agronomy",
+      "icar"
+    ],
+    "onet": {
+      "code": "19-1013.00",
+      "title": "Soil and Plant Scientists"
+    },
+    "description": "Conduct research in breeding, physiology, production, yield, and management of crops and agricultural plants or trees, shrubs, and nursery stock, their growth in soils, and control of pests; or study the chemical, physical, biological, and mineralogical composition of soils as they relate to plant or crop growth. May classify and map soils and investigate effects of alternative practices on soil and crop productivity.",
+    "riasec": {
+      "R": 6.43,
+      "I": 6.71,
+      "A": 2.11,
+      "S": 1.67,
+      "E": 1.71,
+      "C": 3.41
+    },
+    "settings": {
+      "people": 0.548,
+      "team": 0.532,
+      "autonomy": 0.729,
+      "pace": 0.308,
+      "hands": 0.516,
+      "routine": 0.421
+    },
+    "tasks": [
+      "Communicate research or project results to other professionals or the public or teach related courses, seminars, or workshops.",
+      "Develop methods of conserving or managing soil that can be applied by farmers or forestry companies.",
+      "Provide information or recommendations to farmers or other landowners regarding ways in which they can best use land, promote plant growth, or avoid or correct problems such as erosion.",
+      "Conduct experiments to develop new or improved varieties of field crops, focusing on characteristics such as yield, quality, disease resistance, nutritional value, or adaptation to specific soils or climates.",
+      "Investigate soil problems or poor water quality to determine sources and effects."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Speaking",
+      "Science",
+      "Critical Thinking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "pcb",
+        "pcm",
+        "grad-sci"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "body": "icar"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.734,
+      "team": 0.712,
+      "autonomy": 0.839,
+      "pace": 0.527,
+      "hands": 0.487,
+      "routine": 0.606
+    },
+    "related": [
+      "food-technologist",
+      "biotechnologist",
+      "electronics-engineer"
+    ]
+  },
+  {
+    "id": "food-technologist",
+    "title": "Food Technologist",
+    "domain": "agriculture-food",
+    "keywords": [
+      "food processing",
+      "food safety",
+      "nutrition",
+      "fssai"
+    ],
+    "onet": {
+      "code": "19-1012.00",
+      "title": "Food Scientists and Technologists"
+    },
+    "description": "Use chemistry, microbiology, engineering, and other sciences to study the principles underlying the processing and deterioration of foods; analyze food content to determine levels of vitamins, fat, sugar, and protein; discover new food sources; research ways to make processed foods safe, palatable, and healthful; and apply food science knowledge to determine best ways to process, package, preserve, store, and distribute food.",
+    "riasec": {
+      "R": 5.05,
+      "I": 5.71,
+      "A": 2.45,
+      "S": 2.16,
+      "E": 2.58,
+      "C": 3.95
+    },
+    "settings": {
+      "people": 0.571,
+      "team": 0.524,
+      "autonomy": 0.536,
+      "pace": 0.473,
+      "hands": 0.414,
+      "routine": 0.51
+    },
+    "tasks": [
+      "Inspect food processing areas to ensure compliance with government regulations and standards for sanitation, safety, quality, and waste management.",
+      "Check raw ingredients for maturity or stability for processing, and finished products for safety, quality, and nutritional value.",
+      "Study methods to improve aspects of foods, such as chemical composition, flavor, color, texture, nutritional value, and convenience.",
+      "Develop food standards and production specifications, safety and sanitary regulations, and waste management and water supply specifications.",
+      "Stay up to date on new regulations and current events regarding food science by reviewing scientific literature."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Learning",
+      "Active Listening",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcb",
+        "pcm",
+        "grad-sci",
+        "diploma"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.746,
+      "team": 0.708,
+      "autonomy": 0.733,
+      "pace": 0.599,
+      "hands": 0.41,
+      "routine": 0.657
+    },
+    "related": [
+      "aerospace-engineer",
+      "agricultural-scientist",
+      "electrical-engineer"
+    ]
+  },
+  {
+    "id": "environmental-scientist",
+    "title": "Environmental Scientist",
+    "domain": "environment-earth",
+    "keywords": [
+      "environment",
+      "climate",
+      "pollution",
+      "sustainability",
+      "ecology"
+    ],
+    "onet": {
+      "code": "19-2041.00",
+      "title": "Environmental Scientists and Specialists, Including Health"
+    },
+    "description": "Conduct research or perform investigation for the purpose of identifying, abating, or eliminating sources of pollutants or hazards that affect either the environment or public health. Using knowledge of various scientific disciplines, may collect, synthesize, study, report, and recommend action based on data derived from measurements or observations of air, food, soil, water, and other sources.",
+    "riasec": {
+      "R": 4.76,
+      "I": 7,
+      "A": 1.87,
+      "S": 2.75,
+      "E": 2.56,
+      "C": 4.32
+    },
+    "settings": {
+      "people": 0.717,
+      "team": 0.561,
+      "autonomy": 0.486,
+      "pace": 0.386,
+      "hands": 0.188,
+      "routine": 0.443
+    },
+    "tasks": [
+      "Communicate scientific or technical information to the public, organizations, or internal audiences through oral briefings, written documents, workshops, conferences, training sessions, or public hearings.",
+      "Monitor effects of pollution or land degradation and recommend means of prevention or control.",
+      "Collect, synthesize, analyze, manage, and report environmental data, such as pollution emission measurements, atmospheric monitoring measurements, meteorological or mineralogical information, or soil or water samples.",
+      "Review and implement environmental technical standards, guidelines, policies, and formal regulations that meet all appropriate requirements.",
+      "Provide scientific or technical guidance, support, coordination, or oversight to governmental agencies, environmental programs, industry, or the public."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Writing",
+      "Speaking",
+      "Science"
+    ],
+    "entry": {
+      "streams": [
+        "pcb",
+        "pcm",
+        "grad-sci"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.821,
+      "team": 0.726,
+      "autonomy": 0.706,
+      "pace": 0.561,
+      "hands": 0.24,
+      "routine": 0.619
+    },
+    "related": [
+      "biotechnologist",
+      "physicist",
+      "food-technologist"
+    ]
+  },
+  {
+    "id": "physicist",
+    "title": "Physicist (research scientist)",
+    "domain": "physical-sciences",
+    "keywords": [
+      "physics",
+      "research",
+      "csir",
+      "scientist",
+      "msc physics"
+    ],
+    "onet": {
+      "code": "19-2012.00",
+      "title": "Physicists"
+    },
+    "description": "Conduct research into physical phenomena, develop theories on the basis of observation and experiments, and devise methods to apply physical laws and theories.",
+    "riasec": {
+      "R": 4.94,
+      "I": 7,
+      "A": 2.75,
+      "S": 2.12,
+      "E": 1.77,
+      "C": 4.8
+    },
+    "settings": {
+      "people": 0.299,
+      "team": 0.516,
+      "autonomy": 0.827,
+      "pace": 0.404,
+      "hands": 0.179,
+      "routine": 0.41
+    },
+    "tasks": [
+      "Analyze data from research conducted to detect and measure physical phenomena.",
+      "Report experimental results by writing papers for scientific journals or by presenting information at scientific conferences.",
+      "Perform complex calculations as part of the analysis and evaluation of data, using computers.",
+      "Describe and express observations and conclusions in mathematical terms.",
+      "Collaborate with other scientists in the design, development, and testing of experimental, industrial, or medical equipment, instrumentation, and procedures."
+    ],
+    "skills": [
+      "Science",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Speaking",
+      "Mathematics"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "grad-sci"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "csir-ugc-net"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.606,
+      "team": 0.704,
+      "autonomy": 0.893,
+      "pace": 0.569,
+      "hands": 0.233,
+      "routine": 0.6
+    },
+    "related": [
+      "biotechnologist",
+      "food-technologist",
+      "environmental-scientist"
+    ]
+  },
+  {
+    "id": "statistician",
+    "title": "Statistician",
+    "domain": "maths-stats",
+    "keywords": [
+      "statistics",
+      "bstat",
+      "survey",
+      "data",
+      "isi"
+    ],
+    "onet": {
+      "code": "15-2041.00",
+      "title": "Statisticians"
+    },
+    "description": "Develop or apply mathematical or statistical theory and methods to collect, organize, interpret, and summarize numerical data to provide usable information. May specialize in fields such as biostatistics, agricultural statistics, business statistics, or economic statistics. Includes mathematical and survey statisticians.",
+    "riasec": {
+      "R": 2.14,
+      "I": 6.58,
+      "A": 1.77,
+      "S": 1.71,
+      "E": 1.82,
+      "C": 6.03
+    },
+    "settings": {
+      "people": 0.247,
+      "team": 0.499,
+      "autonomy": 0.641,
+      "pace": 0.226,
+      "hands": 0.061,
+      "routine": 0.545
+    },
+    "tasks": [
+      "Analyze and interpret statistical data to identify significant differences in relationships among sources of information.",
+      "Evaluate the statistical methods and procedures used to obtain data to ensure validity, applicability, efficiency, and accuracy.",
+      "Report results of statistical analyses, including information in the form of graphs, charts, and tables.",
+      "Determine whether statistical methods are appropriate, based on user needs or research questions of interest.",
+      "Prepare data for processing by organizing information, checking for inaccuracies, and adjusting and weighting the raw data."
+    ],
+    "skills": [
+      "Mathematics",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Listening",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "commerce",
+        "grad-sci",
+        "grad-com",
+        "grad-eng"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "isi-admission",
+        "body": "isi"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.579,
+      "team": 0.696,
+      "autonomy": 0.791,
+      "pace": 0.491,
+      "hands": 0.144,
+      "routine": 0.677
+    },
+    "related": [
+      "data-scientist",
+      "software-developer",
+      "cybersecurity-analyst"
+    ]
+  },
+  {
+    "id": "actuary",
+    "title": "Actuary",
+    "domain": "maths-stats",
+    "keywords": [
+      "insurance maths",
+      "risk",
+      "actuarial",
+      "iai"
+    ],
+    "onet": {
+      "code": "15-2011.00",
+      "title": "Actuaries"
+    },
+    "description": "Analyze statistical data, such as mortality, accident, sickness, disability, and retirement rates and construct probability tables to forecast risk and liability for payment of future benefits. May ascertain insurance rates required and cash reserves necessary to ensure payment of future benefits.",
+    "riasec": {
+      "R": 1.78,
+      "I": 4.45,
+      "A": 1.13,
+      "S": 2.49,
+      "E": 3.33,
+      "C": 6.29
+    },
+    "settings": {
+      "people": 0.27,
+      "team": 0.427,
+      "autonomy": 0.559,
+      "pace": 0.308,
+      "hands": 0.001,
+      "routine": 0.557
+    },
+    "tasks": [
+      "Analyze data to determine premium rates required and cash reserves and liabilities necessary to ensure payment of future benefits.",
+      "Analyze statistical information to estimate mortality, accident, sickness, disability, and retirement rates.",
+      "Design, review, and help administer insurance, annuity and pension plans, determining financial soundness and calculating premiums.",
+      "Collaborate with programmers, underwriters, accounts, claims experts, and senior management to help companies develop plans for new lines of business or improvements to existing business.",
+      "Provide advice to clients on a contract basis, working as a consultant."
+    ],
+    "skills": [
+      "Mathematics",
+      "Reading Comprehension",
+      "Active Listening",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "commerce",
+        "grad-sci",
+        "grad-com"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "acet",
+        "body": "iai"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.591,
+      "team": 0.661,
+      "autonomy": 0.746,
+      "pace": 0.527,
+      "hands": 0.099,
+      "routine": 0.684
+    },
+    "related": [
+      "chartered-accountant",
+      "management-consultant",
+      "data-analyst"
+    ]
+  },
+  {
+    "id": "chartered-accountant",
+    "title": "Chartered Accountant",
+    "domain": "accounting-audit",
+    "keywords": [
+      "ca",
+      "audit",
+      "taxation",
+      "accounts",
+      "icai"
+    ],
+    "onet": {
+      "code": "13-2011.00",
+      "title": "Accountants and Auditors"
+    },
+    "description": "Examine, analyze, and interpret accounting records to prepare financial statements, give advice, or audit and evaluate statements prepared by others. Install or advise on systems of recording costs or other financial and budgetary data.",
+    "riasec": {
+      "R": 1.14,
+      "I": 3.57,
+      "A": 1.08,
+      "S": 2.13,
+      "E": 3.87,
+      "C": 7
+    },
+    "settings": {
+      "people": 0.507,
+      "team": 0.439,
+      "autonomy": 0.441,
+      "pace": 0.404,
+      "hands": 0.175,
+      "routine": 0.822
+    },
+    "tasks": [
+      "Prepare, examine, or analyze accounting records, financial statements, or other financial reports to assess accuracy, completeness, and conformance to reporting and procedural standards.",
+      "Process invoices for payment.",
+      "Review accounts for discrepancies and reconcile differences.",
+      "Compute taxes owed and prepare tax returns, ensuring compliance with payment, reporting, or other tax requirements.",
+      "Prepare adjusting journal entries."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Writing",
+      "Critical Thinking",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "ca-foundation",
+        "body": "icai"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.713,
+      "team": 0.667,
+      "autonomy": 0.681,
+      "pace": 0.569,
+      "hands": 0.23,
+      "routine": 0.836
+    },
+    "related": [
+      "actuary",
+      "company-secretary",
+      "management-consultant"
+    ]
+  },
+  {
+    "id": "company-secretary",
+    "title": "Company Secretary",
+    "domain": "accounting-audit",
+    "keywords": [
+      "cs",
+      "corporate law",
+      "compliance",
+      "icsi",
+      "governance"
+    ],
+    "onet": {
+      "code": "13-1041.00",
+      "title": "Compliance Officers",
+      "loose": "O*NET has no Company Secretary occupation. Compliance Officers is the nearest, so treat this match as approximate."
+    },
+    "description": "Examine, evaluate, and investigate eligibility for or conformity with laws and regulations governing contract compliance of licenses and permits, and perform other compliance and enforcement inspection and analysis activities not classified elsewhere.",
+    "riasec": {
+      "R": 2.51,
+      "I": 3.07,
+      "A": 1,
+      "S": 2.97,
+      "E": 4.08,
+      "C": 6.33
+    },
+    "settings": {
+      "people": 0.907,
+      "team": 0.6,
+      "autonomy": 0.341,
+      "pace": 0.39,
+      "hands": 0.411,
+      "routine": 0.766
+    },
+    "tasks": [
+      "Warn violators of infractions or penalties.",
+      "Evaluate applications, records, or documents to gather information about eligibility or liability issues.",
+      "Advise licensees or other individuals or groups concerning licensing, permit, or passport regulations.",
+      "Prepare reports of activities, evaluations, recommendations, or decisions.",
+      "Report law or regulation violations to appropriate boards or agencies."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Speaking",
+      "Active Listening",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "cseet",
+        "body": "icsi"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.919,
+      "team": 0.745,
+      "autonomy": 0.626,
+      "pace": 0.563,
+      "hands": 0.408,
+      "routine": 0.804
+    },
+    "related": [
+      "chartered-accountant",
+      "bank-officer",
+      "supply-chain-manager"
+    ]
+  },
+  {
+    "id": "financial-planner",
+    "title": "Financial Planner",
+    "domain": "banking-finance",
+    "keywords": [
+      "investment adviser",
+      "wealth",
+      "mutual funds",
+      "financial advisor",
+      "cfp"
+    ],
+    "onet": {
+      "code": "13-2052.00",
+      "title": "Personal Financial Advisors"
+    },
+    "description": "Advise clients on financial plans using knowledge of tax and investment strategies, securities, insurance, pension plans, and real estate. Duties include assessing clients' assets, liabilities, cash flow, insurance coverage, tax status, and financial objectives. May also buy and sell financial assets for clients.",
+    "riasec": {
+      "R": 1,
+      "I": 3.27,
+      "A": 1.69,
+      "S": 4.07,
+      "E": 5.85,
+      "C": 5.61
+    },
+    "settings": {
+      "people": 0.561,
+      "team": 0.137,
+      "autonomy": 0.639,
+      "pace": 0.493,
+      "hands": 0,
+      "routine": 0.607
+    },
+    "tasks": [
+      "Interview clients to determine their current income, expenses, insurance coverage, tax status, financial objectives, risk tolerance, or other information needed to develop a financial plan.",
+      "Analyze financial information obtained from clients to determine strategies for meeting clients' financial objectives.",
+      "Answer clients' questions about the purposes and details of financial plans and strategies.",
+      "Review clients' accounts and plans regularly to determine whether life changes, economic changes, environmental concerns, or financial performance indicate a need for plan reassessment.",
+      "Manage client portfolios, keeping client plans up-to-date."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "body": "sebi"
+      },
+      {
+        "body": "nism"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.741,
+      "team": 0.521,
+      "autonomy": 0.79,
+      "pace": 0.608,
+      "hands": 0.098,
+      "routine": 0.713
+    },
+    "related": [
+      "hr-manager",
+      "civil-servant",
+      "bank-officer"
+    ]
+  },
+  {
+    "id": "bank-officer",
+    "title": "Bank Officer",
+    "domain": "banking-finance",
+    "keywords": [
+      "po",
+      "banking",
+      "ibps",
+      "sbi",
+      "clerk"
+    ],
+    "onet": {
+      "code": "13-2072.00",
+      "title": "Loan Officers",
+      "loose": "Loan Officers covers one part of a bank officer's work. Treat this match as approximate."
+    },
+    "description": "Evaluate, authorize, or recommend approval of commercial, real estate, or credit loans. Advise borrowers on financial status and payment methods. Includes mortgage loan officers and agents, collection analysts, loan servicing officers, loan underwriters, and payday loan officers.",
+    "riasec": {
+      "R": 1.43,
+      "I": 2.32,
+      "A": 1,
+      "S": 3.65,
+      "E": 4.98,
+      "C": 6.08
+    },
+    "settings": {
+      "people": 0.946,
+      "team": 0.723,
+      "autonomy": 0.752,
+      "pace": 0.662,
+      "hands": 0.241,
+      "routine": 0.661
+    },
+    "tasks": [
+      "Meet with applicants to obtain information for loan applications and to answer questions about the process.",
+      "Analyze applicants' financial status, credit, and property evaluations to determine feasibility of granting loans.",
+      "Approve loans within specified limits, and refer loan applications outside those limits to management for approval.",
+      "Explain to customers the different types of loans and credit options that are available, as well as the terms of those services.",
+      "Submit applications to credit analysts for verification and recommendation."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "ibps-po",
+        "body": "ibps"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.939,
+      "team": 0.804,
+      "autonomy": 0.852,
+      "pace": 0.682,
+      "hands": 0.28,
+      "routine": 0.744
+    },
+    "related": [
+      "civil-servant",
+      "hr-manager",
+      "financial-planner"
+    ]
+  },
+  {
+    "id": "management-consultant",
+    "title": "Management Consultant",
+    "domain": "business-management",
+    "keywords": [
+      "mba",
+      "consulting",
+      "strategy",
+      "iim",
+      "business analyst"
+    ],
+    "onet": {
+      "code": "13-1111.00",
+      "title": "Management Analysts"
+    },
+    "description": "Conduct organizational studies and evaluations, design systems and procedures, conduct work simplification and measurement studies, and prepare operations and procedures manuals to assist management in operating more efficiently and effectively. Includes program analysts and management consultants.",
+    "riasec": {
+      "R": 1.37,
+      "I": 5.44,
+      "A": 1.63,
+      "S": 2.82,
+      "E": 4.81,
+      "C": 6.05
+    },
+    "settings": {
+      "people": 0.678,
+      "team": 0.729,
+      "autonomy": 0.678,
+      "pace": 0.502,
+      "hands": 0.137,
+      "routine": 0.41
+    },
+    "tasks": [
+      "Gather and organize information on problems or procedures.",
+      "Confer with personnel concerned to ensure successful functioning of newly implemented systems or procedures.",
+      "Analyze data gathered and develop solutions or alternative methods of proceeding.",
+      "Document findings of study and prepare recommendations for implementation of new systems, procedures, or organizational changes.",
+      "Plan study of work problems and procedures, such as organizational change, communications, information flow, integrated production methods, inventory control, or cost analysis."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Critical Thinking",
+      "Writing",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "cat"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.801,
+      "team": 0.807,
+      "autonomy": 0.811,
+      "pace": 0.612,
+      "hands": 0.201,
+      "routine": 0.6
+    },
+    "related": [
+      "data-analyst",
+      "actuary",
+      "chartered-accountant"
+    ]
+  },
+  {
+    "id": "hr-manager",
+    "title": "HR Manager",
+    "domain": "business-management",
+    "keywords": [
+      "human resources",
+      "hr",
+      "recruitment",
+      "talent",
+      "mba hr"
+    ],
+    "onet": {
+      "code": "13-1071.00",
+      "title": "Human Resources Specialists"
+    },
+    "description": "Recruit, screen, interview, or place individuals within an organization. May perform other activities in multiple human resources areas.",
+    "riasec": {
+      "R": 1.03,
+      "I": 2.52,
+      "A": 1.35,
+      "S": 3.78,
+      "E": 5.67,
+      "C": 5.52
+    },
+    "settings": {
+      "people": 0.806,
+      "team": 0.812,
+      "autonomy": 0.758,
+      "pace": 0.372,
+      "hands": 0.227,
+      "routine": 0.717
+    },
+    "tasks": [
+      "Interpret and explain human resources policies, procedures, laws, standards, or regulations.",
+      "Hire employees and process hiring-related paperwork.",
+      "Maintain current knowledge of Equal Employment Opportunity (EEO) and affirmative action guidelines and laws, such as the Americans with Disabilities Act (ADA).",
+      "Prepare or maintain employment records related to events, such as hiring, termination, leaves, transfers, or promotions, using human resources management system software.",
+      "Address employee relations issues, such as harassment allegations, work complaints, or other employee concerns."
+    ],
+    "skills": [
+      "Speaking",
+      "Reading Comprehension",
+      "Active Listening",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "cat"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.867,
+      "team": 0.847,
+      "autonomy": 0.855,
+      "pace": 0.555,
+      "hands": 0.269,
+      "routine": 0.776
+    },
+    "related": [
+      "financial-planner",
+      "civil-servant",
+      "bank-officer"
+    ]
+  },
+  {
+    "id": "marketing-manager",
+    "title": "Marketing Manager",
+    "domain": "marketing-sales",
+    "keywords": [
+      "marketing",
+      "brand",
+      "digital marketing",
+      "advertising",
+      "mba marketing"
+    ],
+    "onet": {
+      "code": "11-2021.00",
+      "title": "Marketing Managers"
+    },
+    "description": "Plan, direct, or coordinate marketing policies and programs, such as determining the demand for products and services offered by a firm and its competitors, and identify potential customers. Develop pricing strategies with the goal of maximizing the firm's profits or share of the market while ensuring the firm's customers are satisfied. Oversee product development or monitor trends that indicate the need for new products and services.",
+    "riasec": {
+      "R": 1,
+      "I": 2.9,
+      "A": 2.45,
+      "S": 2.82,
+      "E": 7,
+      "C": 4.7
+    },
+    "settings": {
+      "people": 0.652,
+      "team": 0.954,
+      "autonomy": 0.902,
+      "pace": 0.747,
+      "hands": 0.176,
+      "routine": 0.663
+    },
+    "tasks": [
+      "Formulate, direct, or coordinate marketing activities or policies to promote products or services, working with advertising or promotion managers.",
+      "Use sales forecasting or strategic planning to ensure the sale and profitability of products, lines, or services, analyzing business developments and monitoring market trends.",
+      "Identify, develop, or evaluate marketing strategy, based on knowledge of establishment objectives, market characteristics, and cost and markup factors.",
+      "Direct the hiring, training, or performance evaluations of marketing or sales staff and oversee their daily activities.",
+      "Evaluate the financial aspects of product development, such as budgets, expenditures, research and development appropriations, or return-on-investment and profit-loss projections."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "cat"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.788,
+      "team": 0.916,
+      "autonomy": 0.934,
+      "pace": 0.719,
+      "hands": 0.231,
+      "routine": 0.745
+    },
+    "related": [
+      "entrepreneur",
+      "event-manager",
+      "financial-planner"
+    ]
+  },
+  {
+    "id": "event-manager",
+    "title": "Event Manager",
+    "domain": "hospitality-tourism",
+    "keywords": [
+      "events",
+      "weddings",
+      "conference",
+      "exhibitions",
+      "planner"
+    ],
+    "onet": {
+      "code": "13-1121.00",
+      "title": "Meeting, Convention, and Event Planners"
+    },
+    "description": "Coordinate activities of staff, convention personnel, or clients to make arrangements for group meetings, events, or conventions.",
+    "riasec": {
+      "R": 1,
+      "I": 1.56,
+      "A": 2.49,
+      "S": 4.56,
+      "E": 7,
+      "C": 4.96
+    },
+    "settings": {
+      "people": 0.986,
+      "team": 0.983,
+      "autonomy": 0.851,
+      "pace": 0.502,
+      "hands": 0.406,
+      "routine": 0.497
+    },
+    "tasks": [
+      "Consult with customers to determine objectives and requirements for events, such as meetings, conferences, and conventions.",
+      "Review event bills for accuracy and approve payment.",
+      "Coordinate services for events, such as accommodation and transportation for participants, facilities, catering, signage, displays, special needs requirements, printing and event security.",
+      "Arrange the availability of audio-visual equipment, transportation, displays, and other event needs.",
+      "Confer with staff at a chosen event site to coordinate details."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.96,
+      "team": 0.93,
+      "autonomy": 0.906,
+      "pace": 0.612,
+      "hands": 0.404,
+      "routine": 0.65
+    },
+    "related": [
+      "entrepreneur",
+      "hr-manager",
+      "civil-servant"
+    ]
+  },
+  {
+    "id": "lawyer",
+    "title": "Lawyer",
+    "domain": "law-legal",
+    "keywords": [
+      "advocate",
+      "llb",
+      "clat",
+      "litigation",
+      "corporate law"
+    ],
+    "onet": {
+      "code": "23-1011.00",
+      "title": "Lawyers"
+    },
+    "description": "Represent clients in criminal and civil litigation and other legal proceedings, draw up legal documents, or manage or advise clients on legal transactions. May specialize in a single area or may practice broadly in many areas of law.",
+    "riasec": {
+      "R": 1.12,
+      "I": 4.38,
+      "A": 2.4,
+      "S": 3.48,
+      "E": 5.51,
+      "C": 4.59
+    },
+    "settings": {
+      "people": 0.75,
+      "team": 0.443,
+      "autonomy": 0.893,
+      "pace": 0.742,
+      "hands": 0.015,
+      "routine": 0.522
+    },
+    "tasks": [
+      "Interpret laws, rulings and regulations for individuals and businesses.",
+      "Analyze the probable outcomes of cases, using knowledge of legal precedents.",
+      "Gather evidence to formulate defense or to initiate legal actions by such means as interviewing clients and witnesses to ascertain the facts of a case.",
+      "Represent clients in court or before government agencies.",
+      "Evaluate findings and develop strategies and arguments in preparation for presentation of cases."
+    ],
+    "skills": [
+      "Speaking",
+      "Reading Comprehension",
+      "Active Listening",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "clat",
+        "body": "bci"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.838,
+      "team": 0.669,
+      "autonomy": 0.929,
+      "pace": 0.717,
+      "hands": 0.109,
+      "routine": 0.664
+    },
+    "related": [
+      "judge",
+      "financial-planner",
+      "entrepreneur"
+    ]
+  },
+  {
+    "id": "judge",
+    "title": "Judge",
+    "domain": "law-legal",
+    "keywords": [
+      "judiciary",
+      "magistrate",
+      "civil judge",
+      "judicial services"
+    ],
+    "onet": {
+      "code": "23-1023.00",
+      "title": "Judges, Magistrate Judges, and Magistrates"
+    },
+    "description": "Arbitrate, advise, adjudicate, or administer justice in a court of law. May sentence defendant in criminal cases according to government statutes or sentencing guidelines. May determine liability of defendant in civil cases. May perform wedding ceremonies.",
+    "riasec": {
+      "R": 2.33,
+      "I": 3.81,
+      "A": 2.19,
+      "S": 3.96,
+      "E": 5.27,
+      "C": 4.11
+    },
+    "settings": {
+      "people": 0.944,
+      "team": 0.911,
+      "autonomy": 1,
+      "pace": 0.719,
+      "hands": 0.031,
+      "routine": 0.686
+    },
+    "tasks": [
+      "Sentence defendants in criminal cases, on conviction by jury, according to applicable government statutes.",
+      "Monitor proceedings to ensure that all applicable rules and procedures are followed.",
+      "Instruct juries on applicable laws, direct juries to deduce the facts from the evidence presented, and hear their verdicts.",
+      "Write decisions on cases.",
+      "Read documents on pleadings and motions to ascertain facts and issues."
+    ],
+    "skills": [
+      "Active Listening",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Writing",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "state-judicial"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.938,
+      "team": 0.895,
+      "autonomy": 0.988,
+      "pace": 0.707,
+      "hands": 0.121,
+      "routine": 0.758
+    },
+    "related": [
+      "financial-planner",
+      "entrepreneur",
+      "lawyer"
+    ]
+  },
+  {
+    "id": "civil-servant",
+    "title": "Civil Servant (IAS and allied services)",
+    "domain": "civil-services-policy",
+    "keywords": [
+      "ias",
+      "ips",
+      "ifs",
+      "upsc",
+      "government",
+      "collector"
+    ],
+    "onet": {
+      "code": "11-3012.00",
+      "title": "Administrative Services Managers",
+      "loose": "O*NET has no equivalent of the Indian civil services. Administrative Services Managers is the nearest, so treat this match as approximate."
+    },
+    "description": "Plan, direct, or coordinate one or more administrative services of an organization, such as records and information management, mail distribution, and other office support services.",
+    "riasec": {
+      "R": 1.42,
+      "I": 2.12,
+      "A": 1.11,
+      "S": 3.74,
+      "E": 6.47,
+      "C": 6.27
+    },
+    "settings": {
+      "people": 0.825,
+      "team": 0.733,
+      "autonomy": 0.601,
+      "pace": 0.237,
+      "hands": 0.29,
+      "routine": 0.565
+    },
+    "tasks": [
+      "Prepare and review operational reports and schedules to ensure accuracy and efficiency.",
+      "Set goals and deadlines for the department.",
+      "Acquire, distribute and store supplies.",
+      "Analyze internal processes and recommend and implement procedural or policy changes to improve operations, such as supply changes or the disposal of records.",
+      "Conduct classes to teach procedures to staff."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "upsc-cse",
+        "body": "upsc"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.877,
+      "team": 0.809,
+      "autonomy": 0.769,
+      "pace": 0.496,
+      "hands": 0.317,
+      "routine": 0.689
+    },
+    "related": [
+      "hr-manager",
+      "bank-officer",
+      "financial-planner"
+    ]
+  },
+  {
+    "id": "policy-analyst",
+    "title": "Policy Analyst",
+    "domain": "civil-services-policy",
+    "keywords": [
+      "public policy",
+      "think tank",
+      "governance",
+      "research",
+      "political science"
+    ],
+    "onet": {
+      "code": "19-3094.00",
+      "title": "Political Scientists"
+    },
+    "description": "Study the origin, development, and operation of political systems. May study topics, such as public opinion, political decisionmaking, and ideology. May analyze the structure and operation of governments, as well as various political entities. May conduct public opinion surveys, analyze election results, or analyze public documents.",
+    "riasec": {
+      "R": 1,
+      "I": 6.71,
+      "A": 3.87,
+      "S": 3.42,
+      "E": 3.61,
+      "C": 3.52
+    },
+    "settings": {
+      "people": 0.423,
+      "team": 0.07,
+      "autonomy": 0.944,
+      "pace": 0.374,
+      "hands": 0.076,
+      "routine": 0.227
+    },
+    "tasks": [
+      "Teach political science.",
+      "Maintain current knowledge of government policy decisions.",
+      "Develop and test theories, using information from interviews, newspapers, periodicals, case law, historical papers, polls, or statistical sources.",
+      "Disseminate research results through academic publications, written reports, or public presentations.",
+      "Advise political science students."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Active Learning",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.67,
+      "team": 0.489,
+      "autonomy": 0.957,
+      "pace": 0.556,
+      "hands": 0.155,
+      "routine": 0.495
+    },
+    "related": [
+      "urban-planner",
+      "data-scientist",
+      "journalist"
+    ]
+  },
+  {
+    "id": "police-officer",
+    "title": "Police Officer",
+    "domain": "defence-police",
+    "keywords": [
+      "ips",
+      "sub inspector",
+      "constable",
+      "law enforcement",
+      "police"
+    ],
+    "onet": {
+      "code": "33-3051.00",
+      "title": "Police and Sheriff's Patrol Officers"
+    },
+    "description": "Maintain order and protect life and property by enforcing local, tribal, state, or federal laws and ordinances. Perform a combination of the following duties: patrol a specific area; direct traffic; issue traffic summonses; investigate accidents; apprehend and arrest suspects, or serve legal processes of courts. Includes police officers working at educational institutions.",
+    "riasec": {
+      "R": 5.36,
+      "I": 2.76,
+      "A": 1.07,
+      "S": 3.45,
+      "E": 4.08,
+      "C": 4.35
+    },
+    "settings": {
+      "people": 0.932,
+      "team": 0.714,
+      "autonomy": 0.616,
+      "pace": 0.479,
+      "hands": 0.581,
+      "routine": 0.682
+    },
+    "tasks": [
+      "Provide for public safety by maintaining order, responding to emergencies, protecting people and property, enforcing motor vehicle and criminal laws, and promoting good community relations.",
+      "Identify, pursue, and arrest suspects and perpetrators of criminal acts.",
+      "Verify that the proper legal charges have been made against law offenders.",
+      "Render aid to accident survivors and other persons requiring first aid for physical injuries.",
+      "Record facts to prepare reports that document incidents and activities."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Active Learning",
+      "Reading Comprehension"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "upsc-cse",
+        "body": "upsc"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.932,
+      "team": 0.8,
+      "autonomy": 0.777,
+      "pace": 0.602,
+      "hands": 0.536,
+      "routine": 0.756
+    },
+    "related": [
+      "commercial-pilot",
+      "electrician",
+      "chef"
+    ]
+  },
+  {
+    "id": "criminal-investigator",
+    "title": "Criminal Investigator",
+    "domain": "defence-police",
+    "keywords": [
+      "detective",
+      "cbi",
+      "crime",
+      "forensic",
+      "investigation"
+    ],
+    "onet": {
+      "code": "33-3021.00",
+      "title": "Detectives and Criminal Investigators"
+    },
+    "description": "Conduct investigations related to suspected violations of federal, state, or local laws to prevent or solve crimes.",
+    "riasec": {
+      "R": 4.18,
+      "I": 4.9,
+      "A": 1.2,
+      "S": 2.73,
+      "E": 4.04,
+      "C": 4.83
+    },
+    "settings": {
+      "people": 0.988,
+      "team": 0.894,
+      "autonomy": 0.676,
+      "pace": 0.9,
+      "hands": 0.621,
+      "routine": 1
+    },
+    "tasks": [
+      "Prepare reports that detail investigation findings.",
+      "Obtain and verify evidence by interviewing and observing suspects and witnesses or by analyzing records.",
+      "Preserve, process, and analyze items of evidence obtained from crime scenes and suspects, placing them in proper containers and destroying evidence no longer needed.",
+      "Obtain facts or statements from complainants, witnesses, and accused persons and record interviews, using recording device.",
+      "Record progress of investigation, maintain informational files on suspects, and submit reports to commanding officer or magistrate to authorize warrants."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.961,
+      "team": 0.887,
+      "autonomy": 0.81,
+      "pace": 0.786,
+      "hands": 0.566,
+      "routine": 0.938
+    },
+    "related": [
+      "cybersecurity-analyst",
+      "commercial-pilot",
+      "supply-chain-manager"
+    ]
+  },
+  {
+    "id": "school-teacher",
+    "title": "School Teacher",
+    "domain": "teaching-education",
+    "keywords": [
+      "teacher",
+      "bed",
+      "tgt",
+      "pgt",
+      "school"
+    ],
+    "onet": {
+      "code": "25-2031.00",
+      "title": "Secondary School Teachers, Except Special and Career/Technical Education"
+    },
+    "description": "Teach one or more subjects to students at the secondary school level.",
+    "riasec": {
+      "R": 2.73,
+      "I": 3.19,
+      "A": 3.77,
+      "S": 7,
+      "E": 2.9,
+      "C": 3.61
+    },
+    "settings": {
+      "people": 0.717,
+      "team": 0.696,
+      "autonomy": 0.632,
+      "pace": 0,
+      "hands": 0.416,
+      "routine": 0.105
+    },
+    "tasks": [
+      "Prepare students for later grades by encouraging them to explore learning opportunities and to persevere with challenging tasks.",
+      "Instruct through lectures, discussions, and demonstrations in one or more subjects, such as English, mathematics, or social studies.",
+      "Establish and enforce rules for behavior and procedures for maintaining order among students.",
+      "Prepare materials and classrooms for class activities.",
+      "Adapt teaching methods and instructional materials to meet students' varying needs and interests."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Learning Strategies",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "ctet",
+        "body": "ncte"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.821,
+      "team": 0.791,
+      "autonomy": 0.786,
+      "pace": 0.392,
+      "hands": 0.412,
+      "routine": 0.425
+    },
+    "related": [
+      "social-worker",
+      "special-educator",
+      "career-counsellor"
+    ]
+  },
+  {
+    "id": "special-educator",
+    "title": "Special Educator",
+    "domain": "teaching-education",
+    "keywords": [
+      "special needs",
+      "inclusive education",
+      "disability",
+      "bed special"
+    ],
+    "onet": {
+      "code": "25-2058.00",
+      "title": "Special Education Teachers, Secondary School"
+    },
+    "description": "Teach academic, social, and life skills to secondary school students with learning, emotional, or physical disabilities. Includes teachers who specialize and work with students who are blind or have visual impairments; students who are deaf or have hearing impairments; and students with intellectual disabilities.",
+    "riasec": {
+      "R": 2.39,
+      "I": 3.81,
+      "A": 3.76,
+      "S": 7,
+      "E": 1.93,
+      "C": 3.52
+    },
+    "settings": {
+      "people": 0.788,
+      "team": 1,
+      "autonomy": 0.74,
+      "pace": 0.148,
+      "hands": 0.324,
+      "routine": 0.284
+    },
+    "tasks": [
+      "Establish and enforce rules for behavior and policies and procedures to maintain order among students.",
+      "Maintain accurate and complete student records, and prepare reports on children and activities, as required by laws, district policies, and administrative regulations.",
+      "Confer with parents, administrators, testing specialists, social workers, or other professionals to develop individual educational plans (IEPs) for students' educational, physical, and social development.",
+      "Employ special educational strategies and techniques during instruction to improve the development of sensory- and perceptual-motor skills, language, cognition, and memory.",
+      "Establish clear objectives for all lessons, units, and projects, and communicate those objectives to students."
+    ],
+    "skills": [
+      "Learning Strategies",
+      "Reading Comprehension",
+      "Speaking",
+      "Active Listening",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "body": "rci"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.858,
+      "team": 0.938,
+      "autonomy": 0.845,
+      "pace": 0.457,
+      "hands": 0.342,
+      "routine": 0.528
+    },
+    "related": [
+      "school-teacher",
+      "social-worker",
+      "clinical-psychologist"
+    ]
+  },
+  {
+    "id": "clinical-psychologist",
+    "title": "Clinical Psychologist",
+    "domain": "psychology-counselling",
+    "keywords": [
+      "psychology",
+      "mental health",
+      "therapist",
+      "mphil",
+      "rci"
+    ],
+    "onet": {
+      "code": "19-3033.00",
+      "title": "Clinical and Counseling Psychologists"
+    },
+    "description": "Assess, diagnose, and treat mental and emotional disorders of individuals through observation, interview, and psychological tests. Help individuals with distress or maladjustment understand their problems through their knowledge of case history, interviews with patients, and theory. Provide individual or group counseling services to assist individuals in achieving more effective personal, social, educational, and vocational development and adjustment. May design behavior modification programs and consult with medical personnel regarding the best treatment for patients.",
+    "riasec": {
+      "R": 1.05,
+      "I": 5.58,
+      "A": 3.06,
+      "S": 6.57,
+      "E": 2.65,
+      "C": 3.49
+    },
+    "settings": {
+      "people": 0.701,
+      "team": 0,
+      "autonomy": 0.867,
+      "pace": 0.537,
+      "hands": 0.048,
+      "routine": 0.105
+    },
+    "tasks": [
+      "Conduct assessments of patients' risk for harm to self or others.",
+      "Document patient information including session notes, progress notes, recommendations, and treatment plans.",
+      "Identify psychological, emotional, or behavioral issues and diagnose disorders, using information obtained from interviews, tests, records, or reference materials.",
+      "Write reports on clients and maintain required paperwork.",
+      "Counsel individuals, groups, or families to help them understand problems, deal with crisis situations, define goals, and develop realistic action plans."
+    ],
+    "skills": [
+      "Reading Comprehension",
+      "Active Listening",
+      "Writing",
+      "Critical Thinking",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "body": "rci"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.813,
+      "team": 0.455,
+      "autonomy": 0.915,
+      "pace": 0.627,
+      "hands": 0.134,
+      "routine": 0.425
+    },
+    "related": [
+      "social-worker",
+      "special-educator",
+      "career-counsellor"
+    ]
+  },
+  {
+    "id": "career-counsellor",
+    "title": "Career Counsellor",
+    "domain": "psychology-counselling",
+    "keywords": [
+      "guidance",
+      "student counsellor",
+      "school counsellor",
+      "advisor"
+    ],
+    "onet": {
+      "code": "21-1012.00",
+      "title": "Educational, Guidance, and Career Counselors and Advisors"
+    },
+    "description": "Advise and assist students and provide educational and vocational guidance services.",
+    "riasec": {
+      "R": 1,
+      "I": 3.3,
+      "A": 3.13,
+      "S": 7,
+      "E": 3.92,
+      "C": 4.09
+    },
+    "settings": {
+      "people": 0.893,
+      "team": 0.986,
+      "autonomy": 0.603,
+      "pace": 0.338,
+      "hands": 0.17,
+      "routine": 0.548
+    },
+    "tasks": [
+      "Maintain accurate and complete student records as required by laws, district policies, and administrative regulations.",
+      "Counsel students regarding educational issues, such as course and program selection, class scheduling and registration, school adjustment, truancy, study habits, and career planning.",
+      "Provide crisis intervention to students when difficult situations occur at schools.",
+      "Counsel individuals or groups to help them understand and overcome personal, social, or behavioral problems affecting their educational or vocational situations.",
+      "Review transcripts to ensure that students meet graduation or college entrance requirements, and write letters of recommendation."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Reading Comprehension",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "grad-arts",
+        "grad-any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.912,
+      "team": 0.931,
+      "autonomy": 0.77,
+      "pace": 0.54,
+      "hands": 0.226,
+      "routine": 0.679
+    },
+    "related": [
+      "social-worker",
+      "school-teacher",
+      "clinical-psychologist"
+    ]
+  },
+  {
+    "id": "social-worker",
+    "title": "Social Worker",
+    "domain": "social-work",
+    "keywords": [
+      "msw",
+      "ngo",
+      "community",
+      "welfare",
+      "development sector"
+    ],
+    "onet": {
+      "code": "21-1021.00",
+      "title": "Child, Family, and School Social Workers"
+    },
+    "description": "Provide social services and assistance to improve the social and psychological functioning of children and their families and to maximize the family well-being and the academic functioning of children. May assist parents, arrange adoptions, and find foster homes for abandoned or abused children. In schools, they address such problems as teenage pregnancy, misbehavior, and truancy. May also advise teachers.",
+    "riasec": {
+      "R": 1.7,
+      "I": 3.32,
+      "A": 2.9,
+      "S": 6.85,
+      "E": 2.94,
+      "C": 3.57
+    },
+    "settings": {
+      "people": 0.93,
+      "team": 0.803,
+      "autonomy": 0.758,
+      "pace": 0.511,
+      "hands": 0.329,
+      "routine": 0.545
+    },
+    "tasks": [
+      "Maintain case history records and prepare reports.",
+      "Interview clients individually, in families, or in groups, assessing their situations, capabilities, and problems to determine what services are required to meet their needs.",
+      "Serve as liaisons between students, homes, schools, family services, child guidance clinics, courts, protective services, doctors, and other contacts to help children who face problems, such as disabilities, abuse, or poverty.",
+      "Develop and review service plans in consultation with clients and perform follow-ups assessing the quantity and quality of services provided.",
+      "Address legal issues, such as child abuse and discipline, assisting with hearings and providing testimony to inform custody arrangements."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Monitoring"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.931,
+      "team": 0.843,
+      "autonomy": 0.855,
+      "pace": 0.616,
+      "hands": 0.346,
+      "routine": 0.677
+    },
+    "related": [
+      "career-counsellor",
+      "school-teacher",
+      "special-educator"
+    ]
+  },
+  {
+    "id": "journalist",
+    "title": "Journalist",
+    "domain": "journalism-publishing",
+    "keywords": [
+      "reporter",
+      "news",
+      "media",
+      "mass communication",
+      "anchor"
+    ],
+    "onet": {
+      "code": "27-3023.00",
+      "title": "News Analysts, Reporters, and Journalists"
+    },
+    "description": "Narrate or write news stories, reviews, or commentary for print, broadcast, or other communications media such as newspapers, magazines, radio, or television. May collect and analyze information through interview, investigation, or observation.",
+    "riasec": {
+      "R": 1.47,
+      "I": 4.16,
+      "A": 5.09,
+      "S": 2.8,
+      "E": 3.95,
+      "C": 3.64
+    },
+    "settings": {
+      "people": 0.68,
+      "team": 0.373,
+      "autonomy": 0.787,
+      "pace": 0.475,
+      "hands": 0.338,
+      "routine": 0.768
+    },
+    "tasks": [
+      "Report news stories for publication or broadcast, describing the background and details of events.",
+      "Gather information and develop perspectives about news subjects through research, interviews, observation, and experience.",
+      "Research a story's background information to provide complete and accurate information.",
+      "Arrange interviews with people who can provide information about a story.",
+      "Establish and maintain relationships with individuals who are credible sources of information."
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Speaking",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "iimc-entrance",
+        "body": "iimc"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.802,
+      "team": 0.635,
+      "autonomy": 0.871,
+      "pace": 0.6,
+      "hands": 0.353,
+      "routine": 0.805
+    },
+    "related": [
+      "content-writer",
+      "ux-ui-designer",
+      "policy-analyst"
+    ]
+  },
+  {
+    "id": "content-writer",
+    "title": "Content Writer",
+    "domain": "journalism-publishing",
+    "keywords": [
+      "writer",
+      "author",
+      "copywriter",
+      "blogger",
+      "editor"
+    ],
+    "onet": {
+      "code": "27-3043.00",
+      "title": "Writers and Authors"
+    },
+    "description": "Originate and prepare written material, such as scripts, stories, advertisements, and other material.",
+    "riasec": {
+      "R": 1,
+      "I": 3.25,
+      "A": 6.68,
+      "S": 2.86,
+      "E": 4.75,
+      "C": 3.34
+    },
+    "settings": {
+      "people": 0,
+      "team": 0.106,
+      "autonomy": 0.794,
+      "pace": 0.639,
+      "hands": 0.126,
+      "routine": 0.717
+    },
+    "tasks": [
+      "Write fiction or nonfiction prose, such as short stories, novels, biographies, articles, descriptive or critical analyses, and essays.",
+      "Revise written material to meet personal standards and to satisfy needs of clients, publishers, directors, or producers.",
+      "Present drafts and ideas to clients.",
+      "Edit or rewrite existing written material as necessary, and submit written material for approval by supervisor, editor, or publisher.",
+      "Conduct research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, and interviews."
+    ],
+    "skills": [
+      "Writing",
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.452,
+      "team": 0.506,
+      "autonomy": 0.875,
+      "pace": 0.672,
+      "hands": 0.193,
+      "routine": 0.776
+    },
+    "related": [
+      "journalist",
+      "film-director",
+      "graphic-designer"
+    ]
+  },
+  {
+    "id": "film-director",
+    "title": "Film Director / Producer",
+    "domain": "film-music-arts",
+    "keywords": [
+      "cinema",
+      "filmmaker",
+      "ott",
+      "direction",
+      "television"
+    ],
+    "onet": {
+      "code": "27-2012.00",
+      "title": "Producers and Directors"
+    },
+    "description": "Produce or direct stage, television, radio, video, or film productions for entertainment, information, or instruction. Responsible for creative decisions, such as interpretation of script, choice of actors or guests, set design, sound, special effects, and choreography.",
+    "riasec": {
+      "R": 2.13,
+      "I": 2.24,
+      "A": 6.14,
+      "S": 3.12,
+      "E": 5.78,
+      "C": 3.56
+    },
+    "settings": {
+      "people": 0.74,
+      "team": 0.94,
+      "autonomy": 0.703,
+      "pace": 0.621,
+      "hands": 0.237,
+      "routine": 0.415
+    },
+    "tasks": [
+      "Plan details such as framing, composition, camera movement, sound, and actor movement for each shot or scene.",
+      "Communicate to actors the approach, characterization, and movement needed for each scene in such a way that rehearsals and takes are minimized.",
+      "Direct live broadcasts, films and recordings, or non-broadcast programming for public entertainment or education.",
+      "Research production topics using the internet, video archives, and other informational sources.",
+      "Review film, recordings, or rehearsals to ensure conformance to production and broadcast standards."
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Speaking",
+      "Critical Thinking",
+      "Monitoring"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "ftii-entrance",
+        "body": "ftii"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.833,
+      "team": 0.909,
+      "autonomy": 0.825,
+      "pace": 0.664,
+      "hands": 0.277,
+      "routine": 0.603
+    },
+    "related": [
+      "content-writer",
+      "musician",
+      "graphic-designer"
+    ]
+  },
+  {
+    "id": "musician",
+    "title": "Musician",
+    "domain": "film-music-arts",
+    "keywords": [
+      "singer",
+      "music",
+      "composer",
+      "instrumentalist",
+      "classical"
+    ],
+    "onet": {
+      "code": "27-2042.00",
+      "title": "Musicians and Singers"
+    },
+    "description": "Play one or more musical instruments or sing. May perform on stage, for broadcasting, or for sound or video recording.",
+    "riasec": {
+      "R": 2.87,
+      "I": 1.53,
+      "A": 6.66,
+      "S": 3.41,
+      "E": 3.42,
+      "C": 2.17
+    },
+    "settings": {
+      "people": 0.369,
+      "team": 0.545,
+      "autonomy": 0,
+      "pace": 0.381,
+      "hands": 0.263,
+      "routine": 0.682
+    },
+    "tasks": [
+      "Perform before live audiences in concerts, recitals, educational presentations, and other social gatherings.",
+      "Practice performances, individually or in rehearsal with other musicians, to master individual pieces of music or to maintain and improve skills.",
+      "Specialize in playing a specific family of instruments or a particular type of music.",
+      "Play musical instruments as soloists, or as members or guest artists of musical groups such as orchestras, ensembles, or bands.",
+      "Provide the musical background for live shows, such as ballets, operas, musical theatre, and cabarets."
+    ],
+    "skills": [
+      "Speaking",
+      "Active Listening",
+      "Monitoring",
+      "Reading Comprehension",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.642,
+      "team": 0.718,
+      "autonomy": 0.439,
+      "pace": 0.559,
+      "hands": 0.296,
+      "routine": 0.756
+    },
+    "related": [
+      "fashion-designer",
+      "animator",
+      "graphic-designer"
+    ]
+  },
+  {
+    "id": "graphic-designer",
+    "title": "Graphic Designer",
+    "domain": "design",
+    "keywords": [
+      "bdes",
+      "visual design",
+      "branding",
+      "logo",
+      "advertising design"
+    ],
+    "onet": {
+      "code": "27-1024.00",
+      "title": "Graphic Designers"
+    },
+    "description": "Design or create graphics to meet specific commercial or promotional needs, such as packaging, displays, or logos. May use a variety of mediums to achieve artistic or decorative effects.",
+    "riasec": {
+      "R": 3.38,
+      "I": 2.86,
+      "A": 7,
+      "S": 2.16,
+      "E": 3.43,
+      "C": 3.92
+    },
+    "settings": {
+      "people": 0.507,
+      "team": 0.576,
+      "autonomy": 0.612,
+      "pace": 0.621,
+      "hands": 0.17,
+      "routine": 0.665
+    },
+    "tasks": [
+      "Key information into computer equipment to create layouts for client or supervisor.",
+      "Review final layouts and suggest improvements, as needed.",
+      "Determine size and arrangement of illustrative material and copy, and select style and size of type.",
+      "Develop graphics and layouts for product illustrations, company logos, and Web sites.",
+      "Create designs, concepts, and sample layouts, based on knowledge of layout principles and esthetic design concepts."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Writing",
+      "Critical Thinking",
+      "Active Learning"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "nid-dat"
+      },
+      {
+        "exam": "uceed"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.713,
+      "team": 0.733,
+      "autonomy": 0.775,
+      "pace": 0.664,
+      "hands": 0.226,
+      "routine": 0.746
+    },
+    "related": [
+      "animator",
+      "fashion-designer",
+      "musician"
+    ]
+  },
+  {
+    "id": "fashion-designer",
+    "title": "Fashion Designer",
+    "domain": "design",
+    "keywords": [
+      "nift",
+      "garments",
+      "textile",
+      "apparel",
+      "boutique"
+    ],
+    "onet": {
+      "code": "27-1022.00",
+      "title": "Fashion Designers"
+    },
+    "description": "Design clothing and accessories. Create original designs or adapt fashion trends.",
+    "riasec": {
+      "R": 4.34,
+      "I": 2.17,
+      "A": 7,
+      "S": 2.35,
+      "E": 3.96,
+      "C": 2.94
+    },
+    "settings": {
+      "people": 0.417,
+      "team": 0.282,
+      "autonomy": 0.392,
+      "pace": 0.292,
+      "hands": 0.297,
+      "routine": 0.365
+    },
+    "tasks": [
+      "Sketch rough and detailed drawings of apparel or accessories, and write specifications such as color schemes, construction, material types, and accessory requirements.",
+      "Examine sample garments on and off models, modifying designs to achieve desired effects.",
+      "Confer with sales and management executives or with clients to discuss design ideas.",
+      "Select materials and production techniques to be used for products.",
+      "Provide sample garments to agents and sales representatives, and arrange for showings of sample garments at sales meetings or fashion shows."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Critical Thinking",
+      "Active Learning",
+      "Reading Comprehension"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "nift-entrance"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.667,
+      "team": 0.591,
+      "autonomy": 0.654,
+      "pace": 0.52,
+      "hands": 0.322,
+      "routine": 0.574
+    },
+    "related": [
+      "animator",
+      "graphic-designer",
+      "musician"
+    ]
+  },
+  {
+    "id": "industrial-designer",
+    "title": "Industrial / Product Designer",
+    "domain": "design",
+    "keywords": [
+      "product design",
+      "industrial design",
+      "bdes",
+      "uceed",
+      "ergonomics"
+    ],
+    "onet": {
+      "code": "27-1021.00",
+      "title": "Commercial and Industrial Designers"
+    },
+    "description": "Design and develop manufactured products, such as cars, home appliances, and children's toys. Combine artistic talent with research on product use, marketing, and materials to create the most functional and appealing product design.",
+    "riasec": {
+      "R": 4.62,
+      "I": 4.06,
+      "A": 5.54,
+      "S": 1.84,
+      "E": 3.7,
+      "C": 3.47
+    },
+    "settings": {
+      "people": 0.802,
+      "team": 0.696,
+      "autonomy": 0.443,
+      "pace": 0.468,
+      "hands": 0.212,
+      "routine": 0.688
+    },
+    "tasks": [
+      "Prepare sketches of ideas, detailed drawings, illustrations, artwork, or blueprints, using drafting instruments, paints and brushes, or computer-aided design equipment.",
+      "Modify and refine designs, using working models, to conform with customer specifications, production limitations, or changes in design trends.",
+      "Evaluate feasibility of design ideas, based on factors such as appearance, safety, function, serviceability, budget, production costs/methods, and market characteristics.",
+      "Confer with engineering, marketing, production, or sales departments, or with customers, to establish and evaluate design concepts for manufactured products.",
+      "Present designs and reports to customers or design committees for approval and discuss need for modification."
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Speaking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "uceed"
+      },
+      {
+        "exam": "nid-dat"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.865,
+      "team": 0.791,
+      "autonomy": 0.682,
+      "pace": 0.597,
+      "hands": 0.258,
+      "routine": 0.759
+    },
+    "related": [
+      "animator",
+      "graphic-designer",
+      "fashion-designer"
+    ]
+  },
+  {
+    "id": "architect",
+    "title": "Architect",
+    "domain": "architecture-planning",
+    "keywords": [
+      "barch",
+      "nata",
+      "building design",
+      "coa",
+      "architecture"
+    ],
+    "onet": {
+      "code": "17-1011.00",
+      "title": "Architects, Except Landscape and Naval"
+    },
+    "description": "Plan and design structures, such as private residences, office buildings, theaters, factories, and other structural property.",
+    "riasec": {
+      "R": 4.92,
+      "I": 3.88,
+      "A": 4.13,
+      "S": 2.53,
+      "E": 3.65,
+      "C": 4.44
+    },
+    "settings": {
+      "people": 0.674,
+      "team": 0.723,
+      "autonomy": 0.457,
+      "pace": 0.58,
+      "hands": 0.306,
+      "routine": 0.586
+    },
+    "tasks": [
+      "Prepare scale drawings or architectural designs, using computer-aided design or other tools.",
+      "Plan or design structures such as residences, office buildings, theatres, factories, or other structural properties in accordance with environmental, safety, or other regulations.",
+      "Meet with clients to review or discuss architectural drawings.",
+      "Prepare contract documents for building contractors.",
+      "Develop final construction plans that include aesthetic representations of the structure or details for its construction."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Speaking",
+      "Active Listening",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "exam": "nata",
+        "body": "coa"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.799,
+      "team": 0.804,
+      "autonomy": 0.69,
+      "pace": 0.646,
+      "hands": 0.329,
+      "routine": 0.701
+    },
+    "related": [
+      "mechanical-engineer",
+      "civil-engineer",
+      "electrician"
+    ]
+  },
+  {
+    "id": "urban-planner",
+    "title": "Urban Planner",
+    "domain": "architecture-planning",
+    "keywords": [
+      "town planning",
+      "city planning",
+      "bplan",
+      "smart cities",
+      "mplan"
+    ],
+    "onet": {
+      "code": "19-3051.00",
+      "title": "Urban and Regional Planners"
+    },
+    "description": "Develop comprehensive plans and programs for use of land and physical facilities of jurisdictions, such as towns, cities, counties, and metropolitan areas.",
+    "riasec": {
+      "R": 3.22,
+      "I": 5.31,
+      "A": 3.06,
+      "S": 3.03,
+      "E": 4.46,
+      "C": 3.96
+    },
+    "settings": {
+      "people": 0.773,
+      "team": 0.681,
+      "autonomy": 0.546,
+      "pace": 0.11,
+      "hands": 0.145,
+      "routine": 0
+    },
+    "tasks": [
+      "Design, promote, or administer government plans or policies affecting land use, zoning, public utilities, community facilities, housing, or transportation.",
+      "Advise planning officials on project feasibility, cost-effectiveness, regulatory conformance, or possible alternatives.",
+      "Create, prepare, or requisition graphic or narrative reports on land use data, including land area maps overlaid with geographic variables, such as population density.",
+      "Hold public meetings with government officials, social scientists, lawyers, developers, the public, or special interest groups to formulate, develop, or address issues regarding land use or community plans.",
+      "Mediate community disputes or assist in developing alternative plans or recommendations for programs or projects."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Reading Comprehension",
+      "Critical Thinking",
+      "Writing"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "grad-eng",
+        "grad-design"
+      ],
+      "studyYears": "5+"
+    },
+    "routes": [
+      {
+        "body": "itpi"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.85,
+      "team": 0.784,
+      "autonomy": 0.739,
+      "pace": 0.44,
+      "hands": 0.207,
+      "routine": 0.365
+    },
+    "related": [
+      "data-analyst",
+      "management-consultant",
+      "policy-analyst"
+    ]
+  },
+  {
+    "id": "chef",
+    "title": "Chef",
+    "domain": "hospitality-tourism",
+    "keywords": [
+      "culinary",
+      "cook",
+      "hotel kitchen",
+      "bakery",
+      "catering"
+    ],
+    "onet": {
+      "code": "35-1011.00",
+      "title": "Chefs and Head Cooks"
+    },
+    "description": "Direct and may participate in the preparation, seasoning, and cooking of salads, soups, fish, meats, vegetables, desserts, or other foods. May plan and price menu items, order supplies, and keep records and accounts.",
+    "riasec": {
+      "R": 4.84,
+      "I": 1.68,
+      "A": 2.72,
+      "S": 2.95,
+      "E": 5.13,
+      "C": 4.35
+    },
+    "settings": {
+      "people": 0.779,
+      "team": 0.698,
+      "autonomy": 0.404,
+      "pace": 0.74,
+      "hands": 0.78,
+      "routine": 0.543
+    },
+    "tasks": [
+      "Monitor sanitation practices to ensure that employees follow standards and regulations.",
+      "Instruct cooks or other workers in the preparation, cooking, garnishing, or presentation of food.",
+      "Supervise or coordinate activities of cooks or workers engaged in food preparation.",
+      "Order or requisition food or other supplies needed to ensure efficient operation.",
+      "Inspect supplies, equipment, or work areas to ensure conformance to established standards."
+    ],
+    "skills": [
+      "Monitoring",
+      "Speaking",
+      "Critical Thinking",
+      "Active Listening",
+      "Reading Comprehension"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "nchm-jee",
+        "body": "nchmct"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.853,
+      "team": 0.792,
+      "autonomy": 0.661,
+      "pace": 0.716,
+      "hands": 0.686,
+      "routine": 0.676
+    },
+    "related": [
+      "police-officer",
+      "hotel-manager",
+      "commercial-pilot"
+    ]
+  },
+  {
+    "id": "hotel-manager",
+    "title": "Hotel Manager",
+    "domain": "hospitality-tourism",
+    "keywords": [
+      "hotel management",
+      "hospitality",
+      "front office",
+      "resort",
+      "bsc hha"
+    ],
+    "onet": {
+      "code": "11-9081.00",
+      "title": "Lodging Managers"
+    },
+    "description": "Plan, direct, or coordinate activities of an organization or department that provides lodging and other accommodations.",
+    "riasec": {
+      "R": 2.69,
+      "I": 1.1,
+      "A": 1.43,
+      "S": 4.31,
+      "E": 6.21,
+      "C": 5.22
+    },
+    "settings": {
+      "people": 0.936,
+      "team": 0.95,
+      "autonomy": 0.834,
+      "pace": 0.525,
+      "hands": 0.297,
+      "routine": 0.733
+    },
+    "tasks": [
+      "Answer inquiries pertaining to hotel policies and services, and resolve occupants' complaints.",
+      "Participate in financial activities, such as the setting of room rates, the establishment of budgets, and the allocation of funds to departments.",
+      "Confer and cooperate with other managers to ensure coordination of hotel activities.",
+      "Greet and register guests.",
+      "Monitor the revenue activity of the hotel or facility."
+    ],
+    "skills": [
+      "Active Listening",
+      "Speaking",
+      "Reading Comprehension",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "nchm-jee",
+        "body": "nchmct"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.934,
+      "team": 0.914,
+      "autonomy": 0.897,
+      "pace": 0.622,
+      "hands": 0.322,
+      "routine": 0.785
+    },
+    "related": [
+      "civil-servant",
+      "event-manager",
+      "hr-manager"
+    ]
+  },
+  {
+    "id": "sports-coach",
+    "title": "Sports Coach",
+    "domain": "sports-fitness",
+    "keywords": [
+      "coaching",
+      "physical education",
+      "trainer",
+      "athletics",
+      "nis"
+    ],
+    "onet": {
+      "code": "27-2022.00",
+      "title": "Coaches and Scouts"
+    },
+    "description": "Instruct or coach groups or individuals in the fundamentals of sports for the primary purpose of competition. Demonstrate techniques and methods of participation. May evaluate athletes' strengths and weaknesses as possible recruits or to improve the athletes' technique to prepare them for competition. Those required to hold teaching certifications should be reported in the appropriate teaching category.",
+    "riasec": {
+      "R": 4.25,
+      "I": 2.15,
+      "A": 2.43,
+      "S": 5.31,
+      "E": 5.15,
+      "C": 3.45
+    },
+    "settings": {
+      "people": 0.567,
+      "team": 0.611,
+      "autonomy": 0.61,
+      "pace": 0.482,
+      "hands": 0.586,
+      "routine": 0.229
+    },
+    "tasks": [
+      "Plan, organize, and conduct practice sessions.",
+      "Provide training direction, encouragement, motivation, and nutritional advice to prepare athletes for games, competitive events, or tours.",
+      "Adjust coaching techniques, based on the strengths and weaknesses of athletes.",
+      "Instruct individuals or groups in sports rules, game strategies, and performance principles, such as specific ways of moving the body, hands, or feet, to achieve desired results.",
+      "Plan strategies and choose team members for individual games or sports seasons."
+    ],
+    "skills": [
+      "Speaking",
+      "Learning Strategies",
+      "Monitoring",
+      "Reading Comprehension",
+      "Active Listening"
+    ],
+    "entry": {
+      "streams": [
+        "any"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "body": "sai"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.744,
+      "team": 0.75,
+      "autonomy": 0.774,
+      "pace": 0.603,
+      "hands": 0.54,
+      "routine": 0.496
+    },
+    "related": [
+      "hotel-manager",
+      "chef",
+      "event-manager"
+    ]
+  },
+  {
+    "id": "commercial-pilot",
+    "title": "Commercial Pilot",
+    "domain": "transport-logistics",
+    "keywords": [
+      "pilot",
+      "aviation",
+      "cpl",
+      "airline",
+      "flying"
+    ],
+    "onet": {
+      "code": "53-2011.00",
+      "title": "Airline Pilots, Copilots, and Flight Engineers"
+    },
+    "description": "Pilot and navigate the flight of fixed-wing aircraft, usually on scheduled air carrier routes, for the transport of passengers and cargo. Requires Federal Air Transport certificate and rating for specific aircraft type used. Includes regional, national, and international airline pilots and flight instructors of airline pilots.",
+    "riasec": {
+      "R": 4.74,
+      "I": 3.15,
+      "A": 1.44,
+      "S": 2.5,
+      "E": 3.81,
+      "C": 4.7
+    },
+    "settings": {
+      "people": 0.643,
+      "team": 0.671,
+      "autonomy": 0.559,
+      "pace": 1,
+      "hands": 0.414,
+      "routine": 0.848
+    },
+    "tasks": [
+      "Use instrumentation to guide flights when visibility is poor.",
+      "Start engines, operate controls, and pilot airplanes to transport passengers, mail, or freight, adhering to flight plans, regulations, and procedures.",
+      "Work as part of a flight team with other crew members, especially during takeoffs and landings.",
+      "Respond to and report in-flight emergencies and malfunctions.",
+      "Inspect aircraft for defects and malfunctions, according to pre-flight checklists."
+    ],
+    "skills": [
+      "Active Listening",
+      "Critical Thinking",
+      "Monitoring",
+      "Reading Comprehension",
+      "Speaking"
+    ],
+    "entry": {
+      "streams": [
+        "pcm"
+      ],
+      "studyYears": "≤3"
+    },
+    "routes": [
+      {
+        "exam": "dgca-cpl",
+        "body": "dgca"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.783,
+      "team": 0.779,
+      "autonomy": 0.746,
+      "pace": 0.83,
+      "hands": 0.41,
+      "routine": 0.851
+    },
+    "related": [
+      "police-officer",
+      "criminal-investigator",
+      "electrician"
+    ]
+  },
+  {
+    "id": "supply-chain-manager",
+    "title": "Supply Chain Manager",
+    "domain": "transport-logistics",
+    "keywords": [
+      "logistics",
+      "procurement",
+      "warehouse",
+      "operations",
+      "supply chain"
+    ],
+    "onet": {
+      "code": "13-1081.00",
+      "title": "Logisticians"
+    },
+    "description": "Analyze and coordinate the ongoing logistical functions of a firm or organization. Responsible for the entire life cycle of a product, including acquisition, distribution, internal allocation, delivery, and final disposal of resources.",
+    "riasec": {
+      "R": 2.35,
+      "I": 3.81,
+      "A": 1.1,
+      "S": 2.33,
+      "E": 5.02,
+      "C": 5.44
+    },
+    "settings": {
+      "people": 0.757,
+      "team": 0.685,
+      "autonomy": 0.548,
+      "pace": 0.509,
+      "hands": 0.221,
+      "routine": 0.508
+    },
+    "tasks": [
+      "Maintain and develop positive business relationships with a customer's key personnel involved in, or directly relevant to, a logistics activity.",
+      "Develop an understanding of customers' needs and take actions to ensure that such needs are met.",
+      "Manage subcontractor activities, reviewing proposals, developing performance specifications, and serving as liaisons between subcontractors and organizations.",
+      "Develop proposals that include documentation for estimates.",
+      "Review logistics performance with customers against targets, benchmarks, and service agreements."
+    ],
+    "skills": [
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Active Listening",
+      "Speaking",
+      "Monitoring"
+    ],
+    "entry": {
+      "streams": [
+        "grad-any"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.842,
+      "team": 0.786,
+      "autonomy": 0.74,
+      "pace": 0.615,
+      "hands": 0.265,
+      "routine": 0.656
+    },
+    "related": [
+      "company-secretary",
+      "chartered-accountant",
+      "management-consultant"
+    ]
   }
 ]

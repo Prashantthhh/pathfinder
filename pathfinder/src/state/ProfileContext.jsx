@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useReducer,
 import careers from '../data/careers.json';
 import quiz from '../data/quiz.json';
 import { recommend } from '../engine/recommend.js';
+import { visibleQuestions } from '../engine/vector.js';
 import { load, save, STORAGE_KEY } from './storage.js';
 import { answeredCount, applyAnswer, hasProgress } from './quizState.js';
 import { appReducer, effectiveProfile, sanitizeAppState } from './appState.js';
@@ -32,6 +33,7 @@ export function ProfileProvider({ children }) {
   const { quiz: q, dna, saved, goal, previous } = state;
   const profile = useMemo(() => effectiveProfile(state, quiz), [state]);
   const result = useMemo(() => recommend(profile, careers), [profile]);
+  const questions = useMemo(() => visibleQuestions(quiz, q.answers), [q.answers]);
   const percentById = useMemo(() => Object.fromEntries(result.ranked.map((r) => [r.career.id, r.percent])), [result]);
 
   const answerRef = useRef(q.answers);
@@ -48,7 +50,8 @@ export function ProfileProvider({ children }) {
     // quiz progress
     ...q,
     answered: answeredCount(quiz, q.answers),
-    total: quiz.questions.length,
+    questions,
+    total: questions.length,
     started: hasProgress(q),
     // profile + recommendations (follow hand edits when there are any)
     profile,
@@ -75,7 +78,7 @@ export function ProfileProvider({ children }) {
     toggleSaved: (id) => dispatch({ type: 'saved/toggle', id }),
     setGoal: (g) => dispatch({ type: 'goal/set', goal: g }),
     wipe: () => dispatch({ type: 'wipe' }),
-  }), [q, dna, saved, goal, previous, profile, result, percentById, storageOk, answer]);
+  }), [q, dna, saved, goal, previous, profile, result, percentById, questions, storageOk, answer]);
 
   return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;
 }

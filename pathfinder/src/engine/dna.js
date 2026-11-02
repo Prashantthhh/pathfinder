@@ -1,6 +1,7 @@
 import { DIMENSION_IDS } from '../data/dimensions.js';
+import { centre, zeroVector } from './vector.js';
 
-// Career DNA is the student's 8-dimension profile. It can be edited by hand:
+// Career DNA is the student's six-type interest profile (Holland's RIASEC). It can be edited by hand:
 // edited values replace the quiz-derived vector, so recommendations follow.
 //
 // Values are RELATIVE emphasis (0..1, strongest dimension = 1 when it comes
@@ -32,14 +33,19 @@ export function sanitizeDna(raw) {
  * answers' contributions so "why this match" can still cite them.
  */
 export function profileFromDna(values, quizProfile) {
-  const vector = Object.fromEntries(DIMENSION_IDS.map((d) => [d, clamp01(values[d])]));
-  const top = Math.max(0, ...Object.values(vector));
-  const display = Object.fromEntries(DIMENSION_IDS.map((d) => [d, top ? vector[d] / top : 0]));
+  const riasec = Object.fromEntries(DIMENSION_IDS.map((d) => [d, clamp01(values[d])]));
+  const top = Math.max(0, ...Object.values(riasec));
+  const display = Object.fromEntries(DIMENSION_IDS.map((d) => [d, top ? riasec[d] / top : 0]));
   return {
-    vector,
+    riasec,
+    vector: centre(riasec), // the engine compares shapes, so the profile is centred
     display,
+    settings: quizProfile?.settings ?? {},
+    context: quizProfile?.context ?? { stream: null, study: null, earn: null },
     contributions: quizProfile?.contributions ?? [],
     answeredCount: quizProfile?.answeredCount ?? 0,
     edited: true,
   };
 }
+
+export { zeroVector };

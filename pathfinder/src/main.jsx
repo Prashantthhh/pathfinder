@@ -6,7 +6,6 @@ import '@fontsource/atkinson-hyperlegible/400.css';
 import '@fontsource/atkinson-hyperlegible/700.css';
 import App from './App.jsx';
 import { ProfileProvider } from './state/ProfileContext.jsx';
-import { DIMENSIONS } from './data/dimensions.js';
 import { SURFACES, TYPE_COLORS } from './data/palette.js';
 import './styles/tokens.css';
 import './styles/base.css';
@@ -28,9 +27,6 @@ for (const [t, c] of Object.entries(TYPE_COLORS)) {
   root.style.setProperty(`--${t.toLowerCase()}`, c.dark);
   root.style.setProperty(`--${t.toLowerCase()}-lt`, c.light);
 }
-// The previous 8-dimension model still drives the quiz and results until the data
-// model is replaced; its markers keep their colours meanwhile.
-for (const d of DIMENSIONS) root.style.setProperty(`--blaze-${d.id}`, d.color);
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

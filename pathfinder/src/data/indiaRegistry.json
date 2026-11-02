@@ -1,0 +1,362 @@
+{
+  "_note": "Indian entrance exams and governing/licensing bodies referenced by careers. A name is shown in the product ONLY if `npm run links:check` confirmed that the official page loads AND mentions the name (see india-verification.json). 'needles' are case-insensitive regular expressions that must appear in the page text. We record exam NAMES and bodies only: no eligibility percentages, age limits, fees or exam patterns.",
+  "exams": {
+    "jee-main": {
+      "name": "JEE Main",
+      "url": "https://jeemain.nta.nic.in",
+      "needles": [
+        "JEE\\s*\\(?\\s*Main"
+      ]
+    },
+    "jee-advanced": {
+      "name": "JEE Advanced",
+      "url": "https://jeeadv.ac.in",
+      "needles": [
+        "JEE\\s*\\(?\\s*Advanced"
+      ]
+    },
+    "neet-ug": {
+      "name": "NEET UG",
+      "url": "https://neet.nta.nic.in",
+      "needles": [
+        "NEET\\s*\\(?\\s*UG"
+      ]
+    },
+    "neet-pg": {
+      "name": "NEET PG",
+      "url": "https://natboard.edu.in",
+      "needles": [
+        "NEET\\s*\\(?\\s*PG"
+      ]
+    },
+    "gpat": {
+      "name": "GPAT",
+      "url": "https://gpat.nta.nic.in",
+      "needles": [
+        "GPAT"
+      ]
+    },
+    "csir-ugc-net": {
+      "name": "CSIR UGC NET",
+      "url": "https://csirnet.nta.nic.in",
+      "needles": [
+        "CSIR"
+      ]
+    },
+    "ctet": {
+      "name": "CTET",
+      "url": "https://ctet.nic.in",
+      "needles": [
+        "CTET|Central Teacher Eligibility"
+      ]
+    },
+    "clat": {
+      "name": "CLAT",
+      "url": "https://consortiumofnlus.ac.in",
+      "needles": [
+        "CLAT"
+      ]
+    },
+    "ca-foundation": {
+      "name": "CA Foundation",
+      "url": "https://boslive.icai.org",
+      "needles": [
+        "CA\\s*Foundation"
+      ]
+    },
+    "cseet": {
+      "name": "CSEET",
+      "url": "https://www.icsi.edu",
+      "needles": [
+        "CSEET"
+      ]
+    },
+    "acet": {
+      "name": "ACET",
+      "url": "https://www.actuariesindia.org",
+      "needles": [
+        "ACET|Actuarial Common Entrance"
+      ]
+    },
+    "ibps-po": {
+      "name": "IBPS PO",
+      "url": "https://www.ibps.in",
+      "needles": [
+        "Probationary Officer|PO\\s*/\\s*MT|\\bPO\\b"
+      ]
+    },
+    "cat": {
+      "name": "CAT (Common Admission Test)",
+      "url": "https://iimcat.ac.in",
+      "needles": [
+        "CAT\\b|Common Admission Test"
+      ]
+    },
+    "upsc-cse": {
+      "name": "Civil Services Examination",
+      "url": "https://upsc.gov.in",
+      "needles": [
+        "Civil Services"
+      ]
+    },
+    "iimc-entrance": {
+      "name": "IIMC entrance examination",
+      "url": "https://iimc.gov.in",
+      "needles": [
+        "entrance"
+      ]
+    },
+    "nid-dat": {
+      "name": "NID DAT",
+      "url": "https://admissions.nid.edu",
+      "needles": [
+        "\\bDAT\\b|Design Aptitude Test"
+      ]
+    },
+    "uceed": {
+      "name": "UCEED",
+      "url": "https://www.uceed.iitb.ac.in",
+      "needles": [
+        "UCEED"
+      ]
+    },
+    "nift-entrance": {
+      "name": "NIFT entrance examination",
+      "url": "https://www.nift.ac.in",
+      "needles": [
+        "entrance"
+      ]
+    },
+    "nata": {
+      "name": "NATA",
+      "url": "https://www.nata.in",
+      "needles": [
+        "NATA"
+      ]
+    },
+    "nchm-jee": {
+      "name": "NCHM JEE",
+      "url": "https://nchmjee.nta.nic.in",
+      "needles": [
+        "NCHM"
+      ]
+    },
+    "dgca-cpl": {
+      "name": "DGCA CPL examinations",
+      "url": "https://www.dgca.gov.in",
+      "needles": [
+        "\\bCPL\\b|Commercial Pilot"
+      ]
+    },
+    "aitt": {
+      "name": "All India Trade Test (AITT)",
+      "url": "https://dgt.gov.in",
+      "needles": [
+        "AITT|All India Trade Test"
+      ]
+    },
+    "isi-admission": {
+      "name": "ISI admission test",
+      "url": "https://www.isical.ac.in",
+      "needles": [
+        "admission"
+      ]
+    },
+    "state-judicial": {
+      "name": "State judicial services examination",
+      "url": null,
+      "needles": []
+    },
+    "ftii-entrance": {
+      "name": "FTII Entrance Test",
+      "url": "https://ftii.ac.in",
+      "needles": [
+        "FTII Entrance Test"
+      ]
+    }
+  },
+  "bodies": {
+    "aicte": {
+      "name": "AICTE",
+      "url": "https://www.aicte.gov.in",
+      "needles": [
+        "All India Council for Technical Education"
+      ]
+    },
+    "dgt": {
+      "name": "Directorate General of Training (DGT)",
+      "url": "https://dgt.gov.in",
+      "needles": [
+        "Directorate General of Training|DGT"
+      ]
+    },
+    "nmc": {
+      "name": "National Medical Commission",
+      "url": "https://www.nmc.org.in",
+      "needles": [
+        "National Medical Commission"
+      ]
+    },
+    "dci": {
+      "name": "Dental Council of India",
+      "url": "https://dciindia.gov.in",
+      "needles": [
+        "Dental Council"
+      ]
+    },
+    "inc": {
+      "name": "Indian Nursing Council",
+      "url": "https://www.indiannursingcouncil.org",
+      "needles": [
+        "Nursing Council"
+      ]
+    },
+    "pci": {
+      "name": "Pharmacy Council of India",
+      "url": "https://www.pci.nic.in",
+      "needles": [
+        "Pharmacy Council"
+      ]
+    },
+    "vci": {
+      "name": "Veterinary Council of India",
+      "url": "https://vci.gov.in",
+      "needles": [
+        "Veterinary Council"
+      ]
+    },
+    "rci": {
+      "name": "Rehabilitation Council of India",
+      "url": "https://rehabcouncil.nic.in",
+      "needles": [
+        "Rehabilitation Council"
+      ]
+    },
+    "bci": {
+      "name": "Bar Council of India",
+      "url": "https://www.barcouncilofindia.org",
+      "needles": [
+        "Bar Council"
+      ]
+    },
+    "icai": {
+      "name": "Institute of Chartered Accountants of India (ICAI)",
+      "url": "https://www.icai.org",
+      "needles": [
+        "Chartered Accountants|ICAI"
+      ]
+    },
+    "icsi": {
+      "name": "Institute of Company Secretaries of India (ICSI)",
+      "url": "https://www.icsi.edu",
+      "needles": [
+        "Company Secretaries|ICSI"
+      ]
+    },
+    "iai": {
+      "name": "Institute of Actuaries of India",
+      "url": "https://www.actuariesindia.org",
+      "needles": [
+        "Actuaries"
+      ]
+    },
+    "upsc": {
+      "name": "Union Public Service Commission (UPSC)",
+      "url": "https://upsc.gov.in",
+      "needles": [
+        "Union Public Service Commission|UPSC"
+      ]
+    },
+    "ibps": {
+      "name": "IBPS",
+      "url": "https://www.ibps.in",
+      "needles": [
+        "Institute of Banking Personnel Selection|IBPS"
+      ]
+    },
+    "ncte": {
+      "name": "National Council for Teacher Education (NCTE)",
+      "url": "https://ncte.gov.in",
+      "needles": [
+        "National Council for Teacher Education|NCTE"
+      ]
+    },
+    "coa": {
+      "name": "Council of Architecture",
+      "url": "https://coa.gov.in",
+      "needles": [
+        "Council of Architecture"
+      ]
+    },
+    "dgca": {
+      "name": "Directorate General of Civil Aviation (DGCA)",
+      "url": "https://www.dgca.gov.in",
+      "needles": [
+        "Directorate General of Civil Aviation|DGCA"
+      ]
+    },
+    "icar": {
+      "name": "Indian Council of Agricultural Research (ICAR)",
+      "url": "https://icar.org.in",
+      "needles": [
+        "Indian Council of Agricultural Research|ICAR"
+      ]
+    },
+    "sebi": {
+      "name": "SEBI",
+      "url": "https://www.sebi.gov.in",
+      "needles": [
+        "Securities and Exchange Board"
+      ]
+    },
+    "nism": {
+      "name": "NISM",
+      "url": "https://www.nism.ac.in",
+      "needles": [
+        "National Institute of Securities Markets"
+      ]
+    },
+    "isi": {
+      "name": "Indian Statistical Institute",
+      "url": "https://www.isical.ac.in",
+      "needles": [
+        "Indian Statistical Institute"
+      ]
+    },
+    "iimc": {
+      "name": "Indian Institute of Mass Communication",
+      "url": "https://iimc.gov.in",
+      "needles": [
+        "Indian Institute of Mass Communication"
+      ]
+    },
+    "ftii": {
+      "name": "Film and Television Institute of India",
+      "url": "https://ftii.ac.in",
+      "needles": [
+        "Film and Television Institute"
+      ]
+    },
+    "nchmct": {
+      "name": "NCHMCT",
+      "url": "https://nchm.gov.in",
+      "needles": [
+        "Hotel Management"
+      ]
+    },
+    "sai": {
+      "name": "Sports Authority of India",
+      "url": "https://sportsauthorityofindia.nic.in",
+      "needles": [
+        "Sports Authority"
+      ]
+    },
+    "itpi": {
+      "name": "Institute of Town Planners, India",
+      "url": "https://www.itpi.org.in",
+      "needles": [
+        "Town Planners"
+      ]
+    }
+  }
+}

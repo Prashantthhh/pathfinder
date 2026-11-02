@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { TYPES, TYPE_NAMES } from '../../engine/hexmap.js';
+import { CAREER_COUNT_BY_DOMAIN } from '../../data/domainsIndex.js';
 
 /**
  * What the map is pointing at. The six bars are the O*NET interest scores that put
@@ -35,6 +37,15 @@ export default function DomainReadout({ domain, groups, id }) {
           </ul>
           <p className="fine readout__src">
             Based on O*NET occupations (US): {domain.occupations.map((o) => o.title).join(', ')}.
+          </p>
+          <p className="readout__go">
+            {CAREER_COUNT_BY_DOMAIN[domain.id] > 0 ? (
+              <Link to={`/explore?domain=${domain.id}`}>
+                See the {CAREER_COUNT_BY_DOMAIN[domain.id]} {CAREER_COUNT_BY_DOMAIN[domain.id] === 1 ? 'career' : 'careers'} in this domain
+              </Link>
+            ) : (
+              <span className="fine">No careers in this domain yet.</span>
+            )}
           </p>
         </>
       )}
