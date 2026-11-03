@@ -17,12 +17,11 @@ export default function MiniMap({ you = null, focusId = null, label }) {
   const hex = CORNERS.map((c) => `${toPx(c.x).toFixed(1)},${toPx(c.y).toFixed(1)}`).join(' ');
   const px = you ? toPx(you.x) : 0;
   const py = you ? toPx(you.y) : 0;
-  // keep the focus label inside the box: anchor it toward the centre
   const fx = focus ? toPx(focus.x) : 0;
   const fy = focus ? toPx(focus.y) : 0;
-  const anchor = fx > CENTER + 40 ? 'end' : fx < CENTER - 40 ? 'start' : 'middle';
 
   return (
+    <figure className="minimap-fig">
     <svg className="minimap" viewBox={`0 0 ${SIZE} ${SIZE}`} role="img" aria-label={label} data-testid="minimap">
       <rect width={SIZE} height={SIZE} rx="28" className="minimap__sea" />
       <polygon points={hex} className="minimap__hex" />
@@ -39,9 +38,7 @@ export default function MiniMap({ you = null, focusId = null, label }) {
       {domains.map((d) => (
         <circle key={d.id} cx={toPx(d.x)} cy={toPx(d.y)} r={d.id === focusId ? 17 : near.has(d.id) ? 15 : 11} className={`minimap__dot${near.has(d.id) ? ' is-near' : ''}${d.id === focusId ? ' is-focus' : ''}`} style={{ fill: typeVar(d.primary) }} />
       ))}
-      {focus && (
-        <text x={fx} y={fy - 28} textAnchor={anchor} className="minimap__name">{focus.label}</text>
-      )}
+      {focus && <circle cx={fx} cy={fy} r="30" className="minimap__focus-ring" />}
       {you && (
         <g transform={`translate(${px.toFixed(1)} ${py.toFixed(1)})`}>
           <path d="M0 0 C-30 -19 -30 -70 0 -76 C30 -70 30 -19 0 0Z" className="minimap__pin" />
@@ -49,5 +46,12 @@ export default function MiniMap({ you = null, focusId = null, label }) {
         </g>
       )}
     </svg>
+    {(focus || you) && (
+      <figcaption className="minimap__legend" aria-hidden="true">
+        {focus && <span><i className="minimap__key minimap__key--ring" />{focus.label}</span>}
+        {you && <span><i className="minimap__key minimap__key--pin" />You</span>}
+      </figcaption>
+    )}
+    </figure>
   );
 }
