@@ -16,6 +16,10 @@ const LIST = [
   { name: 'dna', path: '/profile', persona: 'science-pcb' },
   { name: 'career-doctor', path: '/careers/doctor', persona: 'science-pcb' },
   { name: 'career-animator', path: '/careers/animator', persona: 'artistic-maker' },
+  { name: 'career-doctor-skills-roadmap', path: '/careers/doctor#skills', persona: 'science-pcb', state: { saved: ['doctor'], roadmap: { doctor: ['class12', 'entrance'] }, skills: { 'Critical Thinking': 'confident', Writing: 'learning', Speaking: 'none' } } },
+  { name: 'compare', path: '/compare', persona: 'science-pcb', state: { compare: ['doctor', 'animator', 'civil-servant'] } },
+  { name: 'dashboard', path: '/dashboard', persona: 'science-pcb', state: { saved: ['doctor', 'animator'], roadmap: { doctor: ['class12', 'entrance'] }, skills: { Writing: 'confident' }, goal: 'Become a doctor' } },
+  { name: 'dashboard-empty', path: '/dashboard', persona: 'science-pcb' },
   ...(process.env.SHOTS_EXTRA ? JSON.parse(process.env.SHOTS_EXTRA) : []),
 ];
 const only = process.argv[2];

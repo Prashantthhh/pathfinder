@@ -21,6 +21,7 @@ const LINKS = [
   { to: '/quiz', label: 'Find your career' },
   { to: '/explore', label: 'Explore careers' },
   { to: '/profile', label: 'My Career DNA' },
+  { to: '/dashboard', label: 'Dashboard' },
   { to: '/nova', label: 'Ask Nova', tag: 'Demo' },
 ];
 

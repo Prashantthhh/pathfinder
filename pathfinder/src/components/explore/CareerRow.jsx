@@ -4,6 +4,7 @@ import { domainLabel } from '../../data/domainsIndex.js';
 import { primaryType } from '../../engine/explore.js';
 import { MIN_MATCH_PERCENT } from '../../engine/tiers.js';
 import SaveButton from '../common/SaveButton.jsx';
+import CompareButton from '../common/CompareButton.jsx';
 
 const firstSentence = (text) => {
   const m = text.match(/^.*?[.!?](\s|$)/);
@@ -37,6 +38,7 @@ export default function CareerRow({ career, percent }) {
           <p className="crow__score crow__score--low">Below the {MIN_MATCH_PERCENT}% match line for your profile</p>
         )}
         <SaveButton career={career} />
+        <CompareButton career={career} />
       </div>
     </li>
   );

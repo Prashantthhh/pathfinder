@@ -30,7 +30,7 @@ export function ProfileProvider({ children }) {
     return () => window.removeEventListener('storage', onStorage);
   }, []);
 
-  const { quiz: q, dna, saved, goal, previous } = state;
+  const { quiz: q, dna, saved, goal, previous, skills, roadmap, compare } = state;
   const profile = useMemo(() => effectiveProfile(state, quiz), [state]);
   const result = useMemo(() => recommend(profile, careers), [profile]);
   const questions = useMemo(() => visibleQuestions(quiz, q.answers), [q.answers]);
@@ -62,6 +62,9 @@ export function ProfileProvider({ children }) {
     saved,
     goal,
     previous,
+    skills,
+    roadmap,
+    compare,
     storageOk,
     // quiz actions
     answer,
@@ -77,8 +80,12 @@ export function ProfileProvider({ children }) {
     resetDna: () => dispatch({ type: 'dna/reset' }),
     toggleSaved: (id) => dispatch({ type: 'saved/toggle', id }),
     setGoal: (g) => dispatch({ type: 'goal/set', goal: g }),
+    setSkill: (skill, level) => dispatch({ type: 'skill/set', skill, level }),
+    toggleStage: (career, stage) => dispatch({ type: 'roadmap/toggle', career, stage }),
+    toggleCompare: (id) => dispatch({ type: 'compare/toggle', id }),
+    clearCompare: () => dispatch({ type: 'compare/clear' }),
     wipe: () => dispatch({ type: 'wipe' }),
-  }), [q, dna, saved, goal, previous, profile, result, percentById, questions, storageOk, answer]);
+  }), [q, dna, saved, goal, previous, skills, roadmap, compare, profile, result, percentById, questions, storageOk, answer]);
 
   return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;
 }

@@ -10,7 +10,7 @@ import { verificationOf } from './verification.js';
 
 export const CHECK_TEXT = 'Check with the official body';
 
-const lookup = (kind, id) => {
+export const lookup = (kind, id) => {
   const entry = registry[kind][id];
   if (!entry) return null;
   const key = `${kind}:${id}`;

@@ -384,7 +384,7 @@ const docText = await page.locator('article.career').innerText();
 check("career: the description is O*NET's, with its US occupation named", docText.includes(docCareer.description) && docText.includes('Family Medicine Physicians'));
 check('career: lists five O*NET tasks and the real interest scores', (await page.locator('#tasks-title + ul li').count()) === 5 && docText.includes(`${docCareer.riasec.I.toFixed(1)} of 7`));
 check('career: shows the typical route and its verify label, and no eligibility numbers', docText.includes('Science (PCB)') && docText.includes('5 or more years') && !/\d+\s*%\s*(marks|aggregate)/i.test(docText));
-check('career: NEET UG is a link only if verified, otherwise "Check with the official body"', verifiedName('exams', 'neet-ug') ? (await page.locator('article.career a[href="https://neet.nta.nic.in"]').count()) === 1 : !docText.includes('NEET UG') && docText.includes(CHECK_TEXT));
+check('career: NEET UG is a link only if verified, otherwise "Check with the official body"', verifiedName('exams', 'neet-ug') ? (await page.locator('section.career__route a[href="https://neet.nta.nic.in"]').count()) === 1 : !docText.includes('NEET UG') && docText.includes(CHECK_TEXT));
 await goto('/careers/film-director');
 const filmText = await page.locator('article.career').innerText();
 check('career: Film Director uses the corrected FTII exam name ("FTII Entrance Test"), never "FTII JET"', !filmText.includes('FTII JET') && (verifiedName('exams', 'ftii-entrance') ? filmText.includes('FTII Entrance Test') : filmText.includes(CHECK_TEXT)));
@@ -449,12 +449,12 @@ const matchOnly = await pcts(page.locator('.crow__score .match__pct'));
 check('explore: "matches for me" shows only 50%+ careers', matchOnly.length > 0 && matchOnly.every((n) => n >= 50));
 
 await goto('/explore');
-const saveBtn = rows().filter({ hasText: 'Pharmacist' }).first().getByRole('button', { name: 'Save Pharmacist' });
+const saveBtn = rows().filter({ hasText: 'Pharmacist' }).first().getByRole('button', { name: /^Saved? Pharmacist/ });
 check('explore: save starts unpressed', (await saveBtn.getAttribute('aria-pressed')) === 'false');
 await saveBtn.click();
 check('explore: save button becomes pressed', (await saveBtn.getAttribute('aria-pressed')) === 'true');
 await page.reload({ waitUntil: 'networkidle' });
-check('explore: saved career survives reload', (await rows().filter({ hasText: 'Pharmacist' }).first().getByRole('button', { name: 'Save Pharmacist' }).getAttribute('aria-pressed')) === 'true');
+check('explore: saved career survives reload', (await rows().filter({ hasText: 'Pharmacist' }).first().getByRole('button', { name: /^Saved? Pharmacist/ }).getAttribute('aria-pressed')) === 'true');
 await goto('/explore?saved=1');
 check('explore: "careers I saved" shows just that career', (await rows().count()) === 1);
 
@@ -553,6 +553,107 @@ const topTitle = pcbRanked[0].career.title;
 check('nova: with results it explains the real top match, labelled as built from results', (await page.locator('.msg--nova').last().innerText()).includes(topTitle) && (await page.locator('.msg--nova').last().innerText()).includes('not AI'));
 await axeCheck(page, '/nova');
 
+// ================================================================ PHASE 4: skills, roadmap, compare, dashboard
+await clearAll();
+await seed(persona('science-pcb').answers, 'complete');
+await goto('/careers/doctor');
+check('skills: the five O*NET skills for Doctor are listed, and the quiz pre-rates none of them', (await page.locator('.skillrate .seg').count()) === 5 && (await page.locator('.skillrate input:checked').count()) === 0 && (await page.getByTestId('skill-summary').innerText()).includes('5 not rated'), (await page.locator('.skillrate legend').allInnerTexts()).join('|'));
+await page.getByRole('group', { name: 'Critical Thinking' }).getByLabel('Confident').check();
+await page.getByRole('group', { name: 'Writing' }).getByLabel('Learning').check();
+await page.getByRole('group', { name: 'Speaking' }).getByLabel('Not yet').check();
+const sumText = await page.getByTestId('skill-summary').innerText();
+check('skills: the summary counts only what the student rated and lists the gaps', sumText.includes('1 of 5 confident') && sumText.includes('1 learning') && sumText.includes('1 not yet') && sumText.includes('2 not rated') && sumText.includes('Speaking') && sumText.includes('Writing (learning)'), sumText);
+await page.reload({ waitUntil: 'networkidle' });
+check('skills: ratings are kept after a reload (localStorage)', (await page.getByRole('group', { name: 'Critical Thinking' }).getByLabel('Confident').isChecked()) && (await page.evaluate(() => JSON.parse(localStorage.getItem('pathfinder:v1')).skills['Writing'])) === 'learning');
+await page.getByRole('button', { name: 'Clear my rating for Speaking' }).click();
+check('skills: a rating can be cleared', (await page.getByTestId('skill-summary').innerText()).includes('3 not rated'));
+await axeCheck(page, '/careers/doctor (skills and roadmap)');
+
+const stageTitles = await page.locator('.roadmap__title').allInnerTexts();
+check('roadmap: Doctor goes Class 12 PCB, entrance exam, MBBS, internship, registration', JSON.stringify(stageTitles) === JSON.stringify(['Class 12 with Physics, Chemistry and Biology', 'Entrance exam', 'MBBS degree', 'Internship', 'Registration to practise']), stageTitles.join('|'));
+const roadText = await page.locator('.career__roadmap').innerText();
+const hosts = await page.locator('.career__roadmap a[href^="http"]').evaluateAll((as) => as.map((a) => new URL(a.href).hostname));
+check('roadmap: names NEET UG and the National Medical Commission, with only their verified official links', roadText.includes('NEET UG') && roadText.includes('National Medical Commission') && hosts.length > 0 && hosts.every((h) => [...allowedUrls].some((u) => new URL(u).hostname === h)), hosts.join('|'));
+check('roadmap: no "free" claims, and every link opens an official site in a new tab', !/\bfree\b/i.test(roadText) && (await page.locator('.career__roadmap a').count()) === (await page.locator('.career__roadmap a[target=_blank]').count()));
+await page.getByLabel('Class 12 with Physics, Chemistry and Biology').check();
+await page.getByLabel('Entrance exam').check();
+check('roadmap: ticking updates progress ("2 of 5 stages")', (await page.getByTestId('roadmap-progress').innerText()).includes('2 of 5 stages'));
+await page.reload({ waitUntil: 'networkidle' });
+check('roadmap: progress is saved to localStorage and survives a reload', (await page.getByTestId('roadmap-progress').innerText()).includes('2 of 5 stages') && JSON.stringify(await page.evaluate(() => JSON.parse(localStorage.getItem('pathfinder:v1')).roadmap)) === JSON.stringify({ doctor: ['class12', 'entrance'] }));
+
+await goto('/careers/animator');
+const aniRoad = await page.locator('.roadmap__title').allInnerTexts();
+check('roadmap: a career without hand-written stages gets stages from its own route data (Animator: any stream, study length, no exam on record)', aniRoad[0].startsWith('Start from: Any stream') && aniRoad.includes('Degree, diploma or training') && aniRoad.includes('Find the admission route') && !aniRoad.includes('Entrance exam'), aniRoad.join('|'));
+await goto('/careers/electrician');
+check('roadmap: Electrician lists its own exam and body (AITT, DGT), not an invented one', (await page.locator('.career__roadmap').innerText()).includes('All India Trade Test'));
+
+// ---- compare
+await clearAll();
+await seed(persona('science-pcb').answers, 'complete');
+await goto('/compare');
+check('compare: with nothing chosen it says how to start', await page.getByTestId('compare-empty').isVisible());
+await goto('/careers/doctor');
+await page.getByTestId('compare-btn').first().click();
+await goto('/careers/animator');
+await page.getByTestId('compare-btn').first().click();
+await goto('/careers/civil-servant');
+await page.getByTestId('compare-btn').first().click();
+check('compare: the button shows its state with aria-pressed', (await page.getByTestId('compare-btn').first().getAttribute('aria-pressed')) === 'true');
+await goto('/explore?q=lawyer');
+check('compare: a fourth career is blocked (three is the limit)', await page.locator('.crow', { hasText: 'Lawyer' }).getByTestId('compare-btn').first().isDisabled());
+await goto('/compare');
+const heads = await page.locator('.cmp__head a').allInnerTexts();
+check('compare: three careers side by side', heads.length === 3 && heads.includes('Doctor (MBBS)') && heads.includes('Animator'), heads.join('|'));
+const cellCounts = await page.locator('.cmp__table tbody tr[data-row]').evaluateAll((trs) => trs.map((tr) => [tr.dataset.row, tr.querySelectorAll('td').length, [...tr.querySelectorAll('td')].filter((td) => !td.innerText.trim()).length]));
+check('compare: every row has a cell for every career and no cell is empty', cellCounts.length >= 20 && cellCounts.every(([, n, empty]) => n === 3 && empty === 0), JSON.stringify(cellCounts.filter(([, n, e]) => n !== 3 || e)));
+const rowText = (id) => page.locator(`tr[data-row="${id}"] td`).allInnerTexts();
+check('compare: salary and outlook say "Not available" for each career', JSON.stringify(await rowText('salary')) === '["Not available","Not available","Not available"]' && JSON.stringify(await rowText('outlook')) === '["Not available","Not available","Not available"]');
+const examRow = await rowText('exam');
+check('compare: exam names are shown (NEET UG; none on record for Animator; UPSC, verified by hand)', examRow[0] === 'NEET UG' && examRow[1] === 'Not available' && examRow[2] === 'Civil Services Examination', examRow.join('|'));
+const matchRow = await rowText('match');
+const p4DoctorPct = engineFor(persona('science-pcb').answers).res.ranked.find((r) => r.career.id === 'doctor').percent;
+check('compare: match scores come from the engine', matchRow[0].startsWith(`${p4DoctorPct}%`), matchRow.join('|'));
+await axeCheck(page, '/compare');
+await shot(page, 'compare', { fullPage: true });
+await page.getByRole('button', { name: 'Remove Animator from the comparison' }).click();
+check('compare: removing one leaves two columns', (await page.locator('.cmp__head').count()) === 2);
+await page.getByRole('button', { name: /^Remove Civil Servant/ }).click();
+check('compare: with one left it asks for another', await page.getByTestId('compare-empty').isVisible());
+await page.getByLabel(/Add a career/).selectOption('chef');
+check('compare: a career can be added from the picker', (await page.locator('.cmp__head').count()) === 2);
+await clearAll();
+await seed({}, 'in-progress', { compare: ['doctor', 'chef'] });
+await goto('/compare');
+check('compare (no quiz answers): the match score says "Not available", the rest still shows', JSON.stringify(await rowText('match')) === '["Not available","Not available"]' && (await page.locator('tr[data-row="domain"] td').count()) === 2);
+
+// ---- dashboard
+await clearAll();
+await goto('/dashboard');
+check('dashboard (new student): next step is to take the quiz; no invented stats or badges', (await page.getByTestId('next-step').innerText()).includes('Take the quiz') && !/badge|achievement|streak|points|%/i.test(await page.locator('.dashboard').innerText()));
+await seed(persona('science-pcb').answers, 'complete');
+await goto('/dashboard');
+const dashTopTitle = engineFor(persona('science-pcb').answers).res.matches[0].career.title;
+check('dashboard (no saved careers): the next step is to save the top match', (await page.getByTestId('next-step').innerText()).includes('Save a career') && (await page.getByTestId('next-step').innerText()).includes(dashTopTitle) && await page.getByTestId('dash-no-saved').isVisible());
+await seed(persona('science-pcb').answers, 'complete', { saved: ['doctor', 'animator'], roadmap: { doctor: ['class12', 'entrance'] }, skills: { Writing: 'confident' }, goal: 'Become a doctor' });
+await goto('/dashboard');
+const doc = page.locator('.dash__item[data-career="doctor"]');
+const dashDocText = await doc.innerText();
+check('dashboard: saved careers show the student\'s own roadmap ticks and skill ratings', (await page.locator('.dash__item').count()) === 2 && dashDocText.includes('2 of 5 stages ticked') && dashDocText.includes('Skills: 1 of 5 confident') && dashDocText.includes('Next stage: MBBS degree'), dashDocText);
+check('dashboard: the next step continues the roadmap that is under way', (await page.getByTestId('next-step').innerText()).includes('Next on your Doctor (MBBS) roadmap') && (await page.getByTestId('next-step').innerText()).includes('MBBS degree'));
+check('dashboard: shows the map pin and the goal the student wrote', (await page.locator('.dashboard .minimap__pin').count()) === 1 && (await page.locator('.dash__goal').innerText()) === 'Become a doctor');
+await axeCheck(page, '/dashboard');
+await shot(page, 'dashboard', { fullPage: true });
+await page.locator('[data-testid="next-step"] a').click();
+await page.waitForLoadState('networkidle');
+const inView = await page.locator('#roadmap').evaluate((el) => { const r = el.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; });
+check('dashboard: "Open the roadmap" lands on the roadmap section of the career page', page.url().endsWith('/careers/doctor#roadmap') && inView, page.url());
+await seed(persona('science-pcb').answers, 'complete', { saved: ['doctor'], roadmap: { doctor: ['class12', 'entrance', 'mbbs', 'internship', 'registration'] } });
+await goto('/dashboard');
+check('dashboard: with the roadmap finished the next step moves on to skills (none rated yet)', (await page.getByTestId('next-step').innerText()).includes('Rate your skills for Doctor (MBBS)'));
+await page.evaluate(() => localStorage.setItem('pathfinder:v1', JSON.stringify({ v: 1, quiz: { answers: {}, step: 0, status: 'in-progress' }, skills: { Telepathy: 'confident', Writing: 'guru' }, roadmap: { doctor: ['nope'], ghost: ['x'] }, compare: ['ghost'] })));
+await goto('/dashboard');
+check('resilience: unknown skills, stages and compare ids in storage are dropped', (await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('pathfinder:v1')); return JSON.stringify([s.skills, s.roadmap, s.compare]); })) === '[{},{},[]]');
+
 // ================================================================ PRIVACY, RESILIENCE
 await seed(persona('commerce').answers, 'complete', { saved: ['pharmacist'], goal: 'x' });
 await goto('/privacy');
@@ -585,7 +686,7 @@ const m = await ctx.newPage();
 await m.setViewportSize({ width: 390, height: 844 });
 await m.goto(BASE + '/', { waitUntil: 'networkidle' });
 await seed(persona('commerce').answers, 'complete');
-for (const path of ['/', '/quiz', '/results', '/explore', '/profile', '/nova', '/about', '/privacy', '/careers/doctor', '/careers/civil-servant']) {
+for (const path of ['/', '/quiz', '/results', '/explore', '/profile', '/nova', '/about', '/privacy', '/careers/doctor', '/careers/civil-servant', '/dashboard', '/compare']) {
   await m.goto(BASE + path, { waitUntil: 'networkidle' });
   check(`${path}: no horizontal overflow on mobile`, (await overflow(m)) === 0, String(await overflow(m)));
 }

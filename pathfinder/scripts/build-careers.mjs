@@ -130,6 +130,13 @@ const careers = seeds.careers.map((s) => {
     if (r.exam && !routeIds.exam.has(r.exam)) problems.push(`${s.id}: unknown exam ${r.exam}`);
     if (r.body && !routeIds.body.has(r.body)) problems.push(`${s.id}: unknown body ${r.body}`);
   }
+  const stageIds = new Set();
+  for (const st of s.roadmap ?? []) {
+    if (!st.id || !st.title || stageIds.has(st.id)) problems.push(`${s.id}: bad or repeated roadmap stage "${st.id}"`);
+    stageIds.add(st.id);
+    if (st.exam && !routeIds.exam.has(st.exam)) problems.push(`${s.id}: roadmap stage ${st.id}: unknown exam ${st.exam}`);
+    if (st.body && !routeIds.body.has(st.body)) problems.push(`${s.id}: roadmap stage ${st.id}: unknown body ${st.body}`);
+  }
   for (const st of s.entry.streams) if (!(st in STREAM_LABELS)) problems.push(`${s.id}: unknown stream ${st}`);
 
   const riasec = riasecBy.get(code);
@@ -170,6 +177,7 @@ const careers = seeds.careers.map((s) => {
     skills,
     entry: s.entry,
     routes: s.routes,
+    ...(s.roadmap ? { roadmap: s.roadmap } : {}),
     salary: null,
     outlook: null,
   };

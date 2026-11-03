@@ -50,6 +50,19 @@ See `docs/data-model.md` for the full model. In short:
 strong neighbour) and returns the three nearest domains. The pin shows on Home, Results, Career DNA (it moves as the
 sliders move) and career pages (which also mark that career's domain). It is a place to start looking, not a score.
 
+## Skills, roadmap, compare, dashboard
+
+- **Skill gap** (career page): the skills are the career's O*NET skills; the student rates each one (not yet / learning / confident).
+  Nothing is inferred from interest answers, and an unrated skill is "not rated", not "none".
+- **Roadmap** (career page): stages come from the career's own typical-route data (start stream, entrance exam, study length,
+  governing body), or are hand-written in `careerSeeds.json` (`roadmap`) for well-known routes (Doctor, Dentist, Lawyer, CA, Civil
+  Servant, Architect, Pilot). Stages point only at exam and body ids in the India registry, so a link shows only if that name is
+  verified. No invented course links and no "free" claims. Ticks are saved in localStorage.
+- **Compare** (`/compare`): 2-3 careers on the same fields; a field with no data says "Not available".
+- **Dashboard** (`/dashboard`): saved careers, roadmap progress, skill counts, the pin on the map and one next step. Only the
+  student's own data: no invented stats or badges.
+- `npm run shots` takes full-page desktop and mobile screenshots into `e2e-output/shots/`.
+
 ## Deploying (Vercel)
 
 There is no backend and no environment variables, so nothing secret is needed.

@@ -11,10 +11,12 @@ import Results from './pages/Results.jsx';
 import Profile from './pages/Profile.jsx';
 import Explore from './pages/Explore.jsx';
 import CareerDetail from './pages/CareerDetail.jsx';
+import Compare from './pages/Compare.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 import NovaChat from './pages/NovaChat.jsx';
 
 export default function App() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const mainRef = useRef(null);
   const first = useRef(true);
 
@@ -25,9 +27,14 @@ export default function App() {
       first.current = false;
       return;
     }
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) {
+      target.scrollIntoView();
+      return;
+    }
     window.scrollTo(0, 0);
     mainRef.current?.focus({ preventScroll: true });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <>
@@ -41,6 +48,8 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/careers/:id" element={<CareerDetail />} />
+          <Route path="/compare" element={<Compare />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/nova" element={<NovaChat />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />

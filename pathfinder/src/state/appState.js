@@ -7,11 +7,14 @@ import { buildProfile } from '../engine/vector.js';
 import { recommend } from '../engine/recommend.js';
 import { profileFromDna, sanitizeDna } from '../engine/dna.js';
 import { sanitizeSnapshot, snapshotMatches } from '../engine/compare.js';
+import { LEVELS, sanitizeRatings } from '../engine/skillGap.js';
+import { roadmapFor, sanitizeRoadmap } from '../engine/roadmap.js';
+import { MAX_COMPARE } from '../engine/sideBySide.js';
 import { initialQuizState, quizReducer, sanitizeQuizState } from './quizState.js';
 
 export const GOAL_MAX = 300;
 
-export const initialAppState = () => ({ quiz: initialQuizState(), dna: null, saved: [], goal: '', previous: null });
+export const initialAppState = () => ({ quiz: initialQuizState(), dna: null, saved: [], goal: '', previous: null, skills: {}, roadmap: {}, compare: [] });
 
 /** The profile the engine should use: hand-edited DNA if there is any, else the quiz result. */
 export function effectiveProfile(state, quizData) {
@@ -45,6 +48,33 @@ export function appReducer(state, action, env) {
       const has = state.saved.includes(action.id);
       return { ...state, saved: has ? state.saved.filter((id) => id !== action.id) : [...state.saved, action.id] };
     }
+    // The student's own rating of a skill (null clears it). Never set from anything else.
+    case 'skill/set': {
+      if (action.level !== null && !LEVELS.includes(action.level)) return state;
+      if (!careers.some((c) => c.skills.includes(action.skill))) return state;
+      const skills = { ...state.skills };
+      if (action.level === null) delete skills[action.skill];
+      else skills[action.skill] = action.level;
+      return { ...state, skills };
+    }
+    case 'roadmap/toggle': {
+      const career = careers.find((c) => c.id === action.career);
+      if (!career || !roadmapFor(career).some((s) => s.id === action.stage)) return state;
+      const cur = state.roadmap[career.id] ?? [];
+      const next = cur.includes(action.stage) ? cur.filter((s) => s !== action.stage) : [...cur, action.stage];
+      const roadmap = { ...state.roadmap };
+      if (next.length) roadmap[career.id] = next;
+      else delete roadmap[career.id];
+      return { ...state, roadmap };
+    }
+    case 'compare/toggle': {
+      if (!careers.some((c) => c.id === action.id)) return state;
+      if (state.compare.includes(action.id)) return { ...state, compare: state.compare.filter((id) => id !== action.id) };
+      if (state.compare.length >= MAX_COMPARE) return state;
+      return { ...state, compare: [...state.compare, action.id] };
+    }
+    case 'compare/clear':
+      return { ...state, compare: [] };
     case 'goal/set':
       return { ...state, goal: String(action.goal ?? '').slice(0, GOAL_MAX) };
 
@@ -72,6 +102,9 @@ export function sanitizeAppState(saved, { quiz, careers }) {
     quiz: sanitizeQuizState(saved.quiz, quiz),
     dna: sanitizeDna(saved.dna),
     saved: Array.isArray(saved.saved) ? [...new Set(saved.saved.filter((id) => typeof id === 'string' && ids.has(id)))] : [],
+    skills: sanitizeRatings(saved.skills, careers),
+    roadmap: sanitizeRoadmap(saved.roadmap, careers),
+    compare: Array.isArray(saved.compare) ? [...new Set(saved.compare.filter((id) => typeof id === 'string' && ids.has(id)))].slice(0, MAX_COMPARE) : [],
     goal: typeof saved.goal === 'string' ? saved.goal.slice(0, GOAL_MAX) : '',
     previous: (() => {
       const p = sanitizeSnapshot(saved.previous);

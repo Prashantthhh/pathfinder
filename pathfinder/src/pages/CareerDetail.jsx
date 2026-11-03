@@ -6,6 +6,10 @@ import Nova from '../components/nova/Nova.jsx';
 import careersMeta from '../data/careersMeta.json';
 import { DIMENSIONS } from '../data/dimensions.js';
 import { domainLabel } from '../data/domainsIndex.js';
+import Named from '../components/common/Named.jsx';
+import CompareButton from '../components/common/CompareButton.jsx';
+import SkillGapSection from '../components/career/SkillGap.jsx';
+import Roadmap from '../components/career/Roadmap.jsx';
 import YourPlace from '../components/map/YourPlace.jsx';
 import { CHECK_TEXT, routesFor, verifiedOn } from '../data/india.js';
 import { SETTINGS } from '../data/settings.js';
@@ -23,18 +27,6 @@ function Missing() {
       <h1 id="cd-missing">We couldn&rsquo;t find that career</h1>
       <p>The link may be out of date. <Link to="/explore">Browse all careers</Link>.</p>
     </section>
-  );
-}
-
-function Named({ item, fallback = CHECK_TEXT }) {
-  if (!item || !item.verified) return <span>{fallback}</span>;
-  return (
-    <>
-    <a href={item.url} target="_blank" rel="noopener noreferrer">
-      {item.name}<span className="sr-only"> (opens the official site in a new tab)</span>
-    </a>
-    {item.how === 'manual' && <span className="route__manual" data-testid="manual-note"> (verified manually on {item.on})</span>}
-    </>
   );
 }
 
@@ -71,6 +63,8 @@ export default function CareerDetail() {
         </div>
         <div className="career__actions">
           <SaveButton career={career} />
+          <CompareButton career={career} />
+          {p.compare.length >= 2 && <Link className="btn btn--quiet" to="/compare">See the comparison ({p.compare.length})</Link>}
           <Link className="btn btn--quiet" to={`/nova?career=${career.id}`}>Ask Nova about this (demo)</Link>
         </div>
       </header>
@@ -193,6 +187,10 @@ export default function CareerDetail() {
           {verifiedOn ? ` (${verifiedOn})` : ''}, or if a person confirmed it by hand (the date is shown next to it). Otherwise we say &ldquo;{CHECK_TEXT}&rdquo;.
         </p>
       </section>
+
+      <SkillGapSection career={career} />
+
+      <Roadmap career={career} />
 
       <section aria-labelledby="pay-title">
         <h2 id="pay-title">Salary and outlook</h2>
