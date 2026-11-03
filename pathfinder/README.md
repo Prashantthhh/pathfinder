@@ -44,6 +44,12 @@ See `docs/data-model.md` for the full model. In short:
 - Salary and outlook are `null` ("data not connected yet"). O*NET is US data and is not used for India.
 - Indian exams and governing bodies are shown only if `npm run links:check` confirmed the name on the official site.
 
+## Where you are on the map
+
+`src/engine/youAreHere.js` places a student on the same hexagon as the 35 domains (Holland-code wedge, nudged toward a
+strong neighbour) and returns the three nearest domains. The pin shows on Home, Results, Career DNA (it moves as the
+sliders move) and career pages (which also mark that career's domain). It is a place to start looking, not a score.
+
 ## Deploying (Vercel)
 
 There is no backend and no environment variables, so nothing secret is needed.

@@ -3,12 +3,13 @@ import Nova from '../components/nova/Nova.jsx';
 import NovaBubble from '../components/nova/NovaBubble.jsx';
 import MatchItem from '../components/results/MatchItem.jsx';
 import RunComparison from '../components/results/RunComparison.jsx';
+import YourPlace from '../components/map/YourPlace.jsx';
 import SignLink from '../components/common/SignLink.jsx';
 import ConfirmAction from '../components/common/ConfirmAction.jsx';
 import { DIMENSION_BY_ID } from '../data/dimensions.js';
 import { STREAM_LABELS } from '../data/streams.js';
 import { splitMatches } from '../engine/recommend.js';
-import { MIN_ALT_PERCENT, MIN_MATCH_PERCENT, tierOf } from '../engine/tiers.js';
+import { MIN_ALT_PERCENT, MIN_MATCH_PERCENT, STRONG_MIN, tierOf } from '../engine/tiers.js';
 import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
 
@@ -104,6 +105,11 @@ export default function Results() {
 
       {p.previous && matches.length > 0 && <RunComparison previous={p.previous} matches={matches} careers={careers} />}
 
+      <section className="results__place" aria-labelledby="place-title">
+        <h2 id="place-title" className="results__place-h">Where you are on the map</h2>
+        <YourPlace />
+      </section>
+
       <p className="results__dims">
         Strongest in your profile:{' '}
         {topDims.map((d) => (
@@ -162,11 +168,20 @@ export default function Results() {
             Still matches, each with the reason it is here: a lower score band, or a usual route that starts from a
             different stream or takes longer. Nothing is hidden.
           </p>
-          <ol className="results__list">
-            {explore.map((m) => (
-              <MatchItem key={m.career.id} item={m} quiz={quiz} total={careers.length} showFit />
-            ))}
-          </ol>
+          {[
+            { id: 'route', title: 'Strong score, different route', hint: 'These score as high as your strong fits, but the usual route starts elsewhere or takes longer.', items: explore.filter((m) => m.percent >= STRONG_MIN) },
+            { id: 'band', title: 'Worth a look', hint: 'A lower score band: some of your interests line up.', items: explore.filter((m) => m.percent < STRONG_MIN) },
+          ].filter((g) => g.items.length > 0).map((g) => (
+            <div key={g.id} className="results__sub" data-testid={`explore-${g.id}`}>
+              <h3 className="results__sub-h">{g.title}</h3>
+              <p className="fine">{g.hint}</p>
+              <ol className="results__list">
+                {g.items.map((m) => (
+                  <MatchItem key={m.career.id} item={m} quiz={quiz} total={careers.length} showFit />
+                ))}
+              </ol>
+            </div>
+          ))}
         </section>
       )}
 

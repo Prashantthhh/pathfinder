@@ -6,6 +6,7 @@ import Nova from '../components/nova/Nova.jsx';
 import careersMeta from '../data/careersMeta.json';
 import { DIMENSIONS } from '../data/dimensions.js';
 import { domainLabel } from '../data/domainsIndex.js';
+import YourPlace from '../components/map/YourPlace.jsx';
 import { CHECK_TEXT, routesFor, verifiedOn } from '../data/india.js';
 import { SETTINGS } from '../data/settings.js';
 import { STREAM_LABELS } from '../data/streams.js';
@@ -119,6 +120,11 @@ export default function CareerDetail() {
           <ul>{career.skills.map((s) => <li key={s}>{s}</li>)}</ul>
         </section>
       </div>
+
+      <section className="career__place" aria-labelledby="map-title">
+        <h2 id="map-title">Where it sits on the map</h2>
+        <YourPlace focusId={career.domain} />
+      </section>
 
       <section className="career__profile" aria-labelledby="prof-title">
         <h2 id="prof-title">Interest profile</h2>

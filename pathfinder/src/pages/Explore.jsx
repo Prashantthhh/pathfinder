@@ -8,6 +8,7 @@ import { filterCareers, searchCareers, sortCareers, surprise } from '../engine/e
 import { MIN_MATCH_PERCENT } from '../engine/tiers.js';
 import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
+import useYou from '../hooks/useYou.js';
 
 const csv = (v) => (v ? v.split(',').filter(Boolean) : []);
 const toggle = (list, id) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
@@ -18,6 +19,8 @@ export default function Explore() {
   const p = useProfile();
   const { careers, result, percentById } = p;
   const hasProfile = !result.insufficient;
+  const you = useYou();
+  const nearIds = you?.near.map((n) => n.id) ?? [];
 
   // All filter state lives in the URL, so links like /explore?domain=design work
   // and a filtered view can be shared or bookmarked.
@@ -25,6 +28,7 @@ export default function Explore() {
   const q = params.get('q') ?? '';
   const domains = csv(params.get('domain'));
   const types = csv(params.get('type'));
+  const nearActive = nearIds.length > 0 && nearIds.length === domains.length && nearIds.every((id) => domains.includes(id));
   const savedOnly = params.get('saved') === '1';
   const matchOnly = params.get('match') === '1' && hasProfile;
   const sort = params.get('sort') ?? (q ? 'relevance' : hasProfile ? 'match' : 'name');
@@ -137,6 +141,11 @@ export default function Explore() {
 
             <fieldset className="field-group">
               <legend className="field-label">Domain</legend>
+              {you && (
+                <button type="button" className={`btn btn--quiet near-btn${nearActive ? ' is-on' : ''}`} aria-pressed={nearActive} data-testid="near-you-filter" onClick={() => update({ domain: nearActive ? [] : nearIds })}>
+                  Near you on the map
+                </button>
+              )}
               <div className="field-scroll" tabIndex={0} role="group" aria-label="Domains, scrollable">
                 {DOMAIN_GROUPS.map((g) => {
                   const list = DOMAINS_WITH_CAREERS.filter((d) => d.group === g.id);

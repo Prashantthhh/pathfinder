@@ -161,3 +161,20 @@ li.is-active .hexmap__dot-mark { transform: scale(1.55); }
 .nearyou__pick { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
 .nearyou__go { margin-left: var(--s-2); font-size: var(--step--1); color: var(--on-night); }
 .nearyou .fine a { color: var(--on-night); }
+
+/* ---------- Mini map (Results, Career DNA, career pages) ---------- */
+.minimap { display: block; width: 100%; max-width: 21rem; height: auto; }
+.minimap__sea { fill: #0c2740; }
+.minimap__hex { fill: rgba(244, 241, 232, 0.05); stroke: rgba(244, 241, 232, 0.3); stroke-width: 3; stroke-dasharray: 6 12; }
+.minimap__letter { font-family: var(--font-display); font-weight: 800; font-size: 46px; }
+.minimap__dot { stroke: #0c2740; stroke-width: 3; opacity: 0.85; }
+.minimap__dot.is-near { stroke: var(--signal); stroke-width: 5; opacity: 1; }
+.minimap__dot.is-focus { stroke: var(--on-night); stroke-width: 6; opacity: 1; }
+.minimap__link { stroke: var(--signal); stroke-width: 4; stroke-dasharray: 4 11; stroke-linecap: round; opacity: 0.75; }
+.minimap__pin { fill: var(--signal); stroke: var(--on-night); stroke-width: 5; }
+.minimap__eye { fill: #0c2740; }
+.minimap__name { font-family: var(--font-display); font-weight: 800; font-size: 40px; fill: var(--on-night); paint-order: stroke; stroke: #0c2740; stroke-width: 10px; stroke-linejoin: round; }
+
+.place { display: grid; gap: var(--s-4); align-items: center; }
+@media (min-width: 44rem) { .place { grid-template-columns: 21rem 1fr; gap: var(--s-6); } }
+.place__list { margin: 0 0 var(--s-3); padding-left: 1.3rem; display: grid; gap: var(--s-2); }

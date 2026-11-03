@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import YourPlace from '../components/map/YourPlace.jsx';
 import RadarChart from '../components/profile/RadarChart.jsx';
 import DnaSliders from '../components/profile/DnaSliders.jsx';
 import Nova from '../components/nova/Nova.jsx';
@@ -82,6 +83,12 @@ export default function Profile() {
           )}
         </section>
       </div>
+
+      <section className="profile__section" aria-labelledby="place-title">
+        <h2 id="place-title">Where this puts you on the map</h2>
+        <p className="section__intro">The pin moves as you change the sliders.</p>
+        <YourPlace />
+      </section>
 
       <section className="profile__section" aria-labelledby="points-title">
         <h2 id="points-title">What this profile points to right now</h2>

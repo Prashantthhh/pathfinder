@@ -71,3 +71,5 @@ textarea.field { resize: vertical; }
 .field-scroll { max-height: 18rem; overflow-y: auto; padding-right: var(--s-2); border-block: 1px solid var(--line); }
 .field-sub { margin-bottom: var(--s-3); }
 .field-sub__h { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin: var(--s-2) 0 var(--s-1); font-weight: 700; }
+.near-btn { margin-bottom: var(--s-2); font-size: var(--step--1); }
+.near-btn.is-on { background: var(--ink); color: var(--paper-hi); }
