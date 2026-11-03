@@ -23,7 +23,7 @@ export default function Footer() {
             <li><Link to="/profile">My Career DNA</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li><Link to="/compare">Compare careers</Link></li>
-            <li><Link to="/nova">Ask Nova (demo)</Link></li>
+            <li><Link to="/nova">Ask Nova</Link></li>
           </ul>
         </nav>
 

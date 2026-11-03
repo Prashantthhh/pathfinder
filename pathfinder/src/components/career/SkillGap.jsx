@@ -1,4 +1,4 @@
-import { LEVELS, LEVEL_LABELS, skillGap } from '../../engine/skillGap.js';
+import { CORE_LABEL, LEVELS, LEVEL_LABELS, skillGap } from '../../engine/skillGap.js';
 import { useProfile } from '../../state/ProfileContext.jsx';
 
 function Group({ title, rows, detail, career, setSkill }) {
@@ -51,7 +51,12 @@ export default function SkillGapSection({ career }) {
         Rate where <em>you</em> are today. We never guess from your interest answers, and the ratings stay on this device.
       </p>
       <Group title="Skills" rows={gap.rows.filter((r) => r.kind === 'skill')} detail={edgeOf(career.skillDetail)} career={career} setSkill={setSkill} />
-      {career.skills.length === 0 && <p className="fine">No single skill stands out above the average career here.</p>}
+      {career.skills.length === 0 && (
+        <>
+          <p className="fine">No single skill stands out above the average career here, so these are the most important skills overall.</p>
+          <Group title={CORE_LABEL} rows={gap.rows.filter((r) => r.kind === 'core')} detail={{}} career={career} setSkill={setSkill} />
+        </>
+      )}
       <Group title="Knowledge areas" rows={gap.rows.filter((r) => r.kind === 'knowledge')} detail={edgeOf(career.knowledgeDetail)} career={career} setSkill={setSkill} />
       <div className="skillsum" data-testid="skill-summary" role="status" aria-live="polite">
         <p>

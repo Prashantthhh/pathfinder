@@ -58,7 +58,8 @@ const browser = await chromium.launch(launchOptions);
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 const page = await ctx.newPage();
 const errors = [];
-page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+// a mocked 4xx/5xx from /api/nova is logged by the browser as a console error; that is the point of those checks
+page.on('console', (m) => { if (m.type() === 'error' && !m.location().url.endsWith('/api/nova')) errors.push(m.text()); });
 page.on('pageerror', (e) => errors.push(e.message));
 
 const shot = (p, name, opts = {}) => (shotsDir ? p.screenshot({ path: `${shotsDir}${name}.png`, ...opts }) : null);
@@ -522,33 +523,96 @@ await cmp.locator('summary').click();
 const cmpText = await cmp.innerText();
 check('results: the comparison names new arrivals and careers that dropped out', cmpText.includes('new in your top matches') && cmpText.includes('No longer in your top matches'), cmpText.slice(0, 200));
 
-// ================================================================ NOVA (demo)
+// ================================================================ NOVA (live AI when available, demo otherwise)
+// The preview server has no /api/nova (it answers with the app's HTML), which is exactly "live AI not set up":
+// Nova falls back to demo answers. The live paths below are exercised by mocking POST /api/nova.
+const replies = () => page.locator('.msg--nova .msg__source').count();
+const waitReplies = (n) => page.waitForFunction((k) => document.querySelectorAll('.msg--nova .msg__source').length >= k, n);
+const askNova = async (text) => {
+  const before = await replies();
+  await page.locator('#chat-input').fill(text);
+  await page.keyboard.press('Enter');
+  await waitReplies(before + 1);
+  return page.locator('.msg--nova').filter({ has: page.locator('.msg__source') }).last();
+};
 await clearAll();
 await goto('/nova');
-check('nova: DEMO and "not live AI" are on the page', lower(await page.locator('.demo-banner').innerText()).includes('demo mode') && lower(await page.locator('main').innerText()).includes('not live ai'));
+const bannerText = lower(await page.getByTestId('nova-banner').innerText());
+check('nova: the page explains the AI-generated and Demo labels, and that no name or contact details are sent', bannerText.includes('ai-generated') && bannerText.includes('demo') && bannerText.includes('no name or contact details'));
 check('nova: log region is announced politely', (await page.locator('[role=log]').getAttribute('aria-live')) === 'polite');
 await page.getByRole('button', { name: 'What does a match score mean?' }).click();
-check('nova: a suggested question gets its preset answer', (await page.locator('.msg--nova').last().innerText()).includes('cosine similarity'));
-await page.locator('#chat-input').fill('what is the salary of a chartered accountant');
-await page.getByRole('button', { name: 'Send' }).click();
-const salaryMsg = await page.locator('.msg--nova').last().innerText();
+await waitReplies(2);
+check('nova: with no live AI set up, a suggested question gets its preset answer, labelled Demo', (await page.locator('.msg--nova').last().innerText()).includes('cosine similarity') && (await page.locator('.msg__source').last().innerText()).startsWith('Demo'));
+check('nova: once it knows live AI is off, the page says so', /isn.t switched on/.test(await page.locator('.lede').innerText()) && (await page.locator('.tag--demo').count()) >= 1);
+const salaryMsg = await (await askNova('what is the salary of a chartered accountant')).innerText();
 check('nova: a salary question gets the honest "data not connected" answer and says US data is not used for India', salaryMsg.includes('data not connected yet') && salaryMsg.includes('US'));
-await page.locator('#chat-input').fill('which stream do I need for MBBS');
-await page.keyboard.press('Enter');
-check('nova: a stream question points to the typical-route label and refuses eligibility rules', (await page.locator('.msg--nova').last().innerText()).includes('verify with the official body'));
-await page.locator('#chat-input').fill('Tell me about Chartered Accountant');
-await page.keyboard.press('Enter');
-const caMsg = await page.locator('.msg--nova').last().innerText();
+const streamMsg = await (await askNova('which stream do I need for MBBS')).innerText();
+check('nova: a stream question points to the typical-route label and refuses eligibility rules', streamMsg.includes('verify with the official body'));
+const caMsg = await (await askNova('Tell me about Chartered Accountant')).innerText();
 check('nova: a named career is answered from its O*NET description, typical route and salary placeholder', caMsg.includes('Typical route in India') && caMsg.includes('data not connected yet') && caMsg.includes(careers.find((c) => c.id === 'chartered-accountant').description), caMsg.slice(0, 160));
-await page.locator('#chat-input').fill('whats the weather in hyderabad');
-await page.keyboard.press('Enter');
-const fb = await page.locator('.msg--nova').last().innerText();
+const fb = await (await askNova('whats the weather in hyderabad')).innerText();
 check('nova: an unknown question says it is a demo with no preset answer', fb.includes('demo mode') && fb.includes('no preset answer'));
-check('nova: every Nova message carries a Demo source label', (await page.locator('.msg--nova').count()) === (await page.locator('.msg--nova .msg__source').count()) && (await page.locator('.msg__source').allInnerTexts()).every((t) => t.startsWith('Demo')));
+check('nova: every Nova message carries a source label (Demo when not live)', (await page.locator('.msg--nova').count()) === (await page.locator('.msg--nova .msg__source').count()) && (await page.locator('.msg__source').allInnerTexts()).every((t) => t.startsWith('Demo')));
+
+// ---- live AI (mocked)
+await clearAll();
+await seed(persona('science-pcb').answers, 'complete', { goal: 'My name is Asha and I live in Pune', saved: ['animator'], roadmap: { doctor: ['class12', 'entrance'] }, skills: { Science: 'confident' } });
+let calls = [];
+let mode = { status: 200, body: { ok: true, source: 'ai', answer: 'Doctor (MBBS) is your top match because you like science and helping people. Check with the official body for exam details.' } };
+await page.route('**/api/nova', async (route) => {
+  calls.push(route.request().postDataJSON());
+  await route.fulfill({ status: mode.status, contentType: 'application/json', body: JSON.stringify(mode.body) });
+});
+await goto('/nova?career=doctor');
+await waitReplies(2);
+const liveDbg = [await page.locator('.msg--nova').last().innerText(), await page.locator('.msg__source').last().innerText(), await page.locator('.tag--ai').count()];
+check('nova (live): a reply from the AI is labelled AI-generated, with a caution to check with the official body', lower(liveDbg[0]).includes('nova (ai-generated)') && liveDbg[1].startsWith('AI-generated') && liveDbg[1].includes('official body') && liveDbg[2] === 1, JSON.stringify(liveDbg));
+const sent = calls[0];
+check('nova (live): the request has only the question, history and context (matches, Career DNA, career id, roadmap stage)', JSON.stringify(Object.keys(sent).sort()) === '["context","history","question"]' && Object.keys(sent.context).sort().every((k) => ['careerId', 'dna', 'matches', 'stage'].includes(k)), JSON.stringify(Object.keys(sent.context)));
+const engineTop = engineFor(persona('science-pcb').answers).res.matches.slice(0, 5).map((m) => ({ id: m.career.id, percent: m.percent }));
+check('nova (live): the context carries the real top matches, six DNA numbers, the career page and the next roadmap stage', JSON.stringify(sent.context.matches) === JSON.stringify(engineTop) && Object.keys(sent.context.dna).length === 6 && sent.context.careerId === 'doctor' && sent.context.stage.title === 'MBBS degree' && sent.context.stage.done === 2 && sent.context.stage.total === 5, JSON.stringify(sent.context));
+const wire = JSON.stringify(sent);
+check('nova (live): no goal note, name, saved list or quiz answers are sent', !/Asha|Pune|animator|goal|saved|answers|q-stream|Science.*confident/i.test(wire.replace(/"Science"/g, '')), wire.slice(0, 200));
+await askNova('what should I do next?');
+check('nova (live): a follow-up sends the earlier turns as history', calls.length === 2 && calls[1].history.length >= 2 && calls[1].history[0].role === 'user');
+await axeCheck(page, '/nova (live reply)');
+await shot(page, 'nova-live', { fullPage: true });
+
+// ---- fallbacks: every failure ends in a labelled demo answer
+for (const [name, res, note] of [
+  ['the free limit is hit', { status: 502, body: { ok: false, error: 'provider_limit' } }, 'free limit'],
+  ['the user is rate-limited', { status: 429, body: { ok: false, error: 'rate_limited', retryAfter: 90 } }, 'short rest'],
+  ['the API fails', { status: 502, body: { ok: false, error: 'upstream' } }, "couldn't answer just now"],
+  ['the answer fails the safety check', { status: 502, body: { ok: false, error: 'filtered' } }, "can't check"],
+]) {
+  mode = res;
+  await goto('/nova');
+  const m = await askNova('What does a match score mean?');
+  const t = await m.innerText();
+  check(`nova (fallback): when ${name} the demo answer is shown, labelled Demo, with a plain note`, t.includes('cosine similarity') && t.includes(note) && (await m.locator('.msg__source').innerText()).startsWith('Demo'), t.slice(0, 160));
+}
+mode = { status: 503, body: { ok: false, error: 'not_configured' } };
+calls = [];
+await goto('/nova');
+await askNova('What does a match score mean?');
+await askNova('Tell me about Doctor');
+check('nova (no key): the first call finds it is not configured and later questions skip the API', calls.length === 1 && /isn.t switched on/.test(await page.locator('.lede').innerText()));
+mode = { status: 200, body: { ok: true, source: 'ai', answer: 'Hello' } };
+calls = [];
+await page.evaluate(() => localStorage.setItem('pathfinder:nova-live', JSON.stringify({ day: new Date().toISOString().slice(0, 10), n: 25 })));
+await goto('/nova');
+const capped = await (await askNova('What does a match score mean?')).innerText();
+check('nova (daily cap): after 25 live questions a day it uses demo answers without calling the API', calls.length === 0 && capped.includes("today's live questions"));
+await page.unroute('**/api/nova');
+await page.evaluate(() => localStorage.removeItem('pathfinder:nova-live'));
+const bundle = await page.evaluate(async () => (await Promise.all([...document.scripts].filter((s) => s.src).map((s) => fetch(s.src).then((r) => r.text())))).join('\n'));
+check('nova: no API key or provider secret is in the shipped frontend code', !/NOVA_API_KEY|gsk_[A-Za-z0-9]{10,}|sk-[A-Za-z0-9]{20,}|Bearer /.test(bundle));
+
 await seed(persona('science-pcb').answers, 'complete');
 await goto('/nova');
 await shot(page, 'nova', { fullPage: true });
 await page.getByRole('button', { name: 'Why is my top match my top match?' }).click();
+await waitReplies(2);
 const topTitle = pcbRanked[0].career.title;
 check('nova: with results it explains the real top match, labelled as built from results', (await page.locator('.msg--nova').last().innerText()).includes(topTitle) && (await page.locator('.msg--nova').last().innerText()).includes('not AI'));
 await axeCheck(page, '/nova');
@@ -594,6 +658,9 @@ await goto('/careers/chartered-accountant');
 const caText = await page.locator('.career__roadmap').innerText();
 const caTraining = (await page.locator('.roadmap__stage', { hasText: 'articleship' }).locator('.roadmap__title, .roadmap__detail, .roadmap__res').allInnerTexts()).join(' ');
 check('roadmap (CA): graduates enter directly at Intermediate; articleship says to check the current duration with ICAI, with no fixed length', /Graduates can enter directly at the Intermediate level/.test(caText) && caTraining.includes('Check the current duration with ICAI') && !/[0-9]/.test(caTraining) && !/(^|[^a-z])(years?|months?)([^a-z]|$)/i.test(caTraining), caTraining);
+await goto('/careers/musician');
+const musicianText = await page.locator('main').innerText();
+check('skills (Musician has no skill above the edge): shows "Core skills (common to many careers)" with three items, in the list and in the rating section', (musicianText.match(/Core skills \(common to many careers\)/gi) ?? []).length >= 2 && (await page.locator('.career__skills .skillrate legend').count()) >= 4 && musicianText.includes('Speaking') && /importance \d\.\d of 5/.test(musicianText));
 await goto('/careers/electrician');
 check('roadmap: Electrician lists its own exam and body (AITT, DGT), not an invented one', (await page.locator('.career__roadmap').innerText()).includes('All India Trade Test'));
 

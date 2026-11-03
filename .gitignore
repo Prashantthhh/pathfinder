@@ -3,3 +3,7 @@ dist/
 *.local
 e2e-output/
 .cache/
+.env
+.env.*
+!.env.example
+.vercel/

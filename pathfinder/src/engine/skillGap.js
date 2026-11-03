@@ -4,6 +4,7 @@
 // one it is "not rated yet", which is different from "none".
 
 export const LEVELS = ['none', 'learning', 'confident'];
+export const CORE_LABEL = 'Core skills (common to many careers)';
 export const LEVEL_LABELS = { none: 'Not yet', learning: 'Learning', confident: 'Confident' };
 
 /** Ratings are stored under the skill's name, or "knowledge:<name>" for a knowledge area (some names are both). */
@@ -11,7 +12,11 @@ export const itemKey = (kind, name) => (kind === 'knowledge' ? `knowledge:${name
 
 /** Every rateable key used by any career. */
 export const allItemKeys = (careers) => [
-  ...new Set(careers.flatMap((c) => [...c.skills.map((n) => itemKey('skill', n)), ...(c.knowledge ?? []).map((n) => itemKey('knowledge', n))])),
+  ...new Set(careers.flatMap((c) => [
+    ...c.skills.map((n) => itemKey('skill', n)),
+    ...(c.coreSkills ?? []).map((n) => itemKey('skill', n)),
+    ...(c.knowledge ?? []).map((n) => itemKey('knowledge', n)),
+  ])),
 ];
 
 /** Keep only known items with a known level. */
@@ -26,11 +31,13 @@ export function sanitizeRatings(raw, careers) {
  * plus counts and the gaps (rated "none" first, then not rated yet, then "learning").
  */
 export function skillGap(career, ratings) {
+  // a career with no skill above the edge rates its "core skills" (raw importance) instead
   const items = [
     ...career.skills.map((name) => ({ kind: 'skill', name })),
+    ...(career.skills.length ? [] : (career.coreSkills ?? []).map((name) => ({ kind: 'core', name }))),
     ...(career.knowledge ?? []).map((name) => ({ kind: 'knowledge', name })),
   ];
-  const rows = items.map((i) => ({ ...i, key: itemKey(i.kind, i.name), level: ratings?.[itemKey(i.kind, i.name)] ?? null }));
+  const rows = items.map((i) => ({ ...i, key: itemKey(i.kind === 'knowledge' ? 'knowledge' : 'skill', i.name), level: ratings?.[itemKey(i.kind === 'knowledge' ? 'knowledge' : 'skill', i.name)] ?? null }));
   const count = (l) => rows.filter((r) => r.level === l).length;
   const order = { none: 0, null: 1, learning: 2 };
   return {

@@ -8,7 +8,7 @@ import { domainLabel } from '../data/domainsIndex.js';
 import { CHECK_TEXT, routesFor } from '../data/india.js';
 import { STUDY_LABELS } from './feasibility.js';
 import { tierOf } from './tiers.js';
-import { skillGap } from './skillGap.js';
+import { CORE_LABEL, skillGap } from './skillGap.js';
 import { progress } from './roadmap.js';
 
 export const MAX_COMPARE = 3;
@@ -46,7 +46,7 @@ export function sideBySide(careers, ctx = {}) {
       rows: [
         row('domain', 'Domain', (c) => domainLabel(c.domain)),
         row('what', 'In brief', (c) => first(c.description)),
-        row('skills', 'Skills it needs more than most careers', (c) => c.skills.join(', ')),
+        row('skills', 'Skills it needs more than most careers', (c) => (c.skills.length ? c.skills.join(', ') : c.coreSkills?.length ? `${CORE_LABEL}: ${c.coreSkills.join(', ')}` : '')),
         row('knowledge', 'Knowledge it needs more than most careers', (c) => (c.knowledge ?? []).join(', ')),
         row('salary', 'Salary (India)', (c) => (c.salary ? String(c.salary) : '')),
         row('outlook', 'Outlook (India)', (c) => (c.outlook ? String(c.outlook) : '')),

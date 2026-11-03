@@ -3977,6 +3977,25 @@
       "Telecommunications",
       "Administrative"
     ],
+    "coreSkillDetail": [
+      {
+        "name": "Reading Comprehension",
+        "importance": 4
+      },
+      {
+        "name": "Speaking",
+        "importance": 3.88
+      },
+      {
+        "name": "Active Listening",
+        "importance": 3.75
+      }
+    ],
+    "coreSkills": [
+      "Reading Comprehension",
+      "Speaking",
+      "Active Listening"
+    ],
     "related": [
       "chartered-accountant",
       "bank-officer",
@@ -4455,6 +4474,25 @@
       "Administrative",
       "Administration and Management",
       "Law and Government"
+    ],
+    "coreSkillDetail": [
+      {
+        "name": "Speaking",
+        "importance": 4.12
+      },
+      {
+        "name": "Active Listening",
+        "importance": 4
+      },
+      {
+        "name": "Reading Comprehension",
+        "importance": 4
+      }
+    ],
+    "coreSkills": [
+      "Speaking",
+      "Active Listening",
+      "Reading Comprehension"
     ],
     "related": [
       "financial-planner",
@@ -6701,6 +6739,25 @@
       "Fine Arts",
       "History and Archeology",
       "Foreign Language"
+    ],
+    "coreSkillDetail": [
+      {
+        "name": "Speaking",
+        "importance": 3.38
+      },
+      {
+        "name": "Active Listening",
+        "importance": 3.25
+      },
+      {
+        "name": "Monitoring",
+        "importance": 3.25
+      }
+    ],
+    "coreSkills": [
+      "Speaking",
+      "Active Listening",
+      "Monitoring"
     ],
     "related": [
       "fashion-designer",

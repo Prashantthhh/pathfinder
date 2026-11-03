@@ -8,6 +8,7 @@
 //   tasks        the five most important core task statements (Task Statements + Task Ratings IM)
 //   skills       up to five skills the career needs MORE than the average career does (importance minus the
 //                mean over these careers), from O*NET Essential Skills + Transferable Skills, scale IM
+//   coreSkills   only when `skills` is empty: the top three by raw importance ("Core skills (common to many careers)")
 //   knowledge    the same, for O*NET Knowledge areas
 //   related      three nearest careers by interest profile
 // Fails loudly if anything is missing. Nothing here is used for Indian salary,
@@ -249,6 +250,15 @@ const knowledgeMean = edgeRank('_knowledge', 'knowledgeDetail');
 for (const c of careers) {
   c.skills = c.skillDetail.map((d) => d.name);
   c.knowledge = c.knowledgeDetail.map((d) => d.name);
+  // A career with no skill above the edge shows its top three by RAW importance instead, labelled
+  // "Core skills (common to many careers)" in the product, so the section is never empty.
+  if (!c.skills.length) {
+    c.coreSkillDetail = [...c._skills]
+      .map(([name, importance]) => ({ name, importance: round(importance) }))
+      .sort((a, b) => b.importance - a.importance || a.name.localeCompare(b.name))
+      .slice(0, 3);
+    c.coreSkills = c.coreSkillDetail.map((d) => d.name);
+  }
   delete c._skills;
   delete c._knowledge;
 }

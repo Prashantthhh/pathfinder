@@ -22,7 +22,7 @@ const LINKS = [
   { to: '/explore', label: 'Explore careers' },
   { to: '/profile', label: 'My Career DNA' },
   { to: '/dashboard', label: 'Dashboard' },
-  { to: '/nova', label: 'Ask Nova', tag: 'Demo' },
+  { to: '/nova', label: 'Ask Nova' },
 ];
 
 export default function Header() {

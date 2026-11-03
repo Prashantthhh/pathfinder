@@ -29,3 +29,5 @@
   .msg { max-width: 95%; }
   .chat__row { flex-direction: column; }
 }
+.tag--ai { background: var(--forest, #1d5c4a); color: var(--paper-hi); border-style: solid; border-color: var(--forest, #1d5c4a); vertical-align: 0.2em; margin-left: var(--s-2); }
+.msg__note { margin-top: var(--s-1) !important; font-size: var(--step--1); color: var(--ink-2); font-style: italic; }

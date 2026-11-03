@@ -6,6 +6,7 @@ import Nova from '../components/nova/Nova.jsx';
 import careersMeta from '../data/careersMeta.json';
 import { DIMENSIONS } from '../data/dimensions.js';
 import { domainLabel } from '../data/domainsIndex.js';
+import { CORE_LABEL } from '../engine/skillGap.js';
 import Named from '../components/common/Named.jsx';
 import CompareButton from '../components/common/CompareButton.jsx';
 import SkillGapSection from '../components/career/SkillGap.jsx';
@@ -65,7 +66,7 @@ export default function CareerDetail() {
           <SaveButton career={career} />
           <CompareButton career={career} />
           {p.compare.length >= 2 && <Link className="btn btn--quiet" to="/compare">See the comparison ({p.compare.length})</Link>}
-          <Link className="btn btn--quiet" to={`/nova?career=${career.id}`}>Ask Nova about this (demo)</Link>
+          <Link className="btn btn--quiet" to={`/nova?career=${career.id}`}>Ask Nova about this</Link>
         </div>
       </header>
 
@@ -117,7 +118,11 @@ export default function CareerDetail() {
               <ul>{career.skillDetail.map((d) => <li key={d.name}>{d.name} <span className="fine">(+{d.edge.toFixed(1)} on O*NET&rsquo;s 1&ndash;5 scale)</span></li>)}</ul>
             </>
           ) : (
-            <p className="fine">No single skill stands out above the average career here.</p>
+            <>
+              <h3 className="career__sub">{CORE_LABEL}</h3>
+              <ul>{career.coreSkillDetail.map((d) => <li key={d.name}>{d.name} <span className="fine">(importance {d.importance.toFixed(1)} of 5)</span></li>)}</ul>
+              <p className="fine">No single skill stands out above the average career here, so these are the most important skills overall, shared by many careers.</p>
+            </>
           )}
           <h3 className="career__sub">Knowledge areas</h3>
           <ul>{career.knowledgeDetail.map((d) => <li key={d.name}>{d.name} <span className="fine">(+{d.edge.toFixed(1)})</span></li>)}</ul>

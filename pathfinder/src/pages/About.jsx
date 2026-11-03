@@ -37,14 +37,14 @@ export default function About() {
         </li>
         <li>The six work settings are derived by us from O*NET Work Context. They are not O*NET scores.</li>
         <li>Education routes, exams and governing bodies are for India and are written separately. Each is shown with a link only if its official site loaded and mentioned the name when last checked; otherwise we say &ldquo;Check with the official body&rdquo;.</li>
+        <li>Nova&rsquo;s live answers come from a language model and are labelled <em>AI-generated</em>. It is told to answer only from PATHFINDER&rsquo;s own data and to say &ldquo;check with the official body&rdquo; for anything that changes, but it can still be wrong. When live AI is off, busy or out of its free limit, Nova answers from preset demo answers, labelled <em>Demo</em>.</li>
         <li>The typical-route fields (starting stream, study length) are our general reading, not eligibility rules.</li>
         <li>Armed-forces careers are not included because O*NET has no interest data for them.</li>
       </ul>
-      <h2>What is not connected yet</h2>
+      <h2>Nova, and what is not connected yet</h2>
       <ul>
         <li>Salary and job outlook. Pages say &ldquo;data not connected yet&rdquo; rather than guess; US figures are not used for India.</li>
-        <li>Live AI. Nova&rsquo;s chat uses preset answers and is labelled as a demo.</li>
-        <li>Accounts. There is no backend; everything stays in your browser.</li>
+        <li>Accounts. There are no accounts; your progress stays in your browser.</li>
       </ul>
     </article>
   );

@@ -3,10 +3,12 @@ import { Link, useSearchParams } from 'react-router-dom';
 import Nova from '../components/nova/Nova.jsx';
 import demo from '../data/novaDemo.json';
 import { answerFor, careerQuestion } from '../engine/novaDemo.js';
+import { FALLBACK_NOTE, askLive, buildNovaContext } from '../engine/novaLive.js';
 import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
 
 const SOURCE_LABEL = {
+  ai: 'AI-generated · it can be wrong. Check with the official body for anything time-sensitive.',
   preset: 'Demo · preset answer',
   career: 'Demo · built from the career page data, not AI',
   results: 'Demo · built from your saved results, not AI',
@@ -16,29 +18,70 @@ const SOURCE_LABEL = {
 const greeting = () => ({ id: 'greeting', from: 'nova', text: demo.greeting, source: 'preset' });
 
 /**
- * Nova chat in DEMO mode. There is no language model: answers are chosen from a
- * fixed list (see engine/novaDemo.js) and every Nova message says so.
+ * Nova chat. It tries live AI first (POST /api/nova, a serverless function that holds the key) and labels
+ * those replies "AI-generated". If there is no key, the call fails, or a limit is hit, it answers from the
+ * preset demo answers (see engine/novaDemo.js) and says so. Every Nova message carries its source.
  */
 export default function NovaChat() {
-  useTitle('Ask Nova (demo)');
+  useTitle('Ask Nova');
   const p = useProfile();
   const [params] = useSearchParams();
   const [messages, setMessages] = useState(() => [greeting()]);
   const [draft, setDraft] = useState('');
   const [mood, setMood] = useState('happy');
+  const [live, setLive] = useState('unknown'); // 'unknown' | 'live' | 'demo'
+  const [busy, setBusy] = useState(false);
+  const pausedUntil = useRef(0);
+  const messagesRef = useRef(messages);
+  messagesRef.current = messages;
   const counter = useRef(0);
   const endRef = useRef(null);
   const asked = useRef(false);
 
-  const ask = (text) => {
+  const careerForContext = () => {
+    const id = params.get('career');
+    return id ? p.careers.find((c) => c.id === id) ?? null : null;
+  };
+
+  const ask = async (text) => {
     const clean = text.trim();
-    if (!clean) return;
-    const reply = answerFor(clean, { demo, careers: p.careers, result: p.result });
+    if (!clean || busy) return;
     counter.current += 1;
     const n = counter.current;
-    setMessages((m) => [...m, { id: `u${n}`, from: 'you', text: clean }, { id: `n${n}`, from: 'nova', ...reply }]);
-    setMood(reply.source === 'fallback' ? 'thinking' : 'happy');
+    const history = messagesRef.current
+      .filter((m) => m.id !== 'greeting' && !m.pending && m.text)
+      .map((m) => ({ role: m.from === 'you' ? 'user' : 'nova', text: m.text }));
+    setMessages((m) => [...m, { id: `u${n}`, from: 'you', text: clean }]);
     setDraft('');
+
+    const demoReply = (note) => {
+      const reply = answerFor(clean, { demo, careers: p.careers, result: p.result });
+      setMessages((m) => [...m, { id: `n${n}`, from: 'nova', ...reply, note }]);
+      setMood(reply.source === 'fallback' ? 'thinking' : 'happy');
+    };
+
+    if (live === 'demo' || Date.now() < pausedUntil.current) {
+      demoReply(live === 'demo' ? null : FALLBACK_NOTE.rate_limited);
+      return;
+    }
+    setBusy(true);
+    setMood('thinking');
+    const career = careerForContext();
+    const out = await askLive({
+      question: clean,
+      history,
+      context: buildNovaContext({ result: p.result, profile: p.profile, career, ticked: career ? p.roadmap[career.id] ?? [] : [] }),
+    });
+    setBusy(false);
+    if (out.ok) {
+      setLive('live');
+      setMessages((m) => [...m, { id: `n${n}`, from: 'nova', source: 'ai', text: out.text }]);
+      setMood('happy');
+      return;
+    }
+    if (out.reason === 'not_configured') setLive('demo');
+    if (out.reason === 'rate_limited') pausedUntil.current = Date.now() + (out.retryAfter ?? 60) * 1000;
+    demoReply(out.reason === 'not_configured' ? null : FALLBACK_NOTE[out.reason] ?? FALLBACK_NOTE.upstream);
   };
 
   // /nova?career=<id> (from a career page) opens with a question about that career.
@@ -63,27 +106,35 @@ export default function NovaChat() {
       <header className="chat__head">
         <Nova size={96} mood={mood} />
         <div>
-          <h1>Ask Nova <span className="tag tag--demo">Demo</span></h1>
-          <p className="lede">Preset answers only. Nova is <strong>not live AI</strong> here.</p>
+          <h1>Ask Nova {live === 'live' ? <span className="tag tag--ai">AI</span> : live === 'demo' ? <span className="tag tag--demo">Demo</span> : null}</h1>
+          <p className="lede">
+            {live === 'demo'
+              ? <>Live AI isn&rsquo;t switched on here, so Nova answers from <strong>preset demo answers</strong>.</>
+              : <>Nova answers with AI when it can, and from preset demo answers when it can&rsquo;t.</>}
+          </p>
         </div>
       </header>
 
-      <p className="demo-banner" role="note">
-        <span className="tag tag--demo">Demo mode</span> This chat picks from answers written in advance. It
-        doesn&rsquo;t understand free text beyond matching keywords, can&rsquo;t look anything up, and will say so when it has no
-        answer. A few replies are filled in from your own results or the career pages, and are labelled that way.
+      <p className="demo-banner" role="note" data-testid="nova-banner">
+        <span className="tag tag--demo">How replies are labelled</span>{' '}
+        <strong>AI-generated</strong> replies come from a language model that is given only your top matches, your Career DNA, the
+        career you are looking at and your next roadmap step (no name or contact details). It can be wrong, and it is told to say
+        &ldquo;check with the official body&rdquo; for anything that changes. <strong>Demo</strong> replies are chosen from answers
+        written in advance and are used when live AI is off, busy or out of its free limit.
       </p>
 
-      <div className="chat__log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Nova">
+      <div className="chat__log" tabIndex={0} role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Nova">
         <ul className="chat__msgs">
         {messages.map((m) => (
           <li key={m.id} className={`msg msg--${m.from}`}>
-            <p className="msg__who">{m.from === 'you' ? 'You' : 'Nova (demo)'}</p>
+            <p className="msg__who">{m.from === 'you' ? 'You' : m.source === 'ai' ? 'Nova (AI-generated)' : 'Nova (demo)'}</p>
             <p className="msg__text">{m.text}</p>
-            {m.from === 'nova' && <p className="msg__source">{SOURCE_LABEL[m.source] ?? SOURCE_LABEL.preset}</p>}
+            {m.from === 'nova' && <p className="msg__source" data-source={m.source}>{SOURCE_LABEL[m.source] ?? SOURCE_LABEL.preset}</p>}
+            {m.note && <p className="msg__note">{m.note}</p>}
             {m.link && <p className="msg__link"><Link to={m.link.to}>{m.link.label}</Link></p>}
           </li>
         ))}
+        {busy && <li className="msg msg--nova" data-testid="nova-thinking"><p className="msg__who">Nova</p><p className="msg__text">Thinking…</p></li>}
         </ul>
         <div ref={endRef} aria-hidden="true" className="chat__end" />
       </div>
@@ -106,19 +157,19 @@ export default function NovaChat() {
           ask(draft);
         }}
       >
-        <label htmlFor="chat-input" className="field-label">Ask Nova (demo)</label>
+        <label htmlFor="chat-input" className="field-label">Ask Nova</label>
         <div className="chat__row">
           <input
             id="chat-input"
             className="field"
             type="text"
             value={draft}
-            maxLength={200}
+            maxLength={300}
             placeholder='e.g. "Tell me about Data Analyst"'
             onChange={(e) => setDraft(e.target.value)}
             autoComplete="off"
           />
-          <button type="submit" className="btn" disabled={!draft.trim()}>Send</button>
+          <button type="submit" className="btn" disabled={!draft.trim() || busy}>Send</button>
         </div>
       </form>
 

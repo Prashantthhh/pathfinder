@@ -44,6 +44,37 @@ See `docs/data-model.md` for the full model. In short:
 - Salary and outlook are `null` ("data not connected yet"). O*NET is US data and is not used for India.
 - Indian exams and governing bodies are shown only if `npm run links:check` confirmed the name on the official site.
 
+## Live Nova (optional)
+
+Nova answers with AI when a key is set, and with the preset demo answers otherwise (no key, API error, free limit hit).
+Live replies are labelled **AI-generated**; demo replies are labelled **Demo**.
+
+- `POST /api/nova` is a Vercel serverless function (`api/nova.js`, logic in `api/_lib/`). The key is read **only** from the
+  `NOVA_API_KEY` environment variable on the server. It is never in `src/`, the build, or git (`.env*` is git-ignored; a test checks this).
+- The browser sends the question, up to 4 recent turns, top matches (id + score), the Career DNA (six numbers), the career page id and the next
+  roadmap stage. The server looks the career up in its own data; it never trusts career text from the browser. No goal note, saved list, quiz
+  answers, name or contact details are sent.
+- The system prompt (`api/_lib/rules.js`) is server-side: answer only from the data given, never invent salaries, exam dates, eligibility rules
+  or links, say "check with the official body" for anything time-sensitive, keep it short. A guard (`api/_lib/guard.js`) strips links and drops an
+  answer that contains money figures or dates.
+- Limits: 8 requests / 10 min and 40 / day per anonymous client (hashed IP, kept in memory only), 600 / day overall, and 25 live questions / day per
+  browser. In-memory counts are per serverless instance, so this is best-effort; for a hard cross-instance limit add a shared store (Upstash
+  Redis / Vercel KV).
+
+**Provider.** Any OpenAI-compatible chat API. The default is [Groq](https://console.groq.com) (free tier, no card needed when last checked; limits and
+data policy change, so read them). Get a key: sign in at console.groq.com, open **API Keys**, **Create API Key**, copy it (shown once). Other
+options: Google AI Studio (key from aistudio.google.com; set `NOVA_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/chat/completions` and a
+`NOVA_MODEL`); free tiers of some providers may use requests to improve their products, so check before sending student questions.
+
+```
+# local: create pathfinder/.env.local (git-ignored) containing   NOVA_API_KEY=your-key
+npm run dev            # the dev server also serves /api/nova
+npm run nova:samples   # asks 5 sample questions through the same server code
+# Vercel: Project > Settings > Environment Variables > add NOVA_API_KEY (Production and Preview), then redeploy
+```
+
+Optional: `NOVA_API_URL`, `NOVA_MODEL` (see `.env.example`).
+
 ## Where you are on the map
 
 `src/engine/youAreHere.js` places a student on the same hexagon as the 35 domains (Holland-code wedge, nudged toward a
@@ -52,7 +83,7 @@ sliders move) and career pages (which also mark that career's domain). It is a p
 
 ## Skills, roadmap, compare, dashboard
 
-- **Skill gap** (career page): the items are the O*NET skills and knowledge areas the career needs *more than the average career* (importance minus the
+- **Skill gap** (career page; a career with no skill above the edge shows its top 3 by raw importance as "Core skills (common to many careers)"): the items are the O*NET skills and knowledge areas the career needs *more than the average career* (importance minus the
   cross-career mean, see `docs/data-model.md`); the student rates each one (not yet / learning / confident).
   Nothing is inferred from interest answers, and an unrated item is "not rated", not "none".
 - **Roadmap** (career page): stages come from the career's own typical-route data (start stream, entrance exam, study length,
