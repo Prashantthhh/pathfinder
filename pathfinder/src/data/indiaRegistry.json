@@ -50,6 +50,13 @@
         "CLAT"
       ]
     },
+    "aibe": {
+      "name": "All India Bar Examination (AIBE)",
+      "url": "https://allindiabarexamination.com",
+      "needles": [
+        "All India Bar Examination|AIBE"
+      ]
+    },
     "ca-foundation": {
       "name": "CA Foundation",
       "url": "https://boslive.icai.org",

@@ -9,7 +9,10 @@
 | `careerSeeds.json` (hand-written) | id, title, domain, the exact O*NET occupation title, loose-match note, search keywords, typical route (`entry`), India exam/body ids (`routes`) |
 | O*NET 31.0 Database (CC BY 4.0) | description, interest scores (RIASEC, 1-7), tasks, skills, Work Context |
 
-Generated per career: `riasec`, `settings` (+ `settingsRaw`), `tasks` (5 most important core tasks), `skills` (5), `related` (3 nearest by interest profile), `salary: null`, `outlook: null`.
+Generated per career: `riasec`, `settings` (+ `settingsRaw`), `tasks` (5 most important core tasks), `skills` and `knowledge` (see below), `related` (hand-picked `relatedPins`, then the nearest by interest profile, three in all), `salary: null`, `outlook: null`.
+
+## Skills and knowledge
+O*NET importance (scale IM, 1-5) is read for all 35 skills (Essential Skills + Transferable Skills files) and 33 Knowledge areas. Raw importance puts the same generic items (Critical Thinking, Reading Comprehension) at the top of nearly every career, so each career is ranked by **importance minus the mean over the 61 careers** (the "edge"): what it needs MORE than the average career. Only items at least 0.25 above the mean are kept, up to five of each, so a career with no standout skill lists none (Company Secretary, HR Manager and Musician) rather than padding. `skillDetail` / `knowledgeDetail` keep importance and edge. O*NET suppresses a few rows (Food Production for Aerospace Engineer and Musician, Therapy and Counseling for Aerospace Engineer); those are left out for that career, not counted as zero.
 
 ## Scoring
 The student's profile has three parts.

@@ -31,7 +31,7 @@ export default function About() {
       <h2>Where the data comes from, and its limits</h2>
       <ul>
         <li>
-          Interest profiles, tasks and skills come from the {meta.source} ({meta.release.replace(' Release', '')}), published by the
+          Interest profiles, tasks, skills and knowledge areas come from the {meta.source} ({meta.release.replace(' Release', '')}), published by the
           U.S. Department of Labor, Employment and Training Administration and used under {meta.license}. O*NET labels its
           interest scores as <em>{meta.interests.sources.join(' and ')}</em>, so they are estimates, and they describe US occupations.
         </li>

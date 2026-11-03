@@ -7,7 +7,7 @@ import { buildProfile } from '../engine/vector.js';
 import { recommend } from '../engine/recommend.js';
 import { profileFromDna, sanitizeDna } from '../engine/dna.js';
 import { sanitizeSnapshot, snapshotMatches } from '../engine/compare.js';
-import { LEVELS, sanitizeRatings } from '../engine/skillGap.js';
+import { LEVELS, allItemKeys, sanitizeRatings } from '../engine/skillGap.js';
 import { roadmapFor, sanitizeRoadmap } from '../engine/roadmap.js';
 import { MAX_COMPARE } from '../engine/sideBySide.js';
 import { initialQuizState, quizReducer, sanitizeQuizState } from './quizState.js';
@@ -48,10 +48,10 @@ export function appReducer(state, action, env) {
       const has = state.saved.includes(action.id);
       return { ...state, saved: has ? state.saved.filter((id) => id !== action.id) : [...state.saved, action.id] };
     }
-    // The student's own rating of a skill (null clears it). Never set from anything else.
+    // The student's own rating of a skill or knowledge area, by key (null clears it). Never set from anything else.
     case 'skill/set': {
       if (action.level !== null && !LEVELS.includes(action.level)) return state;
-      if (!careers.some((c) => c.skills.includes(action.skill))) return state;
+      if (!allItemKeys(careers).includes(action.skill)) return state;
       const skills = { ...state.skills };
       if (action.level === null) delete skills[action.skill];
       else skills[action.skill] = action.level;

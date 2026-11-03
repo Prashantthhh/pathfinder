@@ -6,7 +6,9 @@
 //   riasec       Occupational Interests, 1-7 (Career Interest Types.txt, scale OI)
 //   settings     six work settings derived from Work Context (see src/data/settings.js)
 //   tasks        the five most important core task statements (Task Statements + Task Ratings IM)
-//   skills       the five most important essential skills (Essential Skills, scale IM)
+//   skills       up to five skills the career needs MORE than the average career does (importance minus the
+//                mean over these careers), from O*NET Essential Skills + Transferable Skills, scale IM
+//   knowledge    the same, for O*NET Knowledge areas
 //   related      three nearest careers by interest profile
 // Fails loudly if anything is missing. Nothing here is used for Indian salary,
 // outlook or qualifications.
@@ -91,15 +93,23 @@ for (const r of tsv('Task Ratings.txt')) {
   taskImportance.get(code).push({ id: r['Task ID'], value: Number(r['Data Value']) });
 }
 
+// O*NET 31.0 splits its 35 skills over two files (10 essential, 25 transferable); knowledge is one file.
 const skillsBy = new Map();
+const knowledgeBy = new Map();
 const skillMeta = {};
-for (const r of tsv('Essential Skills.txt')) {
-  if (r['Scale ID'] !== 'IM' || r['Recommend Suppress'] === 'Y') continue;
-  const code = r['O*NET-SOC Code'];
-  if (!skillsBy.has(code)) skillsBy.set(code, []);
-  skillsBy.get(code).push({ name: r['Element Name'], value: Number(r['Data Value']) });
-  if (usedCodes.has(code)) provenance(skillMeta, r);
-}
+const knowledgeMeta = {};
+const loadImportance = (file, into, meta) => {
+  for (const r of tsv(file)) {
+    if (r['Scale ID'] !== 'IM' || r['Recommend Suppress'] === 'Y') continue;
+    const code = r['O*NET-SOC Code'];
+    if (!into.has(code)) into.set(code, new Map());
+    into.get(code).set(r['Element Name'], Number(r['Data Value']));
+    if (usedCodes.has(code)) provenance(meta, r);
+  }
+};
+loadImportance('Essential Skills.txt', skillsBy, skillMeta);
+loadImportance('Transferable Skills.txt', skillsBy, skillMeta);
+loadImportance('Knowledge.txt', knowledgeBy, knowledgeMeta);
 
 const round = (n, p = 2) => Number(n.toFixed(p));
 
@@ -161,8 +171,12 @@ const careers = seeds.careers.map((s) => {
     .map((t) => t.text);
   if (imp.length < 3) problems.push(`${s.id}: fewer than 3 core tasks for ${code}`);
 
-  const skills = (skillsBy.get(code) ?? []).sort((a, b) => b.value - a.value).slice(0, 5).map((k) => k.name);
-  if (skills.length < 3) problems.push(`${s.id}: fewer than 3 skills for ${code}`);
+  // all skill / knowledge importances for this occupation; the top five by edge are chosen below, once every career is known
+  const allSkills = skillsBy.get(code) ?? new Map();
+  const allKnowledge = knowledgeBy.get(code) ?? new Map();
+  // O*NET suppresses a few unreliable rows. Those items are left out for that career (never counted as zero).
+  if (allSkills.size < 30) problems.push(`${s.id}: only ${allSkills.size} of 35 skills for ${code}`);
+  if (allKnowledge.size < 28) problems.push(`${s.id}: only ${allKnowledge.size} of 33 knowledge areas for ${code}`);
 
   return {
     id: s.id,
@@ -174,7 +188,8 @@ const careers = seeds.careers.map((s) => {
     riasec: Object.fromEntries(TYPES.map((t) => [t, round(riasec?.[t] ?? 0)])),
     settings,
     tasks: imp,
-    skills,
+    _skills: allSkills,
+    _knowledge: allKnowledge,
     entry: s.entry,
     routes: s.routes,
     ...(s.roadmap ? { roadmap: s.roadmap } : {}),
@@ -204,6 +219,40 @@ for (const c of careers) {
   }));
 }
 
+// skills and knowledge: rank by how much MORE this career needs an item than the average career
+// (importance minus the mean over all careers here), not by raw importance. Raw importance puts the same
+// generic items (Critical Thinking, Reading Comprehension...) at the top of nearly every career.
+const TOP_ITEMS = 5;
+// An item only counts as something the career "needs more" if it is at least this far above the mean (O*NET scale 1-5);
+// otherwise a career that needs nothing much beyond the average would still be shown five items.
+const MIN_EDGE = 0.25;
+const edgeRank = (key, label) => {
+  const names = [...new Set(careers.flatMap((c) => [...c[key].keys()]))].sort();
+  const mean = Object.fromEntries(names.map((n) => {
+    const have = careers.filter((c) => c[key].has(n));
+    return [n, have.reduce((sum, c) => sum + c[key].get(n), 0) / have.length];
+  }));
+  const gaps = careers.map((c) => [c.id, names.filter((n) => !c[key].has(n))]).filter(([, g]) => g.length);
+  if (gaps.length) console.log(`  ${label}: items suppressed by O*NET and left out: ${gaps.map(([id, g]) => `${id} (${g.join(', ')})`).join('; ')}`);
+  for (const c of careers) {
+    c[label] = names
+      .filter((n) => c[key].has(n))
+      .map((n) => ({ name: n, importance: round(c[key].get(n)), edge: round(c[key].get(n) - mean[n]) }))
+      .filter((d) => d.edge >= MIN_EDGE)
+      .sort((a, b) => b.edge - a.edge || b.importance - a.importance || a.name.localeCompare(b.name))
+      .slice(0, TOP_ITEMS);
+  }
+  return mean;
+};
+const skillMean = edgeRank('_skills', 'skillDetail');
+const knowledgeMean = edgeRank('_knowledge', 'knowledgeDetail');
+for (const c of careers) {
+  c.skills = c.skillDetail.map((d) => d.name);
+  c.knowledge = c.knowledgeDetail.map((d) => d.name);
+  delete c._skills;
+  delete c._knowledge;
+}
+
 // related careers: any hand-picked `relatedPins` from the seed first, then the nearest by interest profile, three in all
 for (const c of careers) {
   const pins = (seedById[c.id].relatedPins ?? []).slice(0, 3);
@@ -227,6 +276,8 @@ const meta = {
   workContext: finish(contextMeta),
   tasks: finish(taskMeta),
   skills: finish(skillMeta),
+  knowledge: finish(knowledgeMeta),
+  skillsMethod: 'Each career lists up to five skills and five knowledge areas it needs MORE than the average career here does: O*NET importance (scale IM, 1-5) minus the mean importance over these careers, kept only if at least 0.25 above it. Raw importance is kept in skillDetail / knowledgeDetail.',
   streams: STREAM_LABELS,
   settingsMethod: 'Six work settings derived by PATHFINDER from O*NET Work Context items (scale CX 1-5, rescaled 0-1), then rescaled across the careers in this product so 0 means the least and 1 the most among them. They are not O*NET scores. Items are listed in src/data/settings.js.',
   settingRanges,
@@ -236,6 +287,6 @@ const meta = {
 writeFileSync(join(root, 'src/data/careers.json'), `${JSON.stringify(careers, null, 2)}\n`);
 writeFileSync(join(root, 'src/data/careersMeta.json'), `${JSON.stringify(meta, null, 2)}\n`);
 console.log(`Wrote ${careers.length} careers.`);
-for (const k of ['interests', 'workContext', 'tasks', 'skills']) console.log(`  ${k}: ${meta[k].sources.join(' + ')}, ${meta[k].dateFrom} to ${meta[k].dateTo}`);
+for (const k of ['interests', 'workContext', 'tasks', 'skills', 'knowledge']) console.log(`  ${k}: ${meta[k].sources.join(' + ')}, ${meta[k].dateFrom} to ${meta[k].dateTo}`);
 const empty = domains.domains.filter((d) => !careers.some((c) => c.domain === d.id)).map((d) => d.id);
 console.log(`Domains with no career yet: ${empty.length ? empty.join(', ') : 'none'}`);

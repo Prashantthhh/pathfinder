@@ -38,13 +38,6 @@
       "Modify existing software to correct errors, adapt it to new hardware, or upgrade interfaces and improve performance.",
       "Prepare reports or correspondence concerning project specifications, activities, or status."
     ],
-    "skills": [
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Active Learning",
-      "Active Listening",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -70,6 +63,74 @@
       "hands": 0.149,
       "routine": 0.686
     },
+    "skillDetail": [
+      {
+        "name": "Programming",
+        "importance": 4,
+        "edge": 2.14
+      },
+      {
+        "name": "Technology Design",
+        "importance": 3.38,
+        "edge": 1.46
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 2.62,
+        "edge": 0.92
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.25,
+        "edge": 0.75
+      },
+      {
+        "name": "Installation",
+        "importance": 1.88,
+        "edge": 0.75
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.75,
+        "edge": 1.34
+      },
+      {
+        "name": "Telecommunications",
+        "importance": 2.62,
+        "edge": 0.41
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 2.8,
+        "edge": 0.35
+      },
+      {
+        "name": "Design",
+        "importance": 2.7,
+        "edge": 0.35
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.57,
+        "edge": 0.34
+      }
+    ],
+    "skills": [
+      "Programming",
+      "Technology Design",
+      "Troubleshooting",
+      "Operations Analysis",
+      "Installation"
+    ],
+    "knowledge": [
+      "Computers and Electronics",
+      "Telecommunications",
+      "Engineering and Technology",
+      "Design",
+      "Mathematics"
+    ],
     "related": [
       "statistician",
       "data-scientist",
@@ -115,13 +176,6 @@
       "Perform Web site tests according to planned schedules, or after any Web site or product revision.",
       "Collaborate with web development professionals, such as front-end or back-end developers, to complete the full scope of Web development projects."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Listening",
-      "Active Learning",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -146,6 +200,62 @@
       "hands": 0.202,
       "routine": 0.676
     },
+    "skillDetail": [
+      {
+        "name": "Programming",
+        "importance": 3.25,
+        "edge": 1.39
+      },
+      {
+        "name": "Technology Design",
+        "importance": 2.62,
+        "edge": 0.7
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 2.38,
+        "edge": 0.68
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3,
+        "edge": 0.5
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 2.62,
+        "edge": 0.36
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Sales and Marketing",
+        "importance": 2.89,
+        "edge": 0.56
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 3.96,
+        "edge": 0.55
+      },
+      {
+        "name": "Design",
+        "importance": 2.78,
+        "edge": 0.43
+      }
+    ],
+    "skills": [
+      "Programming",
+      "Technology Design",
+      "Troubleshooting",
+      "Operations Analysis",
+      "Quality Control Analysis"
+    ],
+    "knowledge": [
+      "Sales and Marketing",
+      "Computers and Electronics",
+      "Design"
+    ],
     "related": [
       "graphic-designer",
       "data-scientist",
@@ -190,13 +300,6 @@
       "Deliver oral or written presentations of the results of mathematical modeling and data analysis to management or other end users.",
       "Recommend data-driven solutions to key stakeholders."
     ],
-    "skills": [
-      "Mathematics",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Speaking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -221,6 +324,50 @@
       "hands": 0.171,
       "routine": 0.639
     },
+    "skillDetail": [
+      {
+        "name": "Programming",
+        "importance": 3.75,
+        "edge": 1.89
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.38,
+        "edge": 1.51
+      },
+      {
+        "name": "Critical Thinking",
+        "importance": 4.25,
+        "edge": 0.31
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 4.52,
+        "edge": 1.29
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.24,
+        "edge": 0.83
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 2.88,
+        "edge": 0.43
+      }
+    ],
+    "skills": [
+      "Programming",
+      "Mathematics",
+      "Critical Thinking"
+    ],
+    "knowledge": [
+      "Mathematics",
+      "Computers and Electronics",
+      "Engineering and Technology"
+    ],
     "related": [
       "statistician",
       "software-developer",
@@ -266,13 +413,6 @@
       "Provide technical support for existing reports, dashboards, or other tools.",
       "Identify and analyze industry or geographic trends with business strategy implications."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -294,6 +434,56 @@
       "hands": 0.132,
       "routine": 0.665
     },
+    "skillDetail": [
+      {
+        "name": "Programming",
+        "importance": 2.5,
+        "edge": 0.64
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.5,
+        "edge": 0.63
+      },
+      {
+        "name": "Active Learning",
+        "importance": 3.88,
+        "edge": 0.32
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.29,
+        "edge": 0.88
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 3,
+        "edge": 0.64
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.82,
+        "edge": 0.59
+      },
+      {
+        "name": "Geography",
+        "importance": 2.23,
+        "edge": 0.26
+      }
+    ],
+    "skills": [
+      "Programming",
+      "Mathematics",
+      "Active Learning"
+    ],
+    "knowledge": [
+      "Computers and Electronics",
+      "Economics and Accounting",
+      "Mathematics",
+      "Geography"
+    ],
     "related": [
       "management-consultant",
       "actuary",
@@ -338,13 +528,6 @@
       "Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.",
       "Modify computer security files to incorporate new software, correct errors, or change individual access status."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Listening",
-      "Speaking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -370,6 +553,74 @@
       "hands": 0.283,
       "routine": 0.675
     },
+    "skillDetail": [
+      {
+        "name": "Operations Monitoring",
+        "importance": 3,
+        "edge": 0.76
+      },
+      {
+        "name": "Programming",
+        "importance": 2.62,
+        "edge": 0.76
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3,
+        "edge": 0.74
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 2.12,
+        "edge": 0.42
+      },
+      {
+        "name": "Installation",
+        "importance": 1.5,
+        "edge": 0.37
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Telecommunications",
+        "importance": 3.64,
+        "edge": 1.43
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 3.64,
+        "edge": 1.19
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.35,
+        "edge": 0.94
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.27,
+        "edge": 0.66
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 3.68,
+        "edge": 0.51
+      }
+    ],
+    "skills": [
+      "Operations Monitoring",
+      "Programming",
+      "Quality Control Analysis",
+      "Troubleshooting",
+      "Installation"
+    ],
+    "knowledge": [
+      "Telecommunications",
+      "Engineering and Technology",
+      "Computers and Electronics",
+      "Public Safety and Security",
+      "Administration and Management"
+    ],
     "related": [
       "software-developer",
       "statistician",
@@ -415,13 +666,6 @@
       "Create two-dimensional and three-dimensional images depicting objects in motion or illustrating a process, using computer animation or modeling programs.",
       "Make objects or characters appear lifelike by manipulating light, color, texture, shadow, and transparency, or manipulating static images to give the illusion of motion."
     ],
-    "skills": [
-      "Active Listening",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Speaking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -439,6 +683,62 @@
       "hands": 0.274,
       "routine": 0.65
     },
+    "skillDetail": [
+      {
+        "name": "Operation and Control",
+        "importance": 2.25,
+        "edge": 0.53
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 1.88,
+        "edge": 0.43
+      },
+      {
+        "name": "Programming",
+        "importance": 2.12,
+        "edge": 0.26
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Design",
+        "importance": 4.22,
+        "edge": 1.87
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.95,
+        "edge": 1.54
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.87,
+        "edge": 1.54
+      },
+      {
+        "name": "Communications and Media",
+        "importance": 4.11,
+        "edge": 1.41
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.89,
+        "edge": 1.4
+      }
+    ],
+    "skills": [
+      "Operation and Control",
+      "Equipment Selection",
+      "Programming"
+    ],
+    "knowledge": [
+      "Design",
+      "Computers and Electronics",
+      "Sales and Marketing",
+      "Communications and Media",
+      "Fine Arts"
+    ],
     "related": [
       "graphic-designer",
       "fashion-designer",
@@ -484,13 +784,6 @@
       "Direct or coordinate activities concerned with manufacture, construction, installation, maintenance, operation, or modification of electronic equipment, products, or systems.",
       "Confer with engineers, customers, vendors, or others to discuss existing or potential electronics engineering projects or products."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Speaking",
-      "Active Listening",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -515,6 +808,74 @@
       "hands": 0.196,
       "routine": 0.583
     },
+    "skillDetail": [
+      {
+        "name": "Equipment Maintenance",
+        "importance": 2.88,
+        "edge": 1.61
+      },
+      {
+        "name": "Repairing",
+        "importance": 2.75,
+        "edge": 1.49
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 2.88,
+        "edge": 1.43
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 3,
+        "edge": 1.3
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 2.88,
+        "edge": 1.16
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.75,
+        "edge": 2.3
+      },
+      {
+        "name": "Design",
+        "importance": 4.34,
+        "edge": 1.99
+      },
+      {
+        "name": "Mechanical",
+        "importance": 3.2,
+        "edge": 1.23
+      },
+      {
+        "name": "Physics",
+        "importance": 3.17,
+        "edge": 1.17
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.55,
+        "edge": 1.14
+      }
+    ],
+    "skills": [
+      "Equipment Maintenance",
+      "Repairing",
+      "Equipment Selection",
+      "Troubleshooting",
+      "Operation and Control"
+    ],
+    "knowledge": [
+      "Engineering and Technology",
+      "Design",
+      "Mechanical",
+      "Physics",
+      "Computers and Electronics"
+    ],
     "related": [
       "chemical-engineer",
       "electrical-engineer",
@@ -559,13 +920,6 @@
       "Perform detailed calculations to compute and establish manufacturing, construction, or installation standards or specifications.",
       "Operate computer-assisted engineering or design software or equipment to perform engineering tasks."
     ],
-    "skills": [
-      "Writing",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Listening",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -590,6 +944,74 @@
       "hands": 0.335,
       "routine": 0.79
     },
+    "skillDetail": [
+      {
+        "name": "Troubleshooting",
+        "importance": 2.75,
+        "edge": 1.05
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3,
+        "edge": 0.74
+      },
+      {
+        "name": "Repairing",
+        "importance": 2,
+        "edge": 0.74
+      },
+      {
+        "name": "Equipment Maintenance",
+        "importance": 2,
+        "edge": 0.73
+      },
+      {
+        "name": "Science",
+        "importance": 3,
+        "edge": 0.72
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.74,
+        "edge": 2.29
+      },
+      {
+        "name": "Design",
+        "importance": 4.11,
+        "edge": 1.76
+      },
+      {
+        "name": "Physics",
+        "importance": 3.58,
+        "edge": 1.58
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.67,
+        "edge": 1.26
+      },
+      {
+        "name": "Mechanical",
+        "importance": 3.19,
+        "edge": 1.22
+      }
+    ],
+    "skills": [
+      "Troubleshooting",
+      "Quality Control Analysis",
+      "Repairing",
+      "Equipment Maintenance",
+      "Science"
+    ],
+    "knowledge": [
+      "Engineering and Technology",
+      "Design",
+      "Physics",
+      "Computers and Electronics",
+      "Mechanical"
+    ],
     "related": [
       "chemical-engineer",
       "civil-engineer",
@@ -634,13 +1056,6 @@
       "Use a variety of tools or equipment, such as power construction equipment, measuring devices, power tools, and testing equipment, such as oscilloscopes, ammeters, or test lamps.",
       "Assemble, install, test, or maintain electrical or electronic wiring, equipment, appliances, apparatus, or fixtures, using hand tools or power tools."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Active Learning",
-      "Reading Comprehension"
-    ],
     "entry": {
       "streams": [
         "diploma"
@@ -663,6 +1078,74 @@
       "hands": 0.852,
       "routine": 0.761
     },
+    "skillDetail": [
+      {
+        "name": "Troubleshooting",
+        "importance": 4,
+        "edge": 2.3
+      },
+      {
+        "name": "Repairing",
+        "importance": 3.5,
+        "edge": 2.24
+      },
+      {
+        "name": "Installation",
+        "importance": 3.25,
+        "edge": 2.12
+      },
+      {
+        "name": "Equipment Maintenance",
+        "importance": 3,
+        "edge": 1.73
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 3,
+        "edge": 1.55
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Building and Construction",
+        "importance": 3.67,
+        "edge": 2.05
+      },
+      {
+        "name": "Mechanical",
+        "importance": 3.42,
+        "edge": 1.45
+      },
+      {
+        "name": "Design",
+        "importance": 3.32,
+        "edge": 0.97
+      },
+      {
+        "name": "Transportation",
+        "importance": 2.5,
+        "edge": 0.54
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 3.58,
+        "edge": 0.41
+      }
+    ],
+    "skills": [
+      "Troubleshooting",
+      "Repairing",
+      "Installation",
+      "Equipment Maintenance",
+      "Equipment Selection"
+    ],
+    "knowledge": [
+      "Building and Construction",
+      "Mechanical",
+      "Design",
+      "Transportation",
+      "Administration and Management"
+    ],
     "related": [
       "automobile-technician",
       "civil-engineer",
@@ -708,13 +1191,6 @@
       "Confer with engineers or other personnel to implement operating procedures, resolve system malfunctions, or provide technical information.",
       "Investigate equipment failures or difficulties to diagnose faulty operation and recommend remedial actions."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Critical Thinking",
-      "Mathematics",
-      "Science"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -739,6 +1215,74 @@
       "hands": 0.3,
       "routine": 0.669
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.75,
+        "edge": 1.47
+      },
+      {
+        "name": "Technology Design",
+        "importance": 3.12,
+        "edge": 1.2
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 2.88,
+        "edge": 1.18
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 2.75,
+        "edge": 1.03
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.5,
+        "edge": 1
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Mechanical",
+        "importance": 4.23,
+        "edge": 2.26
+      },
+      {
+        "name": "Design",
+        "importance": 4.5,
+        "edge": 2.15
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 4.34,
+        "edge": 2.08
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.46,
+        "edge": 2.01
+      },
+      {
+        "name": "Physics",
+        "importance": 3.38,
+        "edge": 1.38
+      }
+    ],
+    "skills": [
+      "Science",
+      "Technology Design",
+      "Troubleshooting",
+      "Operation and Control",
+      "Operations Analysis"
+    ],
+    "knowledge": [
+      "Mechanical",
+      "Design",
+      "Production and Processing",
+      "Engineering and Technology",
+      "Physics"
+    ],
     "related": [
       "civil-engineer",
       "chemical-engineer",
@@ -784,13 +1328,6 @@
       "Compute load and grade requirements, water flow rates, or material stress factors to determine design specifications.",
       "Plan and design transportation or hydraulic systems or structures, using computer-assisted design or drawing tools."
     ],
-    "skills": [
-      "Active Listening",
-      "Reading Comprehension",
-      "Speaking",
-      "Mathematics",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -815,6 +1352,74 @@
       "hands": 0.303,
       "routine": 0.696
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.75,
+        "edge": 1.47
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.62,
+        "edge": 1.12
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.88,
+        "edge": 1.01
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.88,
+        "edge": 0.73
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Building and Construction",
+        "importance": 4.53,
+        "edge": 2.91
+      },
+      {
+        "name": "Design",
+        "importance": 4.7,
+        "edge": 2.35
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.67,
+        "edge": 2.22
+      },
+      {
+        "name": "Physics",
+        "importance": 3.71,
+        "edge": 1.71
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.48,
+        "edge": 1.25
+      }
+    ],
+    "skills": [
+      "Science",
+      "Operations Analysis",
+      "Mathematics",
+      "Management of Financial Resources",
+      "Management of Material Resources"
+    ],
+    "knowledge": [
+      "Building and Construction",
+      "Design",
+      "Engineering and Technology",
+      "Physics",
+      "Mathematics"
+    ],
     "related": [
       "mechanical-engineer",
       "electrical-engineer",
@@ -861,13 +1466,6 @@
       "Evaluate chemical equipment and processes to identify ways to optimize performance or to ensure compliance with safety and environmental regulations.",
       "Design and plan layout of equipment."
     ],
-    "skills": [
-      "Science",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Active Learning",
-      "Mathematics"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -892,6 +1490,74 @@
       "hands": 0.291,
       "routine": 0.565
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4.12,
+        "edge": 1.84
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 2.88,
+        "edge": 1.18
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.62,
+        "edge": 1.12
+      },
+      {
+        "name": "Technology Design",
+        "importance": 2.88,
+        "edge": 0.96
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.75,
+        "edge": 0.88
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Chemistry",
+        "importance": 4.65,
+        "edge": 2.7
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.78,
+        "edge": 2.33
+      },
+      {
+        "name": "Physics",
+        "importance": 3.96,
+        "edge": 1.96
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 3.95,
+        "edge": 1.69
+      },
+      {
+        "name": "Design",
+        "importance": 4,
+        "edge": 1.65
+      }
+    ],
+    "skills": [
+      "Science",
+      "Troubleshooting",
+      "Operations Analysis",
+      "Technology Design",
+      "Mathematics"
+    ],
+    "knowledge": [
+      "Chemistry",
+      "Engineering and Technology",
+      "Physics",
+      "Production and Processing",
+      "Design"
+    ],
     "related": [
       "electrical-engineer",
       "electronics-engineer",
@@ -937,13 +1603,6 @@
       "Plan or conduct experimental, environmental, operational, or stress tests on models or prototypes of aircraft or aerospace systems or equipment.",
       "Diagnose performance problems by reviewing reports or documentation from customers or field engineers or by inspecting malfunctioning or damaged products."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Writing",
-      "Mathematics",
-      "Science"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -967,6 +1626,74 @@
       "hands": 0.126,
       "routine": 0.725
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4,
+        "edge": 1.72
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.88,
+        "edge": 1.38
+      },
+      {
+        "name": "Technology Design",
+        "importance": 3.25,
+        "edge": 1.33
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4,
+        "edge": 1.13
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3.38,
+        "edge": 1.12
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Design",
+        "importance": 4.69,
+        "edge": 2.34
+      },
+      {
+        "name": "Mechanical",
+        "importance": 4.28,
+        "edge": 2.31
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.7,
+        "edge": 2.25
+      },
+      {
+        "name": "Physics",
+        "importance": 4.1,
+        "edge": 2.1
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 3.63,
+        "edge": 1.37
+      }
+    ],
+    "skills": [
+      "Science",
+      "Operations Analysis",
+      "Technology Design",
+      "Mathematics",
+      "Quality Control Analysis"
+    ],
+    "knowledge": [
+      "Design",
+      "Mechanical",
+      "Engineering and Technology",
+      "Physics",
+      "Production and Processing"
+    ],
     "related": [
       "chemical-engineer",
       "food-technologist",
@@ -1012,13 +1739,6 @@
       "Inspect vehicles for damage and record findings so that necessary repairs can be made.",
       "Align wheels, axles, frames, torsion bars, and steering mechanisms of automobiles, using special alignment equipment and wheel-balancing machines."
     ],
-    "skills": [
-      "Critical Thinking",
-      "Active Listening",
-      "Monitoring",
-      "Speaking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "diploma"
@@ -1041,6 +1761,74 @@
       "hands": 0.698,
       "routine": 0.684
     },
+    "skillDetail": [
+      {
+        "name": "Repairing",
+        "importance": 3.88,
+        "edge": 2.62
+      },
+      {
+        "name": "Equipment Maintenance",
+        "importance": 3.75,
+        "edge": 2.48
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 3.88,
+        "edge": 2.18
+      },
+      {
+        "name": "Installation",
+        "importance": 3.25,
+        "edge": 2.12
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 3,
+        "edge": 1.55
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Mechanical",
+        "importance": 4.59,
+        "edge": 2.62
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 3.49,
+        "edge": 1.04
+      },
+      {
+        "name": "Physics",
+        "importance": 2.63,
+        "edge": 0.63
+      },
+      {
+        "name": "Transportation",
+        "importance": 2.48,
+        "edge": 0.52
+      },
+      {
+        "name": "Chemistry",
+        "importance": 2.28,
+        "edge": 0.33
+      }
+    ],
+    "skills": [
+      "Repairing",
+      "Equipment Maintenance",
+      "Troubleshooting",
+      "Installation",
+      "Equipment Selection"
+    ],
+    "knowledge": [
+      "Mechanical",
+      "Engineering and Technology",
+      "Physics",
+      "Transportation",
+      "Chemistry"
+    ],
     "related": [
       "electrician",
       "civil-engineer",
@@ -1085,13 +1873,6 @@
       "Collect, record, and maintain patient information, such as medical history, reports, or examination results.",
       "Monitor patients' conditions and progress and reevaluate treatments as necessary.",
       "Explain procedures and discuss test results or prescribed treatments with patients."
-    ],
-    "skills": [
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Active Listening",
-      "Writing",
-      "Speaking"
     ],
     "entry": {
       "streams": [
@@ -1143,6 +1924,74 @@
       "hands": 0.385,
       "routine": 0.691
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.88,
+        "edge": 1.6
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.88,
+        "edge": 0.7
+      },
+      {
+        "name": "Time Management",
+        "importance": 4,
+        "edge": 0.69
+      },
+      {
+        "name": "Monitoring",
+        "importance": 4,
+        "edge": 0.52
+      },
+      {
+        "name": "Writing",
+        "importance": 4.12,
+        "edge": 0.45
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 5,
+        "edge": 3.2
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 4.56,
+        "edge": 2.62
+      },
+      {
+        "name": "Biology",
+        "importance": 4.46,
+        "edge": 2.54
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.49,
+        "edge": 1.94
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.14,
+        "edge": 1.01
+      }
+    ],
+    "skills": [
+      "Science",
+      "Service Orientation",
+      "Time Management",
+      "Monitoring",
+      "Writing"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Therapy and Counseling",
+      "Biology",
+      "Psychology",
+      "Sociology and Anthropology"
+    ],
     "related": [
       "nurse",
       "physiotherapist",
@@ -1188,13 +2037,6 @@
       "Direct, plan, or implement policies, objectives, or activities of organizations or businesses to ensure continuing operations, to maximize returns on investments, or to increase productivity.",
       "Prepare or present reports concerning activities, expenses, budgets, government statutes or rulings, or other items affecting businesses or program services."
     ],
-    "skills": [
-      "Critical Thinking",
-      "Speaking",
-      "Reading Comprehension",
-      "Writing",
-      "Active Listening"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -1212,6 +2054,74 @@
       "hands": 0.248,
       "routine": 0.73
     },
+    "skillDetail": [
+      {
+        "name": "Management of Financial Resources",
+        "importance": 4.25,
+        "edge": 2.11
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 4,
+        "edge": 1.85
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 4.25,
+        "edge": 1.4
+      },
+      {
+        "name": "Systems Evaluation",
+        "importance": 4.25,
+        "edge": 1.15
+      },
+      {
+        "name": "Negotiation",
+        "importance": 4.12,
+        "edge": 1.13
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 4.48,
+        "edge": 1.95
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 4.04,
+        "edge": 1.68
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 4.78,
+        "edge": 1.61
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.81,
+        "edge": 1.48
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.88,
+        "edge": 1.27
+      }
+    ],
+    "skills": [
+      "Management of Financial Resources",
+      "Management of Material Resources",
+      "Management of Personnel Resources",
+      "Systems Evaluation",
+      "Negotiation"
+    ],
+    "knowledge": [
+      "Personnel and Human Resources",
+      "Economics and Accounting",
+      "Administration and Management",
+      "Sales and Marketing",
+      "Public Safety and Security"
+    ],
     "related": [
       "marketing-manager",
       "financial-planner",
@@ -1257,13 +2167,6 @@
       "Monitor, record, and report symptoms or changes in patients' conditions.",
       "Provide health care, first aid, immunizations, or assistance in convalescence or rehabilitation in locations such as schools, hospitals, or industry."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcb"
@@ -1285,6 +2188,74 @@
       "hands": 0.424,
       "routine": 0.799
     },
+    "skillDetail": [
+      {
+        "name": "Service Orientation",
+        "importance": 4,
+        "edge": 0.82
+      },
+      {
+        "name": "Operations Monitoring",
+        "importance": 3,
+        "edge": 0.76
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4.12,
+        "edge": 0.68
+      },
+      {
+        "name": "Coordination",
+        "importance": 4,
+        "edge": 0.66
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 2.88,
+        "edge": 0.62
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 4.36,
+        "edge": 2.56
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.58,
+        "edge": 2.03
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 3.43,
+        "edge": 1.49
+      },
+      {
+        "name": "Biology",
+        "importance": 3.02,
+        "edge": 1.1
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.4,
+        "edge": 0.95
+      }
+    ],
+    "skills": [
+      "Service Orientation",
+      "Operations Monitoring",
+      "Social Perceptiveness",
+      "Coordination",
+      "Quality Control Analysis"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Psychology",
+      "Therapy and Counseling",
+      "Biology",
+      "Customer and Personal Service"
+    ],
     "related": [
       "doctor",
       "pharmacist",
@@ -1329,13 +2300,6 @@
       "Instruct patient and family in treatment procedures to be continued at home.",
       "Evaluate effects of treatment at various stages and adjust treatments to achieve maximum benefit."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcb"
@@ -1353,6 +2317,74 @@
       "hands": 0.499,
       "routine": 0.68
     },
+    "skillDetail": [
+      {
+        "name": "Service Orientation",
+        "importance": 4,
+        "edge": 0.82
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4,
+        "edge": 0.56
+      },
+      {
+        "name": "Monitoring",
+        "importance": 3.88,
+        "edge": 0.4
+      },
+      {
+        "name": "Science",
+        "importance": 2.62,
+        "edge": 0.34
+      },
+      {
+        "name": "Time Management",
+        "importance": 3.62,
+        "edge": 0.31
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 4.57,
+        "edge": 2.77
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 4.59,
+        "edge": 2.65
+      },
+      {
+        "name": "Biology",
+        "importance": 3.7,
+        "edge": 1.78
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.11,
+        "edge": 1.56
+      },
+      {
+        "name": "Physics",
+        "importance": 3.2,
+        "edge": 1.2
+      }
+    ],
+    "skills": [
+      "Service Orientation",
+      "Social Perceptiveness",
+      "Monitoring",
+      "Science",
+      "Time Management"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Therapy and Counseling",
+      "Biology",
+      "Psychology",
+      "Physics"
+    ],
     "related": [
       "doctor",
       "dentist",
@@ -1396,13 +2428,6 @@
       "Examine teeth, gums, and related tissues, using dental instruments, x-rays, or other diagnostic equipment, to evaluate dental health, diagnose diseases or abnormalities, and plan appropriate treatments.",
       "Formulate plan of treatment for patient's teeth and mouth tissue.",
       "Use dental air turbines, hand instruments, dental appliances, or surgical implements."
-    ],
-    "skills": [
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Active Learning"
     ],
     "entry": {
       "streams": [
@@ -1454,6 +2479,74 @@
       "hands": 0.347,
       "routine": 0.866
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.62,
+        "edge": 1.34
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 3,
+        "edge": 1.28
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 2.38,
+        "edge": 0.93
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 3,
+        "edge": 0.86
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 3,
+        "edge": 0.85
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 5,
+        "edge": 3.2
+      },
+      {
+        "name": "Biology",
+        "importance": 4.18,
+        "edge": 2.26
+      },
+      {
+        "name": "Chemistry",
+        "importance": 3.51,
+        "edge": 1.56
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.4,
+        "edge": 0.87
+      },
+      {
+        "name": "Psychology",
+        "importance": 3.41,
+        "edge": 0.86
+      }
+    ],
+    "skills": [
+      "Science",
+      "Operation and Control",
+      "Equipment Selection",
+      "Management of Financial Resources",
+      "Management of Material Resources"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Biology",
+      "Chemistry",
+      "Personnel and Human Resources",
+      "Psychology"
+    ],
     "related": [
       "veterinarian",
       "doctor",
@@ -1499,13 +2592,6 @@
       "Provide information and advice regarding drug interactions, side effects, dosage, and proper medication storage.",
       "Provide specialized services to help patients manage conditions, such as diabetes, asthma, smoking cessation, or high blood pressure."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "pcb",
@@ -1530,6 +2616,74 @@
       "hands": 0.375,
       "routine": 0.879
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.12,
+        "edge": 0.84
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.88,
+        "edge": 0.7
+      },
+      {
+        "name": "Time Management",
+        "importance": 3.88,
+        "edge": 0.57
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.62,
+        "edge": 0.47
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 3.88,
+        "edge": 0.44
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 4.64,
+        "edge": 2.84
+      },
+      {
+        "name": "Biology",
+        "importance": 4.36,
+        "edge": 2.44
+      },
+      {
+        "name": "Chemistry",
+        "importance": 4.11,
+        "edge": 2.16
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 3.43,
+        "edge": 1.49
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.18,
+        "edge": 0.95
+      }
+    ],
+    "skills": [
+      "Science",
+      "Service Orientation",
+      "Time Management",
+      "Management of Material Resources",
+      "Social Perceptiveness"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Biology",
+      "Chemistry",
+      "Therapy and Counseling",
+      "Mathematics"
+    ],
     "related": [
       "doctor",
       "nurse",
@@ -1575,13 +2729,6 @@
       "Manage laboratory teams or monitor the quality of a team's work.",
       "Develop new methods to study the mechanisms of biological processes."
     ],
-    "skills": [
-      "Science",
-      "Reading Comprehension",
-      "Writing",
-      "Critical Thinking",
-      "Active Listening"
-    ],
     "entry": {
       "streams": [
         "pcb",
@@ -1601,6 +2748,74 @@
       "hands": 0.328,
       "routine": 0.785
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4.75,
+        "edge": 2.47
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.88,
+        "edge": 1.01
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 4,
+        "edge": 0.93
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 2.25,
+        "edge": 0.8
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3,
+        "edge": 0.74
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Biology",
+        "importance": 4.65,
+        "edge": 2.73
+      },
+      {
+        "name": "Chemistry",
+        "importance": 4.35,
+        "edge": 2.4
+      },
+      {
+        "name": "Physics",
+        "importance": 4.05,
+        "edge": 2.05
+      },
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 2.9,
+        "edge": 1.1
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.3,
+        "edge": 1.07
+      }
+    ],
+    "skills": [
+      "Science",
+      "Mathematics",
+      "Learning Strategies",
+      "Equipment Selection",
+      "Quality Control Analysis"
+    ],
+    "knowledge": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Medicine and Dentistry",
+      "Mathematics"
+    ],
     "related": [
       "physicist",
       "food-technologist",
@@ -1645,13 +2860,6 @@
       "Collect body tissue, feces, blood, urine, or other body fluids for examination and analysis.",
       "Operate diagnostic equipment, such as radiographic or ultrasound equipment, and interpret the resulting images."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Active Learning",
-      "Speaking",
-      "Science"
-    ],
     "entry": {
       "streams": [
         "pcb"
@@ -1674,6 +2882,74 @@
       "hands": 0.549,
       "routine": 0.715
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.88,
+        "edge": 1.6
+      },
+      {
+        "name": "Active Learning",
+        "importance": 4,
+        "edge": 0.44
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 1.75,
+        "edge": 0.3
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.12,
+        "edge": 0.25
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 2.75,
+        "edge": 0.25
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 4.69,
+        "edge": 2.89
+      },
+      {
+        "name": "Biology",
+        "importance": 4.69,
+        "edge": 2.77
+      },
+      {
+        "name": "Chemistry",
+        "importance": 3.37,
+        "edge": 1.42
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.49,
+        "edge": 1.04
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.34,
+        "edge": 0.81
+      }
+    ],
+    "skills": [
+      "Science",
+      "Active Learning",
+      "Equipment Selection",
+      "Mathematics",
+      "Operations Analysis"
+    ],
+    "knowledge": [
+      "Medicine and Dentistry",
+      "Biology",
+      "Chemistry",
+      "Customer and Personal Service",
+      "Personnel and Human Resources"
+    ],
     "related": [
       "dentist",
       "agricultural-scientist",
@@ -1719,13 +2995,6 @@
       "Conduct experiments to develop new or improved varieties of field crops, focusing on characteristics such as yield, quality, disease resistance, nutritional value, or adaptation to specific soils or climates.",
       "Investigate soil problems or poor water quality to determine sources and effects."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Speaking",
-      "Science",
-      "Critical Thinking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "pcb",
@@ -1749,6 +3018,74 @@
       "hands": 0.487,
       "routine": 0.606
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4,
+        "edge": 1.72
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3,
+        "edge": 0.74
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 2.25,
+        "edge": 0.53
+      },
+      {
+        "name": "Operations Monitoring",
+        "importance": 2.75,
+        "edge": 0.51
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3,
+        "edge": 0.5
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Biology",
+        "importance": 4.43,
+        "edge": 2.51
+      },
+      {
+        "name": "Chemistry",
+        "importance": 3.84,
+        "edge": 1.89
+      },
+      {
+        "name": "Food Production",
+        "importance": 2.95,
+        "edge": 1.6
+      },
+      {
+        "name": "Geography",
+        "importance": 3.38,
+        "edge": 1.41
+      },
+      {
+        "name": "Physics",
+        "importance": 3.14,
+        "edge": 1.14
+      }
+    ],
+    "skills": [
+      "Science",
+      "Quality Control Analysis",
+      "Operation and Control",
+      "Operations Monitoring",
+      "Operations Analysis"
+    ],
+    "knowledge": [
+      "Biology",
+      "Chemistry",
+      "Food Production",
+      "Geography",
+      "Physics"
+    ],
     "related": [
       "food-technologist",
       "biotechnologist",
@@ -1793,13 +3130,6 @@
       "Develop food standards and production specifications, safety and sanitary regulations, and waste management and water supply specifications.",
       "Stay up to date on new regulations and current events regarding food science by reviewing scientific literature."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Learning",
-      "Active Listening",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcb",
@@ -1820,6 +3150,74 @@
       "hands": 0.41,
       "routine": 0.657
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 3.88,
+        "edge": 1.6
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3.38,
+        "edge": 1.12
+      },
+      {
+        "name": "Operations Monitoring",
+        "importance": 2.88,
+        "edge": 0.64
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 2.25,
+        "edge": 0.53
+      },
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.62,
+        "edge": 0.52
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Food Production",
+        "importance": 4.14,
+        "edge": 2.79
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 4.41,
+        "edge": 2.15
+      },
+      {
+        "name": "Chemistry",
+        "importance": 4.05,
+        "edge": 2.1
+      },
+      {
+        "name": "Biology",
+        "importance": 3.45,
+        "edge": 1.53
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 3.67,
+        "edge": 1.22
+      }
+    ],
+    "skills": [
+      "Science",
+      "Quality Control Analysis",
+      "Operations Monitoring",
+      "Operation and Control",
+      "Systems Evaluation"
+    ],
+    "knowledge": [
+      "Food Production",
+      "Production and Processing",
+      "Chemistry",
+      "Biology",
+      "Engineering and Technology"
+    ],
     "related": [
       "aerospace-engineer",
       "agricultural-scientist",
@@ -1865,13 +3263,6 @@
       "Review and implement environmental technical standards, guidelines, policies, and formal regulations that meet all appropriate requirements.",
       "Provide scientific or technical guidance, support, coordination, or oversight to governmental agencies, environmental programs, industry, or the public."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Writing",
-      "Speaking",
-      "Science"
-    ],
     "entry": {
       "streams": [
         "pcb",
@@ -1891,6 +3282,74 @@
       "hands": 0.24,
       "routine": 0.619
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4,
+        "edge": 1.72
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.25,
+        "edge": 0.38
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 2.62,
+        "edge": 0.36
+      },
+      {
+        "name": "Complex Problem Solving",
+        "importance": 4,
+        "edge": 0.34
+      },
+      {
+        "name": "Writing",
+        "importance": 4,
+        "edge": 0.33
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Biology",
+        "importance": 3.86,
+        "edge": 1.94
+      },
+      {
+        "name": "Chemistry",
+        "importance": 3.21,
+        "edge": 1.26
+      },
+      {
+        "name": "Geography",
+        "importance": 2.9,
+        "edge": 0.93
+      },
+      {
+        "name": "Law and Government",
+        "importance": 3.52,
+        "edge": 0.69
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.3,
+        "edge": 0.69
+      }
+    ],
+    "skills": [
+      "Science",
+      "Mathematics",
+      "Quality Control Analysis",
+      "Complex Problem Solving",
+      "Writing"
+    ],
+    "knowledge": [
+      "Biology",
+      "Chemistry",
+      "Geography",
+      "Law and Government",
+      "Public Safety and Security"
+    ],
     "related": [
       "biotechnologist",
       "physicist",
@@ -1936,13 +3395,6 @@
       "Describe and express observations and conclusions in mathematical terms.",
       "Collaborate with other scientists in the design, development, and testing of experimental, industrial, or medical equipment, instrumentation, and procedures."
     ],
-    "skills": [
-      "Science",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Speaking",
-      "Mathematics"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -1965,6 +3417,74 @@
       "hands": 0.233,
       "routine": 0.6
     },
+    "skillDetail": [
+      {
+        "name": "Science",
+        "importance": 4.88,
+        "edge": 2.6
+      },
+      {
+        "name": "Programming",
+        "importance": 3.75,
+        "edge": 1.89
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.5,
+        "edge": 1.63
+      },
+      {
+        "name": "Active Learning",
+        "importance": 4.5,
+        "edge": 0.94
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 4,
+        "edge": 0.93
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Physics",
+        "importance": 4.93,
+        "edge": 2.93
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.87,
+        "edge": 1.64
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.03,
+        "edge": 1.58
+      },
+      {
+        "name": "Chemistry",
+        "importance": 3,
+        "edge": 1.05
+      },
+      {
+        "name": "Mechanical",
+        "importance": 2.76,
+        "edge": 0.79
+      }
+    ],
+    "skills": [
+      "Science",
+      "Programming",
+      "Mathematics",
+      "Active Learning",
+      "Learning Strategies"
+    ],
+    "knowledge": [
+      "Physics",
+      "Mathematics",
+      "Engineering and Technology",
+      "Chemistry",
+      "Mechanical"
+    ],
     "related": [
       "biotechnologist",
       "food-technologist",
@@ -2010,13 +3530,6 @@
       "Determine whether statistical methods are appropriate, based on user needs or research questions of interest.",
       "Prepare data for processing by organizing information, checking for inaccuracies, and adjusting and weighting the raw data."
     ],
-    "skills": [
-      "Mathematics",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Listening",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -2043,6 +3556,56 @@
       "hands": 0.144,
       "routine": 0.677
     },
+    "skillDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 4.88,
+        "edge": 2.01
+      },
+      {
+        "name": "Science",
+        "importance": 3.5,
+        "edge": 1.22
+      },
+      {
+        "name": "Programming",
+        "importance": 3,
+        "edge": 1.14
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 2.88,
+        "edge": 0.38
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 4.67,
+        "edge": 1.44
+      },
+      {
+        "name": "Computers and Electronics",
+        "importance": 4.19,
+        "edge": 0.78
+      },
+      {
+        "name": "Biology",
+        "importance": 2.43,
+        "edge": 0.51
+      }
+    ],
+    "skills": [
+      "Mathematics",
+      "Science",
+      "Programming",
+      "Operations Analysis"
+    ],
+    "knowledge": [
+      "Mathematics",
+      "Computers and Electronics",
+      "Biology"
+    ],
     "related": [
       "data-scientist",
       "software-developer",
@@ -2087,13 +3650,6 @@
       "Collaborate with programmers, underwriters, accounts, claims experts, and senior management to help companies develop plans for new lines of business or improvements to existing business.",
       "Provide advice to clients on a contract basis, working as a consultant."
     ],
-    "skills": [
-      "Mathematics",
-      "Reading Comprehension",
-      "Active Listening",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -2119,6 +3675,56 @@
       "hands": 0.099,
       "routine": 0.684
     },
+    "skillDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 4.38,
+        "edge": 1.51
+      },
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.88,
+        "edge": 0.78
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.12,
+        "edge": 0.62
+      },
+      {
+        "name": "Systems Analysis",
+        "importance": 3.75,
+        "edge": 0.58
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.62,
+        "edge": 0.48
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Economics and Accounting",
+        "importance": 4.06,
+        "edge": 1.7
+      },
+      {
+        "name": "Mathematics",
+        "importance": 4.85,
+        "edge": 1.62
+      }
+    ],
+    "skills": [
+      "Mathematics",
+      "Systems Evaluation",
+      "Operations Analysis",
+      "Systems Analysis",
+      "Management of Financial Resources"
+    ],
+    "knowledge": [
+      "Economics and Accounting",
+      "Mathematics"
+    ],
     "related": [
       "chartered-accountant",
       "management-consultant",
@@ -2164,13 +3770,6 @@
       "Compute taxes owed and prepare tax returns, ensuring compliance with payment, reporting, or other tax requirements.",
       "Prepare adjusting journal entries."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Writing",
-      "Critical Thinking",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2186,28 +3785,31 @@
     "roadmap": [
       {
         "id": "class12",
-        "title": "Class 12 in any stream"
+        "title": "Start: Class 12 in any stream, or a graduate degree",
+        "detail": "Graduates can enter directly at the Intermediate level, without the Foundation level. Check the entry conditions with ICAI.",
+        "body": "icai"
       },
       {
         "id": "foundation",
-        "title": "Foundation level",
+        "title": "Foundation level, if you start after Class 12",
         "exam": "ca-foundation"
       },
       {
         "id": "inter",
         "title": "Intermediate level",
-        "detail": "Check the current scheme with the institute.",
+        "detail": "Check the current scheme with ICAI.",
         "body": "icai"
       },
       {
         "id": "training",
-        "title": "Practical training",
-        "detail": "Training under a practising chartered accountant."
+        "title": "Practical training (articleship)",
+        "detail": "Training under a practising chartered accountant. Check the current duration with ICAI.",
+        "body": "icai"
       },
       {
         "id": "final",
         "title": "Final level and membership",
-        "detail": "Check the current scheme with the institute.",
+        "detail": "Check the current scheme with ICAI.",
         "body": "icai"
       }
     ],
@@ -2221,6 +3823,56 @@
       "hands": 0.23,
       "routine": 0.836
     },
+    "skillDetail": [
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.38,
+        "edge": 0.51
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Economics and Accounting",
+        "importance": 4.38,
+        "edge": 2.02
+      },
+      {
+        "name": "Law and Government",
+        "importance": 3.34,
+        "edge": 0.51
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.24,
+        "edge": 0.46
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 2.97,
+        "edge": 0.44
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.48,
+        "edge": 0.25
+      }
+    ],
+    "skills": [
+      "Management of Financial Resources",
+      "Mathematics"
+    ],
+    "knowledge": [
+      "Economics and Accounting",
+      "Law and Government",
+      "Administrative",
+      "Personnel and Human Resources",
+      "Mathematics"
+    ],
     "related": [
       "actuary",
       "company-secretary",
@@ -2267,13 +3919,6 @@
       "Prepare reports of activities, evaluations, recommendations, or decisions.",
       "Report law or regulation violations to appropriate boards or agencies."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Speaking",
-      "Active Listening",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2296,6 +3941,42 @@
       "hands": 0.408,
       "routine": 0.804
     },
+    "skillDetail": [],
+    "knowledgeDetail": [
+      {
+        "name": "Law and Government",
+        "importance": 4.1,
+        "edge": 1.27
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.36,
+        "edge": 0.75
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 3.94,
+        "edge": 0.49
+      },
+      {
+        "name": "Telecommunications",
+        "importance": 2.63,
+        "edge": 0.42
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.12,
+        "edge": 0.34
+      }
+    ],
+    "skills": [],
+    "knowledge": [
+      "Law and Government",
+      "Public Safety and Security",
+      "Customer and Personal Service",
+      "Telecommunications",
+      "Administrative"
+    ],
     "related": [
       "chartered-accountant",
       "bank-officer",
@@ -2341,13 +4022,6 @@
       "Review clients' accounts and plans regularly to determine whether life changes, economic changes, environmental concerns, or financial performance indicate a need for plan reassessment.",
       "Manage client portfolios, keeping client plans up-to-date."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2372,6 +4046,74 @@
       "hands": 0.098,
       "routine": 0.713
     },
+    "skillDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 3.62,
+        "edge": 0.75
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.62,
+        "edge": 0.44
+      },
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.38,
+        "edge": 0.28
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.38,
+        "edge": 0.27
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Economics and Accounting",
+        "importance": 4.08,
+        "edge": 1.72
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.44,
+        "edge": 0.99
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 2.88,
+        "edge": 0.55
+      },
+      {
+        "name": "Psychology",
+        "importance": 3.08,
+        "edge": 0.53
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.73,
+        "edge": 0.5
+      }
+    ],
+    "skills": [
+      "Mathematics",
+      "Management of Financial Resources",
+      "Service Orientation",
+      "Systems Evaluation",
+      "Persuasion"
+    ],
+    "knowledge": [
+      "Economics and Accounting",
+      "Customer and Personal Service",
+      "Sales and Marketing",
+      "Psychology",
+      "Mathematics"
+    ],
     "related": [
       "hr-manager",
       "civil-servant",
@@ -2418,13 +4160,6 @@
       "Explain to customers the different types of loans and credit options that are available, as well as the terms of those services.",
       "Submit applications to credit analysts for verification and recommendation."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -2447,6 +4182,50 @@
       "hands": 0.28,
       "routine": 0.744
     },
+    "skillDetail": [
+      {
+        "name": "Mathematics",
+        "importance": 3.25,
+        "edge": 0.38
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Economics and Accounting",
+        "importance": 3.86,
+        "edge": 1.5
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.7,
+        "edge": 1.25
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.47,
+        "edge": 1.14
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.69,
+        "edge": 0.46
+      },
+      {
+        "name": "Law and Government",
+        "importance": 3.28,
+        "edge": 0.45
+      }
+    ],
+    "skills": [
+      "Mathematics"
+    ],
+    "knowledge": [
+      "Economics and Accounting",
+      "Customer and Personal Service",
+      "Sales and Marketing",
+      "Mathematics",
+      "Law and Government"
+    ],
     "related": [
       "civil-servant",
       "hr-manager",
@@ -2492,13 +4271,6 @@
       "Document findings of study and prepare recommendations for implementation of new systems, procedures, or organizational changes.",
       "Plan study of work problems and procedures, such as organizational change, communications, information flow, integrated production methods, inventory control, or cost analysis."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Critical Thinking",
-      "Writing",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -2520,6 +4292,74 @@
       "hands": 0.201,
       "routine": 0.6
     },
+    "skillDetail": [
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.88,
+        "edge": 0.78
+      },
+      {
+        "name": "Systems Analysis",
+        "importance": 3.75,
+        "edge": 0.58
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.88,
+        "edge": 0.54
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3,
+        "edge": 0.5
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 3.88,
+        "edge": 0.44
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Administration and Management",
+        "importance": 4.38,
+        "edge": 1.21
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 3.48,
+        "edge": 1.12
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.3,
+        "edge": 0.97
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3,
+        "edge": 0.87
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.33,
+        "edge": 0.8
+      }
+    ],
+    "skills": [
+      "Systems Evaluation",
+      "Systems Analysis",
+      "Coordination",
+      "Operations Analysis",
+      "Social Perceptiveness"
+    ],
+    "knowledge": [
+      "Administration and Management",
+      "Economics and Accounting",
+      "Sales and Marketing",
+      "Sociology and Anthropology",
+      "Personnel and Human Resources"
+    ],
     "related": [
       "data-analyst",
       "actuary",
@@ -2565,13 +4405,6 @@
       "Prepare or maintain employment records related to events, such as hiring, termination, leaves, transfers, or promotions, using human resources management system software.",
       "Address employee relations issues, such as harassment allegations, work complaints, or other employee concerns."
     ],
-    "skills": [
-      "Speaking",
-      "Reading Comprehension",
-      "Active Listening",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -2593,6 +4426,36 @@
       "hands": 0.269,
       "routine": 0.776
     },
+    "skillDetail": [],
+    "knowledgeDetail": [
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 4.62,
+        "edge": 2.09
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.94,
+        "edge": 1.16
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 3.83,
+        "edge": 0.66
+      },
+      {
+        "name": "Law and Government",
+        "importance": 3.3,
+        "edge": 0.47
+      }
+    ],
+    "skills": [],
+    "knowledge": [
+      "Personnel and Human Resources",
+      "Administrative",
+      "Administration and Management",
+      "Law and Government"
+    ],
     "related": [
       "financial-planner",
       "civil-servant",
@@ -2638,13 +4501,6 @@
       "Direct the hiring, training, or performance evaluations of marketing or sales staff and oversee their daily activities.",
       "Evaluate the financial aspects of product development, such as budgets, expenditures, research and development appropriations, or return-on-investment and profit-loss projections."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -2666,6 +4522,74 @@
       "hands": 0.231,
       "routine": 0.745
     },
+    "skillDetail": [
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.88,
+        "edge": 0.78
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.88,
+        "edge": 0.77
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.75,
+        "edge": 0.76
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.88,
+        "edge": 0.73
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Sales and Marketing",
+        "importance": 4.71,
+        "edge": 2.38
+      },
+      {
+        "name": "Communications and Media",
+        "importance": 4.09,
+        "edge": 1.39
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.33,
+        "edge": 0.88
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 3.97,
+        "edge": 0.8
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.21,
+        "edge": 0.68
+      }
+    ],
+    "skills": [
+      "Systems Evaluation",
+      "Persuasion",
+      "Negotiation",
+      "Management of Financial Resources",
+      "Management of Material Resources"
+    ],
+    "knowledge": [
+      "Sales and Marketing",
+      "Communications and Media",
+      "Customer and Personal Service",
+      "Administration and Management",
+      "Personnel and Human Resources"
+    ],
     "related": [
       "entrepreneur",
       "event-manager",
@@ -2711,13 +4635,6 @@
       "Arrange the availability of audio-visual equipment, transportation, displays, and other event needs.",
       "Confer with staff at a chosen event site to coordinate details."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2735,6 +4652,74 @@
       "hands": 0.404,
       "routine": 0.65
     },
+    "skillDetail": [
+      {
+        "name": "Management of Financial Resources",
+        "importance": 3,
+        "edge": 0.86
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.88,
+        "edge": 0.73
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.88,
+        "edge": 0.7
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.88,
+        "edge": 0.54
+      },
+      {
+        "name": "Repairing",
+        "importance": 1.75,
+        "edge": 0.49
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Communications and Media",
+        "importance": 3.7,
+        "edge": 1
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.33,
+        "edge": 0.88
+      },
+      {
+        "name": "Transportation",
+        "importance": 2.82,
+        "edge": 0.86
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2.43,
+        "edge": 0.77
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.5,
+        "edge": 0.72
+      }
+    ],
+    "skills": [
+      "Management of Financial Resources",
+      "Management of Material Resources",
+      "Service Orientation",
+      "Coordination",
+      "Repairing"
+    ],
+    "knowledge": [
+      "Communications and Media",
+      "Customer and Personal Service",
+      "Transportation",
+      "Philosophy and Theology",
+      "Administrative"
+    ],
     "related": [
       "entrepreneur",
       "hr-manager",
@@ -2780,13 +4765,6 @@
       "Represent clients in court or before government agencies.",
       "Evaluate findings and develop strategies and arguments in preparation for presentation of cases."
     ],
-    "skills": [
-      "Speaking",
-      "Reading Comprehension",
-      "Active Listening",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2797,28 +4775,39 @@
       {
         "exam": "clat",
         "body": "bci"
+      },
+      {
+        "exam": "aibe"
       }
     ],
     "roadmap": [
       {
-        "id": "class12",
-        "title": "Class 12 in any stream"
+        "id": "route",
+        "title": "Choose your route to an LLB",
+        "detail": "Route A: a 5-year integrated LLB after Class 12. Route B: graduation in any subject, then a 3-year LLB."
       },
       {
         "id": "entrance",
-        "title": "Law entrance exam",
-        "detail": "One of the common routes into a law degree.",
+        "title": "Law entrance exam, if your route needs one",
+        "detail": "Many 5-year integrated LLB admissions use an entrance exam such as this one. For the 3-year LLB after graduation, check each university's admission process.",
         "exam": "clat"
       },
       {
-        "id": "degree",
-        "title": "Law degree (LLB)",
-        "detail": "A five-year integrated course after Class 12, or a three-year course after a degree."
+        "id": "llb",
+        "title": "Complete the LLB",
+        "detail": "5 years after Class 12 (Route A), or 3 years after graduation (Route B)."
       },
       {
         "id": "enrol",
-        "title": "Enrolment as an advocate",
-        "detail": "Enrolment with a State Bar Council; the Bar Council of India governs the profession.",
+        "title": "Enrol with a State Bar Council",
+        "detail": "To practise as an advocate you enrol with a State Bar Council. The Bar Council of India governs the profession.",
+        "body": "bci"
+      },
+      {
+        "id": "aibe",
+        "title": "Pass the All India Bar Examination (AIBE)",
+        "detail": "Passing the AIBE is required to practise as an advocate.",
+        "exam": "aibe",
         "body": "bci"
       }
     ],
@@ -2832,6 +4821,74 @@
       "hands": 0.109,
       "routine": 0.664
     },
+    "skillDetail": [
+      {
+        "name": "Negotiation",
+        "importance": 4,
+        "edge": 1.01
+      },
+      {
+        "name": "Persuasion",
+        "importance": 4,
+        "edge": 0.89
+      },
+      {
+        "name": "Speaking",
+        "importance": 4.62,
+        "edge": 0.73
+      },
+      {
+        "name": "Writing",
+        "importance": 4.25,
+        "edge": 0.58
+      },
+      {
+        "name": "Critical Thinking",
+        "importance": 4.5,
+        "edge": 0.56
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Law and Government",
+        "importance": 4.98,
+        "edge": 2.15
+      },
+      {
+        "name": "English Language",
+        "importance": 4.66,
+        "edge": 0.68
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4,
+        "edge": 0.55
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.2,
+        "edge": 0.42
+      },
+      {
+        "name": "Communications and Media",
+        "importance": 3.02,
+        "edge": 0.32
+      }
+    ],
+    "skills": [
+      "Negotiation",
+      "Persuasion",
+      "Speaking",
+      "Writing",
+      "Critical Thinking"
+    ],
+    "knowledge": [
+      "Law and Government",
+      "English Language",
+      "Customer and Personal Service",
+      "Administrative",
+      "Communications and Media"
+    ],
     "related": [
       "judge",
       "financial-planner",
@@ -2876,13 +4933,6 @@
       "Write decisions on cases.",
       "Read documents on pleadings and motions to ascertain facts and issues."
     ],
-    "skills": [
-      "Active Listening",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Writing",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -2904,6 +4954,74 @@
       "hands": 0.121,
       "routine": 0.758
     },
+    "skillDetail": [
+      {
+        "name": "Active Listening",
+        "importance": 5,
+        "edge": 1.04
+      },
+      {
+        "name": "Critical Thinking",
+        "importance": 4.88,
+        "edge": 0.94
+      },
+      {
+        "name": "Judgment and Decision Making",
+        "importance": 4.25,
+        "edge": 0.58
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4,
+        "edge": 0.56
+      },
+      {
+        "name": "Complex Problem Solving",
+        "importance": 4.12,
+        "edge": 0.46
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Law and Government",
+        "importance": 4.9,
+        "edge": 2.07
+      },
+      {
+        "name": "Psychology",
+        "importance": 3.36,
+        "edge": 0.81
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 2.68,
+        "edge": 0.74
+      },
+      {
+        "name": "English Language",
+        "importance": 4.51,
+        "edge": 0.53
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.1,
+        "edge": 0.49
+      }
+    ],
+    "skills": [
+      "Active Listening",
+      "Critical Thinking",
+      "Judgment and Decision Making",
+      "Social Perceptiveness",
+      "Complex Problem Solving"
+    ],
+    "knowledge": [
+      "Law and Government",
+      "Psychology",
+      "Therapy and Counseling",
+      "English Language",
+      "Public Safety and Security"
+    ],
     "related": [
       "financial-planner",
       "entrepreneur",
@@ -2951,13 +5069,6 @@
       "Analyze internal processes and recommend and implement procedural or policy changes to improve operations, such as supply changes or the disposal of records.",
       "Conduct classes to teach procedures to staff."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -2998,6 +5109,74 @@
       "hands": 0.317,
       "routine": 0.689
     },
+    "skillDetail": [
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.88,
+        "edge": 0.73
+      },
+      {
+        "name": "Time Management",
+        "importance": 4,
+        "edge": 0.69
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.62,
+        "edge": 0.63
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 3.38,
+        "edge": 0.53
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Administrative",
+        "importance": 3.9,
+        "edge": 1.12
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 4.24,
+        "edge": 1.07
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.44,
+        "edge": 0.99
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.35,
+        "edge": 0.82
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.29,
+        "edge": 0.68
+      }
+    ],
+    "skills": [
+      "Management of Financial Resources",
+      "Management of Material Resources",
+      "Time Management",
+      "Negotiation",
+      "Management of Personnel Resources"
+    ],
+    "knowledge": [
+      "Administrative",
+      "Administration and Management",
+      "Customer and Personal Service",
+      "Personnel and Human Resources",
+      "Public Safety and Security"
+    ],
     "related": [
       "hr-manager",
       "bank-officer",
@@ -3043,13 +5222,6 @@
       "Disseminate research results through academic publications, written reports, or public presentations.",
       "Advise political science students."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Active Learning",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -3067,6 +5239,74 @@
       "hands": 0.155,
       "routine": 0.495
     },
+    "skillDetail": [
+      {
+        "name": "Active Learning",
+        "importance": 4.12,
+        "edge": 0.56
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 3.5,
+        "edge": 0.43
+      },
+      {
+        "name": "Instructing",
+        "importance": 3.5,
+        "edge": 0.4
+      },
+      {
+        "name": "Science",
+        "importance": 2.62,
+        "edge": 0.34
+      },
+      {
+        "name": "Writing",
+        "importance": 4,
+        "edge": 0.33
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "History and Archeology",
+        "importance": 3.42,
+        "edge": 1.85
+      },
+      {
+        "name": "Law and Government",
+        "importance": 4.65,
+        "edge": 1.82
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 3.08,
+        "edge": 1.42
+      },
+      {
+        "name": "Education and Training",
+        "importance": 4.27,
+        "edge": 1.25
+      },
+      {
+        "name": "Geography",
+        "importance": 3.12,
+        "edge": 1.15
+      }
+    ],
+    "skills": [
+      "Active Learning",
+      "Learning Strategies",
+      "Instructing",
+      "Science",
+      "Writing"
+    ],
+    "knowledge": [
+      "History and Archeology",
+      "Law and Government",
+      "Philosophy and Theology",
+      "Education and Training",
+      "Geography"
+    ],
     "related": [
       "urban-planner",
       "data-scientist",
@@ -3112,13 +5352,6 @@
       "Render aid to accident survivors and other persons requiring first aid for physical injuries.",
       "Record facts to prepare reports that document incidents and activities."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Active Learning",
-      "Reading Comprehension"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -3141,6 +5374,74 @@
       "hands": 0.536,
       "routine": 0.756
     },
+    "skillDetail": [
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4,
+        "edge": 0.56
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.62,
+        "edge": 0.44
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.5,
+        "edge": 0.39
+      },
+      {
+        "name": "Active Learning",
+        "importance": 3.88,
+        "edge": 0.32
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.62,
+        "edge": 0.28
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Public Safety and Security",
+        "importance": 4.77,
+        "edge": 2.16
+      },
+      {
+        "name": "Law and Government",
+        "importance": 4.74,
+        "edge": 1.91
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.01,
+        "edge": 1.46
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 3.3,
+        "edge": 1.36
+      },
+      {
+        "name": "Transportation",
+        "importance": 3.3,
+        "edge": 1.34
+      }
+    ],
+    "skills": [
+      "Social Perceptiveness",
+      "Service Orientation",
+      "Persuasion",
+      "Active Learning",
+      "Coordination"
+    ],
+    "knowledge": [
+      "Public Safety and Security",
+      "Law and Government",
+      "Psychology",
+      "Therapy and Counseling",
+      "Transportation"
+    ],
     "related": [
       "commercial-pilot",
       "electrician",
@@ -3186,13 +5487,6 @@
       "Obtain facts or statements from complainants, witnesses, and accused persons and record interviews, using recording device.",
       "Record progress of investigation, maintain informational files on suspects, and submit reports to commanding officer or magistrate to authorize warrants."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -3210,6 +5504,74 @@
       "hands": 0.566,
       "routine": 0.938
     },
+    "skillDetail": [
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4.12,
+        "edge": 0.68
+      },
+      {
+        "name": "Active Listening",
+        "importance": 4.5,
+        "edge": 0.54
+      },
+      {
+        "name": "Operation and Control",
+        "importance": 2.25,
+        "edge": 0.53
+      },
+      {
+        "name": "Speaking",
+        "importance": 4.25,
+        "edge": 0.36
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.62,
+        "edge": 0.28
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Public Safety and Security",
+        "importance": 4.49,
+        "edge": 1.88
+      },
+      {
+        "name": "Law and Government",
+        "importance": 4.62,
+        "edge": 1.79
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.09,
+        "edge": 1.54
+      },
+      {
+        "name": "Geography",
+        "importance": 2.9,
+        "edge": 0.93
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.2,
+        "edge": 0.75
+      }
+    ],
+    "skills": [
+      "Social Perceptiveness",
+      "Active Listening",
+      "Operation and Control",
+      "Speaking",
+      "Coordination"
+    ],
+    "knowledge": [
+      "Public Safety and Security",
+      "Law and Government",
+      "Psychology",
+      "Geography",
+      "Customer and Personal Service"
+    ],
     "related": [
       "cybersecurity-analyst",
       "commercial-pilot",
@@ -3255,13 +5617,6 @@
       "Prepare materials and classrooms for class activities.",
       "Adapt teaching methods and instructional materials to meet students' varying needs and interests."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Learning Strategies",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -3284,6 +5639,74 @@
       "hands": 0.412,
       "routine": 0.425
     },
+    "skillDetail": [
+      {
+        "name": "Instructing",
+        "importance": 4.12,
+        "edge": 1.02
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 4,
+        "edge": 0.93
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 3.88,
+        "edge": 0.44
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.75,
+        "edge": 0.41
+      },
+      {
+        "name": "Monitoring",
+        "importance": 3.88,
+        "edge": 0.4
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Education and Training",
+        "importance": 4.69,
+        "edge": 1.67
+      },
+      {
+        "name": "History and Archeology",
+        "importance": 3.03,
+        "edge": 1.46
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.18,
+        "edge": 1.05
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2.57,
+        "edge": 0.91
+      },
+      {
+        "name": "Psychology",
+        "importance": 3.36,
+        "edge": 0.81
+      }
+    ],
+    "skills": [
+      "Instructing",
+      "Learning Strategies",
+      "Social Perceptiveness",
+      "Coordination",
+      "Monitoring"
+    ],
+    "knowledge": [
+      "Education and Training",
+      "History and Archeology",
+      "Sociology and Anthropology",
+      "Philosophy and Theology",
+      "Psychology"
+    ],
     "related": [
       "social-worker",
       "special-educator",
@@ -3328,13 +5751,6 @@
       "Employ special educational strategies and techniques during instruction to improve the development of sensory- and perceptual-motor skills, language, cognition, and memory.",
       "Establish clear objectives for all lessons, units, and projects, and communicate those objectives to students."
     ],
-    "skills": [
-      "Learning Strategies",
-      "Reading Comprehension",
-      "Speaking",
-      "Active Listening",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3356,6 +5772,74 @@
       "hands": 0.342,
       "routine": 0.528
     },
+    "skillDetail": [
+      {
+        "name": "Learning Strategies",
+        "importance": 4.12,
+        "edge": 1.05
+      },
+      {
+        "name": "Instructing",
+        "importance": 4.12,
+        "edge": 1.02
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.88,
+        "edge": 0.7
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.88,
+        "edge": 0.54
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 3.88,
+        "edge": 0.44
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Education and Training",
+        "importance": 4.79,
+        "edge": 1.77
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.18,
+        "edge": 1.63
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 3.56,
+        "edge": 1.62
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.28,
+        "edge": 1.15
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2.44,
+        "edge": 0.78
+      }
+    ],
+    "skills": [
+      "Learning Strategies",
+      "Instructing",
+      "Service Orientation",
+      "Coordination",
+      "Social Perceptiveness"
+    ],
+    "knowledge": [
+      "Education and Training",
+      "Psychology",
+      "Therapy and Counseling",
+      "Sociology and Anthropology",
+      "Philosophy and Theology"
+    ],
     "related": [
       "school-teacher",
       "social-worker",
@@ -3401,13 +5885,6 @@
       "Write reports on clients and maintain required paperwork.",
       "Counsel individuals, groups, or families to help them understand problems, deal with crisis situations, define goals, and develop realistic action plans."
     ],
-    "skills": [
-      "Reading Comprehension",
-      "Active Listening",
-      "Writing",
-      "Critical Thinking",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3429,6 +5906,74 @@
       "hands": 0.134,
       "routine": 0.425
     },
+    "skillDetail": [
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4.38,
+        "edge": 0.94
+      },
+      {
+        "name": "Reading Comprehension",
+        "importance": 4.75,
+        "edge": 0.8
+      },
+      {
+        "name": "Writing",
+        "importance": 4.25,
+        "edge": 0.58
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 3.75,
+        "edge": 0.57
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 3.62,
+        "edge": 0.55
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Therapy and Counseling",
+        "importance": 5,
+        "edge": 3.06
+      },
+      {
+        "name": "Psychology",
+        "importance": 5,
+        "edge": 2.45
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.6,
+        "edge": 1.47
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2.67,
+        "edge": 1.01
+      },
+      {
+        "name": "Medicine and Dentistry",
+        "importance": 2.7,
+        "edge": 0.9
+      }
+    ],
+    "skills": [
+      "Social Perceptiveness",
+      "Reading Comprehension",
+      "Writing",
+      "Service Orientation",
+      "Learning Strategies"
+    ],
+    "knowledge": [
+      "Therapy and Counseling",
+      "Psychology",
+      "Sociology and Anthropology",
+      "Philosophy and Theology",
+      "Medicine and Dentistry"
+    ],
     "related": [
       "social-worker",
       "special-educator",
@@ -3473,13 +6018,6 @@
       "Counsel individuals or groups to help them understand and overcome personal, social, or behavioral problems affecting their educational or vocational situations.",
       "Review transcripts to ensure that students meet graduation or college entrance requirements, and write letters of recommendation."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Reading Comprehension",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "grad-arts",
@@ -3498,6 +6036,74 @@
       "hands": 0.226,
       "routine": 0.679
     },
+    "skillDetail": [
+      {
+        "name": "Service Orientation",
+        "importance": 4,
+        "edge": 0.82
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4.12,
+        "edge": 0.68
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 3.75,
+        "edge": 0.68
+      },
+      {
+        "name": "Instructing",
+        "importance": 3.62,
+        "edge": 0.52
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.62,
+        "edge": 0.51
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Therapy and Counseling",
+        "importance": 3.59,
+        "edge": 1.65
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 2.84,
+        "edge": 0.71
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.06,
+        "edge": 0.61
+      },
+      {
+        "name": "Psychology",
+        "importance": 3.14,
+        "edge": 0.59
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2.16,
+        "edge": 0.5
+      }
+    ],
+    "skills": [
+      "Service Orientation",
+      "Social Perceptiveness",
+      "Learning Strategies",
+      "Instructing",
+      "Persuasion"
+    ],
+    "knowledge": [
+      "Therapy and Counseling",
+      "Sociology and Anthropology",
+      "Customer and Personal Service",
+      "Psychology",
+      "Philosophy and Theology"
+    ],
     "related": [
       "social-worker",
       "school-teacher",
@@ -3543,13 +6149,6 @@
       "Develop and review service plans in consultation with clients and perform follow-ups assessing the quantity and quality of services provided.",
       "Address legal issues, such as child abuse and discipline, assisting with hearings and providing testimony to inform custody arrangements."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Monitoring"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3567,6 +6166,74 @@
       "hands": 0.346,
       "routine": 0.677
     },
+    "skillDetail": [
+      {
+        "name": "Active Listening",
+        "importance": 4.88,
+        "edge": 0.92
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 4,
+        "edge": 0.82
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.75,
+        "edge": 0.76
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 4.12,
+        "edge": 0.68
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.75,
+        "edge": 0.64
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Therapy and Counseling",
+        "importance": 4.13,
+        "edge": 2.19
+      },
+      {
+        "name": "Psychology",
+        "importance": 4.13,
+        "edge": 1.58
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.41,
+        "edge": 1.28
+      },
+      {
+        "name": "Customer and Personal Service",
+        "importance": 4.32,
+        "edge": 0.87
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.63,
+        "edge": 0.85
+      }
+    ],
+    "skills": [
+      "Active Listening",
+      "Service Orientation",
+      "Negotiation",
+      "Social Perceptiveness",
+      "Persuasion"
+    ],
+    "knowledge": [
+      "Therapy and Counseling",
+      "Psychology",
+      "Sociology and Anthropology",
+      "Customer and Personal Service",
+      "Administrative"
+    ],
     "related": [
       "career-counsellor",
       "school-teacher",
@@ -3612,13 +6279,6 @@
       "Arrange interviews with people who can provide information about a story.",
       "Establish and maintain relationships with individuals who are credible sources of information."
     ],
-    "skills": [
-      "Active Listening",
-      "Reading Comprehension",
-      "Speaking",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3641,6 +6301,74 @@
       "hands": 0.353,
       "routine": 0.805
     },
+    "skillDetail": [
+      {
+        "name": "Active Listening",
+        "importance": 4.5,
+        "edge": 0.54
+      },
+      {
+        "name": "Reading Comprehension",
+        "importance": 4.38,
+        "edge": 0.43
+      },
+      {
+        "name": "Speaking",
+        "importance": 4.25,
+        "edge": 0.36
+      },
+      {
+        "name": "Writing",
+        "importance": 4,
+        "edge": 0.33
+      },
+      {
+        "name": "Social Perceptiveness",
+        "importance": 3.75,
+        "edge": 0.31
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Communications and Media",
+        "importance": 4.73,
+        "edge": 2.03
+      },
+      {
+        "name": "Telecommunications",
+        "importance": 3.11,
+        "edge": 0.9
+      },
+      {
+        "name": "English Language",
+        "importance": 4.75,
+        "edge": 0.77
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.22,
+        "edge": 0.73
+      },
+      {
+        "name": "History and Archeology",
+        "importance": 2.28,
+        "edge": 0.71
+      }
+    ],
+    "skills": [
+      "Active Listening",
+      "Reading Comprehension",
+      "Speaking",
+      "Writing",
+      "Social Perceptiveness"
+    ],
+    "knowledge": [
+      "Communications and Media",
+      "Telecommunications",
+      "English Language",
+      "Fine Arts",
+      "History and Archeology"
+    ],
     "related": [
       "content-writer",
       "ux-ui-designer",
@@ -3686,13 +6414,6 @@
       "Edit or rewrite existing written material as necessary, and submit written material for approval by supervisor, editor, or publisher.",
       "Conduct research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, and interviews."
     ],
-    "skills": [
-      "Writing",
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3710,6 +6431,56 @@
       "hands": 0.193,
       "routine": 0.776
     },
+    "skillDetail": [
+      {
+        "name": "Writing",
+        "importance": 5,
+        "edge": 1.33
+      },
+      {
+        "name": "Time Management",
+        "importance": 3.75,
+        "edge": 0.44
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Communications and Media",
+        "importance": 4.42,
+        "edge": 1.72
+      },
+      {
+        "name": "English Language",
+        "importance": 4.95,
+        "edge": 0.97
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 2.95,
+        "edge": 0.62
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.05,
+        "edge": 0.56
+      },
+      {
+        "name": "Administrative",
+        "importance": 3.21,
+        "edge": 0.43
+      }
+    ],
+    "skills": [
+      "Writing",
+      "Time Management"
+    ],
+    "knowledge": [
+      "Communications and Media",
+      "English Language",
+      "Sales and Marketing",
+      "Fine Arts",
+      "Administrative"
+    ],
     "related": [
       "journalist",
       "film-director",
@@ -3755,13 +6526,6 @@
       "Research production topics using the internet, video archives, and other informational sources.",
       "Review film, recordings, or rehearsals to ensure conformance to production and broadcast standards."
     ],
-    "skills": [
-      "Active Listening",
-      "Reading Comprehension",
-      "Speaking",
-      "Critical Thinking",
-      "Monitoring"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3784,6 +6548,74 @@
       "hands": 0.277,
       "routine": 0.603
     },
+    "skillDetail": [
+      {
+        "name": "Management of Financial Resources",
+        "importance": 3,
+        "edge": 0.86
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 3.62,
+        "edge": 0.77
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.75,
+        "edge": 0.6
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.88,
+        "edge": 0.54
+      },
+      {
+        "name": "Monitoring",
+        "importance": 4,
+        "edge": 0.52
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Communications and Media",
+        "importance": 4.72,
+        "edge": 2.02
+      },
+      {
+        "name": "Telecommunications",
+        "importance": 3.74,
+        "edge": 1.53
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.81,
+        "edge": 1.32
+      },
+      {
+        "name": "Foreign Language",
+        "importance": 2.07,
+        "edge": 0.38
+      },
+      {
+        "name": "Philosophy and Theology",
+        "importance": 2,
+        "edge": 0.34
+      }
+    ],
+    "skills": [
+      "Management of Financial Resources",
+      "Management of Personnel Resources",
+      "Management of Material Resources",
+      "Coordination",
+      "Monitoring"
+    ],
+    "knowledge": [
+      "Communications and Media",
+      "Telecommunications",
+      "Fine Arts",
+      "Foreign Language",
+      "Philosophy and Theology"
+    ],
     "related": [
       "content-writer",
       "musician",
@@ -3829,13 +6661,6 @@
       "Play musical instruments as soloists, or as members or guest artists of musical groups such as orchestras, ensembles, or bands.",
       "Provide the musical background for live shows, such as ballets, operas, musical theatre, and cabarets."
     ],
-    "skills": [
-      "Speaking",
-      "Active Listening",
-      "Monitoring",
-      "Reading Comprehension",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3853,6 +6678,30 @@
       "hands": 0.296,
       "routine": 0.756
     },
+    "skillDetail": [],
+    "knowledgeDetail": [
+      {
+        "name": "Fine Arts",
+        "importance": 4.83,
+        "edge": 3.34
+      },
+      {
+        "name": "History and Archeology",
+        "importance": 2.08,
+        "edge": 0.51
+      },
+      {
+        "name": "Foreign Language",
+        "importance": 2.06,
+        "edge": 0.37
+      }
+    ],
+    "skills": [],
+    "knowledge": [
+      "Fine Arts",
+      "History and Archeology",
+      "Foreign Language"
+    ],
     "related": [
       "fashion-designer",
       "animator",
@@ -3898,13 +6747,6 @@
       "Develop graphics and layouts for product illustrations, company logos, and Web sites.",
       "Create designs, concepts, and sample layouts, based on knowledge of layout principles and esthetic design concepts."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Writing",
-      "Critical Thinking",
-      "Active Learning"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -3929,6 +6771,62 @@
       "hands": 0.226,
       "routine": 0.746
     },
+    "skillDetail": [
+      {
+        "name": "Technology Design",
+        "importance": 2.25,
+        "edge": 0.33
+      },
+      {
+        "name": "Programming",
+        "importance": 2.12,
+        "edge": 0.26
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 2.75,
+        "edge": 0.25
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Fine Arts",
+        "importance": 4.4,
+        "edge": 2.91
+      },
+      {
+        "name": "Design",
+        "importance": 4.7,
+        "edge": 2.35
+      },
+      {
+        "name": "Communications and Media",
+        "importance": 4.3,
+        "edge": 1.6
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.65,
+        "edge": 1.32
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 3.3,
+        "edge": 1.04
+      }
+    ],
+    "skills": [
+      "Technology Design",
+      "Programming",
+      "Operations Analysis"
+    ],
+    "knowledge": [
+      "Fine Arts",
+      "Design",
+      "Communications and Media",
+      "Sales and Marketing",
+      "Production and Processing"
+    ],
     "related": [
       "ux-ui-designer",
       "animator",
@@ -3974,13 +6872,6 @@
       "Select materials and production techniques to be used for products.",
       "Provide sample garments to agents and sales representatives, and arrange for showings of sample garments at sales meetings or fashion shows."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Critical Thinking",
-      "Active Learning",
-      "Reading Comprehension"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -4002,6 +6893,74 @@
       "hands": 0.322,
       "routine": 0.574
     },
+    "skillDetail": [
+      {
+        "name": "Operations Analysis",
+        "importance": 3.25,
+        "edge": 0.75
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 3.5,
+        "edge": 0.65
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.62,
+        "edge": 0.63
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.75,
+        "edge": 0.6
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.62,
+        "edge": 0.51
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Design",
+        "importance": 4.41,
+        "edge": 2.06
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.7,
+        "edge": 1.21
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 3.25,
+        "edge": 0.99
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.19,
+        "edge": 0.86
+      },
+      {
+        "name": "Foreign Language",
+        "importance": 1.96,
+        "edge": 0.27
+      }
+    ],
+    "skills": [
+      "Operations Analysis",
+      "Management of Personnel Resources",
+      "Negotiation",
+      "Management of Material Resources",
+      "Persuasion"
+    ],
+    "knowledge": [
+      "Design",
+      "Fine Arts",
+      "Production and Processing",
+      "Sales and Marketing",
+      "Foreign Language"
+    ],
     "related": [
       "animator",
       "graphic-designer",
@@ -4047,13 +7006,6 @@
       "Confer with engineering, marketing, production, or sales departments, or with customers, to establish and evaluate design concepts for manufactured products.",
       "Present designs and reports to customers or design committees for approval and discuss need for modification."
     ],
-    "skills": [
-      "Active Listening",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Speaking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -4078,6 +7030,74 @@
       "hands": 0.258,
       "routine": 0.759
     },
+    "skillDetail": [
+      {
+        "name": "Technology Design",
+        "importance": 3.12,
+        "edge": 1.2
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.25,
+        "edge": 0.75
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 2.75,
+        "edge": 0.49
+      },
+      {
+        "name": "Equipment Selection",
+        "importance": 1.88,
+        "edge": 0.43
+      },
+      {
+        "name": "Science",
+        "importance": 2.62,
+        "edge": 0.34
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Design",
+        "importance": 4.71,
+        "edge": 2.36
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 4.7,
+        "edge": 2.25
+      },
+      {
+        "name": "Mechanical",
+        "importance": 4.04,
+        "edge": 2.07
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 4.04,
+        "edge": 1.78
+      },
+      {
+        "name": "Physics",
+        "importance": 3.1,
+        "edge": 1.1
+      }
+    ],
+    "skills": [
+      "Technology Design",
+      "Operations Analysis",
+      "Quality Control Analysis",
+      "Equipment Selection",
+      "Science"
+    ],
+    "knowledge": [
+      "Design",
+      "Engineering and Technology",
+      "Mechanical",
+      "Production and Processing",
+      "Physics"
+    ],
     "related": [
       "animator",
       "graphic-designer",
@@ -4123,13 +7143,6 @@
       "Prepare contract documents for building contractors.",
       "Develop final construction plans that include aesthetic representations of the structure or details for its construction."
     ],
-    "skills": [
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Speaking",
-      "Active Listening",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm"
@@ -4174,6 +7187,74 @@
       "hands": 0.329,
       "routine": 0.701
     },
+    "skillDetail": [
+      {
+        "name": "Operations Analysis",
+        "importance": 4.12,
+        "edge": 1.62
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3.25,
+        "edge": 0.99
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      },
+      {
+        "name": "Mathematics",
+        "importance": 3.5,
+        "edge": 0.63
+      },
+      {
+        "name": "Science",
+        "importance": 2.88,
+        "edge": 0.6
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Building and Construction",
+        "importance": 4.61,
+        "edge": 2.99
+      },
+      {
+        "name": "Design",
+        "importance": 4.74,
+        "edge": 2.39
+      },
+      {
+        "name": "Engineering and Technology",
+        "importance": 3.96,
+        "edge": 1.51
+      },
+      {
+        "name": "Fine Arts",
+        "importance": 2.91,
+        "edge": 1.42
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.91,
+        "edge": 1.3
+      }
+    ],
+    "skills": [
+      "Operations Analysis",
+      "Quality Control Analysis",
+      "Management of Financial Resources",
+      "Mathematics",
+      "Science"
+    ],
+    "knowledge": [
+      "Building and Construction",
+      "Design",
+      "Engineering and Technology",
+      "Fine Arts",
+      "Public Safety and Security"
+    ],
     "related": [
       "mechanical-engineer",
       "civil-engineer",
@@ -4219,13 +7300,6 @@
       "Hold public meetings with government officials, social scientists, lawyers, developers, the public, or special interest groups to formulate, develop, or address issues regarding land use or community plans.",
       "Mediate community disputes or assist in developing alternative plans or recommendations for programs or projects."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Reading Comprehension",
-      "Critical Thinking",
-      "Writing"
-    ],
     "entry": {
       "streams": [
         "pcm",
@@ -4249,6 +7323,74 @@
       "hands": 0.207,
       "routine": 0.365
     },
+    "skillDetail": [
+      {
+        "name": "Systems Analysis",
+        "importance": 4,
+        "edge": 0.83
+      },
+      {
+        "name": "Systems Evaluation",
+        "importance": 3.75,
+        "edge": 0.65
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.12,
+        "edge": 0.62
+      },
+      {
+        "name": "Judgment and Decision Making",
+        "importance": 4.12,
+        "edge": 0.45
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.38,
+        "edge": 0.39
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Geography",
+        "importance": 4.16,
+        "edge": 2.19
+      },
+      {
+        "name": "Transportation",
+        "importance": 4.04,
+        "edge": 2.08
+      },
+      {
+        "name": "Law and Government",
+        "importance": 4.6,
+        "edge": 1.77
+      },
+      {
+        "name": "Sociology and Anthropology",
+        "importance": 3.4,
+        "edge": 1.27
+      },
+      {
+        "name": "History and Archeology",
+        "importance": 2.68,
+        "edge": 1.11
+      }
+    ],
+    "skills": [
+      "Systems Analysis",
+      "Systems Evaluation",
+      "Operations Analysis",
+      "Judgment and Decision Making",
+      "Negotiation"
+    ],
+    "knowledge": [
+      "Geography",
+      "Transportation",
+      "Law and Government",
+      "Sociology and Anthropology",
+      "History and Archeology"
+    ],
     "related": [
       "data-analyst",
       "management-consultant",
@@ -4294,13 +7436,6 @@
       "Order or requisition food or other supplies needed to ensure efficient operation.",
       "Inspect supplies, equipment, or work areas to ensure conformance to established standards."
     ],
-    "skills": [
-      "Monitoring",
-      "Speaking",
-      "Critical Thinking",
-      "Active Listening",
-      "Reading Comprehension"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -4323,6 +7458,74 @@
       "hands": 0.686,
       "routine": 0.676
     },
+    "skillDetail": [
+      {
+        "name": "Management of Material Resources",
+        "importance": 3.25,
+        "edge": 1.1
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 3.88,
+        "edge": 1.03
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3.25,
+        "edge": 0.99
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 3.12,
+        "edge": 0.98
+      },
+      {
+        "name": "Coordination",
+        "importance": 4.12,
+        "edge": 0.78
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Food Production",
+        "importance": 4.12,
+        "edge": 2.77
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 4.04,
+        "edge": 1.78
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.74,
+        "edge": 1.21
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 3.21,
+        "edge": 0.85
+      },
+      {
+        "name": "Chemistry",
+        "importance": 2.71,
+        "edge": 0.76
+      }
+    ],
+    "skills": [
+      "Management of Material Resources",
+      "Management of Personnel Resources",
+      "Quality Control Analysis",
+      "Management of Financial Resources",
+      "Coordination"
+    ],
+    "knowledge": [
+      "Food Production",
+      "Production and Processing",
+      "Personnel and Human Resources",
+      "Economics and Accounting",
+      "Chemistry"
+    ],
     "related": [
       "police-officer",
       "hotel-manager",
@@ -4368,13 +7571,6 @@
       "Greet and register guests.",
       "Monitor the revenue activity of the hotel or facility."
     ],
-    "skills": [
-      "Active Listening",
-      "Speaking",
-      "Reading Comprehension",
-      "Writing",
-      "Critical Thinking"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -4397,6 +7593,74 @@
       "hands": 0.322,
       "routine": 0.785
     },
+    "skillDetail": [
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 4,
+        "edge": 1.15
+      },
+      {
+        "name": "Service Orientation",
+        "importance": 4.12,
+        "edge": 0.94
+      },
+      {
+        "name": "Negotiation",
+        "importance": 3.88,
+        "edge": 0.89
+      },
+      {
+        "name": "Management of Material Resources",
+        "importance": 3,
+        "edge": 0.85
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.88,
+        "edge": 0.74
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 4.64,
+        "edge": 2.11
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 4.25,
+        "edge": 1.92
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 3.99,
+        "edge": 1.63
+      },
+      {
+        "name": "Administration and Management",
+        "importance": 4.7,
+        "edge": 1.53
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.96,
+        "edge": 1.35
+      }
+    ],
+    "skills": [
+      "Management of Personnel Resources",
+      "Service Orientation",
+      "Negotiation",
+      "Management of Material Resources",
+      "Management of Financial Resources"
+    ],
+    "knowledge": [
+      "Personnel and Human Resources",
+      "Sales and Marketing",
+      "Economics and Accounting",
+      "Administration and Management",
+      "Public Safety and Security"
+    ],
     "related": [
       "civil-servant",
       "event-manager",
@@ -4442,13 +7706,6 @@
       "Instruct individuals or groups in sports rules, game strategies, and performance principles, such as specific ways of moving the body, hands, or feet, to achieve desired results.",
       "Plan strategies and choose team members for individual games or sports seasons."
     ],
-    "skills": [
-      "Speaking",
-      "Learning Strategies",
-      "Monitoring",
-      "Reading Comprehension",
-      "Active Listening"
-    ],
     "entry": {
       "streams": [
         "any"
@@ -4470,6 +7727,74 @@
       "hands": 0.54,
       "routine": 0.496
     },
+    "skillDetail": [
+      {
+        "name": "Instructing",
+        "importance": 4.75,
+        "edge": 1.65
+      },
+      {
+        "name": "Learning Strategies",
+        "importance": 4.12,
+        "edge": 1.05
+      },
+      {
+        "name": "Management of Personnel Resources",
+        "importance": 3.88,
+        "edge": 1.03
+      },
+      {
+        "name": "Persuasion",
+        "importance": 3.88,
+        "edge": 0.77
+      },
+      {
+        "name": "Systems Analysis",
+        "importance": 3.88,
+        "edge": 0.71
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Psychology",
+        "importance": 3.56,
+        "edge": 1.01
+      },
+      {
+        "name": "Therapy and Counseling",
+        "importance": 2.83,
+        "edge": 0.89
+      },
+      {
+        "name": "Education and Training",
+        "importance": 3.83,
+        "edge": 0.81
+      },
+      {
+        "name": "Personnel and Human Resources",
+        "importance": 3.17,
+        "edge": 0.64
+      },
+      {
+        "name": "Transportation",
+        "importance": 2.6,
+        "edge": 0.64
+      }
+    ],
+    "skills": [
+      "Instructing",
+      "Learning Strategies",
+      "Management of Personnel Resources",
+      "Persuasion",
+      "Systems Analysis"
+    ],
+    "knowledge": [
+      "Psychology",
+      "Therapy and Counseling",
+      "Education and Training",
+      "Personnel and Human Resources",
+      "Transportation"
+    ],
     "related": [
       "hotel-manager",
       "chef",
@@ -4515,13 +7840,6 @@
       "Respond to and report in-flight emergencies and malfunctions.",
       "Inspect aircraft for defects and malfunctions, according to pre-flight checklists."
     ],
-    "skills": [
-      "Active Listening",
-      "Critical Thinking",
-      "Monitoring",
-      "Reading Comprehension",
-      "Speaking"
-    ],
     "entry": {
       "streams": [
         "pcm"
@@ -4562,6 +7880,74 @@
       "hands": 0.41,
       "routine": 0.851
     },
+    "skillDetail": [
+      {
+        "name": "Operation and Control",
+        "importance": 4.88,
+        "edge": 3.16
+      },
+      {
+        "name": "Operations Monitoring",
+        "importance": 4.62,
+        "edge": 2.38
+      },
+      {
+        "name": "Troubleshooting",
+        "importance": 3.12,
+        "edge": 1.42
+      },
+      {
+        "name": "Quality Control Analysis",
+        "importance": 3.12,
+        "edge": 0.86
+      },
+      {
+        "name": "Monitoring",
+        "importance": 4.12,
+        "edge": 0.64
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Transportation",
+        "importance": 4.78,
+        "edge": 2.82
+      },
+      {
+        "name": "Geography",
+        "importance": 3.7,
+        "edge": 1.73
+      },
+      {
+        "name": "Mechanical",
+        "importance": 3.7,
+        "edge": 1.73
+      },
+      {
+        "name": "Physics",
+        "importance": 3.32,
+        "edge": 1.32
+      },
+      {
+        "name": "Public Safety and Security",
+        "importance": 3.71,
+        "edge": 1.1
+      }
+    ],
+    "skills": [
+      "Operation and Control",
+      "Operations Monitoring",
+      "Troubleshooting",
+      "Quality Control Analysis",
+      "Monitoring"
+    ],
+    "knowledge": [
+      "Transportation",
+      "Geography",
+      "Mechanical",
+      "Physics",
+      "Public Safety and Security"
+    ],
     "related": [
       "police-officer",
       "criminal-investigator",
@@ -4607,13 +7993,6 @@
       "Develop proposals that include documentation for estimates.",
       "Review logistics performance with customers against targets, benchmarks, and service agreements."
     ],
-    "skills": [
-      "Critical Thinking",
-      "Reading Comprehension",
-      "Active Listening",
-      "Speaking",
-      "Monitoring"
-    ],
     "entry": {
       "streams": [
         "grad-any"
@@ -4631,6 +8010,74 @@
       "hands": 0.265,
       "routine": 0.656
     },
+    "skillDetail": [
+      {
+        "name": "Management of Material Resources",
+        "importance": 2.88,
+        "edge": 0.73
+      },
+      {
+        "name": "Operations Analysis",
+        "importance": 3.12,
+        "edge": 0.62
+      },
+      {
+        "name": "Coordination",
+        "importance": 3.88,
+        "edge": 0.54
+      },
+      {
+        "name": "Management of Financial Resources",
+        "importance": 2.62,
+        "edge": 0.48
+      },
+      {
+        "name": "Monitoring",
+        "importance": 3.88,
+        "edge": 0.4
+      }
+    ],
+    "knowledgeDetail": [
+      {
+        "name": "Transportation",
+        "importance": 4.75,
+        "edge": 2.79
+      },
+      {
+        "name": "Geography",
+        "importance": 3.33,
+        "edge": 1.36
+      },
+      {
+        "name": "Economics and Accounting",
+        "importance": 3.33,
+        "edge": 0.97
+      },
+      {
+        "name": "Sales and Marketing",
+        "importance": 3.29,
+        "edge": 0.96
+      },
+      {
+        "name": "Production and Processing",
+        "importance": 3.17,
+        "edge": 0.91
+      }
+    ],
+    "skills": [
+      "Management of Material Resources",
+      "Operations Analysis",
+      "Coordination",
+      "Management of Financial Resources",
+      "Monitoring"
+    ],
+    "knowledge": [
+      "Transportation",
+      "Geography",
+      "Economics and Accounting",
+      "Sales and Marketing",
+      "Production and Processing"
+    ],
     "related": [
       "company-secretary",
       "chartered-accountant",

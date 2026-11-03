@@ -17,7 +17,7 @@ function careerAnswer(career) {
   const streams = career.entry.streams.map((x) => STREAM_LABELS[x] ?? x).join(', ');
   const parts = [
     `${career.title}: ${career.description}`,
-    `Skills O*NET rates as most important: ${career.skills.slice(0, 4).join('; ')}.`,
+    `What it needs more than most careers (O*NET): ${[...career.skills.slice(0, 2), ...(career.knowledge ?? []).slice(0, 3)].join('; ')}.`,
     `Typical route in India (verify with the official body): usually starts from ${streams}, and takes ${STUDY_LABELS[career.entry.studyYears]} of study.`,
   ];
   if (career.onet.loose) parts.push(career.onet.loose);

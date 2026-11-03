@@ -61,7 +61,7 @@ export default function Dashboard() {
                     <p className="dash__facts">
                       {pct != null && (pct >= MIN_MATCH_PERCENT ? <span>{pct}% match score · {tierOf(pct).label.replace(' matches', ' match')}</span> : <span>Below the {MIN_MATCH_PERCENT}% match line</span>)}
                       {pct != null && ' · '}
-                      <span>Skills: {g.confident} of {g.total} confident{g.unrated === g.total ? ' (none rated yet)' : ''}</span>
+                      <span>Skills and knowledge: {g.confident} of {g.total} confident{g.unrated === g.total ? ' (none rated yet)' : ''}</span>
                     </p>
                     <p className="roadmap__progress" data-testid="dash-progress">
                       Roadmap: {pr.done} of {pr.total} stages ticked

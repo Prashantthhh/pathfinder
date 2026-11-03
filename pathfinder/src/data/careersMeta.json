@@ -37,6 +37,16 @@
       "Analyst"
     ]
   },
+  "knowledge": {
+    "dateFrom": "07/2016",
+    "dateTo": "08/2026",
+    "sources": [
+      "Analyst - Transition",
+      "Incumbent",
+      "Occupational Expert"
+    ]
+  },
+  "skillsMethod": "Each career lists up to five skills and five knowledge areas it needs MORE than the average career here does: O*NET importance (scale IM, 1-5) minus the mean importance over these careers, kept only if at least 0.25 above it. Raw importance is kept in skillDetail / knowledgeDetail.",
   "streams": {
     "pcm": "Science (PCM)",
     "pcb": "Science (PCB)",

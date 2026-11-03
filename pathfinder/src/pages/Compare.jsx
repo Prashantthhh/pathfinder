@@ -87,7 +87,7 @@ export default function Compare() {
         </table>
       </div>
       <p className="fine">
-        Interest scores and skills are from O*NET (US occupation data, estimates). Work feel is derived by PATHFINDER from O*NET Work Context.
+        Interest scores, skills and knowledge areas are from O*NET (US occupation data, estimates). Work feel is derived by PATHFINDER from O*NET Work Context.
         The India route is our general reading, so verify it with the official body.
       </p>
     </section>

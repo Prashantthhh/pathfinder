@@ -75,7 +75,8 @@ describe('career data (generated from O*NET plus hand-written seeds)', () => {
       expect(c.onet.code, c.id).toMatch(/^\d{2}-\d{4}\.\d{2}$/);
       expect(c.description.length, c.id).toBeGreaterThan(40);
       expect(c.tasks.length, c.id).toBeGreaterThanOrEqual(3);
-      expect(c.skills.length, c.id).toBeGreaterThanOrEqual(3);
+      expect(c.skills.length, c.id).toBeLessThanOrEqual(5);
+      expect(c.knowledge.length, c.id).toBeGreaterThanOrEqual(2);
       expect(c.keywords.length, c.id).toBeGreaterThanOrEqual(2);
     }
   });

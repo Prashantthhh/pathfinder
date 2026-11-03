@@ -110,8 +110,21 @@ export default function CareerDetail() {
           <p className="fine">Task statements from O*NET, describing this occupation in the US.</p>
         </section>
         <section aria-labelledby="skills-title">
-          <h2 id="skills-title">Skills O*NET rates most important</h2>
-          <ul>{career.skills.map((s) => <li key={s}>{s}</li>)}</ul>
+          <h2 id="skills-title">What it needs more than most careers</h2>
+          {career.skills.length > 0 ? (
+            <>
+              <h3 className="career__sub">Skills</h3>
+              <ul>{career.skillDetail.map((d) => <li key={d.name}>{d.name} <span className="fine">(+{d.edge.toFixed(1)} on O*NET&rsquo;s 1&ndash;5 scale)</span></li>)}</ul>
+            </>
+          ) : (
+            <p className="fine">No single skill stands out above the average career here.</p>
+          )}
+          <h3 className="career__sub">Knowledge areas</h3>
+          <ul>{career.knowledgeDetail.map((d) => <li key={d.name}>{d.name} <span className="fine">(+{d.edge.toFixed(1)})</span></li>)}</ul>
+          <p className="fine">
+            Ranked by how much more this career needs each item than the average of these {p.careers.length} careers
+            (O*NET importance, estimated, US occupations), not by raw importance.
+          </p>
         </section>
       </div>
 

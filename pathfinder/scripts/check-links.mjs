@@ -1,6 +1,7 @@
 // Verifies the India exam / governing-body registry against the OFFICIAL sites.
 //   npm run links:check             report only
 //   npm run links:check -- --write  also save src/data/india-verification.json
+//   npm run links:check -- --only exams:aibe,bodies:bci --write   check just these entries (others keep their saved result)
 //
 // For every entry in src/data/indiaRegistry.json it loads the official page in a
 // real browser and checks TWO things:
@@ -18,10 +19,18 @@ import { chromium } from 'playwright-core';
 const file = (p) => fileURLToPath(new URL(p, import.meta.url));
 const registry = JSON.parse(readFileSync(file('../src/data/indiaRegistry.json'), 'utf8'));
 const write = process.argv.includes('--write');
+const onlyArg = process.argv.indexOf('--only');
+const only = onlyArg >= 0 ? new Set(process.argv[onlyArg + 1].split(',')) : null;
 
 const entries = [];
 for (const kind of ['exams', 'bodies']) {
   for (const [id, e] of Object.entries(registry[kind])) entries.push({ key: `${kind}:${id}`, kind, id, ...e });
+}
+
+if (only) {
+  const unknown = [...only].filter((k) => !entries.some((e) => e.key === k));
+  if (unknown.length) { console.error(`Unknown registry entries: ${unknown.join(', ')}`); process.exit(2); }
+  for (let i = entries.length - 1; i >= 0; i--) if (!only.has(entries[i].key)) entries.splice(i, 1);
 }
 
 const browser = await chromium.launch(process.env.E2E_CHROME_PATH
@@ -108,6 +117,8 @@ if (write) {
   }
   const today = new Date().toISOString().slice(0, 10);
   const merged = {};
+  // entries not checked this run (--only) keep their saved result
+  for (const [key, r] of Object.entries(previous)) if (!(key in results) && (registry[key.split(':')[0]] ?? {})[key.split(':')[1]]) merged[key] = r;
   let kept = 0;
   for (const [key, r] of Object.entries(results)) {
     const old = previous[key];

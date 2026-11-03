@@ -10,7 +10,7 @@ const FIELDS = [
   { weight: 6, get: (c) => c.title },
   { weight: 4, get: (c) => (c.keywords ?? []).join(' ') },
   { weight: 2, get: (c) => DOMAIN_BY_ID[c.domain]?.label ?? '' },
-  { weight: 2, get: (c) => (c.skills ?? []).join(' ') },
+  { weight: 2, get: (c) => [...(c.skills ?? []), ...(c.knowledge ?? [])].join(' ') },
   { weight: 1, get: (c) => [c.description, ...(c.tasks ?? [])].join(' ') },
 ];
 

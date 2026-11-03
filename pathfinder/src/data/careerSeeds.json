@@ -785,28 +785,31 @@
       "roadmap": [
         {
           "id": "class12",
-          "title": "Class 12 in any stream"
+          "title": "Start: Class 12 in any stream, or a graduate degree",
+          "detail": "Graduates can enter directly at the Intermediate level, without the Foundation level. Check the entry conditions with ICAI.",
+          "body": "icai"
         },
         {
           "id": "foundation",
-          "title": "Foundation level",
+          "title": "Foundation level, if you start after Class 12",
           "exam": "ca-foundation"
         },
         {
           "id": "inter",
           "title": "Intermediate level",
-          "detail": "Check the current scheme with the institute.",
+          "detail": "Check the current scheme with ICAI.",
           "body": "icai"
         },
         {
           "id": "training",
-          "title": "Practical training",
-          "detail": "Training under a practising chartered accountant."
+          "title": "Practical training (articleship)",
+          "detail": "Training under a practising chartered accountant. Check the current duration with ICAI.",
+          "body": "icai"
         },
         {
           "id": "final",
           "title": "Final level and membership",
-          "detail": "Check the current scheme with the institute.",
+          "detail": "Check the current scheme with ICAI.",
           "body": "icai"
         }
       ]
@@ -1004,28 +1007,39 @@
         {
           "exam": "clat",
           "body": "bci"
+        },
+        {
+          "exam": "aibe"
         }
       ],
       "roadmap": [
         {
-          "id": "class12",
-          "title": "Class 12 in any stream"
+          "id": "route",
+          "title": "Choose your route to an LLB",
+          "detail": "Route A: a 5-year integrated LLB after Class 12. Route B: graduation in any subject, then a 3-year LLB."
         },
         {
           "id": "entrance",
-          "title": "Law entrance exam",
-          "detail": "One of the common routes into a law degree.",
+          "title": "Law entrance exam, if your route needs one",
+          "detail": "Many 5-year integrated LLB admissions use an entrance exam such as this one. For the 3-year LLB after graduation, check each university's admission process.",
           "exam": "clat"
         },
         {
-          "id": "degree",
-          "title": "Law degree (LLB)",
-          "detail": "A five-year integrated course after Class 12, or a three-year course after a degree."
+          "id": "llb",
+          "title": "Complete the LLB",
+          "detail": "5 years after Class 12 (Route A), or 3 years after graduation (Route B)."
         },
         {
           "id": "enrol",
-          "title": "Enrolment as an advocate",
-          "detail": "Enrolment with a State Bar Council; the Bar Council of India governs the profession.",
+          "title": "Enrol with a State Bar Council",
+          "detail": "To practise as an advocate you enrol with a State Bar Council. The Bar Council of India governs the profession.",
+          "body": "bci"
+        },
+        {
+          "id": "aibe",
+          "title": "Pass the All India Bar Examination (AIBE)",
+          "detail": "Passing the AIBE is required to practise as an advocate.",
+          "exam": "aibe",
           "body": "bci"
         }
       ]

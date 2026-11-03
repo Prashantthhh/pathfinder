@@ -52,8 +52,9 @@ sliders move) and career pages (which also mark that career's domain). It is a p
 
 ## Skills, roadmap, compare, dashboard
 
-- **Skill gap** (career page): the skills are the career's O*NET skills; the student rates each one (not yet / learning / confident).
-  Nothing is inferred from interest answers, and an unrated skill is "not rated", not "none".
+- **Skill gap** (career page): the items are the O*NET skills and knowledge areas the career needs *more than the average career* (importance minus the
+  cross-career mean, see `docs/data-model.md`); the student rates each one (not yet / learning / confident).
+  Nothing is inferred from interest answers, and an unrated item is "not rated", not "none".
 - **Roadmap** (career page): stages come from the career's own typical-route data (start stream, entrance exam, study length,
   governing body), or are hand-written in `careerSeeds.json` (`roadmap`) for well-known routes (Doctor, Dentist, Lawyer, CA, Civil
   Servant, Architect, Pilot). Stages point only at exam and body ids in the India registry, so a link shows only if that name is

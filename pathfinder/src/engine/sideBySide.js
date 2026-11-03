@@ -37,7 +37,7 @@ export function sideBySide(careers, ctx = {}) {
       id: 'you', title: 'You',
       rows: [
         row('match', 'Match score', matchText),
-        row('skills-rated', 'Skills you have rated', (c) => { const g = skillGap(c, ratings); return `${g.total - g.unrated} of ${g.total} rated; confident in ${g.confident}`; }),
+        row('skills-rated', 'Skills and knowledge you have rated', (c) => { const g = skillGap(c, ratings); return `${g.total - g.unrated} of ${g.total} rated; confident in ${g.confident}`; }),
         row('road', 'Roadmap progress', (c) => { const p = progress(c, roadmap[c.id]); return `${p.done} of ${p.total} stages`; }),
       ],
     },
@@ -46,7 +46,8 @@ export function sideBySide(careers, ctx = {}) {
       rows: [
         row('domain', 'Domain', (c) => domainLabel(c.domain)),
         row('what', 'In brief', (c) => first(c.description)),
-        row('skills', 'Skills O*NET rates most important', (c) => c.skills.join(', ')),
+        row('skills', 'Skills it needs more than most careers', (c) => c.skills.join(', ')),
+        row('knowledge', 'Knowledge it needs more than most careers', (c) => (c.knowledge ?? []).join(', ')),
         row('salary', 'Salary (India)', (c) => (c.salary ? String(c.salary) : '')),
         row('outlook', 'Outlook (India)', (c) => (c.outlook ? String(c.outlook) : '')),
       ],

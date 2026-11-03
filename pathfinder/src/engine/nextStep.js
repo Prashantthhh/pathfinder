@@ -37,7 +37,7 @@ export function nextStep({ status, answered, insufficient, saved, careers, roadm
   }
   const gap = skillGap(focus.c, ratings);
   if (gap.unrated > 0) {
-    return { kind: 'skills', title: `Rate your skills for ${focus.c.title}`, text: `${gap.unrated} of the ${gap.total} skills O*NET lists are not rated yet. Only you can say where you are.`, to: `/careers/${focus.c.id}#skills`, label: 'Rate my skills' };
+    return { kind: 'skills', title: `Rate your skills for ${focus.c.title}`, text: `${gap.unrated} of the ${gap.total} skills and knowledge areas it needs are not rated yet. Only you can say where you are.`, to: `/careers/${focus.c.id}#skills`, label: 'Rate my skills' };
   }
   return { kind: 'explore', title: 'Look at another career', text: `You have ticked every stage on the ${focus.c.title} roadmap. Compare it with another career, or explore more.`, to: '/explore', label: 'Explore careers' };
 }

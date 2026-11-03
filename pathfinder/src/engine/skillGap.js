@@ -1,26 +1,36 @@
-// Skill gap: the skills are the career's O*NET skills; the LEVELS are the student's own
-// rating. A skill is never inferred from an interest answer, so until the student rates
+// Skill gap: the items are the O*NET skills and knowledge areas a career needs MORE than the
+// average career does (see scripts/build-careers.mjs); the LEVELS are the student's own
+// rating. An item is never inferred from an interest answer, so until the student rates
 // one it is "not rated yet", which is different from "none".
 
 export const LEVELS = ['none', 'learning', 'confident'];
 export const LEVEL_LABELS = { none: 'Not yet', learning: 'Learning', confident: 'Confident' };
 
-/** Every distinct O*NET skill name used by any career. */
-export const allSkillNames = (careers) => [...new Set(careers.flatMap((c) => c.skills))];
+/** Ratings are stored under the skill's name, or "knowledge:<name>" for a knowledge area (some names are both). */
+export const itemKey = (kind, name) => (kind === 'knowledge' ? `knowledge:${name}` : name);
 
-/** Keep only known skills with a known level. */
+/** Every rateable key used by any career. */
+export const allItemKeys = (careers) => [
+  ...new Set(careers.flatMap((c) => [...c.skills.map((n) => itemKey('skill', n)), ...(c.knowledge ?? []).map((n) => itemKey('knowledge', n))])),
+];
+
+/** Keep only known items with a known level. */
 export function sanitizeRatings(raw, careers) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
-  const known = new Set(allSkillNames(careers));
+  const known = new Set(allItemKeys(careers));
   return Object.fromEntries(Object.entries(raw).filter(([k, v]) => known.has(k) && LEVELS.includes(v)));
 }
 
 /**
- * Rows for one career: [{ skill, level }] (level null = not rated), plus counts and the gaps
- * (skills rated "none" first, then not rated yet, then "learning").
+ * Rows for one career: [{ key, name, kind: 'skill' | 'knowledge', level }] (level null = not rated),
+ * plus counts and the gaps (rated "none" first, then not rated yet, then "learning").
  */
 export function skillGap(career, ratings) {
-  const rows = career.skills.map((skill) => ({ skill, level: ratings?.[skill] ?? null }));
+  const items = [
+    ...career.skills.map((name) => ({ kind: 'skill', name })),
+    ...(career.knowledge ?? []).map((name) => ({ kind: 'knowledge', name })),
+  ];
+  const rows = items.map((i) => ({ ...i, key: itemKey(i.kind, i.name), level: ratings?.[itemKey(i.kind, i.name)] ?? null }));
   const count = (l) => rows.filter((r) => r.level === l).length;
   const order = { none: 0, null: 1, learning: 2 };
   return {
