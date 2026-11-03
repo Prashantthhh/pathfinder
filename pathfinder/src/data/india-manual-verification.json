@@ -1,4 +1,8 @@
 {
   "note": "Names a person has checked by hand on the official site. Empty until a person adds entries with `npm run links:verify`. Never edited by the automatic checker.",
-  "entries": {}
+  "entries": {
+    "exams:upsc-cse": {
+      "verifiedOn": "2026-11-03"
+    }
+  }
 }
