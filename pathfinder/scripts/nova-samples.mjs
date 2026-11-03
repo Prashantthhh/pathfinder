@@ -19,7 +19,7 @@ for (const name of ['.env', '.env.local']) {
   if (!existsSync(url)) continue;
   for (const line of readFileSync(url, 'utf8').split(/\r?\n/)) {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
-    if (m && m[2] && !line.trim().startsWith('#')) env[m[1]] = m[2].replace(/^['"]|['"]$/g, '');
+    if (m && m[2] && !line.trim().startsWith('#') && !(m[1] in process.env)) env[m[1]] = m[2].replace(/^['"]|['"]$/g, '');
   }
 }
 if (!env.NOVA_API_KEY) {

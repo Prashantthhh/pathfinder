@@ -11,7 +11,9 @@ import { createLimiter } from './limiter.js';
 import { SYSTEM_PROMPT } from './rules.js';
 
 export const DEFAULT_URL = 'https://api.groq.com/openai/v1/chat/completions';
-export const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
+// Groq retires models over time (llama-3.3-70b-versatile now returns model_not_found). Check `npm run nova:diagnose` for
+// the models your key can use, and override with NOVA_MODEL. This one kept to the rules best in `npm run nova:samples`.
+export const DEFAULT_MODEL = 'qwen/qwen3.8-27b';
 const TIMEOUT_MS = 15000;
 
 const sharedLimiter = createLimiter();
@@ -21,7 +23,7 @@ const sharedLimiter = createLimiter();
  *           limiter?: ReturnType<typeof createLimiter>, data?: object }} req
  * @returns {Promise<{ status: number, body: object, headers?: object }>}
  */
-export async function handleNova({ method, body, ip = '', env = process.env, fetchImpl = globalThis.fetch, limiter = sharedLimiter, data = null }) {
+export async function handleNova({ method, body, ip = '', env = process.env, fetchImpl = globalThis.fetch, limiter = sharedLimiter, data = null, log = console.error }) {
   if (method !== 'POST') return { status: 405, body: { ok: false, error: 'method_not_allowed' }, headers: { Allow: 'POST' } };
 
   const key = env.NOVA_API_KEY;
@@ -57,8 +59,18 @@ export async function handleNova({ method, body, ip = '', env = process.env, fet
     clearTimeout(timer);
   }
   // 429 from the provider means the free limit is hit; any other failure is just "unavailable".
-  if (res.status === 429) return { status: 502, body: { ok: false, error: 'provider_limit' } };
-  if (!res.ok) return { status: 502, body: { ok: false, error: 'upstream' } };
+  // The browser only sees the generic error; the provider's real status and message go to the server log
+  // (Vercel > Logs), with the key redacted, so a retired model or a bad key is easy to spot.
+  if (!res.ok) {
+    let detail = '';
+    try {
+      detail = String(await res.text?.()).split(key).join('[key]').replace(/gsk_[A-Za-z0-9]+/g, 'gsk_[redacted]').slice(0, 300);
+    } catch {
+      /* no body */
+    }
+    log(`[nova] provider HTTP ${res.status} (model ${env.NOVA_MODEL || DEFAULT_MODEL}): ${detail}`);
+    return { status: 502, body: { ok: false, error: res.status === 429 ? 'provider_limit' : 'upstream' } };
+  }
 
   let answer;
   try {

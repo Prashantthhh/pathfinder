@@ -61,7 +61,7 @@ Live replies are labelled **AI-generated**; demo replies are labelled **Demo**.
   browser. In-memory counts are per serverless instance, so this is best-effort; for a hard cross-instance limit add a shared store (Upstash
   Redis / Vercel KV).
 
-**Provider.** Any OpenAI-compatible chat API. The default is [Groq](https://console.groq.com) (free tier, no card needed when last checked; limits and
+**Provider.** Any OpenAI-compatible chat API. The default is [Groq](https://console.groq.com) (model `qwen/qwen3.8-27b`; Groq retires models, so `npm run nova:diagnose` prints the provider's real error and the models your key can use) (free tier, no card needed when last checked; limits and
 data policy change, so read them). Get a key: sign in at console.groq.com, open **API Keys**, **Create API Key**, copy it (shown once). Other
 options: Google AI Studio (key from aistudio.google.com; set `NOVA_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/chat/completions` and a
 `NOVA_MODEL`); free tiers of some providers may use requests to improve their products, so check before sending student questions.

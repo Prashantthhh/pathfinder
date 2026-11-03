@@ -17,7 +17,8 @@
     "links:verify": "node scripts/verify-link.mjs",
     "spread": "node scripts/score-spread.mjs",
     "shots": "node scripts/shots.mjs",
-    "nova:samples": "vite-node scripts/nova-samples.mjs"
+    "nova:samples": "vite-node scripts/nova-samples.mjs",
+    "nova:diagnose": "node scripts/nova-diagnose.mjs"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",

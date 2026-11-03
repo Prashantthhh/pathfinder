@@ -139,7 +139,7 @@ describe('live Nova endpoint (provider mocked)', () => {
       expect(out).toMatchObject({ status: 502, body: { ok: false, error: 'provider_limit' } });
     });
     it('provider 500, network error, bad JSON, empty answer', async () => {
-      expect((await ask({}, vi.fn(async () => ({ ok: false, status: 500, json: async () => ({}) })))).body.error).toBe('upstream');
+      expect((await ask({}, vi.fn(async () => ({ ok: false, status: 500, text: async () => 'oops', json: async () => ({}) })))).body.error).toBe('upstream');
       expect((await ask({}, vi.fn(async () => { throw new Error('boom'); }))).body.error).toBe('upstream');
       expect((await ask({}, vi.fn(async () => ({ ok: true, status: 200, json: async () => { throw new Error('bad'); } })))).body.error).toBe('upstream');
       expect((await ask({}, okProvider('   '))).body.error).toBe('empty');
@@ -151,6 +151,17 @@ describe('live Nova endpoint (provider mocked)', () => {
       await vi.advanceTimersByTimeAsync(16000);
       expect((await p).body.error).toBe('upstream');
       vi.useRealTimers();
+    });
+    it('logs the provider status and message on the server (key redacted) while the browser gets a generic error', async () => {
+      const log = vi.fn();
+      const f = vi.fn(async () => ({ ok: false, status: 404, text: async () => '{"error":{"message":"The model `x` does not exist","code":"model_not_found"},"echo":"test-key-123"}' }));
+      const out = await handleNova({ method: 'POST', ip: 'q', env: ENV, fetchImpl: f, limiter: createLimiter(), body: { question: 'hi' }, log });
+      expect(out).toEqual({ status: 502, body: { ok: false, error: 'upstream' } });
+      expect(log).toHaveBeenCalledTimes(1);
+      expect(log.mock.calls[0][0]).toMatch(/HTTP 404/);
+      expect(log.mock.calls[0][0]).toMatch(/model_not_found/);
+      expect(log.mock.calls[0][0]).not.toContain('test-key-123');
+      expect(log.mock.calls[0][0]).toContain('[key]');
     });
     it('the error body never contains the key', async () => {
       const out = await ask({}, vi.fn(async () => ({ ok: false, status: 401, json: async () => ({ error: 'bad key test-key-123' }) })));
@@ -173,6 +184,10 @@ describe('live Nova endpoint (provider mocked)', () => {
       expect(checkAnswer('Doctor is your top match at 87%. Check with the official body for exam details.').ok).toBe(true);
       const long = checkAnswer(`${'word '.repeat(400)}`);
       expect(long.ok && long.text.length).toBeLessThanOrEqual(900);
+    });
+    it("drops a reasoning model's <think> block", () => {
+      expect(checkAnswer('<think>The user asks about pay, so I should...</think>Doctor is a strong match.')).toEqual({ ok: true, text: 'Doctor is a strong match.' });
+      expect(checkAnswer('<think>never closed').ok).toBe(false);
     });
     it('a filtered answer reaches the browser as an error, not as text', async () => {
       const out = await ask({}, okProvider('The salary is ₹12 LPA.'));
