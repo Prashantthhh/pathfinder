@@ -516,9 +516,9 @@
       "routine": 0.583
     },
     "related": [
+      "chemical-engineer",
       "electrical-engineer",
-      "mechanical-engineer",
-      "civil-engineer"
+      "mechanical-engineer"
     ]
   },
   {
@@ -591,9 +591,9 @@
       "routine": 0.79
     },
     "related": [
+      "chemical-engineer",
       "civil-engineer",
-      "electronics-engineer",
-      "mechanical-engineer"
+      "electronics-engineer"
     ]
   },
   {
@@ -741,8 +741,8 @@
     },
     "related": [
       "civil-engineer",
-      "electrical-engineer",
-      "electronics-engineer"
+      "chemical-engineer",
+      "electrical-engineer"
     ]
   },
   {
@@ -818,7 +818,84 @@
     "related": [
       "mechanical-engineer",
       "electrical-engineer",
-      "electronics-engineer"
+      "chemical-engineer"
+    ]
+  },
+  {
+    "id": "chemical-engineer",
+    "title": "Chemical Engineer",
+    "domain": "chemical-materials",
+    "keywords": [
+      "chemical",
+      "process",
+      "petrochemical",
+      "refinery",
+      "plant",
+      "polymers"
+    ],
+    "onet": {
+      "code": "17-2041.00",
+      "title": "Chemical Engineers"
+    },
+    "description": "Design chemical plant equipment and devise processes for manufacturing chemicals and products, such as gasoline, synthetic rubber, plastics, detergents, cement, paper, and pulp, by applying principles and technology of chemistry, physics, and engineering.",
+    "riasec": {
+      "R": 6.27,
+      "I": 5.75,
+      "A": 1.8,
+      "S": 1.02,
+      "E": 1.85,
+      "C": 4.54
+    },
+    "settings": {
+      "people": 0.452,
+      "team": 0.499,
+      "autonomy": 0.576,
+      "pace": 0.612,
+      "hands": 0.256,
+      "routine": 0.349
+    },
+    "tasks": [
+      "Develop safety procedures to be employed by workers operating equipment or working in close proximity to ongoing chemical reactions.",
+      "Troubleshoot problems with chemical manufacturing processes.",
+      "Monitor and analyze data from processes and experiments.",
+      "Evaluate chemical equipment and processes to identify ways to optimize performance or to ensure compliance with safety and environmental regulations.",
+      "Design and plan layout of equipment."
+    ],
+    "skills": [
+      "Science",
+      "Critical Thinking",
+      "Reading Comprehension",
+      "Active Learning",
+      "Mathematics"
+    ],
+    "entry": {
+      "streams": [
+        "pcm",
+        "diploma",
+        "grad-eng"
+      ],
+      "studyYears": "4-5"
+    },
+    "routes": [
+      {
+        "exam": "jee-main",
+        "body": "aicte"
+      }
+    ],
+    "salary": null,
+    "outlook": null,
+    "settingsRaw": {
+      "people": 0.685,
+      "team": 0.696,
+      "autonomy": 0.755,
+      "pace": 0.66,
+      "hands": 0.291,
+      "routine": 0.565
+    },
+    "related": [
+      "electrical-engineer",
+      "electronics-engineer",
+      "mechanical-engineer"
     ]
   },
   {
@@ -891,9 +968,9 @@
       "routine": 0.725
     },
     "related": [
+      "chemical-engineer",
       "food-technologist",
-      "electrical-engineer",
-      "electronics-engineer"
+      "electrical-engineer"
     ]
   },
   {
@@ -1690,7 +1767,7 @@
     "related": [
       "aerospace-engineer",
       "agricultural-scientist",
-      "electrical-engineer"
+      "chemical-engineer"
     ]
   },
   {

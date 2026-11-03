@@ -106,7 +106,7 @@ describe('sample students', () => {
     }
   });
   it('and the five cover science PCB, commerce, arts, a CSE graduate and ITI', () => {
-    expect(PERSONAS.map((p) => p.answers['q-stream'][0])).toEqual(['pcb', 'commerce', 'arts', 'graduate', 'diploma']);
+    expect(PERSONAS.map((p) => p.answers['q-stream'][0])).toEqual(['pcb', 'commerce', 'arts', 'graduate', 'arts', 'diploma']);
   });
 });
 

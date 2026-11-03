@@ -33,21 +33,22 @@ describe('cosine', () => {
 
 describe('career data (generated from O*NET plus hand-written seeds)', () => {
   const domainIds = new Set(domainData.domains.map((d) => d.id));
-  it('has the 60 approved careers with unique ids, in seed order', () => {
-    expect(careers).toHaveLength(60);
-    expect(new Set(careers.map((c) => c.id)).size).toBe(60);
+  it('has the 61 approved careers with unique ids, in seed order', () => {
+    expect(careers).toHaveLength(61);
+    expect(new Set(careers.map((c) => c.id)).size).toBe(61);
     expect(careers.map((c) => c.id)).toEqual(seeds.careers.map((c) => c.id));
   });
   it('includes the five swaps and excludes the careers they replaced', () => {
     for (const id of ['ux-ui-designer', 'animator', 'entrepreneur', 'event-manager', 'industrial-designer']) expect(byId(id), id).toBeTruthy();
-    for (const id of ['software-tester', 'network-engineer', 'market-research-analyst', 'chemical-engineer']) expect(byId(id), id).toBeUndefined();
+    for (const id of ['software-tester', 'network-engineer', 'market-research-analyst']) expect(byId(id), id).toBeUndefined();
+    expect(byId('chemical-engineer')?.domain).toBe('chemical-materials');
   });
   it('every career sits in a known domain', () => {
     for (const c of careers) expect(domainIds.has(c.domain), c.id).toBe(true);
   });
-  it('covers 34 of the 35 domains; Chemical & Materials is empty because of the approved swap', () => {
+  it('covers all 35 domains', () => {
     const empty = domainData.domains.filter((d) => !careers.some((c) => c.domain === d.id)).map((d) => d.id);
-    expect(empty).toEqual(['chemical-materials']);
+    expect(empty).toEqual([]);
   });
   it('interest scores are O*NET 1-7 values for all six types', () => {
     for (const c of careers) {
@@ -313,7 +314,7 @@ describe('match floors and tiers', () => {
   it('shows fewer matches rather than weak ones for a thin profile', () => {
     const thin = results.find((r) => r.id === 'q-subjects/arts').res;
     expect(thin.matches.length + thin.belowMatchFloor).toBe(careers.length - thin.ranked.filter((r) => r.percent >= 50).slice(8).length);
-    expect(thin.ranked.length).toBe(60);
+    expect(thin.ranked.length).toBe(61);
   });
   it('explanations are real: sources come from the student answers, and weaker drivers are not listed', () => {
     for (const p of PERSONAS) {
@@ -417,5 +418,25 @@ describe('Strong / Explore further split', () => {
   it('a graduate in a matching field gets technical careers as strong fits', () => {
     const { strong } = splitMatches(resultFor('cse-graduate').matches);
     expect(strong.map((m) => m.career.id)).toEqual(expect.arrayContaining(['software-developer', 'data-scientist']));
+  });
+});
+
+describe('strongly Artistic student (drawing, design, making things)', () => {
+  const res = resultFor('artistic-maker');
+  const top = (n) => res.matches.slice(0, n).map((m) => m.career.id);
+  it('puts Animator, Fashion, Graphic and Industrial Designer in the top 5, all with real scores', () => {
+    expect(top(5)).toEqual(expect.arrayContaining(['animator', 'fashion-designer', 'graphic-designer', 'industrial-designer']));
+    for (const id of ['animator', 'fashion-designer', 'graphic-designer']) expect(res.ranked.find((r) => r.career.id === id).percent, id).toBeGreaterThanOrEqual(80);
+  });
+  it('UX/UI Designer is not strong for a purely Artistic student: O*NET profiles it as Investigative-led', () => {
+    expect(byId('ux-ui-designer').riasec.I).toBeGreaterThan(byId('ux-ui-designer').riasec.R);
+    expect(res.ranked.find((r) => r.career.id === 'ux-ui-designer').percent).toBeLessThan(50);
+  });
+  it('it becomes the top match for a student who pairs Artistic with Investigative and Conventional picks', () => {
+    const acts = (picks) => Object.fromEntries(picks.map((p, i) => [`q-act-${i + 1}`, p.map((t) => `a${i + 1}-${t}`)]));
+    const answers = { ...persona('artistic-maker').answers, ...acts([['A', 'I'], ['A', 'I'], ['A', 'C'], ['A', 'I'], ['A', 'C'], ['A', 'I'], ['A', 'C'], ['A', 'I']]), 'q-subjects': ['arts', 'cs', 'maths'] };
+    const r = recommend(buildProfile(answers, quiz), careers);
+    expect(r.matches[0].career.id).toBe('ux-ui-designer');
+    expect(r.matches[0].percent).toBeGreaterThanOrEqual(80);
   });
 });

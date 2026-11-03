@@ -13,7 +13,9 @@
     "onet:fetch": "node scripts/fetch-onet.mjs",
     "onet:domains": "node scripts/build-domains.mjs",
     "onet:careers": "node scripts/build-careers.mjs",
-    "links:check": "node scripts/check-links.mjs"
+    "links:check": "node scripts/check-links.mjs",
+    "links:verify": "node scripts/verify-link.mjs",
+    "spread": "node scripts/score-spread.mjs"
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",

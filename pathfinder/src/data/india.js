@@ -1,19 +1,21 @@
 import registry from './indiaRegistry.json';
 import verification from './india-verification.json';
+import manual from './india-manual-verification.json';
+import { verificationOf } from './verification.js';
 
 // Indian exams and bodies are shown by NAME and LINK only when `npm run links:check`
 // confirmed both that the official page loads and that it mentions the name.
 // Anything else is shown as "Check with the official body". We record names and
-// bodies only: no eligibility percentages, age limits, fees or exam patterns.
+// bodies only (a person can also confirm a name by hand: see india-manual-verification.json): no eligibility percentages, age limits, fees or exam patterns.
 
 export const CHECK_TEXT = 'Check with the official body';
 
 const lookup = (kind, id) => {
   const entry = registry[kind][id];
   if (!entry) return null;
-  const v = verification.results?.[`${kind}:${id}`];
-  const verified = Boolean(v?.loaded && v?.needleFound);
-  return { id, name: entry.name, url: verified ? entry.url : null, verified };
+  const key = `${kind}:${id}`;
+  const { verified, how, on } = verificationOf(verification.results?.[key], manual.entries?.[key]);
+  return { id, name: entry.name, url: verified ? entry.url : null, verified, how, on };
 };
 
 /**

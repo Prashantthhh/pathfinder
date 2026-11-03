@@ -4,7 +4,7 @@
 
 const acts = (picks) => Object.fromEntries(picks.map((p, i) => [`q-act-${i + 1}`, p.map((t) => `a${i + 1}-${t}`)]));
 
-export const PERSONAS = [
+export const PERSONAS = [  // `iti-hands-on` is used by tests only; the rest are shown by `npm run samples`
   {
     id: 'science-pcb',
     name: 'Science (PCB) student',
@@ -52,6 +52,19 @@ export const PERSONAS = [
       'q-subjects': ['maths', 'cs', 'physics'],
       'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['mix'], 'q-set-hands': ['desk'],
       'q-study': ['no'], 'q-earn': ['yes'],
+    },
+  },
+  {
+    id: 'artistic-maker',
+    name: 'Strongly Artistic student',
+    stream: 'Arts, Class 12 (draws, designs, makes things)',
+    answers: {
+      'q-stream': ['arts'],
+      // Artistic on every question; "making things" (Realistic) as a second pick on three
+      ...acts([['A', 'R'], ['A', 'R'], ['A'], ['A', 'R'], ['A'], ['A'], ['A'], ['A']]),
+      'q-subjects': ['arts'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['free'], 'q-set-hands': ['mixed'],
+      'q-study': ['yes'], 'q-earn': ['no'],
     },
   },
   {

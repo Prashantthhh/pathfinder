@@ -95,3 +95,4 @@
 .route__list { padding-left: 1.2rem; }
 .route__k { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
 .career__source { margin-top: var(--s-7); max-width: 50rem; }
+.route__manual { font-size: 0.85em; color: var(--ink-3); }

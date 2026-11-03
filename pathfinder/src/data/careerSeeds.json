@@ -285,6 +285,34 @@
       ]
     },
     {
+      "id": "chemical-engineer",
+      "title": "Chemical Engineer",
+      "domain": "chemical-materials",
+      "onet": "Chemical Engineers",
+      "keywords": [
+        "chemical",
+        "process",
+        "petrochemical",
+        "refinery",
+        "plant",
+        "polymers"
+      ],
+      "entry": {
+        "streams": [
+          "pcm",
+          "diploma",
+          "grad-eng"
+        ],
+        "studyYears": "4-5"
+      },
+      "routes": [
+        {
+          "exam": "jee-main",
+          "body": "aicte"
+        }
+      ]
+    },
+    {
       "id": "aerospace-engineer",
       "title": "Aerospace Engineer",
       "domain": "automotive-aerospace",

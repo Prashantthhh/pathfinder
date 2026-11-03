@@ -14,8 +14,7 @@ const quiz = read('../src/data/quiz.json');
 const domains = Object.fromEntries(read('../src/data/domains.json').domains.map((d) => [d.id, d.label]));
 
 const only = process.argv[2];
-for (const p of PERSONAS.filter((x) => !only || x.id === only || (!only && x.id !== 'iti-hands-on'))) {
-  if (!only && p.id === 'iti-hands-on') continue;
+for (const p of PERSONAS.filter((x) => (only ? x.id === only : x.id !== 'iti-hands-on'))) {
   const profile = buildProfile(p.answers, quiz);
   const res = recommend(profile, careers);
   const { strong } = splitMatches(res.matches);

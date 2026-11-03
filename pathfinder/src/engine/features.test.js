@@ -90,8 +90,8 @@ describe('compareRuns', () => {
 describe('searchCareers', () => {
   const find = (q) => searchCareers(careers, q).map((r) => r.career.id);
   it('returns everything for an empty query', () => {
-    expect(find('')).toHaveLength(60);
-    expect(find('   ')).toHaveLength(60);
+    expect(find('')).toHaveLength(61);
+    expect(find('   ')).toHaveLength(61);
   });
   it('finds by title, Indian keyword, domain and skill', () => {
     expect(find('chartered')).toContain('chartered-accountant');

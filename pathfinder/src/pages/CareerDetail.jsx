@@ -28,9 +28,12 @@ function Missing() {
 function Named({ item, fallback = CHECK_TEXT }) {
   if (!item || !item.verified) return <span>{fallback}</span>;
   return (
+    <>
     <a href={item.url} target="_blank" rel="noopener noreferrer">
       {item.name}<span className="sr-only"> (opens the official site in a new tab)</span>
     </a>
+    {item.how === 'manual' && <span className="route__manual" data-testid="manual-note"> (verified manually on {item.on})</span>}
+    </>
   );
 }
 
@@ -181,7 +184,7 @@ export default function CareerDetail() {
         )}
         <p className="fine">
           A name is shown with a link only if its official site loaded and mentioned it when we last checked
-          {verifiedOn ? ` (${verifiedOn})` : ''}. Otherwise we say &ldquo;{CHECK_TEXT}&rdquo;.
+          {verifiedOn ? ` (${verifiedOn})` : ''}, or if a person confirmed it by hand (the date is shown next to it). Otherwise we say &ldquo;{CHECK_TEXT}&rdquo;.
         </p>
       </section>
 

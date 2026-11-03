@@ -14,6 +14,8 @@ npm run onet:fetch    # download O*NET into .cache/onet (git-ignored)
 npm run onet:domains  # rebuild src/data/domains.json from the O*NET data
 npm run onet:careers  # rebuild src/data/careers.json from the O*NET data
 npm run links:check   # confirm exam / body names on official sites (add -- --write to save)
+npm run links:verify  # list / add / remove names a person checked by hand (needs --date)
+npm run spread        # score spread over simulated students (add -- --old <path> to compare)
 ```
 
 ## End-to-end tests

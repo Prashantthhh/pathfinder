@@ -126,7 +126,7 @@ check('home: readout links to the careers in that domain', (await page.locator('
 await shot(page, 'home-pointing');
 
 await page.locator('.hexmap__dot', { hasText: 'Chemical & Materials' }).hover();
-check('home: a domain with no careers says so (Chemical & Materials)', (await page.locator('.readout__go').innerText()).includes('No careers in this domain yet'));
+check('home: every domain has a career (Chemical & Materials links to 1)', (await page.locator('.readout__go').innerText()).includes('1 career') && !(await page.locator('.readout__go').innerText()).includes('No careers'));
 
 await page.locator('.hexmap__dot', { hasText: 'Accounting & Audit' }).click();
 await page.mouse.move(5, 400);
@@ -309,7 +309,7 @@ await seed({ 'q-stream': ['pcb'] });
 await goto('/results');
 check('answering only the stream gives no matches: friendly empty state', (await page.getByRole('heading', { name: 'No matches yet' }).isVisible()) && /don.t point toward anything/.test(lower(await page.locator('.stub').innerText())));
 
-// ================================================================ CAREER PAGES (all 60)
+// ================================================================ CAREER PAGES (all 61)
 const verifiedName = (kind, id) => {
   const r = verification.results?.[`${kind}:${id}`];
   return Boolean(r?.loaded && r?.needleFound);
@@ -340,7 +340,7 @@ for (const c of careers) {
   }
   if (c.routes.length === 0 && !text.includes(CHECK_TEXT)) careerProblems.push(`${c.id}: no routes but no Check text`);
 }
-check('all 60 career pages: title, verify note, 6 interest scores, 6 work settings, loose notes only where flagged, salary/outlook "data not connected yet", only verified official links, no figures', careerProblems.length === 0, careerProblems.slice(0, 8).join(' ;; '));
+check('all 61 career pages: title, verify note, 6 interest scores, 6 work settings, loose notes only where flagged, salary/outlook "data not connected yet", only verified official links, no figures', careerProblems.length === 0, careerProblems.slice(0, 8).join(' ;; '));
 
 await goto('/careers/doctor');
 const docCareer = careers.find((c) => c.id === 'doctor');
@@ -382,8 +382,8 @@ check('career: below 50% it prints no score, only that it is below the line', ch
 await seed(persona('science-pcb').answers, 'complete');
 await goto('/explore');
 const rows = () => page.locator('.explore__list > li');
-check('explore: lists all 60 careers across 34 domains', (await rows().count()) === 60 && (await page.locator('.explore__count').innerText()) === 'All 60 careers' && (await page.locator('.lede').innerText()).includes('34 domains'));
-check('explore: the domain filter omits Chemical & Materials (no careers) and lists 34', (await page.locator('.field-scroll label.check').count()) === 34 && !(await page.locator('.field-scroll').innerText()).includes('Chemical & Materials'));
+check('explore: lists all 61 careers across 35 domains', (await rows().count()) === 61 && (await page.locator('.explore__count').innerText()) === 'All 61 careers' && (await page.locator('.lede').innerText()).includes('35 domains'));
+check('explore: the domain filter lists all 35 domains', (await page.locator('.field-scroll label.check').count()) === 35 && (await page.locator('.field-scroll').innerText()).includes('Chemical & Materials'));
 check('explore: sorts by best match for the student by default', (await page.locator('#sort').inputValue()) === 'match' && (await rows().first().locator('.crow__title').innerText()) === pcbRanked[0].career.title);
 const exploreScores = await pcts(page.locator('.crow__score .match__pct'));
 check('explore: no score under 50% is printed anywhere', exploreScores.length > 0 && exploreScores.every((n) => n >= 50), exploreScores.join(','));
@@ -401,7 +401,7 @@ check('explore: "iti" finds the ITI-route careers', itiRows.includes('Electricia
 await page.locator('#q').fill('zzzzqq');
 check('explore: no results gives a friendly empty state', (await page.locator('.explore__empty').innerText()).includes('No careers match'));
 await page.locator('.explore__empty').getByRole('button', { name: 'Clear all filters' }).click();
-check('explore: clearing filters restores all 60', (await rows().count()) === 60);
+check('explore: clearing filters restores all 61', (await rows().count()) === 61);
 
 await goto('/explore?domain=design');
 check('explore: a domain from a link filters to its careers (Design: 3)', (await rows().count()) === 3 && (await page.getByRole('checkbox', { name: /Visual, Product & Fashion Design/ }).isChecked()));

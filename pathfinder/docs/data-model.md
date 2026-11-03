@@ -1,7 +1,7 @@
 # Data model, scoring and sources (Phase 2)
 
 ## What a career is
-60 careers across 34 of the 35 domains (Chemical & Materials has none: Chemical Engineer was swapped out).
+61 careers across all 35 domains.
 `src/data/careers.json` is **generated** by `scripts/build-careers.mjs` from two inputs:
 
 | Input | Contents |
@@ -37,10 +37,12 @@ The student's profile has three parts.
 `entry.streams` and `entry.studyYears` are **our general reading** of the usual route in India, not eligibility rules. They are labelled "typical route, verify with the official body" everywhere. We record no eligibility percentages, age limits, fees or exam patterns.
 
 ## Work settings (derived by us, not O*NET)
-O*NET 31.0 has no Work Values file. `src/data/settings.js` lists the Work Context items behind each setting. Raw values are compressed (nearly every occupation involves some contact with people), so each setting is rescaled 0-1 across the 60 careers; `settingsRaw` keeps the unscaled value.
+O*NET 31.0 has no Work Values file. `src/data/settings.js` lists the Work Context items behind each setting. Raw values are compressed (nearly every occupation involves some contact with people), so each setting is rescaled 0-1 across the 61 careers; `settingsRaw` keeps the unscaled value.
 
 ## India routes
 `indiaRegistry.json` holds exam and governing-body **names** with their official URLs. `npm run links:check` loads each official page in a real browser and checks that **the page loads and the name appears on it**. Results are in `india-verification.json`; an unreachable site keeps an earlier verification (with its date), and only a loaded page that lacks the name removes one. The UI shows a name and link only when verified; otherwise "Check with the official body".
+
+**Manual verification.** A person can confirm a name by hand: `npm run links:verify -- add exams:upsc-cse --date YYYY-MM-DD` writes `india-manual-verification.json` (`list` shows candidates, `remove` undoes it). The date is required. The UI then shows the link with "(verified manually on <date>)". The checker never writes this file, and it ships empty.
 
 ## Known limits
 - O*NET labels its interest scores "Machine Learning/Expert" (02/2026); they are estimates and describe US occupations. Nothing from O*NET is used for Indian salary, outlook or qualifications (those show "data not connected yet").
