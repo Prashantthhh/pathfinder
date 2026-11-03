@@ -39,7 +39,7 @@ See `docs/data-model.md` for the full model. In short:
 - Interests use Holland's six RIASEC types. A match score is the cosine similarity of the student's and the
   career's interest profiles (each with its own average removed), plus a smaller work-settings term. It is not a
   prediction of success.
-- Bands: strong 80%+, worth exploring 65-79%, partial overlap 50-64%. Nothing under 50% is a match; alternatives need 45%+.
+- Bands: strong 75%+, worth exploring 60-74%, partial overlap 50-59%. Nothing under 50% is a match; alternatives need 45%+.
 - Stream and study answers only decide **Strong fits vs Explore further**. They never change a score or hide a career.
 - Salary and outlook are `null` ("data not connected yet"). O*NET is US data and is not used for India.
 - Indian exams and governing bodies are shown only if `npm run links:check` confirmed the name on the official site.

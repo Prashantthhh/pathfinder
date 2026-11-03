@@ -54,6 +54,9 @@
         {
           "exam": "nid-dat"
         }
+      ],
+      "relatedPins": [
+        "graphic-designer"
       ]
     },
     {
@@ -1262,6 +1265,9 @@
         {
           "exam": "uceed"
         }
+      ],
+      "relatedPins": [
+        "ux-ui-designer"
       ]
     },
     {

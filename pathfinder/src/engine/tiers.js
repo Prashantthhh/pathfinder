@@ -1,15 +1,19 @@
 // Match-strength bands for the results page, as specified for the product:
-//   strong >= 80%, worth exploring 65-79%, partial overlap 50-64%.
+//   strong >= 75%, worth exploring 60-74%, partial overlap 50-59%.
+// (Re-set from 80/65 when scoring moved to centred interests: 75 gives a student about
+// three strong careers, as 80 did before. See `npm run spread`.)
 // Nothing below MIN_MATCH_PERCENT is ever presented as a match. Alternatives
 // (careers from other areas) may go down to MIN_ALT_PERCENT.
 // Percentages are the rounded match scores that are shown to the user.
 
 export const MIN_MATCH_PERCENT = 50;
 export const MIN_ALT_PERCENT = 45;
+export const STRONG_MIN = 75;
+export const WORTH_MIN = 60;
 
 export const TIERS = [
-  { id: 'strong', min: 80, label: 'Strong matches', blurb: 'Your answers line up closely with these careers.' },
-  { id: 'worth', min: 65, label: 'Worth exploring', blurb: 'A good part of the profile overlaps. Read the details before deciding.' },
+  { id: 'strong', min: STRONG_MIN, label: 'Strong matches', blurb: 'Your answers line up closely with these careers.' },
+  { id: 'worth', min: WORTH_MIN, label: 'Worth exploring', blurb: 'A good part of the profile overlaps. Read the details before deciding.' },
   { id: 'partial', min: MIN_MATCH_PERCENT, label: 'Partial overlap', blurb: 'Only some of your answers line up. Explore these out of curiosity, not because of the score.' },
 ];
 

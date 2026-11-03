@@ -138,7 +138,7 @@ export default function Results() {
         <section className="results__group" aria-labelledby="strong-title">
           <h2 id="strong-title">Strong fits for you</h2>
           <p className="section__intro">
-            Careers that score 80% or more <em>and</em> whose usual route suits the stream and study answers you gave.
+            Careers that score 75% or more <em>and</em> whose usual route suits the stream and study answers you gave.
           </p>
           {strong.length > 0 ? (
             <ol className="results__list">
@@ -177,7 +177,7 @@ export default function Results() {
         </p>
       )}
       <p className="fine">
-        Score bands: strong is 80% and above, worth exploring is 65–79%, partial overlap is 50–64%. They are reading
+        Score bands: strong is 75% and above, worth exploring is 60–74%, partial overlap is 50–59%. They are reading
         aids, not cut-offs with any meaning on their own. &ldquo;Typical route&rdquo; is our general reading of the
         usual route in India, not an eligibility rule: verify with the official body.
       </p>

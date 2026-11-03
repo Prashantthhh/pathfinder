@@ -26,6 +26,7 @@ const quiz = readJson('../src/data/quiz.json');
 const careers = readJson('../src/data/careers.json');
 const registry = readJson('../src/data/indiaRegistry.json');
 const verification = readJson('../src/data/india-verification.json');
+const manualVerification = readJson('../src/data/india-manual-verification.json');
 const shotsDir = process.env.E2E_SHOTS ? fileURLToPath(new URL('../e2e-output/', import.meta.url)) : null;
 if (shotsDir) {
   mkdirSync(shotsDir, { recursive: true });
@@ -242,10 +243,10 @@ const uiExplore = await titlesIn('explore-title');
 check('results: the Strong fits list is exactly what the engine computes', JSON.stringify(uiStrong) === JSON.stringify(exp.split.strong.map((m) => m.career.title)), `${uiStrong} vs ${exp.split.strong.map((m) => m.career.title)}`);
 check('results: the Explore further list is exactly what the engine computes', JSON.stringify(uiExplore) === JSON.stringify(exp.split.explore.map((m) => m.career.title)), `${uiExplore} vs ${exp.split.explore.map((m) => m.career.title)}`);
 const strongPcts = await pcts(page.locator('section[aria-labelledby="strong-title"] .match__pct'));
-check('results: every strong fit scores 80%+ and shows no route reason', strongPcts.length > 0 && strongPcts.every((n) => n >= 80) && (await page.locator('section[aria-labelledby="strong-title"] .result__fit').count()) === 0, strongPcts.join(','));
+check('results: every strong fit scores 75%+ and shows no route reason', strongPcts.length > 0 && strongPcts.every((n) => n >= 75) && (await page.locator('section[aria-labelledby="strong-title"] .result__fit').count()) === 0, strongPcts.join(','));
 const civil = page.locator('section[aria-labelledby="explore-title"] .result', { hasText: 'Civil Servant' });
 const civilFit = await civil.locator('.result__fit').innerText();
-check('results: a strong score with an unsuited route sits under Explore further, with the reason and the "verify" note', (await pcts(civil.locator('.match__pct')))[0] >= 80 && /Typical route takes 4 to 5 years of study/.test(civilFit) && civilFit.includes('verify with the official body'), civilFit);
+check('results: a strong score with an unsuited route sits under Explore further, with the reason and the "verify" note', (await pcts(civil.locator('.match__pct')))[0] >= 75 && /Typical route takes 4 to 5 years of study/.test(civilFit) && civilFit.includes('verify with the official body'), civilFit);
 check('results: the context line says what was used and that it never changes a score or hides a career', (await page.getByTestId('context-line').innerText()).includes('never change a score or hide a career') && (await page.getByTestId('context-line').innerText()).includes('Commerce'));
 check('results: a loose O*NET match says so in the list (Entrepreneur)', (await page.locator('.result', { hasText: 'Entrepreneur' }).first().locator('.result__loose').innerText()).includes('Approximate match to O*NET'));
 check('results: says a match score is not a prediction of success', (await page.locator('.note').first().innerText()).includes('not a prediction of success'));
@@ -280,10 +281,10 @@ for (const id of ['science-pcb', 'arts', 'cse-graduate']) {
 await seed(persona('cse-graduate').answers, 'complete');
 await goto('/results');
 check('results (CSE graduate): software and data careers are strong fits (a degree in the field already covers the study years)', (await titlesIn('strong-title')).includes('Software Developer') && (await titlesIn('strong-title')).includes('Data Scientist'));
-await seed(persona('arts').answers, 'complete');
+await seed(persona('undecided').answers, 'complete');
 await goto('/results');
-check('results (arts): with no strong fit, it says so and points to Explore further', await page.getByTestId('no-strong').isVisible());
-await shot(page, 'results-arts', { fullPage: true });
+check('results (undecided): with no strong fit, it says so and points to Explore further', await page.getByTestId('no-strong').isVisible());
+await shot(page, 'results-undecided', { fullPage: true });
 
 // ---------------------------------------------------------------- floors and sparse results
 await seed({ 'q-subjects': ['pe'] });
@@ -312,7 +313,7 @@ check('answering only the stream gives no matches: friendly empty state', (await
 // ================================================================ CAREER PAGES (all 61)
 const verifiedName = (kind, id) => {
   const r = verification.results?.[`${kind}:${id}`];
-  return Boolean(r?.loaded && r?.needleFound);
+  return Boolean(r?.loaded && r?.needleFound) || Boolean(manualVerification.entries?.[`${kind}:${id}`]?.verifiedOn);
 };
 const allowedUrls = new Set([...Object.entries(registry.exams).filter(([id]) => verifiedName('exams', id)).map(([, e]) => e.url), ...Object.entries(registry.bodies).filter(([id]) => verifiedName('bodies', id)).map(([, e]) => e.url)]);
 const unverifiedNames = [...Object.entries(registry.exams).filter(([id]) => !verifiedName('exams', id)).map(([, e]) => e.name), ...Object.entries(registry.bodies).filter(([id]) => !verifiedName('bodies', id)).map(([, e]) => e.name)];

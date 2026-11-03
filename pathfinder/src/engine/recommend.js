@@ -136,7 +136,7 @@ export function recommend(profile, careers, { top = TOP_N, alternatives = ALT_N 
 }
 
 /**
- * Strong / Explore further. "Strong fits" are strong matches (80%+) whose typical route
+ * Strong / Explore further. "Strong fits" are strong matches (75%+) whose typical route
  * also suits the student's stream and study answers. Everything else that is still a
  * match goes to "Explore further", each with its score band and the reasons. Nothing is hidden.
  */

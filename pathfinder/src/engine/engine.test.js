@@ -349,9 +349,10 @@ describe('match floors and tiers', () => {
   });
   it('tiers follow the agreed bands', () => {
     expect(tierOf(80).id).toBe('strong');
-    expect(tierOf(79).id).toBe('worth');
-    expect(tierOf(65).id).toBe('worth');
-    expect(tierOf(64).id).toBe('partial');
+    expect(tierOf(75).id).toBe('strong');
+    expect(tierOf(74).id).toBe('worth');
+    expect(tierOf(60).id).toBe('worth');
+    expect(tierOf(59).id).toBe('partial');
     expect(tierOf(50).id).toBe('partial');
     expect(tierOf(49)).toBeNull();
   });
@@ -396,23 +397,23 @@ describe('typical-route fit (stream and study length)', () => {
 });
 
 describe('Strong / Explore further split', () => {
-  it('puts a match in Strong only if it scores 80%+ AND its typical route fits; the rest are Explore further', () => {
+  it('puts a match in Strong only if it scores 75%+ AND its typical route fits; the rest are Explore further', () => {
     for (const p of PERSONAS) {
       const res = resultFor(p.id);
       const { strong, explore } = splitMatches(res.matches);
       expect(strong.length + explore.length).toBe(res.matches.length);
       for (const m of strong) {
-        expect(m.percent).toBeGreaterThanOrEqual(80);
+        expect(m.percent).toBeGreaterThanOrEqual(75);
         expect(m.fit.fits).toBe(true);
       }
-      for (const m of explore) expect(m.percent < 80 || !m.fit.fits).toBe(true);
+      for (const m of explore) expect(m.percent < 75 || !m.fit.fits).toBe(true);
     }
   });
   it('keeps a strong score visible when the route does not fit, with the reasons', () => {
     const { explore } = splitMatches(resultFor('commerce').matches);
     const civil = explore.find((m) => m.career.id === 'civil-servant');
     expect(civil).toBeTruthy();
-    expect(civil.percent).toBeGreaterThanOrEqual(80);
+    expect(civil.percent).toBeGreaterThanOrEqual(75);
     expect(civil.fit.reasons.length).toBeGreaterThan(0);
   });
   it('a graduate in a matching field gets technical careers as strong fits', () => {
@@ -438,5 +439,17 @@ describe('strongly Artistic student (drawing, design, making things)', () => {
     const r = recommend(buildProfile(answers, quiz), careers);
     expect(r.matches[0].career.id).toBe('ux-ui-designer');
     expect(r.matches[0].percent).toBeGreaterThanOrEqual(80);
+  });
+});
+
+describe('related careers', () => {
+  it('Graphic Designer lists UX/UI Designer (a hand-picked pin, then the nearest by interests), and vice versa', () => {
+    expect(byId('graphic-designer').related[0]).toBe('ux-ui-designer');
+    expect(byId('ux-ui-designer').related[0]).toBe('graphic-designer');
+    for (const c of careers) expect(new Set(c.related).size, c.id).toBe(3);
+  });
+  it('neet-pg is gone from the India registry', async () => {
+    const reg = (await import('../data/indiaRegistry.json')).default;
+    expect(reg.exams['neet-pg']).toBeUndefined();
   });
 });

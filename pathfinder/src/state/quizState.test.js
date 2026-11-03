@@ -105,8 +105,8 @@ describe('sample students', () => {
       expect(answeredCount(quiz, p.answers), p.id).toBe(visibleQuestions(quiz, p.answers).length);
     }
   });
-  it('and the five cover science PCB, commerce, arts, a CSE graduate and ITI', () => {
-    expect(PERSONAS.map((p) => p.answers['q-stream'][0])).toEqual(['pcb', 'commerce', 'arts', 'graduate', 'arts', 'diploma']);
+  it('and they cover science PCB, commerce, arts, a CSE graduate, ITI and an undecided student', () => {
+    expect(PERSONAS.map((p) => p.answers['q-stream'][0])).toEqual(['pcb', 'commerce', 'arts', 'graduate', 'arts', 'diploma', 'arts']);
   });
 });
 
@@ -139,8 +139,8 @@ describe('sanitizeQuizState', () => {
 });
 
 describe('tiers', () => {
-  it('uses strong >= 80, worth exploring 65-79, partial overlap 50-64', () => {
-    const cases = [[100, 'strong'], [80, 'strong'], [79, 'worth'], [65, 'worth'], [64, 'partial'], [50, 'partial']];
+  it('uses strong >= 75, worth exploring 60-74, partial overlap 50-59', () => {
+    const cases = [[100, 'strong'], [75, 'strong'], [74, 'worth'], [60, 'worth'], [59, 'partial'], [50, 'partial']];
     for (const [pct, id] of cases) expect(tierOf(pct)?.id, String(pct)).toBe(id);
   });
   it('never gives a tier to anything below 50', () => {

@@ -92,13 +92,6 @@
       "finalUrl": "https://www.ibps.in/",
       "checkedAt": "2026-11-02"
     },
-    "exams:neet-pg": {
-      "loaded": false,
-      "needleFound": false,
-      "status": 403,
-      "finalUrl": "https://natboard.edu.in/",
-      "checkedAt": "2026-11-02"
-    },
     "exams:nid-dat": {
       "loaded": true,
       "needleFound": false,

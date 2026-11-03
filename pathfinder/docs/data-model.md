@@ -23,14 +23,14 @@ The student's profile has three parts.
 - `interest` = cosine similarity of the student's and the career's interest profiles **after each has its own average removed** (so "likes everything a bit" does not match everything), clipped at 0;
 - `settings` = 1 minus the mean absolute difference over the settings the student answered.
 
-`percent` is the rounded score. Bands: strong >= 80, worth exploring 65-79, partial overlap 50-64. Nothing below 50 is a match; alternatives (other domains than the top three) need 45+ and are shown with no number below 50.
+`percent` is the rounded score. Bands: strong >= 75, worth exploring 60-74, partial overlap 50-59 (cutoffs chosen with `npm run spread` so a student gets about three strong careers, as the old 80 did). Nothing below 50 is a match; alternatives (other domains than the top three) need 45+ and are shown with no number below 50.
 
 **Drivers** in "Why this match" are interest types where BOTH profiles are above their own average. (Low-on-both also adds to a centred cosine but is not a reason.)
 
 ## Strong fits vs Explore further
 `feasibility.assess()` compares the career's typical route with the student's context. It never changes a score and never hides a career.
 
-- **Strong fits** = score >= 80 **and** the typical route suits the student's stream and study answers.
+- **Strong fits** = score >= 75 **and** the typical route suits the student's stream and study answers.
 - **Explore further** = every other match, with the reasons: a different usual starting stream, or a longer route than the student wants.
 - Any 12th-level stream can start "any graduate degree" routes, so those are not a stream mismatch. A graduate whose degree already fits a route has done its bachelor's years, so only routes needing study beyond a degree count against them.
 

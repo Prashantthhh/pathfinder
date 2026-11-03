@@ -20,6 +20,7 @@ import { TYPES } from '../src/engine/hexmap.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const seeds = JSON.parse(readFileSync(join(root, 'src/data/careerSeeds.json'), 'utf8'));
+const seedById = Object.fromEntries(seeds.careers.map((s) => [s.id, s]));
 const domains = JSON.parse(readFileSync(join(root, 'src/data/domains.json'), 'utf8'));
 const registry = JSON.parse(readFileSync(join(root, 'src/data/indiaRegistry.json'), 'utf8'));
 
@@ -195,14 +196,16 @@ for (const c of careers) {
   }));
 }
 
-// related careers: nearest three by interest profile
+// related careers: any hand-picked `relatedPins` from the seed first, then the nearest by interest profile, three in all
 for (const c of careers) {
-  c.related = careers
-    .filter((o) => o.id !== c.id)
+  const pins = (seedById[c.id].relatedPins ?? []).slice(0, 3);
+  for (const id of pins) if (id === c.id || !careers.some((o) => o.id === id)) throw new Error(`${c.id}: bad relatedPins entry "${id}"`);
+  const nearest = careers
+    .filter((o) => o.id !== c.id && !pins.includes(o.id))
     .map((o) => ({ id: o.id, sim: cos(centred(c.riasec), centred(o.riasec)) }))
     .sort((a, b) => b.sim - a.sim || a.id.localeCompare(b.id))
-    .slice(0, 3)
     .map((o) => o.id);
+  c.related = [...pins, ...nearest].slice(0, 3);
 }
 
 const readme = readFileSync(join(DB_DIR, 'Read Me.txt'), 'utf8').split(/\r?\n/);

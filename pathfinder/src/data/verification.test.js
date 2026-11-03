@@ -18,11 +18,14 @@ describe('link verification', () => {
     for (const bad of [undefined, '', '5 Nov', '2026-13-45', 20261105]) expect(verificationOf(null, { verifiedOn: bad }).verified, String(bad)).toBe(false);
     expect(isValidDate('2026-11-05')).toBe(true);
   });
-  it('the shipped manual file is empty: nothing is marked until a person does it', () => {
-    expect(manual.entries).toEqual({});
+  it('manual entries are only ones a person recorded, each with a real date', () => {
+    for (const [k, v] of Object.entries(manual.entries)) {
+      expect(k).toMatch(/^(exams|bodies):/);
+      expect(isValidDate(v.verifiedOn), k).toBe(true);
+    }
   });
   it('an unconfirmed name still reads "Check with the official body" (no link)', () => {
-    const career = { routes: [{ exam: 'upsc-cse' }] };
+    const career = { routes: [{ exam: 'iimc-entrance' }] };
     const [r] = routesFor(career);
     expect(r.exam.verified).toBe(false);
     expect(r.exam.url).toBeNull();

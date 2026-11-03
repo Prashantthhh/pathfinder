@@ -22,13 +22,6 @@
         "NEET\\s*\\(?\\s*UG"
       ]
     },
-    "neet-pg": {
-      "name": "NEET PG",
-      "url": "https://natboard.edu.in",
-      "needles": [
-        "NEET\\s*\\(?\\s*PG"
-      ]
-    },
     "gpat": {
       "name": "GPAT",
       "url": "https://gpat.nta.nic.in",

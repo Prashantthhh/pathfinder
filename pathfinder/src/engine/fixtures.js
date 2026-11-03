@@ -4,7 +4,7 @@
 
 const acts = (picks) => Object.fromEntries(picks.map((p, i) => [`q-act-${i + 1}`, p.map((t) => `a${i + 1}-${t}`)]));
 
-export const PERSONAS = [  // `iti-hands-on` is used by tests only; the rest are shown by `npm run samples`
+export const PERSONAS = [  // `iti-hands-on` and `undecided` are used by tests only; the rest are shown by `npm run samples`
   {
     id: 'science-pcb',
     name: 'Science (PCB) student',
@@ -77,6 +77,19 @@ export const PERSONAS = [  // `iti-hands-on` is used by tests only; the rest are
       'q-subjects': ['physics', 'pe'],
       'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['clear'], 'q-set-hands': ['hands'],
       'q-study': ['no'], 'q-earn': ['yes'],
+    },
+  },
+  {
+    id: 'undecided',
+    name: 'Undecided student (no type leads)',
+    stream: 'Arts, Class 12',
+    answers: {
+      'q-stream': ['arts'],
+      // one pick per question, cycling through the six types so none stands out
+      ...acts([['I'], ['A'], ['S'], ['E'], ['C'], ['R'], ['I'], ['A']]),
+      'q-subjects': ['pe'],
+      'q-set-people': ['small'], 'q-set-pace': ['some'], 'q-set-structure': ['mix'], 'q-set-hands': ['mixed'],
+      'q-study': ['yes'], 'q-earn': ['no'],
     },
   },
 ];
