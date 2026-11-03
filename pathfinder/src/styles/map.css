@@ -142,3 +142,22 @@ li.is-active .hexmap__dot-mark { transform: scale(1.55); }
 .readout__go { margin: var(--s-3) 0 0; }
 .readout__go a { color: var(--signal); font-weight: 700; }
 .readout__go a:hover { color: var(--signal-hi); }
+
+/* ---------- You are here ---------- */
+.hexmap__you { pointer-events: none; }
+.hexmap__you-line { stroke: var(--signal); stroke-width: 3; stroke-dasharray: 3 9; stroke-linecap: round; opacity: 0.8; }
+.hexmap__you-halo { fill: var(--signal); opacity: 0.22; }
+.hexmap__pin { position: absolute; width: 0; height: 0; z-index: 6; pointer-events: none; }
+.hexmap__pin svg { position: absolute; left: -22px; top: -57px; width: 44px; height: 57px; max-width: none; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.55)); }
+.hexmap__pin-body { fill: var(--signal); stroke: var(--on-night); stroke-width: 3; }
+.hexmap__pin-eye { fill: var(--night); }
+.hexmap__pin-label { position: absolute; left: 50%; top: 8px; transform: translateX(-50%); white-space: nowrap; background: var(--signal); color: var(--night); font-family: var(--font-label); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 999px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }
+.hexmap__list li.is-near .hexmap__dot-mark { box-shadow: 0 0 0 2px var(--night), 0 0 0 5px var(--signal); }
+
+.nearyou { border: 2px solid var(--signal); border-radius: var(--radius); padding: var(--s-4); margin-bottom: var(--s-4); background: rgba(244, 241, 232, 0.05); }
+.nearyou__kicker { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); margin: 0 0 var(--s-2); font-weight: 700; }
+.nearyou__lead { margin: 0 0 var(--s-2); }
+.nearyou__list { margin: 0 0 var(--s-3); padding-left: 1.3rem; display: grid; gap: var(--s-2); }
+.nearyou__pick { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
+.nearyou__go { margin-left: var(--s-2); font-size: var(--step--1); color: var(--on-night); }
+.nearyou .fine a { color: var(--on-night); }

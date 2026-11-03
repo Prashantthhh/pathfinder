@@ -41,7 +41,8 @@ function CornerLabel({ i, type }) {
  * share one tab stop (roving tabindex); arrow keys move to the nearest neighbour.
  * The domain list beside it does the same job for touch and screen readers.
  */
-export default function HexMap({ domains, activeId, selectedId, onHover, onSelect }) {
+export default function HexMap({ domains, activeId, selectedId, onHover, onSelect, you = null }) {
+  const nearIds = new Set(you?.near.map((n) => n.id) ?? []);
   const terrain = useMemo(() => {
     const hills = [{ x: 0, y: 0, weight: 1.1 }, ...domains.map((d) => ({ x: d.x, y: d.y, weight: 1 }))];
     return buildTerrain({ hills, size: SIZE, radius: RADIUS, cols: 120, levels: [0.4, 0.8, 1.2, 1.65, 2.15] });
@@ -111,6 +112,16 @@ export default function HexMap({ domains, activeId, selectedId, onHover, onSelec
           <CornerLabel key={t} i={i} type={t} />
         ))}
 
+        {you && (
+          <g className="hexmap__you" transform={`translate(${toPx(you.x).toFixed(1)} ${toPx(you.y).toFixed(1)})`}>
+            {you.near.map((n) => {
+              const d = domains.find((x) => x.id === n.id);
+              return <line key={n.id} className="hexmap__you-line" x1="0" y1="0" x2={((d.x - you.x) * RADIUS).toFixed(1)} y2={((d.y - you.y) * RADIUS).toFixed(1)} />;
+            })}
+            <circle r="34" className="hexmap__you-halo" />
+          </g>
+        )}
+
         {active && (
           <g className="hexmap__route" key={active.id}>
             <line x1={CENTER} y1={CENTER} x2={toPx(active.x)} y2={toPx(active.y)} />
@@ -131,7 +142,7 @@ export default function HexMap({ domains, activeId, selectedId, onHover, onSelec
           // tooltips point outward from the centre so they never cover Nova or the route line
           const vert = d.y > 0 ? (d.y > 0.7 ? 'above' : 'below') : (d.y < -0.7 ? 'below' : 'above');
           return (
-            <li key={d.id} style={{ left: `${toPct(d.x)}%`, top: `${toPct(d.y)}%`, '--t': typeVar(d.primary) }} className={isActive ? 'is-active' : undefined}>
+            <li key={d.id} style={{ left: `${toPct(d.x)}%`, top: `${toPct(d.y)}%`, '--t': typeVar(d.primary) }} className={`${isActive ? 'is-active' : ''}${nearIds.has(d.id) ? ' is-near' : ''}`.trim() || undefined}>
               <button
                 type="button"
                 ref={(el) => { refs.current[d.id] = el; }}
@@ -149,7 +160,7 @@ export default function HexMap({ domains, activeId, selectedId, onHover, onSelec
                 onClick={() => onSelect(d.id)}
               >
                 <span className="hexmap__dot-mark" aria-hidden="true" />
-                <span className="sr-only">{d.label}</span>
+                <span className="sr-only">{d.label}{nearIds.has(d.id) ? ' (near you)' : ''}</span>
               </button>
               {isActive && <span className={`hexmap__tip hexmap__tip--${side} hexmap__tip--${vert}`} aria-hidden="true">{d.label}</span>}
             </li>
@@ -157,6 +168,16 @@ export default function HexMap({ domains, activeId, selectedId, onHover, onSelec
         })}
         </ol>
       </div>
+
+      {you && (
+        <div className="hexmap__pin" data-testid="you-marker" style={{ left: `${toPct(you.x)}%`, top: `${toPct(you.y)}%` }}>
+          <svg viewBox="-20 -52 40 52" width="34" height="44" aria-hidden="true" focusable="false">
+            <path d="M0 0 C-19 -12 -19 -44 0 -48 C19 -44 19 -12 0 0Z" className="hexmap__pin-body" />
+            <circle cy="-30" r="7" className="hexmap__pin-eye" />
+          </svg>
+          <span className="hexmap__pin-label">You are here</span>
+        </div>
+      )}
     </div>
   );
 }

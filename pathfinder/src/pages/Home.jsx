@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import domainData from '../data/domains.json';
 import { TYPES, TYPE_NAMES } from '../engine/hexmap.js';
 import { TYPE_NICKNAMES } from '../data/palette.js';
@@ -9,6 +9,9 @@ import Nova from '../components/nova/Nova.jsx';
 import NovaBubble from '../components/nova/NovaBubble.jsx';
 import SignLink from '../components/common/SignLink.jsx';
 import useTitle from '../hooks/useTitle.js';
+import { useProfile } from '../state/ProfileContext.jsx';
+import { locate } from '../engine/youAreHere.js';
+import NearYou from '../components/map/NearYou.jsx';
 
 const { domains, groups, meta } = domainData;
 
@@ -32,12 +35,13 @@ const STEPS = [
   },
   {
     title: 'You land on it too',
-    text: 'Your answers will place you on the same map, and the domains around you are where to start looking.',
-    soon: true,
+    text: 'Your answers place you on the same map. The pin shows where your interests point, and the domains around it are where to start looking.',
   },
 ];
 
 function Hero() {
+  const p = useProfile();
+  const you = useMemo(() => locate(p.profile, domains, meta.maxLead), [p.profile]);
   const [hover, setHover] = useState(null);
   const [selected, setSelected] = useState(null);
   const readoutRef = useRef(null);
@@ -79,10 +83,12 @@ function Hero() {
               selectedId={selected}
               onHover={setHover}
               onSelect={select}
+              you={you}
             />
           </div>
 
           <div className="h-hero__readout" ref={readoutRef}>
+            <NearYou you={you} onPick={selectFromList} />
             <DomainReadout domain={shown} groups={groups} id="domain-readout" />
           </div>
         </div>

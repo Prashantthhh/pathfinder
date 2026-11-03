@@ -18,6 +18,7 @@ import { PERSONAS } from '../src/engine/fixtures.js';
 import { buildProfile } from '../src/engine/vector.js';
 import { recommend, splitMatches } from '../src/engine/recommend.js';
 import { profileFromDna } from '../src/engine/dna.js';
+import { locate } from '../src/engine/youAreHere.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const axeSource = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
@@ -146,7 +147,7 @@ check('home: choosing from the list selects the same domain on the map', (await 
 
 const homeText = await page.locator('main').innerText();
 check('home: discloses O*NET estimates (machine learning), US data, India labelling and "data not connected yet"', homeText.includes('Machine Learning/Expert') && /US occupations/.test(homeText) && /India facts are labelled/.test(homeText) && /data not connected yet/.test(homeText));
-check('home: step 3 (placing you on the map) is marked Coming next', lower(await page.locator('.h-step--soon .tag').innerText()) === 'coming next');
+check('home: step 3 (placing you on the map) is live, no longer marked Coming next', (await page.locator('.h-step--soon').count()) === 0 && lower(await page.locator('.h-steps').innerText()).includes('you are here') === false && (await page.locator('.h-steps li').count()) === 3);
 check('no global contour backdrop', (await page.locator('svg.contours').count()) === 0);
 await shot(page, 'home-full', { fullPage: true });
 
@@ -281,6 +282,24 @@ for (const id of ['science-pcb', 'arts', 'cse-graduate']) {
 await seed(persona('cse-graduate').answers, 'complete');
 await goto('/results');
 check('results (CSE graduate): software and data careers are strong fits (a degree in the field already covers the study years)', (await titlesIn('strong-title')).includes('Software Developer') && (await titlesIn('strong-title')).includes('Data Scientist'));
+// ---------------------------------------------------------------- Home: "you are here"
+await clearAll();
+await goto('/');
+check('home (no answers): no pin, and an invitation to take the quiz', (await page.getByTestId('you-marker').count()) === 0 && await page.getByTestId('near-you-empty').isVisible());
+const homeDomains = readJson('../src/data/domains.json');
+for (const id of ['artistic-maker', 'cse-graduate']) {
+  await seed(persona(id).answers, 'complete');
+  await goto('/');
+  const want = locate(buildProfile(persona(id).answers, quiz), homeDomains.domains, homeDomains.meta.maxLead).near.map((n) => n.label);
+  const got = await page.locator('[data-testid="near-you"] .nearyou__pick').allInnerTexts();
+  check(`home (${id}): a pin is on the map and the three nearest domains match the engine`, (await page.getByTestId('you-marker').count()) === 1 && JSON.stringify(got) === JSON.stringify(want), `${got} vs ${want}`);
+  check(`home (${id}): the nearest domains are marked on the map`, (await page.locator('.hexmap__list li.is-near').count()) === 3);
+}
+await shot(page, 'home-you-are-here');
+await page.locator('[data-testid="near-you"] .nearyou__pick').first().click();
+check('home: choosing a nearby domain points Nova at it and fills the readout', (await page.locator('.readout__title').count()) === 1);
+await axeCheck(page, '/ (with the pin)');
+
 await seed(persona('undecided').answers, 'complete');
 await goto('/results');
 check('results (undecided): with no strong fit, it says so and points to Explore further', await page.getByTestId('no-strong').isVisible());

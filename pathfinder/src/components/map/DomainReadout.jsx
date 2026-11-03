@@ -19,7 +19,7 @@ export default function DomainReadout({ domain, groups, id }) {
       ) : (
         <>
           <p className="readout__kicker">{group?.label}</p>
-          <h3 className="readout__title">{domain.label}</h3>
+          <h2 className="readout__title">{domain.label}</h2>
           <p>{domain.blurb}</p>
 
           <p className="readout__sub">
