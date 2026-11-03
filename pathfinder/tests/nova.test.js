@@ -4,7 +4,7 @@ import { join, relative } from 'node:path';
 import { handleNova, DEFAULT_MODEL, DEFAULT_URL } from '../api/_lib/nova.js';
 import { createLimiter } from '../api/_lib/limiter.js';
 import { checkAnswer } from '../api/_lib/guard.js';
-import { SYSTEM_PROMPT } from '../api/_lib/rules.js';
+import { FEATURES, SYSTEM_PROMPT } from '../api/_lib/rules.js';
 import { askLive, buildNovaContext, FALLBACK_NOTE, LIVE_DAILY_CAP } from '../src/engine/novaLive.js';
 import { buildProfile } from '../src/engine/vector.js';
 import { recommend } from '../src/engine/recommend.js';
@@ -52,6 +52,35 @@ describe('live Nova endpoint (provider mocked)', () => {
     expect(body.messages[0]).toEqual({ role: 'system', content: SYSTEM_PROMPT });
     expect(JSON.stringify(out)).not.toContain('test-key-123');
   });
+  it('the system rules list exactly what PATHFINDER has, and forbid mentioning anything else', () => {
+    expect(FEATURES.map(([name]) => name)).toEqual(['Quiz', 'Results', 'Career DNA', 'Explore', 'Career pages', 'Skill gap', 'Roadmap', 'Compare', 'Dashboard']);
+    for (const [name, what] of FEATURES) {
+      expect(SYSTEM_PROMPT).toContain(`- ${name}: ${what}`);
+      expect(what.length, name).toBeGreaterThan(20);
+    }
+    expect(SYSTEM_PROMPT).toMatch(/PATHFINDER has exactly these parts and no others/);
+    expect(SYSTEM_PROMPT).toMatch(/Never mention or promise any course, resource, study material, tutorial, coaching, app, website, tool, feature/);
+    expect(SYSTEM_PROMPT).toMatch(/Never suggest a stage that is DONE/);
+  });
+  it('a roadmap with every stage done, or none, is described correctly', async () => {
+    const f = okProvider();
+    await ask({ context: { careerId: 'doctor', stages: [{ title: 'A', done: true }, { title: 'B', done: true }] } }, f);
+    expect(sentBody(f).messages.at(-1).content).toContain('Every stage is done.');
+    const g = okProvider();
+    await ask({ context: { careerId: 'doctor', stages: [{ title: 'A', done: false }, { title: 'B', done: false }] } }, g);
+    expect(sentBody(g).messages.at(-1).content).toContain('The next step is the first stage not done: A.');
+  });
+  it('roadmap stages are ignored without a career, capped at 12, and only done: true counts as done', async () => {
+    const f = okProvider();
+    await ask({ context: { stages: [{ title: 'Stray', done: true }] } }, f);
+    expect(sentBody(f).messages.at(-1).content).not.toContain('Stray');
+    const g = okProvider();
+    await ask({ context: { careerId: 'doctor', stages: Array.from({ length: 20 }, (_, i) => ({ title: `S${i}`, done: i === 0 ? 'yes' : false })) } }, g);
+    const user = sentBody(g).messages.at(-1).content;
+    expect(user).toContain('12. [NOT DONE] S11');
+    expect(user).not.toContain('S12');
+    expect(user).toContain('1. [NOT DONE] S0');
+  });
   it('the system rules cover: only PATHFINDER data, no invented salaries/dates/eligibility/links, check with the official body, short and friendly', () => {
     expect(SYSTEM_PROMPT).toMatch(/Answer ONLY from the DATA/);
     expect(SYSTEM_PROMPT).toMatch(/Never invent or estimate salaries/);
@@ -87,11 +116,17 @@ describe('live Nova endpoint (provider mocked)', () => {
       expect(user).toContain('NEET UG');
       expect(user).toContain('National Medical Commission');
       expect(user).toContain('Salary and outlook for India: not available');
-      expect(user).toContain('2 of 5 stages ticked. Next stage: MBBS degree');
+      expect(user).toContain('1. [DONE] Class 12 with Physics, Chemistry and Biology');
+      expect(user).toContain('2. [DONE] Entrance exam');
+      expect(user).toContain('3. [NOT DONE] MBBS degree');
+      expect(user).toContain('5. [NOT DONE] Registration to practise');
+      expect(user).toContain('The next step is the first stage not done: MBBS degree.');
+      expect(user).toContain('Never suggest a stage that is marked DONE');
       expect(user.endsWith("Student's question: What next?")).toBe(true);
     });
     it('the client sends only ids and numbers, never career text, goal, saved list or answers', () => {
-      expect(Object.keys(context).sort()).toEqual(['careerId', 'dna', 'matches', 'stage']);
+      expect(Object.keys(context).sort()).toEqual(['careerId', 'dna', 'matches', 'stages']);
+      expect(context.stages.map((s) => s.done)).toEqual([true, true, false, false, false]);
       expect(context.matches.every((m) => Object.keys(m).sort().join() === 'id,percent')).toBe(true);
       expect(Object.keys(context.dna)).toEqual(['R', 'I', 'A', 'S', 'E', 'C']);
       expect(JSON.stringify(context)).not.toMatch(/goal|saved|answers|name|email/i);

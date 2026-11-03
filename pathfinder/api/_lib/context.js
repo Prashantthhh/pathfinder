@@ -46,11 +46,12 @@ export function parseRequest(body, data) {
   }
 
   const careerId = typeof ctx.careerId === 'string' && ids.has(ctx.careerId) ? ctx.careerId : null;
-  let stage = null;
-  if (ctx.stage && typeof ctx.stage === 'object' && text(ctx.stage.title, 120)) {
-    stage = { title: text(ctx.stage.title, 120), detail: text(ctx.stage.detail, 240), done: int(ctx.stage.done, 0, 20) ?? 0, total: int(ctx.stage.total, 1, 20) ?? 1 };
-  }
-  return { ok: true, value: { question, history, matches, dna, careerId, stage } };
+  // the full roadmap of the career being viewed, each stage marked done or not
+  const stages = (Array.isArray(ctx.stages) ? ctx.stages : [])
+    .filter((s) => s && typeof s === 'object' && text(s.title, 120))
+    .slice(0, 12)
+    .map((s) => ({ title: text(s.title, 120), detail: text(s.detail, 240), done: s.done === true }));
+  return { ok: true, value: { question, history, matches, dna, careerId, stages: careerId ? stages : [] } };
 }
 
 const tierWord = (p) => (p >= STRONG_MIN ? 'strong match' : p >= WORTH_MIN ? 'worth exploring' : p >= 50 ? 'partial overlap' : 'below the 50% match line');
@@ -95,8 +96,14 @@ export function buildData(value, data) {
   if (value.careerId) {
     parts.push(`The career page the student is on:\n${careerBlock(data.careers.find((c) => c.id === value.careerId), data)}`);
   }
-  if (value.stage) {
-    parts.push(`The student's roadmap: ${value.stage.done} of ${value.stage.total} stages ticked. Next stage: ${value.stage.title}${value.stage.detail ? ` (${value.stage.detail})` : ''}`);
+  if (value.stages.length) {
+    const rows = value.stages.map((s, i) => `${i + 1}. [${s.done ? 'DONE' : 'NOT DONE'}] ${s.title}${s.detail ? ` (${s.detail})` : ''}`);
+    const next = value.stages.find((s) => !s.done);
+    parts.push(
+      `The student's roadmap for this career (the typical route; the student ticks stages as they finish them):\n${rows.join('\n')}\n` +
+      (next ? `The next step is the first stage not done: ${next.title}.` : 'Every stage is done.') +
+      ' Never suggest a stage that is marked DONE as something still to do.',
+    );
   }
   return parts.join('\n\n');
 }

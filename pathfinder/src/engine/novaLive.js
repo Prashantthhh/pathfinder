@@ -3,9 +3,9 @@
 //
 // Sent to the server (and from there to the AI provider): the question and up to 4 recent turns, the top
 // matches (career id + score), the Career DNA (six numbers), the career page being viewed (id only; the
-// server looks the career up), and the next roadmap stage (its title and a count). Nothing identifying:
+// server looks the career up), and that career's roadmap (each stage's title and whether it is ticked). Nothing identifying:
 // no name or email, no goal note, no saved list, no quiz answers.
-import { progress } from './roadmap.js';
+import { roadmapFor } from './roadmap.js';
 
 export const LIVE_DAILY_CAP = 25;
 const CAP_KEY = 'pathfinder:nova-live';
@@ -21,8 +21,8 @@ export function buildNovaContext({ result, profile, career = null, ticked = [] }
   if (d && Object.values(d).some((v) => v > 0)) ctx.dna = { R: d.R, I: d.I, A: d.A, S: d.S, E: d.E, C: d.C };
   if (career) {
     ctx.careerId = career.id;
-    const p = progress(career, ticked);
-    if (p.next) ctx.stage = { title: p.next.title, detail: p.next.detail ?? '', done: p.done, total: p.total };
+    const done = new Set(ticked);
+    ctx.stages = roadmapFor(career).map((s) => ({ title: s.title, detail: s.detail ?? '', done: done.has(s.id) }));
   }
   return ctx;
 }
