@@ -14,7 +14,7 @@ import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
 
 export default function Profile() {
-  useTitle('My Career DNA');
+  useTitle('My Career DNA', 'Your six interest levels (Holland RIASEC), adjustable with sliders, and where they place you on the career map.');
   const p = useProfile();
   const navigate = useNavigate();
   const { quiz, careers, result } = p;

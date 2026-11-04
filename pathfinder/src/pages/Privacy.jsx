@@ -4,7 +4,7 @@ import { clearAll } from '../state/storage.js';
 import { useProfile } from '../state/ProfileContext.jsx';
 
 export default function Privacy() {
-  useTitle('Privacy & your data');
+  useTitle('Privacy & your data', 'What PATHFINDER saves on your device, what is sent when you ask Nova, and how to delete it.');
   const [cleared, setCleared] = useState(false);
   const profile = useProfile();
 

@@ -2,7 +2,7 @@ import useTitle from '../hooks/useTitle.js';
 import meta from '../data/careersMeta.json';
 
 export default function About() {
-  useTitle('About');
+  useTitle('About', 'How PATHFINDER works, where its career data comes from (O*NET, CC BY 4.0), and what its scores do and do not mean.');
   return (
     <article className="page page--narrow prose" aria-labelledby="about-title">
       <h1 id="about-title">About PATHFINDER</h1>

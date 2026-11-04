@@ -145,3 +145,9 @@
 
 .trail-progress__section { overflow: hidden; }
 .trail-progress__name { overflow: hidden; text-overflow: ellipsis; }
+
+/* Phase 5: on very small phones the section labels get tighter so none is cut off */
+@media (max-width: 24rem) {
+  .trail-progress__sections { gap: var(--s-2); }
+  .trail-progress__name { font-size: 0.6rem; letter-spacing: 0.04em; }
+}

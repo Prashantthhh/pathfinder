@@ -18,6 +18,18 @@ npm run links:verify  # list / add / remove names a person checked by hand (need
 npm run spread        # score spread over simulated students (add -- --old <path> to compare)
 ```
 
+## Quality checks
+
+`npm run test:all` runs everything: unit tests, the end-to-end suite and the audit. Each can run alone:
+
+- `npm test` unit tests (engine, data integrity, state, the Nova server code with the AI provider mocked)
+- `npm run e2e` drives the real UI (details below)
+- `npm run audit` visits every route, with and without student data, at 1280, 390 and 320 px wide and checks: no console
+  errors, no horizontal scroll, a unique title and meta description, one `h1` and one `main`, axe-core (WCAG 2.0/2.1/2.2 A and AA plus best
+  practices), tap targets of at least 24x24 px, a visible keyboard focus indicator on every Tab stop, no text cut off by an ellipsis,
+  no endless animation under `prefers-reduced-motion`, and the mobile menu (state announced, Escape closes it and returns focus)
+- `npm run shots` full-page desktop and mobile screenshots into `e2e-output/shots/` for a visual check
+
 ## End-to-end tests
 
 `npm run e2e` builds the app, serves it on a free port, and clicks through the quiz,

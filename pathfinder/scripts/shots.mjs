@@ -32,9 +32,12 @@ for (const [label, viewport] of [['desktop', { width: 1280, height: 900 }], ['mo
   const ctx = await browser.newContext({ viewport });
   const page = await ctx.newPage();
   for (const j of jobs) {
-    const answers = PERSONAS.find((p) => p.id === j.persona).answers;
+    const answers = j.persona === 'none' ? null : PERSONAS.find((p) => p.id === j.persona).answers; // 'none' = a brand-new student
     await page.goto(BASE + '/', { waitUntil: 'networkidle' });
-    await page.evaluate(([a, extra]) => localStorage.setItem('pathfinder:v1', JSON.stringify({ v: 1, quiz: { answers: a, step: 0, status: 'complete' }, ...(extra ?? {}) })), [answers, j.state]);
+    await page.evaluate(([a, extra]) => {
+      localStorage.clear();
+      if (a) localStorage.setItem('pathfinder:v1', JSON.stringify({ v: 1, quiz: { answers: a, step: 0, status: 'complete' }, ...(extra ?? {}) }));
+    }, [answers, j.state]);
     await page.goto(BASE + j.path, { waitUntil: 'networkidle' });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     await page.screenshot({ path: `${out}${j.name}-${label}.png`, fullPage: true });

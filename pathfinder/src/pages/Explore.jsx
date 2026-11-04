@@ -15,7 +15,7 @@ const toggle = (list, id) => (list.includes(id) ? list.filter((x) => x !== id) :
 const DOMAINS_WITH_CAREERS = DOMAINS.filter((d) => CAREER_COUNT_BY_DOMAIN[d.id] > 0);
 
 export default function Explore() {
-  useTitle('Explore careers');
+  useTitle('Explore careers', 'Search and filter careers by domain, interest type or how well they match you.');
   const p = useProfile();
   const { careers, result, percentById } = p;
   const hasProfile = !result.insufficient;

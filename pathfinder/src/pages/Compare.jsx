@@ -6,7 +6,7 @@ import useTitle from '../hooks/useTitle.js';
 
 /** 2-3 careers on the same fields. A field that has no data says "Not available". */
 export default function Compare() {
-  useTitle('Compare careers');
+  useTitle('Compare careers', 'Put two or three careers side by side on the same fields: skills, interests, typical route in India and more.');
   const p = useProfile();
   const chosen = p.compare.map((id) => p.careers.find((c) => c.id === id)).filter(Boolean);
   const hasProfile = !p.result.insufficient;

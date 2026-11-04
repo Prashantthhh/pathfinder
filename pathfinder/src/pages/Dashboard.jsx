@@ -16,7 +16,7 @@ import useTitle from '../hooks/useTitle.js';
  * next step. Only the student's own data is shown: no scores of progress, rankings or badges.
  */
 export default function Dashboard() {
-  useTitle('My dashboard');
+  useTitle('My dashboard', 'Your saved careers, roadmap progress and one suggested next step, kept on this device.');
   const p = useProfile();
   const hasProfile = !p.result.insufficient;
   const saved = p.saved.map((id) => p.careers.find((c) => c.id === id)).filter(Boolean);

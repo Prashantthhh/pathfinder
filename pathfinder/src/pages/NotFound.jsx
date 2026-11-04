@@ -3,7 +3,7 @@ import Nova from '../components/nova/Nova.jsx';
 import useTitle from '../hooks/useTitle.js';
 
 export default function NotFound() {
-  useTitle('Off the map');
+  useTitle('Off the map', 'That page is not on the PATHFINDER map.');
   return (
     <section className="page page--narrow stub" aria-labelledby="nf-title">
       <Nova size={120} mood="curious" />

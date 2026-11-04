@@ -36,7 +36,7 @@ function Empty({ answered }) {
 }
 
 export default function Results() {
-  useTitle('Your matches');
+  useTitle('Your matches', 'Careers that match your interests, with reasons, grouped into strong fits and ones to explore further.');
   const p = useProfile();
   const navigate = useNavigate();
   const { result, profile, quiz, careers } = p;
@@ -105,10 +105,6 @@ export default function Results() {
 
       {p.previous && matches.length > 0 && <RunComparison previous={p.previous} matches={matches} careers={careers} />}
 
-      <section className="results__place" aria-labelledby="place-title">
-        <h2 id="place-title" className="results__place-h">Where you are on the map</h2>
-        <YourPlace />
-      </section>
 
       <p className="results__dims">
         Strongest in your profile:{' '}
@@ -196,6 +192,11 @@ export default function Results() {
         aids, not cut-offs with any meaning on their own. &ldquo;Typical route&rdquo; is our general reading of the
         usual route in India, not an eligibility rule: verify with the official body.
       </p>
+
+      <section className="results__place" aria-labelledby="place-title">
+        <h2 id="place-title" className="results__place-h">Where you are on the map</h2>
+        <YourPlace />
+      </section>
 
       <section className="results__group" aria-labelledby="alts-title">
         <h2 id="alts-title">Other trails worth a look</h2>

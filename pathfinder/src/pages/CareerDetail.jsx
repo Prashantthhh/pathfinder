@@ -35,7 +35,7 @@ export default function CareerDetail() {
   const { id } = useParams();
   const p = useProfile();
   const career = p.careers.find((c) => c.id === id);
-  useTitle(career?.title ?? 'Career');
+  useTitle(career?.title ?? 'Career', career ? `${career.title}: ${career.description.slice(0, 130).replace(/\s+\S*$/, '')}… Skills, interest profile and the typical route in India.` : undefined);
   if (!career) return <Missing />;
 
   const hasProfile = !p.result.insufficient;

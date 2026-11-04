@@ -229,3 +229,9 @@
 .sign:hover { color: inherit; }
 .sign--primary:hover .sign__board { filter: brightness(1.08); }
 .sign:focus-visible { outline-offset: 5px; border-radius: 999px; }
+
+/* Phase 5: footer links are full-size tap targets */
+.site-footer li { margin-bottom: 0; }
+.site-footer nav li a { display: inline-block; padding-block: 0.55rem; min-height: 2.75rem; }
+
+.route-loading { color: var(--ink-2); min-height: 40vh; }

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { starTips } from '../nova/starPath.js';
 
@@ -29,7 +29,22 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const toggleRef = useRef(null);
+
   useEffect(() => setOpen(false), [pathname]);
+
+  // Escape closes the open menu and puts focus back on the button that opened it
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
 
   return (
     <header className="site-header">
@@ -42,6 +57,7 @@ export default function Header() {
         <button
           type="button"
           className="nav-toggle"
+          ref={toggleRef}
           aria-expanded={open}
           aria-controls="site-nav"
           onClick={() => setOpen((o) => !o)}

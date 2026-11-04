@@ -1,0 +1,291 @@
+
+> pathfinder@0.1.0 test:all
+> vitest run && npm run e2e && node scripts/audit.mjs
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mE:/sreetha_project/pathfinder[39m
+
+ [32m✓[39m src/engine/palette.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32m✓[39m src/components/map/nav.test.js [2m([22m[2m3 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32m✓[39m src/engine/hexmap.test.js [2m([22m[2m21 tests[22m[2m)[22m[90m 35[2mms[22m[39m
+ [32m✓[39m src/components/map/terrain.test.js [2m([22m[2m8 tests[22m[2m)[22m[90m 33[2mms[22m[39m
+ [32m✓[39m src/data/verification.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m src/state/quizState.test.js [2m([22m[2m22 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+ [32m✓[39m src/state/appState.test.js [2m([22m[2m14 tests[22m[2m)[22m[90m 31[2mms[22m[39m
+[90mstderr[2m | tests/nova.test.js[2m > [22m[2mlive Nova endpoint (provider mocked)[2m > [22m[2mwhen the provider fails, the browser is told to fall back[2m > [22m[2mprovider 429 (free limit hit)
+[22m[39m[nova] provider HTTP 429 (model qwen/qwen3.8-27b): undefined
+
+[90mstderr[2m | tests/nova.test.js[2m > [22m[2mlive Nova endpoint (provider mocked)[2m > [22m[2mwhen the provider fails, the browser is told to fall back[2m > [22m[2mprovider 500, network error, bad JSON, empty answer
+[22m[39m[nova] provider HTTP 500 (model qwen/qwen3.8-27b): oops
+
+ [32m✓[39m src/engine/phase4.test.js [2m([22m[2m24 tests[22m[2m)[22m[90m 64[2mms[22m[39m
+ [32m✓[39m src/engine/features.test.js [2m([22m[2m33 tests[22m[2m)[22m[90m 90[2mms[22m[39m
+[90mstderr[2m | tests/nova.test.js[2m > [22m[2mlive Nova endpoint (provider mocked)[2m > [22m[2mwhen the provider fails, the browser is told to fall back[2m > [22m[2mthe error body never contains the key
+[22m[39m[nova] provider HTTP 401 (model qwen/qwen3.8-27b): undefined
+
+ [32m✓[39m tests/nova.test.js [2m([22m[2m38 tests[22m[2m)[22m[90m 151[2mms[22m[39m
+ [32m✓[39m src/engine/engine.test.js [2m([22m[2m61 tests[22m[2m)[22m[90m 221[2mms[22m[39m
+ [32m✓[39m src/engine/youAreHere.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m12 passed[39m[22m[90m (12)[39m
+[2m      Tests [22m [1m[32m240 passed[39m[22m[90m (240)[39m
+[2m   Start at [22m 00:19:19
+[2m   Duration [22m 1.29s[2m (transform 1.06s, setup 0ms, collect 3.15s, tests 664ms, environment 3ms, prepare 2.68s)[22m
+
+
+> pathfinder@0.1.0 e2e
+> vite build && node scripts/e2e.mjs
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 128 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                                        [39m[1m[2m  0.99 kB[22m[1m[22m[2m │ gzip:   0.61 kB[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-ext-400-normal-Bbz-b3yf.woff   [39m[1m[2m  7.36 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-ext-700-normal-CKkU2Dpt.woff   [39m[1m[2m  7.36 kB[22m[1m[22m
+[2mdist/[22m[32massets/bricolage-grotesque-vietnamese-wght-normal-BUzh504Q.woff2  [39m[1m[2m  8.61 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-ext-700-normal-BoVPHkS0.woff2  [39m[1m[2m  9.37 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-ext-400-normal-DRk46D-x.woff2  [39m[1m[2m  9.38 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-400-normal-BbWidj28.woff       [39m[1m[2m 14.02 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-700-normal-BK6Glc0m.woff       [39m[1m[2m 14.29 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-400-normal-BrHNak5F.woff2      [39m[1m[2m 17.21 kB[22m[1m[22m
+[2mdist/[22m[32massets/atkinson-hyperlegible-latin-700-normal-GZI4o3u0.woff2      [39m[1m[2m 17.52 kB[22m[1m[22m
+[2mdist/[22m[32massets/bricolage-grotesque-latin-ext-wght-normal-CcLUaPy7.woff2   [39m[1m[2m 18.67 kB[22m[1m[22m
+[2mdist/[22m[32massets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2       [39m[1m[2m 41.34 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-sfegWkDc.css                                         [39m[1m[2m 54.95 kB[22m[1m[22m[2m │ gzip:  11.17 kB[22m
+[2mdist/[22m[36massets/Privacy-DZ-6KjO3.js                                        [39m[1m[2m  2.73 kB[22m[1m[22m[2m │ gzip:   1.26 kB[22m
+[2mdist/[22m[36massets/About-Qp3OvUfH.js                                          [39m[1m[2m  3.66 kB[22m[1m[22m[2m │ gzip:   1.67 kB[22m
+[2mdist/[22m[36massets/Compare-vACzQ6vj.js                                        [39m[1m[2m  3.86 kB[22m[1m[22m[2m │ gzip:   1.57 kB[22m
+[2mdist/[22m[36massets/Dashboard-BH460JBR.js                                      [39m[1m[2m  5.59 kB[22m[1m[22m[2m │ gzip:   2.06 kB[22m
+[2mdist/[22m[36massets/Profile-qzLwpD-S.js                                        [39m[1m[2m  7.48 kB[22m[1m[22m[2m │ gzip:   2.69 kB[22m
+[2mdist/[22m[36massets/NovaChat-Sdu7xewW.js                                       [39m[1m[2m 17.37 kB[22m[1m[22m[2m │ gzip:   7.07 kB[22m
+[2mdist/[22m[36massets/index-ySBHyLcI.js                                          [39m[1m[2m454.38 kB[22m[1m[22m[2m │ gzip: 136.42 kB[22m
+[32m✓ built in 1.36s[39m
+PASS home: headline and the 35-domain promise
+PASS home: states the India / any-stream audience
+PASS home: map has exactly 35 domain dots, and the list twin the same 35 in 7 groups
+PASS home: all six RIASEC corners are labelled
+PASS home: the dots share one tab stop (roving tabindex)
+PASS home: nothing selected, so Nova is not pointing yet
+PASS home: hovering a domain fills the readout with name, group and O*NET basis
+PASS home: readout shows six interest scores out of 7 and names Artistic as primary
+PASS home: Nova points at the domain (her bearing changes)
+PASS home: a label and a route line appear for the active domain
+PASS home: readout links to the careers in that domain
+PASS home: every domain has a career (Chemical & Materials links to 1)
+PASS home: clicking a dot keeps it selected after the mouse leaves
+PASS home: clicking again clears the selection
+PASS home: arrow keys move to a neighbouring domain
+PASS home: Enter selects the focused domain
+PASS home: choosing from the list selects the same domain on the map
+PASS home: discloses O*NET estimates (machine learning), US data, India labelling and "data not connected yet"
+PASS home: step 3 (placing you on the map) is live, no longer marked Coming next
+PASS no global contour backdrop
+PASS O*NET attribution (CC BY 4.0) with modification notice and links is in the footer of every page
+PASS quiz: starts at question 1 of 16
+PASS quiz: first question is stream/education with the six agreed options
+PASS quiz: Nova intro uses the section intro
+PASS quiz: no Back button on question 1
+PASS quiz: Next with no answer shows an alert and stays
+PASS quiz: Nova answers the specific stream picked
+PASS quiz: alert clears once answered; stream answers say they only arrange results
+PASS quiz: a different stream gets its own reaction
+PASS quiz: choosing "graduate" inserts the field question (now 17 in all)
+PASS quiz: Nova reacts to the field picked
+PASS quiz: switching away from "graduate" drops the field answer and returns to 16 questions
+PASS quiz: interest questions offer six activities, one per interest type, and say "up to 2"
+PASS quiz: Nova reacts to the exact activity picked
+PASS quiz: a second pick gets a different, specific reaction
+PASS quiz: the third pick is disabled at the limit of 2
+PASS quiz: selected rows show which interest type they count toward
+PASS quiz: unticking gets a removal message
+PASS quiz: Space toggles a checkbox from the keyboard
+PASS quiz: focus moves to the step heading after Next
+PASS quiz: Back keeps earlier answers
+PASS quiz: progress is written to localStorage
+PASS quiz: reload shows the resume gate with the answered count
+PASS quiz: resume lands on the saved question with its answers
+PASS quiz: start over asks for confirmation
+PASS quiz: after clearing, question 1 with nothing selected
+PASS quiz: a full run asks exactly 16 questions and lands on /results
+PASS results: heading
+PASS results: the Strong fits list is exactly what the engine computes
+PASS results: the Explore further list is exactly what the engine computes
+PASS results: every strong fit scores 75%+ and shows no route reason
+PASS results: a strong score with an unsuited route sits under Explore further, with the reason and the "verify" note
+PASS results: the context line says what was used and that it never changes a score or hides a career
+PASS results: a loose O*NET match says so in the list (Entrepreneur)
+PASS results: says a match score is not a prediction of success
+PASS results: every listed match is 50% or higher
+PASS results: bars are neutral (no inline colour, ink-2 token)
+PASS results: Why this match shows O*NET interest scores and the answers behind them, no student percentage
+PASS results: Why this match does not claim the student "leans on" Artistic for Bank Officer (low-on-both is not a reason)
+PASS results: Why this match compares the day-to-day with work settings, labelled as derived
+PASS results: "every career scoring 50% or more" lists nothing under 50%
+PASS axe: no accessibility violations on /results
+PASS results survive a full reload
+PASS results (science-pcb): the matches shown equal the engine's
+PASS results (arts): the matches shown equal the engine's
+PASS results (cse-graduate): the matches shown equal the engine's
+PASS results (CSE graduate): software and data careers are strong fits (a degree in the field already covers the study years)
+PASS home (no answers): no pin, and an invitation to take the quiz
+PASS home (artistic-maker): a pin is on the map and the three nearest domains match the engine
+PASS home (artistic-maker): the nearest domains are marked on the map
+PASS home (cse-graduate): a pin is on the map and the three nearest domains match the engine
+PASS home (cse-graduate): the nearest domains are marked on the map
+PASS home: choosing a nearby domain points Nova at it and fills the readout
+PASS axe: no accessibility violations on / (with the pin)
+PASS results: "where you are on the map" shows the pin and the three nearest domains from the engine
+PASS results: Explore further is grouped by reason (strong score / different route, worth a look)
+PASS career page: shows where its domain sits on the map and whether it is near you
+PASS explore: "Near you on the map" filters to the three nearest domains
+PASS explore: pressing it again clears the filter
+PASS career page (no answers): map shows the domain and invites the quiz, no pin
+PASS results (undecided): with no strong fit, it says so and points to Explore further
+PASS sparse: fewer than 8 matches explains why (3 rather than 8, below 50%)
+PASS sparse: nothing under 50% is listed as a match
+PASS sparse: this profile has alternatives in the 45-49% range
+PASS sparse: alternatives under 50% say "below the 50% match line" and print no score or bar
+PASS sparse: fewer than 3 alternatives explains the count
+PASS sparse: no alternatives reach 45%: says so
+PASS sparse: partial answers show the incomplete banner
+PASS answering only the stream gives no matches: friendly empty state
+PASS all 61 career pages: title, verify note, 6 interest scores, 6 work settings, loose notes only where flagged, salary/outlook "data not connected yet", only verified official links, no figures
+PASS career: the description is O*NET's, with its US occupation named
+PASS career: lists five O*NET tasks and the real interest scores
+PASS career: shows the typical route and its verify label, and no eligibility numbers
+PASS career: NEET UG is a link only if verified, otherwise "Check with the official body"
+PASS career: Film Director uses the corrected FTII exam name ("FTII Entrance Test"), never "FTII JET"
+PASS career: an exam name that could not be confirmed (NID DAT) is not shown, only "Check with the official body"
+PASS career: a loose O*NET match carries an "approximate match" callout (Entrepreneur)
+PASS career: without a profile it invites the quiz instead of a score
+PASS career: unknown id gives a friendly not-found
+PASS axe: no accessibility violations on /careers/doctor
+PASS axe: no accessibility violations on /careers/entrepreneur
+PASS career: with a profile it shows the same match score the engine computes, with the caveat
+PASS career: below 50% it prints no score, only that it is below the line
+PASS explore: lists all 61 careers across 35 domains
+PASS explore: the domain filter lists all 35 domains
+PASS explore: sorts by best match for the student by default
+PASS explore: no score under 50% is printed anywhere
+PASS explore: low-scoring careers say "below the 50% match line" instead of a number
+PASS axe: no accessibility violations on /explore
+PASS explore: search writes the query to the URL and finds Civil Servant by its Indian keyword
+PASS explore: "iti" finds the ITI-route careers
+PASS explore: no results gives a friendly empty state
+PASS explore: clearing filters restores all 61
+PASS explore: a domain from a link filters to its careers (Design: 3)
+PASS explore: "main interest" filter finds Realistic careers (Electrician, Automobile Technician)
+PASS explore: "matches for me" shows only 50%+ careers
+PASS explore: save starts unpressed
+PASS explore: save button becomes pressed
+PASS explore: saved career survives reload
+PASS explore: "careers I saved" shows just that career
+PASS explore: Surprise Me avoids the top matches and explains itself
+PASS explore: "Show me another" gives a different career
+PASS explore: without a profile "matches for me" is disabled and the default sort is A-Z
+PASS explore: Surprise Me works with no profile
+PASS profile: six interest sliders with plain-word levels, no percentages
+PASS profile: strongest interest reads "Strongest"
+PASS profile: shows stream, study and earning answers and the work-setting preferences
+PASS axe: no accessibility violations on /profile
+PASS profile: the pin is on the map with three nearest domains
+PASS profile: moving the sliders moves the pin and changes the nearest domains
+PASS profile: editing sliders marks the profile as edited
+PASS profile: the live matches follow the edit and equal the engine's
+PASS profile: results use the edited DNA and say so
+PASS profile: edited DNA persists after navigating away
+PASS profile: reset returns to the quiz result
+PASS profile: goal note persists
+PASS profile: retake asks for confirmation and says what is kept
+PASS profile: retake kept saved careers and goal, and remembered the old matches
+PASS results: show how matches changed since the last attempt
+PASS results: the comparison names new arrivals and careers that dropped out
+PASS nova: the page explains the AI-generated and Demo labels, and that no name or contact details are sent
+PASS nova: log region is announced politely
+PASS nova: with no live AI set up, a suggested question gets its preset answer, labelled Demo
+PASS nova: once it knows live AI is off, the page says so
+PASS nova: a salary question gets the honest "data not connected" answer and says US data is not used for India
+PASS nova: a stream question points to the typical-route label and refuses eligibility rules
+PASS nova: a named career is answered from its O*NET description, typical route and salary placeholder
+PASS nova: an unknown question says it is a demo with no preset answer
+PASS nova: every Nova message carries a source label (Demo when not live; the welcome message says what the labels mean)
+PASS nova: the welcome message no longer claims to be a demo or "not live AI"
+PASS nova (live): a reply from the AI is labelled AI-generated, with a caution to check with the official body
+PASS nova (live): the request has only the question, history and context (matches, Career DNA, career id, roadmap stages)
+PASS nova (live): the context carries the real top matches, six DNA numbers, the career page and the full roadmap with ticks
+PASS nova (live): no goal note, name, saved list or quiz answers are sent
+PASS nova (live): a follow-up sends the earlier turns as history
+PASS axe: no accessibility violations on /nova (live reply)
+PASS nova (fallback): when the free limit is hit the demo answer is shown, labelled Demo, with a plain note
+PASS nova (fallback): when the user is rate-limited the demo answer is shown, labelled Demo, with a plain note
+PASS nova (fallback): when the API fails the demo answer is shown, labelled Demo, with a plain note
+PASS nova (fallback): when the answer fails the safety check the demo answer is shown, labelled Demo, with a plain note
+PASS nova (no key): the first call finds it is not configured and later questions skip the API
+PASS nova (daily cap): after 25 live questions a day it uses demo answers without calling the API
+PASS nova: no API key or provider secret is in the shipped frontend code
+PASS nova: with results it explains the real top match, labelled as built from results
+PASS axe: no accessibility violations on /nova
+PASS skills: Doctor's own skills and knowledge areas are listed (ranked above the average career), and the quiz pre-rates none of them
+PASS skills: the summary counts only what the student rated and lists the gaps
+PASS skills: ratings are kept after a reload (localStorage)
+PASS skills: a rating can be cleared
+PASS axe: no accessibility violations on /careers/doctor (skills and roadmap)
+PASS roadmap: Doctor goes Class 12 PCB, entrance exam, MBBS, internship, registration
+PASS roadmap: names NEET UG and the National Medical Commission, with only their verified official links
+PASS roadmap: no "free" claims, and every link opens an official site in a new tab
+PASS roadmap: ticking updates progress ("2 of 5 stages")
+PASS roadmap: progress is saved to localStorage and survives a reload
+PASS roadmap: a career without hand-written stages gets stages from its own route data (Animator: any stream, study length, no exam on record)
+PASS roadmap (Lawyer): both routes into an LLB, enrolment with a State Bar Council, and the AIBE to practise
+PASS roadmap (Lawyer): the AIBE and Bar Council names link only to their verified official sites
+PASS roadmap (CA): graduates enter directly at Intermediate; articleship says to check the current duration with ICAI, with no fixed length
+PASS skills (Musician has no skill above the edge): shows "Core skills (common to many careers)" with three items, in the list and in the rating section
+PASS roadmap: Electrician lists its own exam and body (AITT, DGT), not an invented one
+PASS compare: with nothing chosen it says how to start
+PASS compare: the button shows its state with aria-pressed
+PASS compare: a fourth career is blocked (three is the limit)
+PASS compare: three careers side by side
+PASS compare: every row has a cell for every career and no cell is empty
+PASS compare: salary and outlook say "Not available" for each career
+PASS compare: exam names are shown (NEET UG; none on record for Animator; UPSC, verified by hand)
+PASS compare: match scores come from the engine
+PASS axe: no accessibility violations on /compare
+PASS compare: removing one leaves two columns
+PASS compare: with one left it asks for another
+PASS compare: a career can be added from the picker
+PASS compare (no quiz answers): the match score says "Not available", the rest still shows
+PASS dashboard (new student): next step is to take the quiz; no invented stats or badges
+PASS dashboard (no saved careers): the next step is to save the top match
+PASS dashboard: saved careers show the student's own roadmap ticks and skill ratings
+PASS dashboard: the next step continues the roadmap that is under way
+PASS dashboard: shows the map pin and the goal the student wrote
+PASS axe: no accessibility violations on /dashboard
+PASS dashboard: "Open the roadmap" lands on the roadmap section of the career page
+PASS dashboard: with the roadmap finished the next step moves on to skills (none rated yet)
+PASS resilience: unknown skills, stages and compare ids in storage are dropped
+PASS privacy: wipe removes answers, saved careers, goal and old results
+PASS privacy: after the wipe results are empty
+PASS resilience: corrupt storage still loads the quiz
+PASS resilience: an older (8-dimension) save is discarded, not misread
+PASS axe: no accessibility violations on / (home)
+PASS axe: no accessibility violations on /quiz (question)
+PASS axe: no accessibility violations on /about
+PASS about: explains the grouping rule and the data limits
+PASS axe: no accessibility violations on /privacy
+PASS /: no horizontal overflow on mobile
+PASS /quiz: no horizontal overflow on mobile
+PASS /results: no horizontal overflow on mobile
+PASS /explore: no horizontal overflow on mobile
+PASS /profile: no horizontal overflow on mobile
+PASS /nova: no horizontal overflow on mobile
+PASS /about: no horizontal overflow on mobile
+PASS /privacy: no horizontal overflow on mobile
+PASS /careers/doctor: no horizontal overflow on mobile
+PASS /careers/civil-servant: no horizontal overflow on mobile
+PASS /dashboard: no horizontal overflow on mobile
+PASS /compare: no horizontal overflow on mobile
+PASS no console errors
+
+ALL PASSED

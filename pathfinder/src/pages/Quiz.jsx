@@ -69,7 +69,7 @@ function Gate({ kind, onContinue }) {
 }
 
 export default function Quiz() {
-  useTitle('Career quiz');
+  useTitle('Career quiz', 'A short quiz about your interests, school subjects and how you like to work. It places you on the career map.');
   const p = useProfile();
   const { quiz, step, answers, questions } = p;
   const navigate = useNavigate();

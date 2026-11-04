@@ -190,8 +190,9 @@ describe('Nova demo chat', () => {
     const ids = new Set(demo.prompts.map((p) => p.id));
     for (const id of demo.suggested) expect(ids.has(id)).toBe(true);
   });
-  it('says it is not live AI in the greeting and the fallback', () => {
-    expect(demo.greeting.toLowerCase()).toContain('not a live ai');
+  it('the greeting does not claim to be a demo or a live AI, and the fallback says it is a demo', () => {
+    expect(demo.greeting.toLowerCase()).not.toContain('not a live ai');
+    expect(demo.greeting.toLowerCase()).toContain('every reply says which');
     expect(demo.fallback.toLowerCase()).toContain('demo mode');
   });
   it('does not invent salary figures, course links or eligibility details', () => {

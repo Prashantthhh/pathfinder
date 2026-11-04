@@ -552,7 +552,8 @@ const caMsg = await (await askNova('Tell me about Chartered Accountant')).innerT
 check('nova: a named career is answered from its O*NET description, typical route and salary placeholder', caMsg.includes('Typical route in India') && caMsg.includes('data not connected yet') && caMsg.includes(careers.find((c) => c.id === 'chartered-accountant').description), caMsg.slice(0, 160));
 const fb = await (await askNova('whats the weather in hyderabad')).innerText();
 check('nova: an unknown question says it is a demo with no preset answer', fb.includes('demo mode') && fb.includes('no preset answer'));
-check('nova: every Nova message carries a source label (Demo when not live)', (await page.locator('.msg--nova').count()) === (await page.locator('.msg--nova .msg__source').count()) && (await page.locator('.msg__source').allInnerTexts()).every((t) => t.startsWith('Demo')));
+check('nova: every Nova message carries a source label (Demo when not live; the welcome message says what the labels mean)', (await page.locator('.msg--nova').count()) === (await page.locator('.msg--nova .msg__source').count()) && (await page.locator('.msg__source').allInnerTexts()).every((t, i) => (i === 0 ? t.startsWith('Welcome') : t.startsWith('Demo'))));
+check('nova: the welcome message no longer claims to be a demo or "not live AI"', !/not a live ai|demo mode/i.test(await page.locator('.msg--nova').first().innerText()));
 
 // ---- live AI (mocked)
 await clearAll();

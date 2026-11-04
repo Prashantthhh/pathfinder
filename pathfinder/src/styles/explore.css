@@ -73,3 +73,9 @@ textarea.field { resize: vertical; }
 .field-sub__h { font-family: var(--font-label); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin: var(--s-2) 0 var(--s-1); font-weight: 700; }
 .near-btn { margin-bottom: var(--s-2); font-size: var(--step--1); }
 .near-btn.is-on { background: var(--ink); color: var(--paper-hi); }
+
+/* Phase 5: on a phone the score sits on its own line and Save / Compare share one row */
+@media (max-width: 43.99rem) {
+  .crow__side { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: var(--s-2) var(--s-3); }
+  .crow__score { grid-column: 1 / -1; }
+}

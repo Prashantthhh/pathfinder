@@ -1,106 +1,250 @@
 {
-  "greeting": "Hi, I'm Nova. This chat is in demo mode: I only have answers that were written in advance, and I'm not a live AI. Pick a question below, or type one and I'll try to match it to something I have.",
+  "greeting": "Hi, I'm Nova. Ask me about careers, your matches or your next steps. I answer with AI when it is switched on and from preset answers when it isn't, and every reply says which. Pick a question below, or type your own.",
   "fallback": "I'm in demo mode, so I only have preset answers and I don't have one for that. I haven't looked it up or worked it out. Try one of the suggested questions, or mention a career by name (for example \"Chartered Accountant\").",
-  "suggested": ["match-score", "predict", "start", "results-top", "onet", "salary"],
+  "suggested": [
+    "match-score",
+    "predict",
+    "start",
+    "results-top",
+    "onet",
+    "salary"
+  ],
   "prompts": [
     {
       "id": "who",
       "question": "Who are you, Nova?",
-      "keywords": ["who are you", "what are you", "nova", "are you ai", "are you real", "chatgpt", "live ai"],
+      "keywords": [
+        "who are you",
+        "what are you",
+        "nova",
+        "are you ai",
+        "are you real",
+        "chatgpt",
+        "live ai"
+      ],
       "answer": "I'm Nova, the star-compass guide of PATHFINDER. Right now I'm a demo: my answers are written in advance and chosen by matching your words to a list. I'm not connected to a live AI model, so I can't reason about new questions."
     },
     {
       "id": "match-score",
       "question": "What does a match score mean?",
-      "keywords": ["match score", "score", "percent", "percentage", "cosine", "how is it calculated", "how do you calculate"],
+      "keywords": [
+        "match score",
+        "score",
+        "percent",
+        "percentage",
+        "cosine",
+        "how is it calculated",
+        "how do you calculate"
+      ],
       "answer": "Your answers become an interest profile across six types (Holland's RIASEC), and every career has its own profile from O*NET. The match score is how closely the shape of the two lines up, using cosine similarity. A smaller part comes from how the day-to-day work feels compared with what you said you like. It says nothing about how well you would do in the career."
     },
     {
       "id": "predict",
       "question": "Does a high score mean I would succeed?",
-      "keywords": ["succeed", "success", "predict", "guarantee", "good at", "will i", "chance", "sure thing", "best career"],
+      "keywords": [
+        "succeed",
+        "success",
+        "predict",
+        "guarantee",
+        "good at",
+        "will i",
+        "chance",
+        "sure thing",
+        "best career"
+      ],
       "answer": "No. A match score compares your interests with a career's interest profile. It does not measure ability, effort or how the job market treats you. Use it to decide what to read about and try, not to rule careers in or out."
     },
     {
       "id": "dna",
       "question": "What is Career DNA?",
-      "keywords": ["dna", "radar", "chart", "my profile", "profile shape", "edit profile"],
+      "keywords": [
+        "dna",
+        "radar",
+        "chart",
+        "my profile",
+        "profile shape",
+        "edit profile"
+      ],
       "answer": "It's your interest profile across the six types, drawn as a radar chart. It comes from your quiz answers, and you can edit it on the Career DNA page. Your matches update straight away. The sliders show how much each type stands out compared with your others, not how good you are at it."
     },
     {
       "id": "types",
       "question": "What are the six interest types?",
       "kind": "dimensions",
-      "keywords": ["six types", "riasec", "holland", "interest types", "dimensions", "realistic investigative"],
+      "keywords": [
+        "six types",
+        "riasec",
+        "holland",
+        "interest types",
+        "dimensions",
+        "realistic investigative"
+      ],
       "answer": ""
     },
     {
       "id": "start",
       "question": "I'm not sure where to start",
-      "keywords": ["start", "begin", "lost", "confused", "unsure", "not sure", "where do i", "no idea", "overwhelmed"],
+      "keywords": [
+        "start",
+        "begin",
+        "lost",
+        "confused",
+        "unsure",
+        "not sure",
+        "where do i",
+        "no idea",
+        "overwhelmed"
+      ],
       "answer": "A good first step is the quiz: it asks about what you enjoy and how you like to work, then shows careers with the reasons. You don't have to decide anything. Treat the results as a reading list. You can also browse Explore Careers or try Surprise Me."
     },
     {
       "id": "split",
       "question": "What do Strong fits and Explore further mean?",
-      "keywords": ["strong fits", "explore further", "strong fit", "why is it under explore"],
+      "keywords": [
+        "strong fits",
+        "explore further",
+        "strong fit",
+        "why is it under explore"
+      ],
       "answer": "Strong fits are careers that score 80% or more and whose typical route also suits the stream and study answers you gave. Explore further holds everything else that is still a match, each with the reason, such as a different usual starting stream or a longer route. Nothing is hidden, and your answers about stream and study never change the match score."
     },
     {
       "id": "streams",
       "question": "Which stream do I need for a career?",
       "strong": true,
-      "keywords": ["stream", "pcm", "pcb", "eligibility", "eligible", "which stream", "after 12th", "after 10th"],
+      "keywords": [
+        "stream",
+        "pcm",
+        "pcb",
+        "eligibility",
+        "eligible",
+        "which stream",
+        "after 12th",
+        "after 10th"
+      ],
       "answer": "Each career page shows the stream its route typically starts from, labelled \"typical route, verify with the official body\". It is our general reading, not an eligibility rule. I don't give percentages, age limits or fees. For the rules, use the official body named on the career page, or check with the institute."
     },
     {
       "id": "exams",
       "question": "Which entrance exams do you list?",
-      "keywords": ["exam", "exams", "entrance", "neet", "jee", "clat", "cat", "upsc", "licence", "license", "governing body"],
+      "keywords": [
+        "exam",
+        "exams",
+        "entrance",
+        "neet",
+        "jee",
+        "clat",
+        "cat",
+        "upsc",
+        "licence",
+        "license",
+        "governing body"
+      ],
       "answer": "Career pages name the entrance exam and the governing or licensing body for India, with a link, only where that name was confirmed on the official site. Where it wasn't, the page says \"Check with the official body\". I don't list eligibility, fees or exam patterns."
     },
     {
       "id": "maths",
       "question": "Do I need to be good at maths?",
-      "keywords": ["math", "maths", "mathematics", "statistics", "stats", "calculus"],
+      "keywords": [
+        "math",
+        "maths",
+        "mathematics",
+        "statistics",
+        "stats",
+        "calculus"
+      ],
       "answer": "It varies by career. Some, such as statistics, engineering or data science, lean on it heavily; many others lean on it much less. That is a general picture, not a rule, and maths is learnable."
     },
     {
       "id": "salary",
       "question": "What do these careers pay?",
       "strong": true,
-      "keywords": ["salary", "pay", "paid", "earn", "money", "ctc", "package", "lpa", "income", "demand", "openings", "job market", "outlook"],
+      "keywords": [
+        "salary",
+        "pay",
+        "paid",
+        "earn",
+        "money",
+        "ctc",
+        "package",
+        "lpa",
+        "income",
+        "demand",
+        "openings",
+        "job market",
+        "outlook"
+      ],
       "answer": "I don't have that data. Salary and job outlook show \"data not connected yet\" on every career page because I won't make up numbers, and the occupation data we use comes from the US, so it can't tell you about India. When a cited Indian source is connected, it will show with its source and date."
     },
     {
       "id": "onet",
       "question": "Where does the career data come from?",
-      "keywords": ["onet", "o net", "source", "data come", "where is the data", "department of labor", "us data"],
+      "keywords": [
+        "onet",
+        "o net",
+        "source",
+        "data come",
+        "where is the data",
+        "department of labor",
+        "us data"
+      ],
       "answer": "Interest profiles, tasks and skills come from the O*NET 31.0 Database (U.S. Department of Labor, August 2026), used under a CC BY 4.0 licence. O*NET says its interest scores were produced by machine learning with expert review, so treat them as estimates. They describe US occupations. Education routes, exams and licences are for India and written separately."
     },
     {
       "id": "results-top",
       "question": "Why is my top match my top match?",
       "kind": "results-top",
-      "keywords": ["why", "top match", "my match", "my result", "my results", "explain", "reason", "recommended"],
+      "keywords": [
+        "why",
+        "top match",
+        "my match",
+        "my result",
+        "my results",
+        "explain",
+        "reason",
+        "recommended"
+      ],
       "answer": ""
     },
     {
       "id": "change",
       "question": "Can I change my answers?",
-      "keywords": ["retake", "change my", "redo", "edit my", "wrong answer", "start over", "mistake"],
+      "keywords": [
+        "retake",
+        "change my",
+        "redo",
+        "edit my",
+        "wrong answer",
+        "start over",
+        "mistake"
+      ],
       "answer": "Yes. You can review and change quiz answers, adjust your Career DNA with the sliders, or retake the whole quiz. Retaking clears your answers and DNA edits but keeps your saved careers, and the results page shows how your matches moved."
     },
     {
       "id": "privacy",
       "question": "Where is my data stored?",
-      "keywords": ["privacy", "private", "stored", "store", "my data", "safe", "delete", "server", "account"],
+      "keywords": [
+        "privacy",
+        "private",
+        "stored",
+        "store",
+        "my data",
+        "safe",
+        "delete",
+        "server",
+        "account"
+      ],
       "answer": "Only in this browser, in local storage. There are no accounts and nothing is sent to a server. You can delete it all from the Privacy page."
     },
     {
       "id": "surprise",
       "question": "What does Surprise Me do?",
-      "keywords": ["surprise", "random", "something new", "unfamiliar"],
+      "keywords": [
+        "surprise",
+        "random",
+        "something new",
+        "unfamiliar"
+      ],
       "answer": "On Explore Careers it suggests a career from a domain you haven't looked at, picked because its interest profile is close to careers you matched or saved. With no profile yet, it picks something at random."
     }
   ]

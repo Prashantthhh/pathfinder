@@ -16,7 +16,7 @@ const ENV = { NOVA_API_KEY: 'test-key-123' };
 const okProvider = (content = 'Doctor is a strong match because you like science. Check with the official body for exam details.') =>
   vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ choices: [{ message: { content } }] }) }));
 const ask = (over = {}, fetchImpl = okProvider(), extra = {}) =>
-  handleNova({ method: 'POST', ip: '1.2.3.4', env: ENV, fetchImpl, limiter: createLimiter(), body: { question: 'What next?', context: {}, ...over }, ...extra });
+  handleNova({ method: 'POST', ip: '1.2.3.4', env: ENV, fetchImpl, limiter: createLimiter(), log: () => {}, body: { question: 'What next?', context: {}, ...over }, ...extra });
 const sentBody = (fetchImpl) => JSON.parse(fetchImpl.mock.calls[0][1].body);
 
 describe('live Nova endpoint (provider mocked)', () => {

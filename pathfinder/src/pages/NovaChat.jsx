@@ -8,6 +8,7 @@ import { useProfile } from '../state/ProfileContext.jsx';
 import useTitle from '../hooks/useTitle.js';
 
 const SOURCE_LABEL = {
+  greeting: 'Welcome message. Replies below are labelled AI-generated or Demo.',
   ai: 'AI-generated · it can be wrong. Check with the official body for anything time-sensitive.',
   preset: 'Demo · preset answer',
   career: 'Demo · built from the career page data, not AI',
@@ -15,7 +16,7 @@ const SOURCE_LABEL = {
   fallback: 'Demo · no preset answer for this',
 };
 
-const greeting = () => ({ id: 'greeting', from: 'nova', text: demo.greeting, source: 'preset' });
+const greeting = () => ({ id: 'greeting', from: 'nova', text: demo.greeting, source: 'greeting' });
 
 /**
  * Nova chat. It tries live AI first (POST /api/nova, a serverless function that holds the key) and labels
@@ -23,7 +24,7 @@ const greeting = () => ({ id: 'greeting', from: 'nova', text: demo.greeting, sou
  * preset demo answers (see engine/novaDemo.js) and says so. Every Nova message carries its source.
  */
 export default function NovaChat() {
-  useTitle('Ask Nova');
+  useTitle('Ask Nova', 'Ask Nova, the PATHFINDER guide, about careers, your matches and your next steps. Replies are labelled AI-generated or Demo.');
   const p = useProfile();
   const [params] = useSearchParams();
   const [messages, setMessages] = useState(() => [greeting()]);
@@ -127,7 +128,7 @@ export default function NovaChat() {
         <ul className="chat__msgs">
         {messages.map((m) => (
           <li key={m.id} className={`msg msg--${m.from}`}>
-            <p className="msg__who">{m.from === 'you' ? 'You' : m.source === 'ai' ? 'Nova (AI-generated)' : 'Nova (demo)'}</p>
+            <p className="msg__who">{m.from === 'you' ? 'You' : m.source === 'ai' ? 'Nova (AI-generated)' : m.source === 'greeting' ? 'Nova' : 'Nova (demo)'}</p>
             <p className="msg__text">{m.text}</p>
             {m.from === 'nova' && <p className="msg__source" data-source={m.source}>{SOURCE_LABEL[m.source] ?? SOURCE_LABEL.preset}</p>}
             {m.note && <p className="msg__note">{m.note}</p>}
